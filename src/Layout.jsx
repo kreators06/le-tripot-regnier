@@ -1,0 +1,278 @@
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { createPageUrl } from '@/utils';
+import { Menu, X, Phone, Mail, MapPin, Instagram, Linkedin, Facebook } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const navLinks = [
+  { name: 'Accueil', page: 'Home' },
+  { name: 'Nos Engagements', page: 'Engagements' },
+  { name: "L'Équipe", page: 'Equipe' },
+  { name: 'Galerie', page: 'Galerie' },
+  { name: 'Capacités', page: 'Capacites' },
+  { name: 'Contact', page: 'Contact' },
+];
+
+export default function Layout({ children, currentPageName }) {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location]);
+
+  const isHome = currentPageName === 'Home';
+  const headerBg = isScrolled || !isHome ? 'bg-[#0D0D0D]/95 backdrop-blur-md' : 'bg-transparent';
+
+  return (
+    <div className="min-h-screen bg-[#F5F5F0]">
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+        
+        body {
+          font-family: 'Inter', sans-serif;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+          font-family: 'Cormorant Garamond', serif;
+        }
+        
+        .nav-link {
+          position: relative;
+        }
+        
+        .nav-link::after {
+          content: '';
+          position: absolute;
+          bottom: -4px;
+          left: 0;
+          width: 0;
+          height: 1px;
+          background: #C9A962;
+          transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+          width: 100%;
+        }
+        
+        ::-webkit-scrollbar {
+          width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+          background: #0D0D0D;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+          background: #C9A962;
+          border-radius: 4px;
+        }
+      `}</style>
+
+      {/* Header */}
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${headerBg}`}>
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex items-center justify-between h-20">
+            {/* Logo */}
+            <Link to={createPageUrl('Home')} className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-[#C9A962] flex items-center justify-center">
+                <span className="text-[#0D0D0D] font-bold text-xl">T</span>
+              </div>
+              <div className="hidden sm:block">
+                <span className="text-white text-lg tracking-widest font-light">LE TRIPOT</span>
+                <span className="text-[#C9A962] text-lg tracking-widest font-light ml-2">RÉGNIER</span>
+              </div>
+            </Link>
+
+            {/* Desktop Nav */}
+            <nav className="hidden lg:flex items-center gap-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.page}
+                  to={createPageUrl(link.page)}
+                  className={`nav-link text-sm tracking-wide transition-colors ${
+                    currentPageName === link.page 
+                      ? 'text-[#C9A962] active' 
+                      : 'text-white/80 hover:text-white'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </nav>
+
+            {/* CTA Button */}
+            <div className="hidden lg:block">
+              <Link
+                to={createPageUrl('Contact')}
+                className="px-6 py-2.5 bg-[#C9A962] text-[#0D0D0D] text-sm font-medium tracking-wide hover:bg-[#D4B872] transition-colors"
+              >
+                Réserver
+              </Link>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="lg:hidden text-white p-2"
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="lg:hidden bg-[#0D0D0D] border-t border-white/10"
+            >
+              <nav className="flex flex-col py-6 px-6">
+                {navLinks.map((link, i) => (
+                  <motion.div
+                    key={link.page}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.05 }}
+                  >
+                    <Link
+                      to={createPageUrl(link.page)}
+                      className={`block py-3 text-lg tracking-wide ${
+                        currentPageName === link.page 
+                          ? 'text-[#C9A962]' 
+                          : 'text-white/80'
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  </motion.div>
+                ))}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: navLinks.length * 0.05 }}
+                  className="mt-4"
+                >
+                  <Link
+                    to={createPageUrl('Contact')}
+                    className="block w-full py-3 bg-[#C9A962] text-[#0D0D0D] text-center font-medium tracking-wide"
+                  >
+                    Réserver
+                  </Link>
+                </motion.div>
+              </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </header>
+
+      {/* Main Content */}
+      <main>{children}</main>
+
+      {/* Footer */}
+      <footer className="bg-[#0D0D0D] text-white">
+        <div className="max-w-7xl mx-auto px-6 py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            {/* Brand */}
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 bg-[#C9A962] flex items-center justify-center">
+                  <span className="text-[#0D0D0D] font-bold text-xl">T</span>
+                </div>
+                <div>
+                  <span className="text-white text-lg tracking-widest font-light">LE TRIPOT</span>
+                  <span className="text-[#C9A962] text-lg tracking-widest font-light ml-2">RÉGNIER</span>
+                </div>
+              </div>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Salle événementielle parisienne de 700m² alliant style Art Déco et Industriel.
+              </p>
+            </div>
+
+            {/* Navigation */}
+            <div>
+              <h4 className="text-[#C9A962] font-medium mb-6 tracking-wide">Navigation</h4>
+              <ul className="space-y-3">
+                {navLinks.map((link) => (
+                  <li key={link.page}>
+                    <Link 
+                      to={createPageUrl(link.page)}
+                      className="text-gray-400 hover:text-white transition-colors text-sm"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <h4 className="text-[#C9A962] font-medium mb-6 tracking-wide">Contact</h4>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <MapPin className="w-5 h-5 text-[#C9A962] flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-400 text-sm">
+                    Paris 15ème arrondissement
+                  </span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Phone className="w-5 h-5 text-[#C9A962]" />
+                  <a href="tel:+33100000000" className="text-gray-400 hover:text-white transition-colors text-sm">
+                    +33 1 00 00 00 00
+                  </a>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Mail className="w-5 h-5 text-[#C9A962]" />
+                  <a href="mailto:contact@tripotregnier.fr" className="text-gray-400 hover:text-white transition-colors text-sm">
+                    contact@tripotregnier.fr
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Social */}
+            <div>
+              <h4 className="text-[#C9A962] font-medium mb-6 tracking-wide">Suivez-nous</h4>
+              <div className="flex gap-4">
+                <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-[#C9A962] hover:bg-[#C9A962]/10 transition-all">
+                  <Instagram className="w-5 h-5 text-white" />
+                </a>
+                <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-[#C9A962] hover:bg-[#C9A962]/10 transition-all">
+                  <Linkedin className="w-5 h-5 text-white" />
+                </a>
+                <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-[#C9A962] hover:bg-[#C9A962]/10 transition-all">
+                  <Facebook className="w-5 h-5 text-white" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-500 text-sm">
+              © {new Date().getFullYear()} Le Tripot Régnier. Tous droits réservés.
+            </p>
+            <div className="flex gap-6 text-sm">
+              <a href="#" className="text-gray-500 hover:text-white transition-colors">Mentions légales</a>
+              <a href="#" className="text-gray-500 hover:text-white transition-colors">Politique de confidentialité</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
