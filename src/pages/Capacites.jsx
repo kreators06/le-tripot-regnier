@@ -8,11 +8,7 @@ import {
   Truck, 
   Accessibility,
   Shield,
-  Layers,
-  Tv,
-  Video,
-  Headphones,
-  Mic
+  Layers
 } from 'lucide-react';
 import SectionTitle from '@/components/ui/SectionTitle';
 import CTABanner from '@/components/ui/CTABanner';
@@ -62,17 +58,17 @@ export default function Capacites() {
         <div className="absolute inset-0 opacity-20">
           <img 
             src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1920&auto=format"
-            alt="Equipment"
+            alt="Équipements salle événementielle Paris"
             className="w-full h-full object-cover"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#0D0D0D] via-[#0D0D0D]/90 to-[#0D0D0D]/70" />
         
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
+        <div className="relative z-10 max-w-4xl mx-auto text-left">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl text-white font-light tracking-wide mb-6"
+            className="text-4xl md:text-6xl text-white font-semibold tracking-wide mb-6"
           >
             Capacités & <span className="text-[#C9A962]">Équipements</span>
           </motion.h1>
@@ -80,7 +76,7 @@ export default function Capacites() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-gray-300 font-light leading-relaxed"
+            className="text-xl text-gray-200 leading-relaxed"
           >
             Tout ce dont vous avez besoin pour un événement réussi
           </motion.p>
@@ -93,6 +89,7 @@ export default function Capacites() {
           <SectionTitle 
             title="Espaces & Surfaces"
             subtitle="Des espaces modulables pour tous vos besoins"
+            align="left"
           />
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
@@ -103,11 +100,11 @@ export default function Capacites() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white p-8 text-center group hover:shadow-xl transition-shadow duration-300"
+                className="bg-white p-8 text-left group hover:shadow-xl transition-shadow duration-300"
               >
-                <Maximize2 className="w-8 h-8 text-[#C9A962] mx-auto mb-4" />
+                <Maximize2 className="w-8 h-8 text-[#C9A962] mb-4" />
                 <h3 className="text-lg font-medium text-[#0D0D0D] mb-2">{space.name}</h3>
-                <p className="text-3xl font-light text-[#C9A962] mb-2">{space.surface}</p>
+                <p className="text-3xl font-semibold text-[#C9A962] mb-2">{space.surface}</p>
                 <p className="text-sm text-gray-500">{space.description}</p>
               </motion.div>
             ))}
@@ -123,29 +120,30 @@ export default function Capacites() {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
+              className="text-left"
             >
               <div className="inline-block px-4 py-1 bg-[#C9A962]/20 text-[#C9A962] text-sm tracking-wide mb-6">
                 INNOVATION
               </div>
-              <h2 className="text-4xl font-light text-white mb-6 tracking-wide">
+              <h2 className="text-4xl font-semibold text-white mb-6 tracking-wide">
                 Mur LED<br />
                 <span className="text-[#C9A962]">Immersif</span>
               </h2>
-              <p className="text-gray-400 leading-relaxed mb-6">
+              <p className="text-gray-300 leading-relaxed mb-6">
                 Notre plateau virtuel modulable avec projection immersive sur mur LED 
                 repousse les limites de la créativité. Créez des décors 3D époustouflants 
                 et réalisez des captations visuelles d'exception.
               </p>
               <ul className="space-y-3">
-                <li className="flex items-center gap-3 text-gray-300">
+                <li className="flex items-center gap-3 text-gray-200">
                   <span className="w-2 h-2 rounded-full bg-[#C9A962]" />
                   Décors 3D personnalisables
                 </li>
-                <li className="flex items-center gap-3 text-gray-300">
+                <li className="flex items-center gap-3 text-gray-200">
                   <span className="w-2 h-2 rounded-full bg-[#C9A962]" />
                   Captation visuelle haute définition
                 </li>
-                <li className="flex items-center gap-3 text-gray-300">
+                <li className="flex items-center gap-3 text-gray-200">
                   <span className="w-2 h-2 rounded-full bg-[#C9A962]" />
                   Expérience immersive unique
                 </li>
@@ -161,7 +159,7 @@ export default function Capacites() {
               <div className="aspect-video bg-gradient-to-br from-[#1A1A1A] to-[#2A2A2A] rounded-lg overflow-hidden">
                 <img 
                   src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=800&auto=format"
-                  alt="Mur LED"
+                  alt="Mur LED immersif"
                   className="w-full h-full object-cover opacity-80"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -181,6 +179,7 @@ export default function Capacites() {
           <SectionTitle 
             title="Équipements Techniques"
             subtitle="Du matériel professionnel haut de gamme"
+            align="left"
           />
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
@@ -189,13 +188,13 @@ export default function Capacites() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-[#F5F5F0] p-8"
+              className="bg-[#F5F5F0] p-8 text-left"
             >
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-[#C9A962]/20 flex items-center justify-center">
                   <Lightbulb className="w-6 h-6 text-[#C9A962]" />
                 </div>
-                <h3 className="text-xl font-light text-[#0D0D0D]">Éclairage</h3>
+                <h3 className="text-xl font-semibold text-[#0D0D0D]">Éclairage</h3>
               </div>
               <ul className="space-y-3">
                 {lighting.map((item, i) => (
@@ -213,13 +212,13 @@ export default function Capacites() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="bg-[#F5F5F0] p-8"
+              className="bg-[#F5F5F0] p-8 text-left"
             >
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-[#C9A962]/20 flex items-center justify-center">
                   <Monitor className="w-6 h-6 text-[#C9A962]" />
                 </div>
-                <h3 className="text-xl font-light text-[#0D0D0D]">Vidéo</h3>
+                <h3 className="text-xl font-semibold text-[#0D0D0D]">Vidéo</h3>
               </div>
               <ul className="space-y-3">
                 {video.map((item, i) => (
@@ -237,13 +236,13 @@ export default function Capacites() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-[#F5F5F0] p-8"
+              className="bg-[#F5F5F0] p-8 text-left"
             >
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full bg-[#C9A962]/20 flex items-center justify-center">
                   <Speaker className="w-6 h-6 text-[#C9A962]" />
                 </div>
-                <h3 className="text-xl font-light text-[#0D0D0D]">Son</h3>
+                <h3 className="text-xl font-semibold text-[#0D0D0D]">Son</h3>
               </div>
               <ul className="space-y-3">
                 {sound.map((item, i) => (
@@ -264,6 +263,7 @@ export default function Capacites() {
           <SectionTitle 
             title="Logistique & Accès"
             subtitle="Un lieu pensé pour faciliter votre organisation"
+            align="left"
           />
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
@@ -274,7 +274,7 @@ export default function Capacites() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white p-6 flex items-start gap-4"
+                className="bg-white p-6 flex items-start gap-4 text-left"
               >
                 <div className="w-12 h-12 rounded-full bg-[#0D0D0D] flex items-center justify-center flex-shrink-0">
                   <item.icon className="w-5 h-5 text-[#C9A962]" />
@@ -290,23 +290,23 @@ export default function Capacites() {
 
       {/* Normes */}
       <section className="py-16 px-6 bg-[#0D0D0D]">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col md:flex-row items-center justify-center gap-8"
+            className="flex flex-col md:flex-row items-start justify-start gap-8"
           >
-            <div className="flex items-center gap-4 px-8 py-4 bg-white/5 rounded">
+            <div className="flex items-center gap-4 px-8 py-4 bg-white/5 rounded text-left">
               <Shield className="w-8 h-8 text-[#C9A962]" />
-              <div className="text-left">
+              <div>
                 <p className="text-white font-medium">Normes ERP</p>
                 <p className="text-gray-400 text-sm">Établissement Recevant du Public</p>
               </div>
             </div>
-            <div className="flex items-center gap-4 px-8 py-4 bg-white/5 rounded">
+            <div className="flex items-center gap-4 px-8 py-4 bg-white/5 rounded text-left">
               <Accessibility className="w-8 h-8 text-[#C9A962]" />
-              <div className="text-left">
+              <div>
                 <p className="text-white font-medium">Accessibilité PMR</p>
                 <p className="text-gray-400 text-sm">Personnes à Mobilité Réduite</p>
               </div>

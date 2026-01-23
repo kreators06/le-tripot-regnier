@@ -8,7 +8,7 @@ export default function FeatureIcon({ icon: Icon, title, description, index = 0 
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.05, duration: 0.4 }}
-      className="flex flex-col items-center text-center p-6 group"
+      className="flex flex-col items-start text-left p-6 group"
     >
       <div className="w-16 h-16 rounded-full bg-[#C9A962]/10 flex items-center justify-center mb-4 group-hover:bg-[#C9A962]/20 transition-colors duration-300">
         <Icon className="w-7 h-7 text-[#C9A962]" />

@@ -9,11 +9,11 @@ export default function TestimonialCard({ quote, author, company, index = 0 }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.15, duration: 0.5 }}
-      className="bg-white p-8 relative group hover:shadow-xl transition-shadow duration-500"
+      className="bg-white p-8 relative group hover:shadow-xl transition-shadow duration-500 text-left"
     >
       <Quote className="w-10 h-10 text-[#C9A962]/30 absolute top-6 right-6" />
       
-      <p className="text-[#2A2A2A] text-lg leading-relaxed mb-6 font-light italic">
+      <p className="text-[#2A2A2A] text-lg leading-relaxed mb-6 italic">
         "{quote}"
       </p>
       
