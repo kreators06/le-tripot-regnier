@@ -26,9 +26,11 @@ export default function Layout({ children, currentPageName }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Scroll to top on page change
   useEffect(() => {
+    window.scrollTo(0, 0);
     setMobileMenuOpen(false);
-  }, [location]);
+  }, [location.pathname]);
 
   const isHome = currentPageName === 'Home';
   const headerBg = isScrolled || !isHome ? 'bg-[#0D0D0D]/95 backdrop-blur-md' : 'bg-transparent';
@@ -36,14 +38,14 @@ export default function Layout({ children, currentPageName }) {
   return (
     <div className="min-h-screen bg-[#F5F5F0]">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
         
         body {
-          font-family: 'Inter', sans-serif;
+          font-family: 'Poppins', sans-serif;
         }
         
         h1, h2, h3, h4, h5, h6 {
-          font-family: 'Cormorant Garamond', serif;
+          font-family: 'Poppins', sans-serif;
         }
         
         .nav-link {
@@ -104,7 +106,7 @@ export default function Layout({ children, currentPageName }) {
                   className={`nav-link text-sm tracking-wide transition-colors ${
                     currentPageName === link.page 
                       ? 'text-[#C9A962] active' 
-                      : 'text-white/80 hover:text-white'
+                      : 'text-white/90 hover:text-white'
                   }`}
                 >
                   {link.name}
@@ -126,6 +128,7 @@ export default function Layout({ children, currentPageName }) {
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="lg:hidden text-white p-2"
+              aria-label="Menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -154,7 +157,7 @@ export default function Layout({ children, currentPageName }) {
                       className={`block py-3 text-lg tracking-wide ${
                         currentPageName === link.page 
                           ? 'text-[#C9A962]' 
-                          : 'text-white/80'
+                          : 'text-white/90'
                       }`}
                     >
                       {link.name}
@@ -198,7 +201,7 @@ export default function Layout({ children, currentPageName }) {
                   <span className="text-[#C9A962] text-lg tracking-widest font-light ml-2">RÉGNIER</span>
                 </div>
               </div>
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <p className="text-gray-400 text-sm leading-relaxed text-left">
                 Salle événementielle parisienne de 700m² alliant style Art Déco et Industriel.
               </p>
             </div>
@@ -206,7 +209,7 @@ export default function Layout({ children, currentPageName }) {
             {/* Navigation */}
             <div>
               <h4 className="text-[#C9A962] font-medium mb-6 tracking-wide">Navigation</h4>
-              <ul className="space-y-3">
+              <ul className="space-y-3 text-left">
                 {navLinks.map((link) => (
                   <li key={link.page}>
                     <Link 
@@ -223,7 +226,7 @@ export default function Layout({ children, currentPageName }) {
             {/* Contact */}
             <div>
               <h4 className="text-[#C9A962] font-medium mb-6 tracking-wide">Contact</h4>
-              <ul className="space-y-4">
+              <ul className="space-y-4 text-left">
                 <li className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-[#C9A962] flex-shrink-0 mt-0.5" />
                   <span className="text-gray-400 text-sm">
@@ -249,26 +252,27 @@ export default function Layout({ children, currentPageName }) {
             <div>
               <h4 className="text-[#C9A962] font-medium mb-6 tracking-wide">Suivez-nous</h4>
               <div className="flex gap-4">
-                <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-[#C9A962] hover:bg-[#C9A962]/10 transition-all">
+                <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-[#C9A962] hover:bg-[#C9A962]/10 transition-all" aria-label="Instagram">
                   <Instagram className="w-5 h-5 text-white" />
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-[#C9A962] hover:bg-[#C9A962]/10 transition-all">
+                <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-[#C9A962] hover:bg-[#C9A962]/10 transition-all" aria-label="LinkedIn">
                   <Linkedin className="w-5 h-5 text-white" />
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-[#C9A962] hover:bg-[#C9A962]/10 transition-all">
+                <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-[#C9A962] hover:bg-[#C9A962]/10 transition-all" aria-label="Facebook">
                   <Facebook className="w-5 h-5 text-white" />
                 </a>
               </div>
             </div>
           </div>
 
-          <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
             <p className="text-gray-500 text-sm">
               © {new Date().getFullYear()} Le Tripot Régnier. Tous droits réservés.
             </p>
-            <div className="flex gap-6 text-sm">
-              <a href="#" className="text-gray-500 hover:text-white transition-colors">Mentions légales</a>
-              <a href="#" className="text-gray-500 hover:text-white transition-colors">Politique de confidentialité</a>
+            <div className="flex flex-wrap gap-6 text-sm">
+              <Link to={createPageUrl('MentionsLegales')} className="text-gray-500 hover:text-white transition-colors">Mentions légales</Link>
+              <Link to={createPageUrl('PolitiqueConfidentialite')} className="text-gray-500 hover:text-white transition-colors">Politique de confidentialité</Link>
+              <Link to={createPageUrl('CGU')} className="text-gray-500 hover:text-white transition-colors">CGU</Link>
             </div>
           </div>
         </div>

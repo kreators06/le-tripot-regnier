@@ -20,13 +20,13 @@ export default function CTABanner({
       viewport={{ once: true }}
       className={`py-20 px-6 ${isDark ? 'bg-[#0D0D0D]' : 'bg-[#F5F5F0]'}`}
     >
-      <div className="max-w-4xl mx-auto text-center">
+      <div className="max-w-4xl mx-auto text-left">
         <motion.h2 
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className={`text-3xl md:text-4xl font-light tracking-wide mb-4 ${isDark ? 'text-white' : 'text-[#0D0D0D]'}`}
+          className={`text-3xl md:text-4xl font-semibold tracking-wide mb-4 ${isDark ? 'text-white' : 'text-[#0D0D0D]'}`}
         >
           {title}
         </motion.h2>
@@ -37,7 +37,7 @@ export default function CTABanner({
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className={`text-lg mb-8 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}
+            className={`text-lg mb-8 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}
           >
             {subtitle}
           </motion.p>
@@ -48,7 +48,7 @@ export default function CTABanner({
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center mt-8"
+          className="flex flex-col sm:flex-row gap-4 mt-8"
         >
           <Link 
             to={createPageUrl('Contact')}

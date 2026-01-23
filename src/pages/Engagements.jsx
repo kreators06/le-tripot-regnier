@@ -67,17 +67,17 @@ export default function Engagements() {
         <div className="absolute inset-0 opacity-20">
           <img 
             src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&auto=format"
-            alt="Background"
+            alt="Nos engagements RSE Le Tripot Régnier"
             className="w-full h-full object-cover"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#0D0D0D] via-[#0D0D0D]/90 to-[#0D0D0D]/70" />
         
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
+        <div className="relative z-10 max-w-4xl mx-auto text-left">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl text-white font-light tracking-wide mb-6"
+            className="text-4xl md:text-6xl text-white font-semibold tracking-wide mb-6"
           >
             Nos <span className="text-[#C9A962]">Engagements</span>
           </motion.h1>
@@ -85,7 +85,7 @@ export default function Engagements() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-gray-300 font-light leading-relaxed"
+            className="text-xl text-gray-200 leading-relaxed"
           >
             Un positionnement RSE fort pour un événementiel responsable. 
             Nous croyons qu'il est possible de créer des événements mémorables 
@@ -100,6 +100,7 @@ export default function Engagements() {
           <SectionTitle 
             title="Nos 3 Piliers"
             subtitle="Les valeurs fondamentales qui guident notre action au quotidien"
+            align="left"
           />
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-16">
@@ -118,15 +119,15 @@ export default function Engagements() {
                   <pillar.icon className="w-8 h-8 text-white" />
                 </div>
                 
-                <h3 className="text-2xl font-light text-[#0D0D0D] mb-4 tracking-wide">
+                <h3 className="text-2xl font-semibold text-[#0D0D0D] mb-4 tracking-wide text-left">
                   {pillar.title}
                 </h3>
                 
-                <p className="text-gray-600 leading-relaxed mb-6">
+                <p className="text-gray-600 leading-relaxed mb-6 text-left">
                   {pillar.description}
                 </p>
                 
-                <ul className="space-y-2">
+                <ul className="space-y-2 text-left">
                   {pillar.points.map((point) => (
                     <li key={point} className="flex items-center gap-3 text-sm text-gray-700">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#C9A962]" />
@@ -146,6 +147,7 @@ export default function Engagements() {
           <SectionTitle 
             title="Actions Concrètes"
             subtitle="Des mesures tangibles pour un impact réel"
+            align="left"
           />
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-12">
@@ -156,9 +158,9 @@ export default function Engagements() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="text-center p-6 bg-[#F5F5F0] group hover:bg-[#0D0D0D] transition-colors duration-300"
+                className="text-left p-6 bg-[#F5F5F0] group hover:bg-[#0D0D0D] transition-colors duration-300"
               >
-                <div className="w-14 h-14 mx-auto rounded-full bg-[#C9A962]/20 flex items-center justify-center mb-4 group-hover:bg-[#C9A962]/30 transition-colors">
+                <div className="w-14 h-14 rounded-full bg-[#C9A962]/20 flex items-center justify-center mb-4 group-hover:bg-[#C9A962]/30 transition-colors">
                   <action.icon className="w-7 h-7 text-[#C9A962]" />
                 </div>
                 <h3 className="font-medium text-[#0D0D0D] group-hover:text-white transition-colors mb-2 text-sm">
@@ -182,27 +184,27 @@ export default function Engagements() {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative"
+              className="text-left"
             >
               <Wind className="w-12 h-12 text-[#C9A962] mb-6" />
-              <h3 className="text-3xl font-light text-white mb-4 tracking-wide">
+              <h3 className="text-3xl font-semibold text-white mb-4 tracking-wide">
                 Qualité de l'Air
               </h3>
-              <p className="text-gray-400 leading-relaxed mb-6">
+              <p className="text-gray-300 leading-relaxed mb-6">
                 Nous accordons une importance primordiale à la qualité de l'air dans nos espaces. 
                 Notre système de ventilation CTA est équipé de détecteurs CO2 permettant 
                 un renouvellement régulier et automatisé de l'air.
               </p>
               <ul className="space-y-3">
-                <li className="flex items-center gap-3 text-gray-300">
+                <li className="flex items-center gap-3 text-gray-200">
                   <span className="w-2 h-2 rounded-full bg-[#C9A962]" />
                   Système CTA avec détecteurs CO2
                 </li>
-                <li className="flex items-center gap-3 text-gray-300">
+                <li className="flex items-center gap-3 text-gray-200">
                   <span className="w-2 h-2 rounded-full bg-[#C9A962]" />
                   Renouvellement automatisé
                 </li>
-                <li className="flex items-center gap-3 text-gray-300">
+                <li className="flex items-center gap-3 text-gray-200">
                   <span className="w-2 h-2 rounded-full bg-[#C9A962]" />
                   Traitement de l'air optimisé
                 </li>
@@ -214,27 +216,27 @@ export default function Engagements() {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative"
+              className="text-left"
             >
               <Volume2 className="w-12 h-12 text-[#C9A962] mb-6" />
-              <h3 className="text-3xl font-light text-white mb-4 tracking-wide">
+              <h3 className="text-3xl font-semibold text-white mb-4 tracking-wide">
                 Acoustique Soignée
               </h3>
-              <p className="text-gray-400 leading-relaxed mb-6">
+              <p className="text-gray-300 leading-relaxed mb-6">
                 Notre salle dispose d'un traitement acoustique professionnel. 
                 L'ensemble du dispositif anti-vibratile a été validé par un ingénieur acousticien 
                 pour garantir une expérience sonore optimale.
               </p>
               <ul className="space-y-3">
-                <li className="flex items-center gap-3 text-gray-300">
+                <li className="flex items-center gap-3 text-gray-200">
                   <span className="w-2 h-2 rounded-full bg-[#C9A962]" />
                   Salle anti-vibratile certifiée
                 </li>
-                <li className="flex items-center gap-3 text-gray-300">
+                <li className="flex items-center gap-3 text-gray-200">
                   <span className="w-2 h-2 rounded-full bg-[#C9A962]" />
                   Validation ingénieur acousticien
                 </li>
-                <li className="flex items-center gap-3 text-gray-300">
+                <li className="flex items-center gap-3 text-gray-200">
                   <span className="w-2 h-2 rounded-full bg-[#C9A962]" />
                   Isolation phonique premium
                 </li>

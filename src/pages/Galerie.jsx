@@ -5,24 +5,24 @@ import SectionTitle from '@/components/ui/SectionTitle';
 import CTABanner from '@/components/ui/CTABanner';
 
 const galleryImages = [
-  { src: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&auto=format", alt: "Salle principale", category: "Salle" },
-  { src: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&auto=format", alt: "Événement soirée", category: "Événements" },
-  { src: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format", alt: "Conférence", category: "Événements" },
-  { src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&auto=format", alt: "Mariage", category: "Événements" },
-  { src: "https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=800&auto=format", alt: "Détail Art Déco", category: "Architecture" },
-  { src: "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=800&auto=format", alt: "Bar", category: "Salle" },
-  { src: "https://images.unsplash.com/photo-1478146896981-b80fe463b330?w=800&auto=format", alt: "Cocktail", category: "Événements" },
-  { src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format", alt: "Architecture intérieure", category: "Architecture" },
+  { src: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&auto=format", alt: "Salle principale Le Tripot Régnier", category: "Salle" },
+  { src: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&auto=format", alt: "Événement soirée Paris", category: "Événements" },
+  { src: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format", alt: "Conférence entreprise", category: "Événements" },
+  { src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&auto=format", alt: "Réception mariage Paris", category: "Événements" },
+  { src: "https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=800&auto=format", alt: "Architecture Art Déco", category: "Architecture" },
+  { src: "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=800&auto=format", alt: "Bar événementiel", category: "Salle" },
+  { src: "https://images.unsplash.com/photo-1478146896981-b80fe463b330?w=800&auto=format", alt: "Cocktail professionnel", category: "Événements" },
+  { src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format", alt: "Décor intérieur industriel", category: "Architecture" },
   { src: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800&auto=format", alt: "Soirée dansante", category: "Événements" },
-  { src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format", alt: "Espace de travail", category: "Salle" },
-  { src: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&auto=format", alt: "Célébration", category: "Événements" },
-  { src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&auto=format", alt: "Lounge", category: "Salle" },
-  { src: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&auto=format", alt: "Concert", category: "Événements" },
-  { src: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&auto=format", alt: "Fête", category: "Événements" },
-  { src: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&auto=format", alt: "Loge", category: "Salle" },
-  { src: "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800&auto=format", alt: "DJ set", category: "Événements" },
-  { src: "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?w=800&auto=format", alt: "Soirée", category: "Événements" },
-  { src: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&auto=format", alt: "Performance", category: "Événements" }
+  { src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format", alt: "Espace séminaire", category: "Salle" },
+  { src: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&auto=format", alt: "Célébration entreprise", category: "Événements" },
+  { src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&auto=format", alt: "Espace lounge", category: "Salle" },
+  { src: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&auto=format", alt: "Concert privé", category: "Événements" },
+  { src: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&auto=format", alt: "Soirée festive", category: "Événements" },
+  { src: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&auto=format", alt: "Loge artiste", category: "Salle" },
+  { src: "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800&auto=format", alt: "DJ set soirée", category: "Événements" },
+  { src: "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?w=800&auto=format", alt: "Ambiance soirée", category: "Événements" },
+  { src: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&auto=format", alt: "Performance live", category: "Événements" }
 ];
 
 const categories = ["Tous", "Salle", "Événements", "Architecture"];
@@ -42,17 +42,17 @@ export default function Galerie() {
         <div className="absolute inset-0 opacity-20">
           <img 
             src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1920&auto=format"
-            alt="Gallery"
+            alt="Galerie photos Le Tripot Régnier"
             className="w-full h-full object-cover"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#0D0D0D] via-[#0D0D0D]/90 to-[#0D0D0D]/70" />
         
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
+        <div className="relative z-10 max-w-4xl mx-auto text-left">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl text-white font-light tracking-wide mb-6"
+            className="text-4xl md:text-6xl text-white font-semibold tracking-wide mb-6"
           >
             Notre <span className="text-[#C9A962]">Galerie</span>
           </motion.h1>
@@ -60,7 +60,7 @@ export default function Galerie() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-gray-300 font-light leading-relaxed"
+            className="text-xl text-gray-200 leading-relaxed"
           >
             Découvrez l'ambiance unique du Tripot Régnier à travers nos photos
           </motion.p>
@@ -71,7 +71,7 @@ export default function Galerie() {
       <section className="py-16 px-6 bg-[#F5F5F0]">
         <div className="max-w-7xl mx-auto">
           {/* Filters */}
-          <div className="flex justify-center gap-4 mb-12 flex-wrap">
+          <div className="flex gap-4 mb-12 flex-wrap">
             {categories.map((category) => (
               <button
                 key={category}
@@ -112,7 +112,7 @@ export default function Galerie() {
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
                     <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-left">
                     <p className="text-white text-sm">{image.alt}</p>
                     <p className="text-[#C9A962] text-xs">{image.category}</p>
                   </div>
@@ -136,6 +136,7 @@ export default function Galerie() {
             <button 
               className="absolute top-6 right-6 text-white/80 hover:text-white transition-colors"
               onClick={() => setSelectedImage(null)}
+              aria-label="Fermer"
             >
               <X className="w-8 h-8" />
             </button>
@@ -148,7 +149,7 @@ export default function Galerie() {
               className="max-w-full max-h-[85vh] object-contain"
               onClick={(e) => e.stopPropagation()}
             />
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-center">
+            <div className="absolute bottom-6 left-6 text-left">
               <p className="text-white text-lg">{selectedImage.alt}</p>
               <p className="text-[#C9A962] text-sm">{selectedImage.category}</p>
             </div>

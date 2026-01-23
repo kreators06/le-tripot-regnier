@@ -4,6 +4,9 @@ import Equipe from './pages/Equipe';
 import Galerie from './pages/Galerie';
 import Capacites from './pages/Capacites';
 import Contact from './pages/Contact';
+import MentionsLegales from './pages/MentionsLegales';
+import PolitiqueConfidentialite from './pages/PolitiqueConfidentialite';
+import CGU from './pages/CGU';
 import __Layout from './Layout.jsx';
 
 
@@ -14,6 +17,9 @@ export const PAGES = {
     "Galerie": Galerie,
     "Capacites": Capacites,
     "Contact": Contact,
+    "MentionsLegales": MentionsLegales,
+    "PolitiqueConfidentialite": PolitiqueConfidentialite,
+    "CGU": CGU,
 }
 
 export const pagesConfig = {

@@ -100,17 +100,17 @@ export default function Contact() {
         <div className="absolute inset-0 opacity-20">
           <img 
             src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&auto=format"
-            alt="Contact"
+            alt="Contact Le Tripot Régnier"
             className="w-full h-full object-cover"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#0D0D0D] via-[#0D0D0D]/90 to-[#0D0D0D]/70" />
         
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
+        <div className="relative z-10 max-w-4xl mx-auto text-left">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl text-white font-light tracking-wide mb-6"
+            className="text-4xl md:text-6xl text-white font-semibold tracking-wide mb-6"
           >
             Contactez-<span className="text-[#C9A962]">nous</span>
           </motion.h1>
@@ -118,35 +118,10 @@ export default function Contact() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-gray-300 font-light leading-relaxed"
+            className="text-xl text-gray-200 leading-relaxed"
           >
             Parlons de votre projet et créons ensemble un événement inoubliable
           </motion.p>
-        </div>
-      </section>
-
-      {/* Contact Info Cards */}
-      <section className="py-16 px-6 bg-[#F5F5F0]">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {contactInfo.map((info, index) => (
-              <motion.div
-                key={info.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white p-6 text-center group hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="w-14 h-14 mx-auto rounded-full bg-[#0D0D0D] flex items-center justify-center mb-4 group-hover:bg-[#C9A962] transition-colors duration-300">
-                  <info.icon className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="font-medium text-[#0D0D0D] mb-2">{info.title}</h3>
-                <p className="text-[#0D0D0D]">{info.content}</p>
-                <p className="text-gray-500 text-sm">{info.subContent}</p>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -170,9 +145,9 @@ export default function Contact() {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="bg-green-50 border border-green-200 rounded-lg p-8 text-center"
+                  className="bg-green-50 border border-green-200 rounded-lg p-8 text-left"
                 >
-                  <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
+                  <CheckCircle className="w-16 h-16 text-green-500 mb-4" />
                   <h3 className="text-xl font-medium text-green-800 mb-2">Message envoyé !</h3>
                   <p className="text-green-600">Nous vous répondrons dans les plus brefs délais.</p>
                 </motion.div>
@@ -180,7 +155,7 @@ export default function Contact() {
                 <form onSubmit={handleSubmit} className="space-y-6 mt-8">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <Label htmlFor="lastName">Nom</Label>
+                      <Label htmlFor="lastName" className="text-[#0D0D0D]">Nom</Label>
                       <Input
                         id="lastName"
                         name="lastName"
@@ -191,7 +166,7 @@ export default function Contact() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="firstName">Prénom</Label>
+                      <Label htmlFor="firstName" className="text-[#0D0D0D]">Prénom</Label>
                       <Input
                         id="firstName"
                         name="firstName"
@@ -205,7 +180,7 @@ export default function Contact() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <Label htmlFor="email">Email</Label>
+                      <Label htmlFor="email" className="text-[#0D0D0D]">Email</Label>
                       <Input
                         id="email"
                         name="email"
@@ -217,7 +192,7 @@ export default function Contact() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="phone">Téléphone</Label>
+                      <Label htmlFor="phone" className="text-[#0D0D0D]">Téléphone</Label>
                       <Input
                         id="phone"
                         name="phone"
@@ -230,7 +205,7 @@ export default function Contact() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="subject">Sujet</Label>
+                    <Label htmlFor="subject" className="text-[#0D0D0D]">Sujet</Label>
                     <Select value={formData.subject} onValueChange={handleSelectChange}>
                       <SelectTrigger className="border-gray-300 focus:border-[#C9A962] focus:ring-[#C9A962]">
                         <SelectValue placeholder="Sélectionnez un sujet" />
@@ -246,7 +221,7 @@ export default function Contact() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
+                    <Label htmlFor="message" className="text-[#0D0D0D]">Message</Label>
                     <Textarea
                       id="message"
                       name="message"
@@ -289,7 +264,7 @@ export default function Contact() {
             >
               {/* Google Map */}
               <div>
-                <h3 className="text-2xl font-light text-[#0D0D0D] mb-6 tracking-wide">
+                <h3 className="text-2xl font-semibold text-[#0D0D0D] mb-6 tracking-wide text-left">
                   Notre <span className="text-[#C9A962]">localisation</span>
                 </h3>
                 <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
@@ -301,18 +276,18 @@ export default function Contact() {
                     allowFullScreen=""
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Le Tripot Régnier - Paris 15ème"
+                    title="Le Tripot Régnier - Location salle Paris 15ème"
                   />
                 </div>
               </div>
 
               {/* Booking Widget Placeholder */}
               <div>
-                <h3 className="text-2xl font-light text-[#0D0D0D] mb-6 tracking-wide">
+                <h3 className="text-2xl font-semibold text-[#0D0D0D] mb-6 tracking-wide text-left">
                   Réserver <span className="text-[#C9A962]">une visite</span>
                 </h3>
-                <div className="bg-[#F5F5F0] p-8 rounded-lg text-center">
-                  <div className="w-16 h-16 mx-auto rounded-full bg-[#C9A962]/20 flex items-center justify-center mb-4">
+                <div className="bg-[#F5F5F0] p-8 rounded-lg text-left">
+                  <div className="w-16 h-16 rounded-full bg-[#C9A962]/20 flex items-center justify-center mb-4">
                     <Clock className="w-8 h-8 text-[#C9A962]" />
                   </div>
                   <h4 className="text-lg font-medium text-[#0D0D0D] mb-2">
@@ -329,6 +304,31 @@ export default function Contact() {
                 </div>
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Info Section - Now below the form */}
+      <section className="py-16 px-6 bg-[#F5F5F0]">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {contactInfo.map((info, index) => (
+              <motion.div
+                key={info.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white p-6 text-left group hover:shadow-lg transition-shadow duration-300"
+              >
+                <div className="w-14 h-14 rounded-full bg-[#0D0D0D] flex items-center justify-center mb-4 group-hover:bg-[#C9A962] transition-colors duration-300">
+                  <info.icon className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="font-medium text-[#0D0D0D] mb-2">{info.title}</h3>
+                <p className="text-[#0D0D0D]">{info.content}</p>
+                <p className="text-gray-500 text-sm">{info.subContent}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

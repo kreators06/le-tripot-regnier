@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 export default function SectionTitle({ 
   title, 
   subtitle, 
-  align = "center",
+  align = "left",
   light = false 
 }) {
   const alignClass = {
@@ -20,11 +20,11 @@ export default function SectionTitle({
       viewport={{ once: true }}
       className={`mb-12 ${alignClass}`}
     >
-      <h2 className={`text-3xl md:text-4xl font-light tracking-wide mb-4 ${light ? 'text-white' : 'text-[#0D0D0D]'}`}>
+      <h2 className={`text-3xl md:text-4xl font-semibold tracking-wide mb-4 ${light ? 'text-white' : 'text-[#0D0D0D]'}`}>
         {title}
       </h2>
       {subtitle && (
-        <p className={`text-lg max-w-2xl ${align === 'center' ? 'mx-auto' : ''} ${light ? 'text-gray-400' : 'text-gray-600'}`}>
+        <p className={`text-lg max-w-2xl ${light ? 'text-gray-300' : 'text-gray-600'}`}>
           {subtitle}
         </p>
       )}

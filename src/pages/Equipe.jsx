@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, Award, Heart, MessageSquare } from 'lucide-react';
+import { Users, Award, Heart } from 'lucide-react';
 import SectionTitle from '@/components/ui/SectionTitle';
 import TestimonialCard from '@/components/ui/TestimonialCard';
 import CTABanner from '@/components/ui/CTABanner';
@@ -68,17 +68,17 @@ export default function Equipe() {
         <div className="absolute inset-0 opacity-20">
           <img 
             src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&auto=format"
-            alt="Team"
+            alt="L'équipe du Tripot Régnier"
             className="w-full h-full object-cover"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#0D0D0D] via-[#0D0D0D]/90 to-[#0D0D0D]/70" />
         
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
+        <div className="relative z-10 max-w-4xl mx-auto text-left">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl text-white font-light tracking-wide mb-6"
+            className="text-4xl md:text-6xl text-white font-semibold tracking-wide mb-6"
           >
             Notre <span className="text-[#C9A962]">Équipe</span>
           </motion.h1>
@@ -86,7 +86,7 @@ export default function Equipe() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-gray-300 font-light leading-relaxed"
+            className="text-xl text-gray-200 leading-relaxed"
           >
             Une équipe passionnée et des partenaires de confiance 
             pour faire de votre événement un moment inoubliable.
@@ -100,6 +100,7 @@ export default function Equipe() {
           <SectionTitle 
             title="Notre ADN"
             subtitle="Les valeurs qui nous animent au quotidien"
+            align="left"
           />
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
@@ -110,12 +111,12 @@ export default function Equipe() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.15 }}
-                className="bg-white p-8 text-center group hover:shadow-xl transition-shadow duration-500"
+                className="bg-white p-8 text-left group hover:shadow-xl transition-shadow duration-500"
               >
-                <div className="w-20 h-20 mx-auto rounded-full bg-[#0D0D0D] flex items-center justify-center mb-6 group-hover:bg-[#C9A962] transition-colors duration-300">
+                <div className="w-20 h-20 rounded-full bg-[#0D0D0D] flex items-center justify-center mb-6 group-hover:bg-[#C9A962] transition-colors duration-300">
                   <value.icon className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-xl font-light text-[#0D0D0D] mb-4 tracking-wide">
+                <h3 className="text-xl font-semibold text-[#0D0D0D] mb-4 tracking-wide">
                   {value.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
@@ -133,6 +134,7 @@ export default function Equipe() {
           <SectionTitle 
             title="Nos Partenaires"
             subtitle="Un réseau de professionnels triés sur le volet"
+            align="left"
           />
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
@@ -146,11 +148,11 @@ export default function Equipe() {
                 className="flex gap-6 p-6 bg-[#F5F5F0] group hover:bg-[#0D0D0D] transition-colors duration-300"
               >
                 <div className="w-1 bg-[#C9A962] self-stretch" />
-                <div>
-                  <h3 className="text-xl font-light text-[#0D0D0D] group-hover:text-white transition-colors mb-3 tracking-wide">
+                <div className="text-left">
+                  <h3 className="text-xl font-semibold text-[#0D0D0D] group-hover:text-white transition-colors mb-3 tracking-wide">
                     {partner.category}
                   </h3>
-                  <p className="text-gray-600 group-hover:text-gray-400 transition-colors leading-relaxed">
+                  <p className="text-gray-600 group-hover:text-gray-300 transition-colors leading-relaxed">
                     {partner.description}
                   </p>
                 </div>
@@ -166,6 +168,7 @@ export default function Equipe() {
           <SectionTitle 
             title="Ce qu'ils disent de nous"
             subtitle="Des retours clients axés sur la qualité du service"
+            align="left"
           />
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
