@@ -197,15 +197,15 @@ export default function Engagements() {
               </p>
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-gray-200">
-                  <span className="w-2 h-2 rounded-full bg-[#C9A962]" />
+                  <span className="w-2 h-2 bg-[#4A5568]" />
                   Système CTA avec détecteurs CO2
                 </li>
                 <li className="flex items-center gap-3 text-gray-200">
-                  <span className="w-2 h-2 rounded-full bg-[#C9A962]" />
+                  <span className="w-2 h-2 bg-[#4A5568]" />
                   Renouvellement automatisé
                 </li>
                 <li className="flex items-center gap-3 text-gray-200">
-                  <span className="w-2 h-2 rounded-full bg-[#C9A962]" />
+                  <span className="w-2 h-2 bg-[#4A5568]" />
                   Traitement de l'air optimisé
                 </li>
               </ul>
@@ -229,15 +229,15 @@ export default function Engagements() {
               </p>
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-gray-200">
-                  <span className="w-2 h-2 rounded-full bg-[#C9A962]" />
+                  <span className="w-2 h-2 bg-[#4A5568]" />
                   Salle anti-vibratile certifiée
                 </li>
                 <li className="flex items-center gap-3 text-gray-200">
-                  <span className="w-2 h-2 rounded-full bg-[#C9A962]" />
+                  <span className="w-2 h-2 bg-[#4A5568]" />
                   Validation ingénieur acousticien
                 </li>
                 <li className="flex items-center gap-3 text-gray-200">
-                  <span className="w-2 h-2 rounded-full bg-[#C9A962]" />
+                  <span className="w-2 h-2 bg-[#4A5568]" />
                   Isolation phonique premium
                 </li>
               </ul>

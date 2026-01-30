@@ -136,15 +136,15 @@ export default function Capacites() {
               </p>
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-gray-200">
-                  <span className="w-2 h-2 rounded-full bg-[#C9A962]" />
+                  <span className="w-2 h-2 bg-[#4A5568]" />
                   Décors 3D personnalisables
                 </li>
                 <li className="flex items-center gap-3 text-gray-200">
-                  <span className="w-2 h-2 rounded-full bg-[#C9A962]" />
+                  <span className="w-2 h-2 bg-[#4A5568]" />
                   Captation visuelle haute définition
                 </li>
                 <li className="flex items-center gap-3 text-gray-200">
-                  <span className="w-2 h-2 rounded-full bg-[#C9A962]" />
+                  <span className="w-2 h-2 bg-[#4A5568]" />
                   Expérience immersive unique
                 </li>
               </ul>
@@ -199,7 +199,7 @@ export default function Capacites() {
               <ul className="space-y-3">
                 {lighting.map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-gray-600 text-sm">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#C9A962] mt-2 flex-shrink-0" />
+                    <span className="w-1.5 h-1.5 bg-[#4A5568] mt-2 flex-shrink-0" />
                     {item}
                   </li>
                 ))}
@@ -223,7 +223,7 @@ export default function Capacites() {
               <ul className="space-y-3">
                 {video.map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-gray-600 text-sm">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#C9A962] mt-2 flex-shrink-0" />
+                    <span className="w-1.5 h-1.5 bg-[#4A5568] mt-2 flex-shrink-0" />
                     {item}
                   </li>
                 ))}
@@ -247,7 +247,7 @@ export default function Capacites() {
               <ul className="space-y-3">
                 {sound.map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-gray-600 text-sm">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#C9A962] mt-2 flex-shrink-0" />
+                    <span className="w-1.5 h-1.5 bg-[#4A5568] mt-2 flex-shrink-0" />
                     {item}
                   </li>
                 ))}

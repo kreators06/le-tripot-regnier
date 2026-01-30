@@ -284,7 +284,7 @@ export default function Home() {
             className="mt-12 flex items-center justify-center"
           >
             {/* Placeholder pour le visuel roue des logos clients */}
-            <div className="w-full max-w-3xl aspect-square bg-white border-2 border-dashed border-gray-300 flex items-center justify-center rounded-full">
+            <div className="w-full max-w-3xl aspect-square bg-white border-2 border-dashed border-gray-300 flex items-center justify-center">
               <div className="text-center p-8">
                 <p className="text-gray-500 text-lg mb-2">Emplacement réservé</p>
                 <p className="text-gray-400 text-sm">Visuel roue des logos clients</p>
