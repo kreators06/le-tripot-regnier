@@ -20,19 +20,19 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Adresse",
-    content: "Paris 15ème arrondissement",
-    subContent: "France"
+    content: "LE TRIPOT RÉGNIER",
+    subContent: "10-12 rue Mathurin Régnier 75015 PARIS"
   },
   {
     icon: Phone,
     title: "Téléphone",
-    content: "+33 1 00 00 00 00",
+    content: "06.61.06.07.10",
     subContent: "Du lundi au vendredi"
   },
   {
     icon: Mail,
     title: "Email",
-    content: "contact@tripotregnier.fr",
+    content: "contact@letripotregnier.fr",
     subContent: "Réponse sous 24h"
   },
   {
@@ -49,6 +49,7 @@ export default function Contact() {
     lastName: '',
     email: '',
     phone: '',
+    company: '',
     subject: '',
     message: ''
   });
@@ -112,7 +113,7 @@ export default function Contact() {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-6xl text-white font-semibold tracking-wide mb-6"
           >
-            Contactez-<span className="text-[#4A5568]">nous</span>
+            Contactez-<span className="text-[#ff8c5a]">nous</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -162,7 +163,7 @@ export default function Contact() {
                         value={formData.lastName}
                         onChange={handleChange}
                         required
-                        className="border-gray-300 focus:border-[#4A5568] focus:ring-[#4A5568]"
+                        className="border-gray-300 focus:border-[#ff8c5a] focus:ring-[#ff8c5a]"
                       />
                     </div>
                     <div className="space-y-2">
@@ -173,7 +174,7 @@ export default function Contact() {
                         value={formData.firstName}
                         onChange={handleChange}
                         required
-                        className="border-gray-300 focus:border-[#4A5568] focus:ring-[#4A5568]"
+                        className="border-gray-300 focus:border-[#ff8c5a] focus:ring-[#ff8c5a]"
                       />
                     </div>
                   </div>
@@ -188,7 +189,7 @@ export default function Contact() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="border-gray-300 focus:border-[#4A5568] focus:ring-[#4A5568]"
+                        className="border-gray-300 focus:border-[#ff8c5a] focus:ring-[#ff8c5a]"
                       />
                     </div>
                     <div className="space-y-2">
@@ -199,9 +200,21 @@ export default function Contact() {
                         type="tel"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="border-gray-300 focus:border-[#4A5568] focus:ring-[#4A5568]"
+                        required
+                        className="border-gray-300 focus:border-[#ff8c5a] focus:ring-[#ff8c5a]"
                       />
                     </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="company" className="text-[#0D0D0D]">Société</Label>
+                    <Input
+                      id="company"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleChange}
+                      className="border-gray-300 focus:border-[#ff8c5a] focus:ring-[#ff8c5a]"
+                    />
                   </div>
 
                   <div className="space-y-2">
@@ -237,7 +250,7 @@ export default function Contact() {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-[#4A5568] hover:bg-[#374151] text-white py-6 text-lg font-medium tracking-wide border border-[#4A5568] hover:border-[#374151]"
+                    className="w-full bg-[#ff8c5a] hover:bg-[#e67a47] text-white py-6 text-lg font-medium tracking-wide border border-[#ff8c5a] hover:border-[#e67a47]"
                   >
                     {isSubmitting ? (
                       <>
@@ -265,7 +278,7 @@ export default function Contact() {
               {/* Google Map */}
               <div>
                 <h3 className="text-2xl font-semibold text-[#0D0D0D] mb-6 tracking-wide text-left">
-                  Notre <span className="text-[#4A5568]">localisation</span>
+                  Notre <span className="text-[#ff8c5a]">localisation</span>
                 </h3>
                 <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
                   <iframe
@@ -284,11 +297,11 @@ export default function Contact() {
               {/* Booking Widget Placeholder */}
               <div>
                 <h3 className="text-2xl font-semibold text-[#0D0D0D] mb-6 tracking-wide text-left">
-                  Réserver <span className="text-[#4A5568]">une visite</span>
+                  Réserver <span className="text-[#ff8c5a]">une visite</span>
                 </h3>
                 <div className="bg-[#F5F5F0] p-8 rounded-lg text-left">
-                  <div className="w-16 h-16 bg-[#4A5568]/20 flex items-center justify-center mb-4">
-                    <Clock className="w-8 h-8 text-[#4A5568]" />
+                  <div className="w-16 h-16 bg-[#ff8c5a]/20 flex items-center justify-center mb-4">
+                    <Clock className="w-8 h-8 text-[#ff8c5a]" />
                   </div>
                   <h4 className="text-lg font-medium text-[#0D0D0D] mb-2">
                     Module de réservation
@@ -321,7 +334,7 @@ export default function Contact() {
                 transition={{ delay: index * 0.1 }}
                 className="bg-white p-6 text-left group hover:shadow-lg transition-shadow duration-300"
               >
-                <div className="w-14 h-14 bg-[#0D0D0D] flex items-center justify-center mb-4 group-hover:bg-[#4A5568] transition-colors duration-300">
+                <div className="w-14 h-14 bg-[#0D0D0D] flex items-center justify-center mb-4 group-hover:bg-[#ff8c5a] transition-colors duration-300">
                   <info.icon className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="font-medium text-[#0D0D0D] mb-2">{info.title}</h3>

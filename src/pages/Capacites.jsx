@@ -14,10 +14,11 @@ import SectionTitle from '@/components/ui/SectionTitle';
 import CTABanner from '@/components/ui/CTABanner';
 
 const spaces = [
-  { name: "Espace Total", surface: "700 m²", description: "Surface totale disponible" },
-  { name: "Salle Principale", surface: "400 m²", description: "Béton ciré" },
-  { name: "Hall d'Accueil", surface: "90 m²", description: "Carrelage" },
-  { name: "Mezzanine", surface: "65 m²", description: "Moquette" }
+  { name: "Salle Principale", surface: "400 m²", description: "Espace modulable équipé (son, lumière, projection vidéo) dotée d'un bar et d'un fumoir intérieur." },
+  { name: "Bar", surface: "", description: "Bar équipé : four, machine à glaçons, réfrigérateur." },
+  { name: "Mezzanine", surface: "65 m²", description: "Espace en hauteur offrant une vue panoramique sur la salle." },
+  { name: "Espace Lounge", surface: "", description: "Espace détente situé en prolongation de la mezzanine." },
+  { name: "Loge", surface: "", description: "Loge avec accès privé comprenant: écran TV pour visualiser en direct l'évènement, canapé, toilettes, douche, lavabo." }
 ];
 
 const lighting = [
@@ -70,7 +71,7 @@ export default function Capacites() {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-6xl text-white font-semibold tracking-wide mb-6"
           >
-            Capacités & <span className="text-[#4A5568]">Équipements</span>
+            Capacités & <span className="text-[#ff8c5a]">Équipements</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -83,16 +84,72 @@ export default function Capacites() {
         </div>
       </section>
 
-      {/* Spaces & Surfaces */}
+      {/* Capacités Section */}
       <section className="py-24 px-6 bg-[#F5F5F0]">
         <div className="max-w-6xl mx-auto">
           <SectionTitle 
-            title="Espaces & Surfaces"
+            title="Capacités"
+            subtitle="Nos espaces en chiffres"
+            align="left"
+          />
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 text-center group hover:shadow-xl transition-shadow duration-300"
+            >
+              <p className="text-4xl font-semibold text-[#ff8c5a] mb-2">700m²</p>
+              <p className="text-sm text-gray-600">ESPACE TOTAL</p>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-white p-8 text-center group hover:shadow-xl transition-shadow duration-300"
+            >
+              <p className="text-4xl font-semibold text-[#ff8c5a] mb-2">90m²</p>
+              <p className="text-sm text-gray-600">HALL D'ACCUEIL</p>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-white p-8 text-center group hover:shadow-xl transition-shadow duration-300"
+            >
+              <p className="text-4xl font-semibold text-[#ff8c5a] mb-2">400m²</p>
+              <p className="text-sm text-gray-600">SALLE PRINCIPALE</p>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="bg-white p-8 text-center group hover:shadow-xl transition-shadow duration-300"
+            >
+              <p className="text-4xl font-semibold text-[#ff8c5a] mb-2">65m²</p>
+              <p className="text-sm text-gray-600">MEZZANINE</p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Nos Espaces Section */}
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <SectionTitle 
+            title="Nos Espaces"
             subtitle="Des espaces modulables pour tous vos besoins"
             align="left"
           />
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
             {spaces.map((space, index) => (
               <motion.div
                 key={space.name}
@@ -100,12 +157,13 @@ export default function Capacites() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white p-8 text-left group hover:shadow-xl transition-shadow duration-300"
+                className="bg-[#F5F5F0] p-8 text-left group hover:shadow-xl transition-shadow duration-300"
               >
-                <Maximize2 className="w-8 h-8 text-[#4A5568] mb-4" />
-                <h3 className="text-lg font-medium text-[#0D0D0D] mb-2">{space.name}</h3>
-                <p className="text-3xl font-semibold text-[#4A5568] mb-2">{space.surface}</p>
-                <p className="text-sm text-gray-500">{space.description}</p>
+                <h3 className="text-xl font-semibold text-[#0D0D0D] mb-2">{space.name}</h3>
+                {space.surface && (
+                  <p className="text-lg font-medium text-[#ff8c5a] mb-3">{space.surface}</p>
+                )}
+                <p className="text-gray-600 leading-relaxed">{space.description}</p>
               </motion.div>
             ))}
           </div>
@@ -122,12 +180,12 @@ export default function Capacites() {
               viewport={{ once: true }}
               className="text-left"
             >
-              <div className="inline-block px-4 py-1 bg-[#4A5568]/20 text-[#4A5568] text-sm tracking-wide mb-6">
+              <div className="inline-block px-4 py-1 bg-[#ff8c5a]/20 text-[#ff8c5a] text-sm tracking-wide mb-6">
                 INNOVATION
               </div>
               <h2 className="text-4xl font-semibold text-white mb-6 tracking-wide">
                 Mur LED<br />
-                <span className="text-[#4A5568]">Immersif</span>
+                <span className="text-[#ff8c5a]">Immersif</span>
               </h2>
               <p className="text-gray-300 leading-relaxed mb-6">
                 Notre plateau virtuel modulable avec projection immersive sur mur LED 
@@ -136,15 +194,15 @@ export default function Capacites() {
               </p>
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-gray-200">
-                  <span className="w-2 h-2 bg-[#4A5568]" />
+                  <span className="w-2 h-2 bg-[#ff8c5a]" />
                   Décors 3D personnalisables
                 </li>
                 <li className="flex items-center gap-3 text-gray-200">
-                  <span className="w-2 h-2 bg-[#4A5568]" />
+                  <span className="w-2 h-2 bg-[#ff8c5a]" />
                   Captation visuelle haute définition
                 </li>
                 <li className="flex items-center gap-3 text-gray-200">
-                  <span className="w-2 h-2 bg-[#4A5568]" />
+                  <span className="w-2 h-2 bg-[#ff8c5a]" />
                   Expérience immersive unique
                 </li>
               </ul>
@@ -163,8 +221,8 @@ export default function Capacites() {
                   className="w-full h-full object-cover opacity-80"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-20 h-20 border-2 border-[#4A5568] flex items-center justify-center bg-black/50">
-                    <Layers className="w-8 h-8 text-[#4A5568]" />
+                  <div className="w-20 h-20 border-2 border-[#ff8c5a] flex items-center justify-center bg-black/50">
+                    <Layers className="w-8 h-8 text-[#ff8c5a]" />
                   </div>
                 </div>
               </div>
@@ -191,15 +249,15 @@ export default function Capacites() {
               className="bg-[#F5F5F0] p-8 text-left"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-[#4A5568]/20 flex items-center justify-center">
-                  <Lightbulb className="w-6 h-6 text-[#4A5568]" />
+                <div className="w-12 h-12 bg-[#ff8c5a]/20 flex items-center justify-center">
+                  <Lightbulb className="w-6 h-6 text-[#ff8c5a]" />
                 </div>
                 <h3 className="text-xl font-semibold text-[#0D0D0D]">Éclairage</h3>
               </div>
               <ul className="space-y-3">
                 {lighting.map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-gray-600 text-sm">
-                    <span className="w-1.5 h-1.5 bg-[#4A5568] mt-2 flex-shrink-0" />
+                    <span className="w-1.5 h-1.5 bg-[#ff8c5a] mt-2 flex-shrink-0" />
                     {item}
                   </li>
                 ))}
@@ -215,15 +273,15 @@ export default function Capacites() {
               className="bg-[#F5F5F0] p-8 text-left"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-[#4A5568]/20 flex items-center justify-center">
-                  <Monitor className="w-6 h-6 text-[#4A5568]" />
+                <div className="w-12 h-12 bg-[#ff8c5a]/20 flex items-center justify-center">
+                  <Monitor className="w-6 h-6 text-[#ff8c5a]" />
                 </div>
                 <h3 className="text-xl font-semibold text-[#0D0D0D]">Vidéo</h3>
               </div>
               <ul className="space-y-3">
                 {video.map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-gray-600 text-sm">
-                    <span className="w-1.5 h-1.5 bg-[#4A5568] mt-2 flex-shrink-0" />
+                    <span className="w-1.5 h-1.5 bg-[#ff8c5a] mt-2 flex-shrink-0" />
                     {item}
                   </li>
                 ))}
@@ -239,15 +297,15 @@ export default function Capacites() {
               className="bg-[#F5F5F0] p-8 text-left"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-[#4A5568]/20 flex items-center justify-center">
-                  <Speaker className="w-6 h-6 text-[#4A5568]" />
+                <div className="w-12 h-12 bg-[#ff8c5a]/20 flex items-center justify-center">
+                  <Speaker className="w-6 h-6 text-[#ff8c5a]" />
                 </div>
                 <h3 className="text-xl font-semibold text-[#0D0D0D]">Son</h3>
               </div>
               <ul className="space-y-3">
                 {sound.map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-gray-600 text-sm">
-                    <span className="w-1.5 h-1.5 bg-[#4A5568] mt-2 flex-shrink-0" />
+                    <span className="w-1.5 h-1.5 bg-[#ff8c5a] mt-2 flex-shrink-0" />
                     {item}
                   </li>
                 ))}
@@ -277,7 +335,7 @@ export default function Capacites() {
                 className="bg-white p-6 flex items-start gap-4 text-left"
               >
                 <div className="w-12 h-12 bg-[#0D0D0D] flex items-center justify-center flex-shrink-0">
-                  <item.icon className="w-5 h-5 text-[#4A5568]" />
+                  <item.icon className="w-5 h-5 text-[#ff8c5a]" />
                 </div>
                 <p className="text-gray-700 text-sm leading-relaxed pt-3">
                   {item.text}
@@ -298,14 +356,14 @@ export default function Capacites() {
             className="flex flex-col md:flex-row items-start justify-start gap-8"
           >
             <div className="flex items-center gap-4 px-8 py-4 bg-white/5 text-left">
-              <Shield className="w-8 h-8 text-[#4A5568]" />
+              <Shield className="w-8 h-8 text-[#ff8c5a]" />
               <div>
                 <p className="text-white font-medium">Normes ERP</p>
                 <p className="text-gray-400 text-sm">Établissement Recevant du Public</p>
               </div>
             </div>
             <div className="flex items-center gap-4 px-8 py-4 bg-white/5 text-left">
-              <Accessibility className="w-8 h-8 text-[#4A5568]" />
+              <Accessibility className="w-8 h-8 text-[#ff8c5a]" />
               <div>
                 <p className="text-white font-medium">Accessibilité PMR</p>
                 <p className="text-gray-400 text-sm">Personnes à Mobilité Réduite</p>

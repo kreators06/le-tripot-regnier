@@ -5,7 +5,7 @@ import { Menu, X, Phone, Mail, MapPin, Instagram, Linkedin, Facebook } from 'luc
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
-  { name: 'Histoire', page: 'Home' },
+  { name: 'Histoire', page: 'Histoire' },
   { name: 'Galerie Photos', page: 'Galerie' },
   { name: 'Espaces & Équipements', page: 'Capacites' },
   { name: 'Nos Engagements', page: 'Engagements' },
@@ -58,7 +58,7 @@ export default function Layout({ children, currentPageName }) {
           left: 0;
           width: 0;
           height: 1px;
-          background: #4A5568;
+          background: #ff8c5a;
           transition: width 0.3s ease;
         }
         
@@ -76,7 +76,7 @@ export default function Layout({ children, currentPageName }) {
         }
         
         ::-webkit-scrollbar-thumb {
-          background: #4A5568;
+          background: #ff8c5a;
           border-radius: 4px;
         }
       `}</style>
@@ -86,8 +86,8 @@ export default function Layout({ children, currentPageName }) {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <Link to={createPageUrl('Home')} className="flex items-center gap-3">
-              <div className="w-14 h-14 bg-[#4A5568] flex items-center justify-center">
+            <Link to={createPageUrl('Histoire')} className="flex items-center gap-3">
+              <div className="w-14 h-14 bg-[#ff8c5a] flex items-center justify-center">
                 <span className="text-white font-bold text-2xl">TR</span>
               </div>
             </Link>
@@ -100,7 +100,7 @@ export default function Layout({ children, currentPageName }) {
                   to={createPageUrl(link.page)}
                   className={`nav-link text-sm tracking-wide transition-colors ${
                     currentPageName === link.page 
-                      ? 'text-[#4A5568] active' 
+                      ? 'text-[#ff8c5a] active' 
                       : 'text-white/90 hover:text-white'
                   }`}
                 >
@@ -113,7 +113,7 @@ export default function Layout({ children, currentPageName }) {
             <div className="hidden lg:block">
               <Link
                 to={createPageUrl('Contact')}
-                className="px-6 py-2.5 bg-[#4A5568] text-white text-sm font-medium tracking-wide hover:bg-[#374151] transition-colors border border-[#4A5568] hover:border-[#374151]"
+                className="px-6 py-2.5 bg-[#ff8c5a] text-white text-sm font-medium tracking-wide hover:bg-[#e67a47] transition-colors border border-[#ff8c5a] hover:border-[#e67a47]"
               >
                 NOUS CONTACTER
               </Link>
@@ -151,7 +151,7 @@ export default function Layout({ children, currentPageName }) {
                       to={createPageUrl(link.page)}
                       className={`block py-3 text-lg tracking-wide ${
                         currentPageName === link.page 
-                          ? 'text-[#4A5568]' 
+                          ? 'text-[#ff8c5a]' 
                           : 'text-white/90'
                       }`}
                     >
@@ -167,7 +167,7 @@ export default function Layout({ children, currentPageName }) {
                 >
                   <Link
                     to={createPageUrl('Contact')}
-                    className="block w-full py-3 bg-[#4A5568] text-white text-center font-medium tracking-wide"
+                    className="block w-full py-3 bg-[#ff8c5a] text-white text-center font-medium tracking-wide"
                   >
                     NOUS CONTACTER
                   </Link>
@@ -188,7 +188,7 @@ export default function Layout({ children, currentPageName }) {
             {/* Brand */}
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-[#4A5568] flex items-center justify-center">
+                <div className="w-12 h-12 bg-[#ff8c5a] flex items-center justify-center">
                   <span className="text-white font-bold text-xl">TR</span>
                 </div>
               </div>
@@ -199,7 +199,7 @@ export default function Layout({ children, currentPageName }) {
 
             {/* Navigation */}
             <div>
-              <h4 className="text-[#4A5568] font-medium mb-6 tracking-wide">Navigation</h4>
+              <h4 className="text-[#ff8c5a] font-medium mb-6 tracking-wide">Navigation</h4>
               <ul className="space-y-3 text-left">
                 {navLinks.map((link) => (
                   <li key={link.page}>
@@ -216,22 +216,22 @@ export default function Layout({ children, currentPageName }) {
 
             {/* Contact */}
             <div>
-              <h4 className="text-[#4A5568] font-medium mb-6 tracking-wide">Contact</h4>
+              <h4 className="text-[#ff8c5a] font-medium mb-6 tracking-wide">Contact</h4>
               <ul className="space-y-4 text-left">
                 <li className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-[#4A5568] flex-shrink-0 mt-0.5" />
+                  <MapPin className="w-5 h-5 text-[#ff8c5a] flex-shrink-0 mt-0.5" />
                   <span className="text-gray-400 text-sm">
                     Paris 15ème arrondissement
                   </span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-[#4A5568]" />
+                  <Phone className="w-5 h-5 text-[#ff8c5a]" />
                   <a href="tel:+33100000000" className="text-gray-400 hover:text-white transition-colors text-sm">
                     +33 1 00 00 00 00
                   </a>
                 </li>
                 <li className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-[#4A5568]" />
+                  <Mail className="w-5 h-5 text-[#ff8c5a]" />
                   <a href="mailto:contact@tripotregnier.fr" className="text-gray-400 hover:text-white transition-colors text-sm">
                     contact@tripotregnier.fr
                   </a>
@@ -241,15 +241,15 @@ export default function Layout({ children, currentPageName }) {
 
             {/* Social */}
             <div>
-              <h4 className="text-[#4A5568] font-medium mb-6 tracking-wide">Suivez-nous</h4>
+              <h4 className="text-[#ff8c5a] font-medium mb-6 tracking-wide">Suivez-nous</h4>
               <div className="flex gap-4">
-                <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-[#4A5568] hover:bg-[#4A5568]/10 transition-all" aria-label="Instagram">
+                <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-[#ff8c5a] hover:bg-[#ff8c5a]/10 transition-all" aria-label="Instagram">
                   <Instagram className="w-5 h-5 text-white" />
                 </a>
-                <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-[#4A5568] hover:bg-[#4A5568]/10 transition-all" aria-label="LinkedIn">
+                <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-[#ff8c5a] hover:bg-[#ff8c5a]/10 transition-all" aria-label="LinkedIn">
                   <Linkedin className="w-5 h-5 text-white" />
                 </a>
-                <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-[#4A5568] hover:bg-[#4A5568]/10 transition-all" aria-label="Facebook">
+                <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-[#ff8c5a] hover:bg-[#ff8c5a]/10 transition-all" aria-label="Facebook">
                   <Facebook className="w-5 h-5 text-white" />
                 </a>
               </div>

@@ -56,6 +56,7 @@ import Galerie from './pages/Galerie';
 import Home from './pages/Home';
 import MentionsLegales from './pages/MentionsLegales';
 import PolitiqueConfidentialite from './pages/PolitiqueConfidentialite';
+import Histoire from './pages/Histoire';
 import __Layout from './Layout.jsx';
 
 
@@ -69,6 +70,7 @@ export const PAGES = {
     "Home": Home,
     "MentionsLegales": MentionsLegales,
     "PolitiqueConfidentialite": PolitiqueConfidentialite,
+    "Histoire": Histoire,
 }
 
 export const pagesConfig = {

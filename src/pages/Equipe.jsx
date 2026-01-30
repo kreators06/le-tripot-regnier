@@ -80,7 +80,7 @@ export default function Equipe() {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-6xl text-white font-semibold tracking-wide mb-6"
           >
-            Notre <span className="text-[#4A5568]">Équipe</span>
+            Notre <span className="text-[#ff8c5a]">Équipe</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -113,7 +113,7 @@ export default function Equipe() {
                 transition={{ delay: index * 0.15 }}
                 className="bg-white p-8 text-left group hover:shadow-xl transition-shadow duration-500"
               >
-                <div className="w-20 h-20 bg-[#0D0D0D] flex items-center justify-center mb-6 group-hover:bg-[#4A5568] transition-colors duration-300">
+                <div className="w-20 h-20 bg-[#0D0D0D] flex items-center justify-center mb-6 group-hover:bg-[#ff8c5a] transition-colors duration-300">
                   <value.icon className="w-10 h-10 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-[#0D0D0D] mb-4 tracking-wide">
@@ -147,7 +147,7 @@ export default function Equipe() {
                 transition={{ delay: index * 0.1 }}
                 className="flex gap-6 p-6 bg-[#F5F5F0] group hover:bg-[#0D0D0D] transition-colors duration-300"
               >
-                <div className="w-1 bg-[#4A5568] self-stretch" />
+                <div className="w-1 bg-[#ff8c5a] self-stretch" />
                 <div className="text-left">
                   <h3 className="text-xl font-semibold text-[#0D0D0D] group-hover:text-white transition-colors mb-3 tracking-wide">
                     {partner.category}

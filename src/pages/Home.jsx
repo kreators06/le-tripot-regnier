@@ -156,8 +156,8 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-4xl md:text-6xl lg:text-7xl text-white font-semibold tracking-wide mb-6 leading-tight">
-              Salle parisienne où vos
-              <span className="block text-[#4A5568]">évènements prennent vie</span>
+              Salle parisienne où vos<br />
+              <span className="text-[#ff8c5a]">événements prennent vie.</span>
             </h1>
           </motion.div>
 
@@ -165,7 +165,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg md:text-xl text-gray-200 max-w-3xl mb-10 leading-relaxed"
+            className="text-lg md:text-xl text-gray-200 max-w-3xl mb-10 leading-relaxed text-justify"
           >
             Situé dans le 15ème arrondissement de Paris, notre salle de réception est entièrement équipée 
             en son, lumières et projections vidéo. Inspiré de l'Art Déco et Industriel, ce bâtiment de 1904 
@@ -177,13 +177,13 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <Link
-              to={createPageUrl('Contact')}
-              className="group inline-flex items-center gap-3 px-10 py-5 bg-[#4A5568] text-white font-medium tracking-wide text-lg hover:bg-[#374151] transition-all duration-300 border border-[#4A5568] hover:border-[#374151]"
+            <a
+              href="#nos-espaces"
+              className="group inline-flex items-center gap-3 px-10 py-5 bg-[#ff8c5a] text-white font-medium tracking-wide text-lg hover:bg-[#e67a47] transition-all duration-300 border border-[#ff8c5a] hover:border-[#e67a47]"
             >
-              NOUS CONTACTER
+              Découvrir le lieu
               <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-            </Link>
+            </a>
           </motion.div>
         </div>
 
@@ -198,7 +198,7 @@ export default function Home() {
             <motion.div
               animate={{ y: [0, 12, 0] }}
               transition={{ repeat: Infinity, duration: 1.5 }}
-              className="w-1 h-2 bg-[#4A5568]"
+              className="w-1 h-2 bg-[#ff8c5a]"
             />
           </div>
         </motion.div>
@@ -207,7 +207,7 @@ export default function Home() {
 
 
       {/* Spaces Section */}
-      <section className="py-24 px-6 bg-[#0D0D0D]">
+      <section id="nos-espaces" className="py-24 px-6 bg-[#0D0D0D]">
         <div className="max-w-7xl mx-auto">
           <SectionTitle 
             title="Nos Espaces"
@@ -251,14 +251,14 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-4">
-                    <div className="w-10 h-10 bg-[#4A5568] flex items-center justify-center mb-2">
+                    <div className="w-10 h-10 bg-[#ff8c5a] flex items-center justify-center mb-2">
                       <config.icon className="w-5 h-5 text-[#0D0D0D]" />
                     </div>
                   </div>
                 </div>
                 <div className="p-6">
                   <h3 className="font-medium text-[#0D0D0D] text-lg mb-1">{config.name}</h3>
-                  <p className="text-[#4A5568] font-medium">{config.capacity}</p>
+                  <p className="text-[#ff8c5a] font-medium">{config.capacity}</p>
                 </div>
               </motion.div>
             ))}
@@ -270,28 +270,54 @@ export default function Home() {
 
       {/* Nos Clients Section */}
       <section className="py-24 px-6 bg-[#F5F5F0]">
-        <div className="max-w-6xl mx-auto">
-          <SectionTitle 
-            title="Nos Clients"
-            subtitle="Ils nous ont fait confiance pour leurs événements"
-            align="left"
-          />
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mt-12 flex items-center justify-center"
-          >
-            {/* Placeholder pour le visuel roue des logos clients */}
-            <div className="w-full max-w-3xl aspect-square bg-white border-2 border-dashed border-gray-300 flex items-center justify-center">
-              <div className="text-center p-8">
-                <p className="text-gray-500 text-lg mb-2">Emplacement réservé</p>
-                <p className="text-gray-400 text-sm">Visuel roue des logos clients</p>
-                <p className="text-gray-400 text-xs mt-2">Format recommandé : carré (ex: 800x800px)</p>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Texte à gauche */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="text-left"
+            >
+              <SectionTitle 
+                title="Nos Clients"
+                subtitle="Ils nous ont fait confiance pour leurs événements"
+                align="left"
+              />
+              
+              <div className="flex flex-col sm:flex-row gap-4 mt-8">
+                <Link 
+                  to={createPageUrl('Engagements')}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#ff8c5a] text-white font-medium tracking-wide hover:bg-[#e67a47] transition-all duration-300 border border-[#ff8c5a] hover:border-[#e67a47]"
+                >
+                  NOS ENGAGEMENTS
+                </Link>
+                
+                <Link 
+                  to={createPageUrl('Contact')}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-[#0D0D0D]/30 text-[#0D0D0D] hover:bg-[#0D0D0D]/5 font-medium tracking-wide transition-all duration-300"
+                >
+                  NOUS CONTACTER
+                </Link>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+            
+            {/* Roue à droite */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="flex items-center justify-center"
+            >
+              <div className="w-full max-w-lg aspect-square bg-white border-2 border-dashed border-gray-300 flex items-center justify-center">
+                <div className="text-center p-8">
+                  <p className="text-gray-500 text-lg mb-2">Emplacement réservé</p>
+                  <p className="text-gray-400 text-sm">Visuel roue des logos clients</p>
+                  <p className="text-gray-400 text-xs mt-2">Format recommandé : carré (ex: 800x800px)</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

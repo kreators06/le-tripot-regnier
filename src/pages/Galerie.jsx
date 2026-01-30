@@ -54,7 +54,7 @@ export default function Galerie() {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-6xl text-white font-semibold tracking-wide mb-6"
           >
-            Notre <span className="text-[#4A5568]">Galerie</span>
+            Notre <span className="text-[#ff8c5a]">Galerie</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -114,7 +114,7 @@ export default function Galerie() {
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-left">
                     <p className="text-white text-sm">{image.alt}</p>
-                    <p className="text-[#4A5568] text-xs">{image.category}</p>
+                    <p className="text-[#ff8c5a] text-xs">{image.category}</p>
                   </div>
                 </motion.div>
               ))}
@@ -151,7 +151,7 @@ export default function Galerie() {
             />
             <div className="absolute bottom-6 left-6 text-left">
               <p className="text-white text-lg">{selectedImage.alt}</p>
-              <p className="text-[#4A5568] text-sm">{selectedImage.category}</p>
+              <p className="text-[#ff8c5a] text-sm">{selectedImage.category}</p>
             </div>
           </motion.div>
         )}

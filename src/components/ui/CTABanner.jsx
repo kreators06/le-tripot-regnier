@@ -52,7 +52,7 @@ export default function CTABanner({
         >
           <Link 
             to={createPageUrl('Contact')}
-            className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#4A5568] text-white font-medium tracking-wide hover:bg-[#374151] transition-all duration-300 border border-[#4A5568] hover:border-[#374151]"
+            className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#ff8c5a] text-white font-medium tracking-wide hover:bg-[#e67a47] transition-all duration-300 border border-[#ff8c5a] hover:border-[#e67a47]"
           >
             {primaryText}
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

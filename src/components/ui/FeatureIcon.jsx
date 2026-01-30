@@ -10,8 +10,8 @@ export default function FeatureIcon({ icon: Icon, title, description, index = 0 
       transition={{ delay: index * 0.05, duration: 0.4 }}
       className="flex flex-col items-start text-left p-6 group"
     >
-      <div className="w-16 h-16 bg-[#4A5568]/10 flex items-center justify-center mb-4 group-hover:bg-[#4A5568]/20 transition-colors duration-300">
-        <Icon className="w-7 h-7 text-[#4A5568]" />
+      <div className="w-16 h-16 bg-[#ff8c5a]/10 flex items-center justify-center mb-4 group-hover:bg-[#ff8c5a]/20 transition-colors duration-300">
+        <Icon className="w-7 h-7 text-[#ff8c5a]" />
       </div>
       <h3 className="text-[#0D0D0D] font-medium mb-2">{title}</h3>
       {description && (

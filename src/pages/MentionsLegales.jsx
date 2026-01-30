@@ -13,7 +13,7 @@ export default function MentionsLegales() {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl text-white font-semibold tracking-wide mb-4"
           >
-            Mentions <span className="text-[#4A5568]">Légales</span>
+            Mentions <span className="text-[#ff8c5a]">Légales</span>
           </motion.h1>
         </div>
       </section>

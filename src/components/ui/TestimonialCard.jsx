@@ -11,14 +11,14 @@ export default function TestimonialCard({ quote, author, company, index = 0 }) {
       transition={{ delay: index * 0.15, duration: 0.5 }}
       className="bg-white p-8 relative group hover:shadow-xl transition-shadow duration-500 text-left"
     >
-      <Quote className="w-10 h-10 text-[#4A5568]/30 absolute top-6 right-6" />
+      <Quote className="w-10 h-10 text-[#ff8c5a]/30 absolute top-6 right-6" />
       
       <p className="text-[#2A2A2A] text-lg leading-relaxed mb-6 italic">
         "{quote}"
       </p>
       
       <div className="flex items-center gap-4">
-        <div className="w-12 h-12 bg-gradient-to-br from-[#4A5568] to-[#374151] flex items-center justify-center text-white font-medium">
+        <div className="w-12 h-12 bg-gradient-to-br from-[#ff8c5a] to-[#e67a47] flex items-center justify-center text-white font-medium">
           {author.charAt(0)}
         </div>
         <div>
@@ -27,7 +27,7 @@ export default function TestimonialCard({ quote, author, company, index = 0 }) {
         </div>
       </div>
       
-      <div className="absolute bottom-0 left-0 w-full h-1 bg-[#4A5568] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+      <div className="absolute bottom-0 left-0 w-full h-1 bg-[#ff8c5a] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
     </motion.div>
   );
 }

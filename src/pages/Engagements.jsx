@@ -79,7 +79,7 @@ export default function Engagements() {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-6xl text-white font-semibold tracking-wide mb-6"
           >
-            Nos <span className="text-[#4A5568]">Engagements</span>
+            Nos <span className="text-[#ff8c5a]">Engagements</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -113,9 +113,9 @@ export default function Engagements() {
                 transition={{ delay: index * 0.15 }}
                 className="bg-white p-8 relative group overflow-hidden"
               >
-                <div className="absolute top-0 left-0 w-full h-1 bg-[#4A5568]" />
+                <div className="absolute top-0 left-0 w-full h-1 bg-[#ff8c5a]" />
                 
-                <div className="w-16 h-16 bg-[#0D0D0D] flex items-center justify-center mb-6 group-hover:bg-[#4A5568] transition-colors duration-300">
+                <div className="w-16 h-16 bg-[#0D0D0D] flex items-center justify-center mb-6 group-hover:bg-[#ff8c5a] transition-colors duration-300">
                   <pillar.icon className="w-8 h-8 text-white" />
                 </div>
                 
@@ -130,7 +130,7 @@ export default function Engagements() {
                 <ul className="space-y-2 text-left">
                   {pillar.points.map((point) => (
                     <li key={point} className="flex items-center gap-3 text-sm text-gray-700">
-                      <span className="w-1.5 h-1.5 bg-[#4A5568]" />
+                      <span className="w-1.5 h-1.5 bg-[#ff8c5a]" />
                       {point}
                     </li>
                   ))}
@@ -160,8 +160,8 @@ export default function Engagements() {
                 transition={{ delay: index * 0.1 }}
                 className="text-left p-6 bg-[#F5F5F0] group hover:bg-[#0D0D0D] transition-colors duration-300"
               >
-                <div className="w-14 h-14 bg-[#4A5568]/20 flex items-center justify-center mb-4 group-hover:bg-[#4A5568]/30 transition-colors">
-                  <action.icon className="w-7 h-7 text-[#4A5568]" />
+                <div className="w-14 h-14 bg-[#ff8c5a]/20 flex items-center justify-center mb-4 group-hover:bg-[#ff8c5a]/30 transition-colors">
+                  <action.icon className="w-7 h-7 text-[#ff8c5a]" />
                 </div>
                 <h3 className="font-medium text-[#0D0D0D] group-hover:text-white transition-colors mb-2 text-sm">
                   {action.title}
@@ -186,7 +186,7 @@ export default function Engagements() {
               viewport={{ once: true }}
               className="text-left"
             >
-              <Wind className="w-12 h-12 text-[#4A5568] mb-6" />
+              <Wind className="w-12 h-12 text-[#ff8c5a] mb-6" />
               <h3 className="text-3xl font-semibold text-white mb-4 tracking-wide">
                 Qualité de l'Air
               </h3>
@@ -197,15 +197,15 @@ export default function Engagements() {
               </p>
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-gray-200">
-                  <span className="w-2 h-2 bg-[#4A5568]" />
+                  <span className="w-2 h-2 bg-[#ff8c5a]" />
                   Système CTA avec détecteurs CO2
                 </li>
                 <li className="flex items-center gap-3 text-gray-200">
-                  <span className="w-2 h-2 bg-[#4A5568]" />
+                  <span className="w-2 h-2 bg-[#ff8c5a]" />
                   Renouvellement automatisé
                 </li>
                 <li className="flex items-center gap-3 text-gray-200">
-                  <span className="w-2 h-2 bg-[#4A5568]" />
+                  <span className="w-2 h-2 bg-[#ff8c5a]" />
                   Traitement de l'air optimisé
                 </li>
               </ul>
@@ -218,7 +218,7 @@ export default function Engagements() {
               viewport={{ once: true }}
               className="text-left"
             >
-              <Volume2 className="w-12 h-12 text-[#4A5568] mb-6" />
+              <Volume2 className="w-12 h-12 text-[#ff8c5a] mb-6" />
               <h3 className="text-3xl font-semibold text-white mb-4 tracking-wide">
                 Acoustique Soignée
               </h3>
@@ -229,15 +229,15 @@ export default function Engagements() {
               </p>
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-gray-200">
-                  <span className="w-2 h-2 bg-[#4A5568]" />
+                  <span className="w-2 h-2 bg-[#ff8c5a]" />
                   Salle anti-vibratile certifiée
                 </li>
                 <li className="flex items-center gap-3 text-gray-200">
-                  <span className="w-2 h-2 bg-[#4A5568]" />
+                  <span className="w-2 h-2 bg-[#ff8c5a]" />
                   Validation ingénieur acousticien
                 </li>
                 <li className="flex items-center gap-3 text-gray-200">
-                  <span className="w-2 h-2 bg-[#4A5568]" />
+                  <span className="w-2 h-2 bg-[#ff8c5a]" />
                   Isolation phonique premium
                 </li>
               </ul>
