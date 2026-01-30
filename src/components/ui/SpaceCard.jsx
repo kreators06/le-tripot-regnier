@@ -24,14 +24,14 @@ export default function SpaceCard({ title, surface, image, description, index = 
           <div>
             <h3 className="text-xl font-light text-white mb-1 tracking-wide">{title}</h3>
             {surface && (
-              <p className="text-[#C9A962] text-sm font-medium">{surface}</p>
+              <p className="text-[#4A5568] text-sm font-medium">{surface}</p>
             )}
           </div>
           <motion.div 
-            className="w-10 h-10 rounded-full border border-[#C9A962]/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            className="w-10 h-10 border border-[#4A5568]/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
             whileHover={{ scale: 1.1 }}
           >
-            <svg className="w-4 h-4 text-[#C9A962]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="w-4 h-4 text-[#4A5568]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </motion.div>

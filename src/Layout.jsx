@@ -5,11 +5,10 @@ import { Menu, X, Phone, Mail, MapPin, Instagram, Linkedin, Facebook } from 'luc
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
-  { name: 'Accueil', page: 'Home' },
+  { name: 'Histoire', page: 'Home' },
+  { name: 'Galerie Photos', page: 'Galerie' },
+  { name: 'Espaces & Équipements', page: 'Capacites' },
   { name: 'Nos Engagements', page: 'Engagements' },
-  { name: "L'Équipe", page: 'Equipe' },
-  { name: 'Galerie', page: 'Galerie' },
-  { name: 'Capacités', page: 'Capacites' },
   { name: 'Contact', page: 'Contact' },
 ];
 
@@ -59,7 +58,7 @@ export default function Layout({ children, currentPageName }) {
           left: 0;
           width: 0;
           height: 1px;
-          background: #C9A962;
+          background: #4A5568;
           transition: width 0.3s ease;
         }
         
@@ -77,7 +76,7 @@ export default function Layout({ children, currentPageName }) {
         }
         
         ::-webkit-scrollbar-thumb {
-          background: #C9A962;
+          background: #4A5568;
           border-radius: 4px;
         }
       `}</style>
@@ -88,12 +87,8 @@ export default function Layout({ children, currentPageName }) {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link to={createPageUrl('Home')} className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-[#C9A962] flex items-center justify-center">
-                <span className="text-[#0D0D0D] font-bold text-xl">T</span>
-              </div>
-              <div className="hidden sm:block">
-                <span className="text-white text-lg tracking-widest font-light">LE TRIPOT</span>
-                <span className="text-[#C9A962] text-lg tracking-widest font-light ml-2">RÉGNIER</span>
+              <div className="w-14 h-14 bg-[#4A5568] flex items-center justify-center">
+                <span className="text-white font-bold text-2xl">TR</span>
               </div>
             </Link>
 
@@ -105,7 +100,7 @@ export default function Layout({ children, currentPageName }) {
                   to={createPageUrl(link.page)}
                   className={`nav-link text-sm tracking-wide transition-colors ${
                     currentPageName === link.page 
-                      ? 'text-[#C9A962] active' 
+                      ? 'text-[#4A5568] active' 
                       : 'text-white/90 hover:text-white'
                   }`}
                 >
@@ -118,9 +113,9 @@ export default function Layout({ children, currentPageName }) {
             <div className="hidden lg:block">
               <Link
                 to={createPageUrl('Contact')}
-                className="px-6 py-2.5 bg-[#C9A962] text-[#0D0D0D] text-sm font-medium tracking-wide hover:bg-[#D4B872] transition-colors"
+                className="px-6 py-2.5 bg-[#4A5568] text-white text-sm font-medium tracking-wide hover:bg-[#374151] transition-colors border border-[#4A5568] hover:border-[#374151]"
               >
-                Réserver
+                NOUS CONTACTER
               </Link>
             </div>
 
@@ -156,7 +151,7 @@ export default function Layout({ children, currentPageName }) {
                       to={createPageUrl(link.page)}
                       className={`block py-3 text-lg tracking-wide ${
                         currentPageName === link.page 
-                          ? 'text-[#C9A962]' 
+                          ? 'text-[#4A5568]' 
                           : 'text-white/90'
                       }`}
                     >
@@ -172,9 +167,9 @@ export default function Layout({ children, currentPageName }) {
                 >
                   <Link
                     to={createPageUrl('Contact')}
-                    className="block w-full py-3 bg-[#C9A962] text-[#0D0D0D] text-center font-medium tracking-wide"
+                    className="block w-full py-3 bg-[#4A5568] text-white text-center font-medium tracking-wide"
                   >
-                    Réserver
+                    NOUS CONTACTER
                   </Link>
                 </motion.div>
               </nav>
@@ -193,12 +188,8 @@ export default function Layout({ children, currentPageName }) {
             {/* Brand */}
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-[#C9A962] flex items-center justify-center">
-                  <span className="text-[#0D0D0D] font-bold text-xl">T</span>
-                </div>
-                <div>
-                  <span className="text-white text-lg tracking-widest font-light">LE TRIPOT</span>
-                  <span className="text-[#C9A962] text-lg tracking-widest font-light ml-2">RÉGNIER</span>
+                <div className="w-12 h-12 bg-[#4A5568] flex items-center justify-center">
+                  <span className="text-white font-bold text-xl">TR</span>
                 </div>
               </div>
               <p className="text-gray-400 text-sm leading-relaxed text-left">
@@ -208,7 +199,7 @@ export default function Layout({ children, currentPageName }) {
 
             {/* Navigation */}
             <div>
-              <h4 className="text-[#C9A962] font-medium mb-6 tracking-wide">Navigation</h4>
+              <h4 className="text-[#4A5568] font-medium mb-6 tracking-wide">Navigation</h4>
               <ul className="space-y-3 text-left">
                 {navLinks.map((link) => (
                   <li key={link.page}>
@@ -225,22 +216,22 @@ export default function Layout({ children, currentPageName }) {
 
             {/* Contact */}
             <div>
-              <h4 className="text-[#C9A962] font-medium mb-6 tracking-wide">Contact</h4>
+              <h4 className="text-[#4A5568] font-medium mb-6 tracking-wide">Contact</h4>
               <ul className="space-y-4 text-left">
                 <li className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-[#C9A962] flex-shrink-0 mt-0.5" />
+                  <MapPin className="w-5 h-5 text-[#4A5568] flex-shrink-0 mt-0.5" />
                   <span className="text-gray-400 text-sm">
                     Paris 15ème arrondissement
                   </span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-[#C9A962]" />
+                  <Phone className="w-5 h-5 text-[#4A5568]" />
                   <a href="tel:+33100000000" className="text-gray-400 hover:text-white transition-colors text-sm">
                     +33 1 00 00 00 00
                   </a>
                 </li>
                 <li className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-[#C9A962]" />
+                  <Mail className="w-5 h-5 text-[#4A5568]" />
                   <a href="mailto:contact@tripotregnier.fr" className="text-gray-400 hover:text-white transition-colors text-sm">
                     contact@tripotregnier.fr
                   </a>
@@ -250,15 +241,15 @@ export default function Layout({ children, currentPageName }) {
 
             {/* Social */}
             <div>
-              <h4 className="text-[#C9A962] font-medium mb-6 tracking-wide">Suivez-nous</h4>
+              <h4 className="text-[#4A5568] font-medium mb-6 tracking-wide">Suivez-nous</h4>
               <div className="flex gap-4">
-                <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-[#C9A962] hover:bg-[#C9A962]/10 transition-all" aria-label="Instagram">
+                <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-[#4A5568] hover:bg-[#4A5568]/10 transition-all" aria-label="Instagram">
                   <Instagram className="w-5 h-5 text-white" />
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-[#C9A962] hover:bg-[#C9A962]/10 transition-all" aria-label="LinkedIn">
+                <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-[#4A5568] hover:bg-[#4A5568]/10 transition-all" aria-label="LinkedIn">
                   <Linkedin className="w-5 h-5 text-white" />
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-[#C9A962] hover:bg-[#C9A962]/10 transition-all" aria-label="Facebook">
+                <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-[#4A5568] hover:bg-[#4A5568]/10 transition-all" aria-label="Facebook">
                   <Facebook className="w-5 h-5 text-white" />
                 </a>
               </div>

@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 export default function CTABanner({ 
   title = "Venez découvrir le lieu",
   subtitle = "",
-  primaryText = "Demander un devis",
+  primaryText = "NOUS CONTACTER",
   secondaryText = "Prendre RDV pour une visite",
   variant = "dark"
 }) {
@@ -52,7 +52,7 @@ export default function CTABanner({
         >
           <Link 
             to={createPageUrl('Contact')}
-            className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#C9A962] text-[#0D0D0D] font-medium tracking-wide hover:bg-[#D4B872] transition-all duration-300"
+            className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#4A5568] text-white font-medium tracking-wide hover:bg-[#374151] transition-all duration-300 border border-[#4A5568] hover:border-[#374151]"
           >
             {primaryText}
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

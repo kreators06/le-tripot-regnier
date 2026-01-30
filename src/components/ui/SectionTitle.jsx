@@ -33,7 +33,7 @@ export default function SectionTitle({
         whileInView={{ scaleX: 1 }}
         viewport={{ once: true }}
         transition={{ delay: 0.2, duration: 0.5 }}
-        className={`w-20 h-0.5 bg-[#C9A962] mt-6 ${align === 'center' ? 'mx-auto' : ''}`}
+        className={`w-20 h-0.5 bg-[#4A5568] mt-6 ${align === 'center' ? 'mx-auto' : ''}`}
       />
     </motion.div>
   );
