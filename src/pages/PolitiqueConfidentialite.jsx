@@ -12,7 +12,7 @@ export default function PolitiqueConfidentialite() {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl text-white font-semibold tracking-wide mb-4"
           >
-            Politique de <span className="text-[#C9A962]">Confidentialité</span>
+            Politique de <span className="text-[#4A5568]">Confidentialité</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}

@@ -70,7 +70,7 @@ export default function Capacites() {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-6xl text-white font-semibold tracking-wide mb-6"
           >
-            Capacités & <span className="text-[#C9A962]">Équipements</span>
+            Capacités & <span className="text-[#4A5568]">Équipements</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -102,9 +102,9 @@ export default function Capacites() {
                 transition={{ delay: index * 0.1 }}
                 className="bg-white p-8 text-left group hover:shadow-xl transition-shadow duration-300"
               >
-                <Maximize2 className="w-8 h-8 text-[#C9A962] mb-4" />
+                <Maximize2 className="w-8 h-8 text-[#4A5568] mb-4" />
                 <h3 className="text-lg font-medium text-[#0D0D0D] mb-2">{space.name}</h3>
-                <p className="text-3xl font-semibold text-[#C9A962] mb-2">{space.surface}</p>
+                <p className="text-3xl font-semibold text-[#4A5568] mb-2">{space.surface}</p>
                 <p className="text-sm text-gray-500">{space.description}</p>
               </motion.div>
             ))}
@@ -122,12 +122,12 @@ export default function Capacites() {
               viewport={{ once: true }}
               className="text-left"
             >
-              <div className="inline-block px-4 py-1 bg-[#C9A962]/20 text-[#C9A962] text-sm tracking-wide mb-6">
+              <div className="inline-block px-4 py-1 bg-[#4A5568]/20 text-[#4A5568] text-sm tracking-wide mb-6">
                 INNOVATION
               </div>
               <h2 className="text-4xl font-semibold text-white mb-6 tracking-wide">
                 Mur LED<br />
-                <span className="text-[#C9A962]">Immersif</span>
+                <span className="text-[#4A5568]">Immersif</span>
               </h2>
               <p className="text-gray-300 leading-relaxed mb-6">
                 Notre plateau virtuel modulable avec projection immersive sur mur LED 
@@ -163,8 +163,8 @@ export default function Capacites() {
                   className="w-full h-full object-cover opacity-80"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-20 h-20 rounded-full border-2 border-[#C9A962] flex items-center justify-center bg-black/50">
-                    <Layers className="w-8 h-8 text-[#C9A962]" />
+                  <div className="w-20 h-20 border-2 border-[#4A5568] flex items-center justify-center bg-black/50">
+                    <Layers className="w-8 h-8 text-[#4A5568]" />
                   </div>
                 </div>
               </div>
@@ -191,8 +191,8 @@ export default function Capacites() {
               className="bg-[#F5F5F0] p-8 text-left"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 rounded-full bg-[#C9A962]/20 flex items-center justify-center">
-                  <Lightbulb className="w-6 h-6 text-[#C9A962]" />
+                <div className="w-12 h-12 bg-[#4A5568]/20 flex items-center justify-center">
+                  <Lightbulb className="w-6 h-6 text-[#4A5568]" />
                 </div>
                 <h3 className="text-xl font-semibold text-[#0D0D0D]">Éclairage</h3>
               </div>
@@ -215,8 +215,8 @@ export default function Capacites() {
               className="bg-[#F5F5F0] p-8 text-left"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 rounded-full bg-[#C9A962]/20 flex items-center justify-center">
-                  <Monitor className="w-6 h-6 text-[#C9A962]" />
+                <div className="w-12 h-12 bg-[#4A5568]/20 flex items-center justify-center">
+                  <Monitor className="w-6 h-6 text-[#4A5568]" />
                 </div>
                 <h3 className="text-xl font-semibold text-[#0D0D0D]">Vidéo</h3>
               </div>
@@ -239,8 +239,8 @@ export default function Capacites() {
               className="bg-[#F5F5F0] p-8 text-left"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 rounded-full bg-[#C9A962]/20 flex items-center justify-center">
-                  <Speaker className="w-6 h-6 text-[#C9A962]" />
+                <div className="w-12 h-12 bg-[#4A5568]/20 flex items-center justify-center">
+                  <Speaker className="w-6 h-6 text-[#4A5568]" />
                 </div>
                 <h3 className="text-xl font-semibold text-[#0D0D0D]">Son</h3>
               </div>
@@ -276,8 +276,8 @@ export default function Capacites() {
                 transition={{ delay: index * 0.1 }}
                 className="bg-white p-6 flex items-start gap-4 text-left"
               >
-                <div className="w-12 h-12 rounded-full bg-[#0D0D0D] flex items-center justify-center flex-shrink-0">
-                  <item.icon className="w-5 h-5 text-[#C9A962]" />
+                <div className="w-12 h-12 bg-[#0D0D0D] flex items-center justify-center flex-shrink-0">
+                  <item.icon className="w-5 h-5 text-[#4A5568]" />
                 </div>
                 <p className="text-gray-700 text-sm leading-relaxed pt-3">
                   {item.text}
@@ -297,15 +297,15 @@ export default function Capacites() {
             viewport={{ once: true }}
             className="flex flex-col md:flex-row items-start justify-start gap-8"
           >
-            <div className="flex items-center gap-4 px-8 py-4 bg-white/5 rounded text-left">
-              <Shield className="w-8 h-8 text-[#C9A962]" />
+            <div className="flex items-center gap-4 px-8 py-4 bg-white/5 text-left">
+              <Shield className="w-8 h-8 text-[#4A5568]" />
               <div>
                 <p className="text-white font-medium">Normes ERP</p>
                 <p className="text-gray-400 text-sm">Établissement Recevant du Public</p>
               </div>
             </div>
-            <div className="flex items-center gap-4 px-8 py-4 bg-white/5 rounded text-left">
-              <Accessibility className="w-8 h-8 text-[#C9A962]" />
+            <div className="flex items-center gap-4 px-8 py-4 bg-white/5 text-left">
+              <Accessibility className="w-8 h-8 text-[#4A5568]" />
               <div>
                 <p className="text-white font-medium">Accessibilité PMR</p>
                 <p className="text-gray-400 text-sm">Personnes à Mobilité Réduite</p>

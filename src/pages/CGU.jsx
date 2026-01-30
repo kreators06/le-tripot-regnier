@@ -12,7 +12,7 @@ export default function CGU() {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl text-white font-semibold tracking-wide mb-4"
           >
-            Conditions Générales <span className="text-[#C9A962]">d'Utilisation</span>
+            Conditions Générales <span className="text-[#4A5568]">d'Utilisation</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
