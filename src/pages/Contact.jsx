@@ -88,6 +88,7 @@ export default function Contact() {
         lastName: '',
         email: '',
         phone: '',
+        company: '',
         subject: '',
         message: ''
       });
@@ -220,14 +221,17 @@ export default function Contact() {
                   <div className="space-y-2">
                     <Label htmlFor="subject" className="text-[#0D0D0D]">Sujet</Label>
                     <Select value={formData.subject} onValueChange={handleSelectChange}>
-                      <SelectTrigger className="border-gray-300 focus:border-[#C9A962] focus:ring-[#C9A962]">
+                      <SelectTrigger className="border-gray-300 focus:border-[#ff8c5a] focus:ring-[#ff8c5a]">
                         <SelectValue placeholder="Sélectionnez un sujet" />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="devis">Demande de devis</SelectItem>
                         <SelectItem value="visite">Demande de visite</SelectItem>
-                        <SelectItem value="information">Demande d'information</SelectItem>
-                        <SelectItem value="partenariat">Proposition de partenariat</SelectItem>
+                        <SelectItem value="showroom">Showroom</SelectItem>
+                        <SelectItem value="seminaire">Séminaire</SelectItem>
+                        <SelectItem value="cocktail">Cocktail / Soirée</SelectItem>
+                        <SelectItem value="diner">Dîner assis</SelectItem>
+                        <SelectItem value="conference">Conférence</SelectItem>
                         <SelectItem value="autre">Autre</SelectItem>
                       </SelectContent>
                     </Select>
@@ -242,8 +246,8 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       rows={6}
-                      className="border-gray-300 focus:border-[#C9A962] focus:ring-[#C9A962] resize-none"
-                      placeholder="Décrivez votre projet..."
+                      className="border-gray-300 focus:border-[#ff8c5a] focus:ring-[#ff8c5a] resize-none"
+                      placeholder="Votre message (merci d'indiquer la date de l'événement, les horaires et nombre de personnes)..."
                     />
                   </div>
 
