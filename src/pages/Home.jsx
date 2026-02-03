@@ -155,7 +155,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl text-white font-semibold tracking-wide mb-6 leading-tight">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl text-white font-semibold tracking-wide mb-6 leading-tight">
               Salle parisienne où vos<br />
               <span className="text-[#ff8c5a]">événements prennent vie.</span>
             </h1>
