@@ -76,7 +76,7 @@ export default function Galerie() {
               <button
                 key={category}
                 onClick={() => setActiveFilter(category)}
-                className={`px-6 py-2 text-sm tracking-wide transition-all duration-300 ${
+                className={`px-6 py-2 text-sm tracking-wide transition-all duration-300 rounded-md ${
                   activeFilter === category
                     ? 'bg-[#0D0D0D] text-white'
                     : 'bg-white text-[#0D0D0D] hover:bg-[#0D0D0D]/10'
@@ -101,13 +101,13 @@ export default function Galerie() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className="break-inside-avoid group relative cursor-pointer overflow-hidden"
+                  className="break-inside-avoid group relative cursor-pointer overflow-hidden rounded-lg"
                   onClick={() => setSelectedImage(image)}
                 >
                   <img
                     src={image.src}
                     alt={image.alt}
-                    className="w-full transition-transform duration-500 group-hover:scale-110"
+                    className="w-full transition-transform duration-500 group-hover:scale-110 rounded-lg"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
                     <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -134,7 +134,7 @@ export default function Galerie() {
             onClick={() => setSelectedImage(null)}
           >
             <button 
-              className="absolute top-6 right-6 text-white/80 hover:text-white transition-colors"
+              className="absolute top-6 right-6 text-white/80 hover:text-white transition-colors p-2 bg-black/20 hover:bg-black/40 rounded-full"
               onClick={() => setSelectedImage(null)}
               aria-label="Fermer"
             >
@@ -146,7 +146,7 @@ export default function Galerie() {
               exit={{ scale: 0.9, opacity: 0 }}
               src={selectedImage.src}
               alt={selectedImage.alt}
-              className="max-w-full max-h-[85vh] object-contain"
+              className="max-w-full max-h-[85vh] object-contain rounded-lg"
               onClick={(e) => e.stopPropagation()}
             />
             <div className="absolute bottom-6 left-6 text-left">

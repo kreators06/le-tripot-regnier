@@ -111,11 +111,11 @@ export default function Engagements() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.15 }}
-                className="bg-white p-8 relative group overflow-hidden"
+                className="bg-white p-8 relative group overflow-hidden rounded-lg"
               >
                 <div className="absolute top-0 left-0 w-full h-1 bg-[#ff8c5a]" />
                 
-                <div className="w-16 h-16 bg-[#0D0D0D] flex items-center justify-center mb-6 group-hover:bg-[#ff8c5a] transition-colors duration-300">
+                <div className="w-16 h-16 bg-[#0D0D0D] flex items-center justify-center mb-6 group-hover:bg-[#ff8c5a] transition-colors duration-300 rounded-lg">
                   <pillar.icon className="w-8 h-8 text-white" />
                 </div>
                 
@@ -158,9 +158,9 @@ export default function Engagements() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="text-left p-6 bg-[#F5F5F0] group hover:bg-[#0D0D0D] transition-colors duration-300"
+                className="text-left p-6 bg-[#F5F5F0] group hover:bg-[#0D0D0D] transition-colors duration-300 rounded-lg"
               >
-                <div className="w-14 h-14 bg-[#ff8c5a]/20 flex items-center justify-center mb-4 group-hover:bg-[#ff8c5a]/30 transition-colors">
+                <div className="w-14 h-14 bg-[#ff8c5a]/20 flex items-center justify-center mb-4 group-hover:bg-[#ff8c5a]/30 transition-colors rounded-lg">
                   <action.icon className="w-7 h-7 text-[#ff8c5a]" />
                 </div>
                 <h3 className="font-medium text-[#0D0D0D] group-hover:text-white transition-colors mb-2 text-sm">
