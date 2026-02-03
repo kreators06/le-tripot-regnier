@@ -98,7 +98,7 @@ export default function Capacites() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white p-8 text-center group hover:shadow-xl transition-shadow duration-300"
+              className="bg-white p-8 text-center group hover:shadow-xl transition-shadow duration-300 rounded-lg"
             >
               <p className="text-4xl font-semibold text-[#ff8c5a] mb-2">700m²</p>
               <p className="text-sm text-gray-600">ESPACE TOTAL</p>
@@ -109,7 +109,7 @@ export default function Capacites() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="bg-white p-8 text-center group hover:shadow-xl transition-shadow duration-300"
+              className="bg-white p-8 text-center group hover:shadow-xl transition-shadow duration-300 rounded-lg"
             >
               <p className="text-4xl font-semibold text-[#ff8c5a] mb-2">90m²</p>
               <p className="text-sm text-gray-600">HALL D'ACCUEIL</p>
@@ -120,7 +120,7 @@ export default function Capacites() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-white p-8 text-center group hover:shadow-xl transition-shadow duration-300"
+              className="bg-white p-8 text-center group hover:shadow-xl transition-shadow duration-300 rounded-lg"
             >
               <p className="text-4xl font-semibold text-[#ff8c5a] mb-2">400m²</p>
               <p className="text-sm text-gray-600">SALLE PRINCIPALE</p>
@@ -131,7 +131,7 @@ export default function Capacites() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="bg-white p-8 text-center group hover:shadow-xl transition-shadow duration-300"
+              className="bg-white p-8 text-center group hover:shadow-xl transition-shadow duration-300 rounded-lg"
             >
               <p className="text-4xl font-semibold text-[#ff8c5a] mb-2">65m²</p>
               <p className="text-sm text-gray-600">MEZZANINE</p>
@@ -157,7 +157,7 @@ export default function Capacites() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-[#F5F5F0] p-8 text-left group hover:shadow-xl transition-shadow duration-300"
+                className="bg-[#F5F5F0] p-8 text-left group hover:shadow-xl transition-shadow duration-300 rounded-lg"
               >
                 <h3 className="text-xl font-semibold text-[#0D0D0D] mb-2">{space.name}</h3>
                 {space.surface && (
@@ -214,7 +214,7 @@ export default function Capacites() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="aspect-video bg-gradient-to-br from-[#1A1A1A] to-[#2A2A2A] rounded-lg overflow-hidden">
+              <div className="aspect-video bg-gradient-to-br from-[#1A1A1A] to-[#2A2A2A] rounded-lg overflow-hidden shadow-xl">
                 <img 
                   src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=800&auto=format"
                   alt="Mur LED immersif"
@@ -332,9 +332,9 @@ export default function Capacites() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white p-6 flex items-start gap-4 text-left"
+                className="bg-white p-6 flex items-start gap-4 text-left rounded-lg"
               >
-                <div className="w-12 h-12 bg-[#0D0D0D] flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-[#0D0D0D] flex items-center justify-center flex-shrink-0 rounded-lg">
                   <item.icon className="w-5 h-5 text-[#ff8c5a]" />
                 </div>
                 <p className="text-gray-700 text-sm leading-relaxed pt-3">

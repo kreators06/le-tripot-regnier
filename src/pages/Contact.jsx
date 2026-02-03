@@ -147,7 +147,7 @@ export default function Contact() {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="bg-green-50 border border-green-200 rounded-lg p-8 text-left"
+                  className="bg-green-50 border border-green-200 rounded-lg p-8 text-left shadow-lg"
                 >
                   <CheckCircle className="w-16 h-16 text-green-500 mb-4" />
                   <h3 className="text-xl font-medium text-green-800 mb-2">Message envoyé !</h3>
@@ -254,7 +254,7 @@ export default function Contact() {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-[#ff8c5a] hover:bg-[#e67a47] text-white py-6 text-lg font-medium tracking-wide border border-[#ff8c5a] hover:border-[#e67a47]"
+                    className="w-full bg-[#ff8c5a] hover:bg-[#e67a47] text-white py-6 text-lg font-medium tracking-wide border border-[#ff8c5a] hover:border-[#e67a47] rounded-md"
                   >
                     {isSubmitting ? (
                       <>
@@ -303,8 +303,8 @@ export default function Contact() {
                 <h3 className="text-2xl font-semibold text-[#0D0D0D] mb-6 tracking-wide text-left">
                   Réserver <span className="text-[#ff8c5a]">une visite</span>
                 </h3>
-                <div className="bg-[#F5F5F0] p-8 rounded-lg text-left">
-                  <div className="w-16 h-16 bg-[#ff8c5a]/20 flex items-center justify-center mb-4">
+                <div className="bg-[#F5F5F0] p-8 rounded-lg text-left shadow-md">
+                  <div className="w-16 h-16 bg-[#ff8c5a]/20 flex items-center justify-center mb-4 rounded-lg">
                     <Clock className="w-8 h-8 text-[#ff8c5a]" />
                   </div>
                   <h4 className="text-lg font-medium text-[#0D0D0D] mb-2">
@@ -314,7 +314,7 @@ export default function Contact() {
                     Intégration du widget Joy pour la prise de rendez-vous en ligne
                   </p>
                   <Button
-                    className="bg-[#0D0D0D] hover:bg-[#2A2A2A] text-white"
+                    className="bg-[#0D0D0D] hover:bg-[#2A2A2A] text-white rounded-md"
                   >
                     Prendre rendez-vous
                   </Button>
@@ -336,9 +336,9 @@ export default function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white p-6 text-left group hover:shadow-lg transition-shadow duration-300"
+                className="bg-white p-6 text-left group hover:shadow-lg transition-shadow duration-300 rounded-lg"
               >
-                <div className="w-14 h-14 bg-[#0D0D0D] flex items-center justify-center mb-4 group-hover:bg-[#ff8c5a] transition-colors duration-300">
+                <div className="w-14 h-14 bg-[#0D0D0D] flex items-center justify-center mb-4 group-hover:bg-[#ff8c5a] transition-colors duration-300 rounded-lg">
                   <info.icon className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="font-medium text-[#0D0D0D] mb-2">{info.title}</h3>

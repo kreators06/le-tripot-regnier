@@ -179,7 +179,7 @@ export default function Home() {
           >
             <a
               href="#nos-espaces"
-              className="group inline-flex items-center gap-3 px-10 py-5 bg-[#ff8c5a] text-white font-medium tracking-wide text-lg hover:bg-[#e67a47] transition-all duration-300 border border-[#ff8c5a] hover:border-[#e67a47]"
+              className="group inline-flex items-center gap-3 px-10 py-5 bg-[#ff8c5a] text-white font-medium tracking-wide text-lg hover:bg-[#e67a47] transition-all duration-300 border border-[#ff8c5a] hover:border-[#e67a47] rounded-md"
             >
               Découvrir le lieu
               <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
@@ -194,11 +194,11 @@ export default function Home() {
           transition={{ delay: 1 }}
           className="absolute bottom-8 left-1/2 -translate-x-1/2"
         >
-          <div className="w-6 h-10 border-2 border-white/30 flex items-start justify-center p-2">
+          <div className="w-6 h-10 border-2 border-white/30 flex items-start justify-center p-2 rounded-full">
             <motion.div
               animate={{ y: [0, 12, 0] }}
               transition={{ repeat: Infinity, duration: 1.5 }}
-              className="w-1 h-2 bg-[#ff8c5a]"
+              className="w-1 h-2 bg-[#ff8c5a] rounded-full"
             />
           </div>
         </motion.div>
@@ -241,9 +241,9 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white group overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                className="bg-white group overflow-hidden hover:shadow-xl transition-shadow duration-300 rounded-lg"
               >
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-48 overflow-hidden rounded-t-lg">
                   <img 
                     src={config.image}
                     alt={config.name}
@@ -251,7 +251,7 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-4">
-                    <div className="w-10 h-10 bg-[#ff8c5a] flex items-center justify-center mb-2">
+                    <div className="w-10 h-10 bg-[#ff8c5a] flex items-center justify-center mb-2 rounded-md">
                       <config.icon className="w-5 h-5 text-[#0D0D0D]" />
                     </div>
                   </div>
@@ -288,14 +288,14 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 mt-8">
                 <Link 
                   to={createPageUrl('Engagements')}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#ff8c5a] text-white font-medium tracking-wide hover:bg-[#e67a47] transition-all duration-300 border border-[#ff8c5a] hover:border-[#e67a47]"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#ff8c5a] text-white font-medium tracking-wide hover:bg-[#e67a47] transition-all duration-300 border border-[#ff8c5a] hover:border-[#e67a47] rounded-md"
                 >
                   NOS ENGAGEMENTS
                 </Link>
                 
                 <Link 
                   to={createPageUrl('Contact')}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-[#0D0D0D]/30 text-[#0D0D0D] hover:bg-[#0D0D0D]/5 font-medium tracking-wide transition-all duration-300"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-[#0D0D0D]/30 text-[#0D0D0D] hover:bg-[#0D0D0D]/5 font-medium tracking-wide transition-all duration-300 rounded-md"
                 >
                   NOUS CONTACTER
                 </Link>
@@ -309,7 +309,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="flex items-center justify-center"
             >
-              <div className="w-full max-w-lg aspect-square bg-white border-2 border-dashed border-gray-300 flex items-center justify-center">
+              <div className="w-full max-w-lg aspect-square bg-white border-2 border-dashed border-gray-300 flex items-center justify-center rounded-lg">
                 <div className="text-center p-8">
                   <p className="text-gray-500 text-lg mb-2">Emplacement réservé</p>
                   <p className="text-gray-400 text-sm">Visuel roue des logos clients</p>
