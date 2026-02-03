@@ -86,8 +86,8 @@ export default function Layout({ children, currentPageName }) {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <Link to={createPageUrl('Histoire')} className="flex items-center gap-3">
-              <div className="w-14 h-14 bg-[#ff8c5a] flex items-center justify-center">
+            <Link to={createPageUrl('Home')} className="flex items-center gap-3">
+              <div className="w-14 h-14 bg-[#ff8c5a] flex items-center justify-center rounded-md">
                 <span className="text-white font-bold text-2xl">TR</span>
               </div>
             </Link>
@@ -113,7 +113,7 @@ export default function Layout({ children, currentPageName }) {
             <div className="hidden lg:block">
               <Link
                 to={createPageUrl('Contact')}
-                className="px-6 py-2.5 bg-[#ff8c5a] text-white text-sm font-medium tracking-wide hover:bg-[#e67a47] transition-colors border border-[#ff8c5a] hover:border-[#e67a47]"
+                className="px-6 py-2.5 bg-[#ff8c5a] text-white text-sm font-medium tracking-wide hover:bg-[#e67a47] transition-colors border border-[#ff8c5a] hover:border-[#e67a47] rounded-md"
               >
                 NOUS CONTACTER
               </Link>
@@ -167,7 +167,7 @@ export default function Layout({ children, currentPageName }) {
                 >
                   <Link
                     to={createPageUrl('Contact')}
-                    className="block w-full py-3 bg-[#ff8c5a] text-white text-center font-medium tracking-wide"
+                    className="block w-full py-3 bg-[#ff8c5a] text-white text-center font-medium tracking-wide rounded-md"
                   >
                     NOUS CONTACTER
                   </Link>
@@ -188,7 +188,7 @@ export default function Layout({ children, currentPageName }) {
             {/* Brand */}
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-[#ff8c5a] flex items-center justify-center">
+                <div className="w-12 h-12 bg-[#ff8c5a] flex items-center justify-center rounded-md">
                   <span className="text-white font-bold text-xl">TR</span>
                 </div>
               </div>
@@ -243,13 +243,13 @@ export default function Layout({ children, currentPageName }) {
             <div>
               <h4 className="text-[#ff8c5a] font-medium mb-6 tracking-wide">Suivez-nous</h4>
               <div className="flex gap-4">
-                <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-[#ff8c5a] hover:bg-[#ff8c5a]/10 transition-all" aria-label="Instagram">
+                <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-[#ff8c5a] hover:bg-[#ff8c5a]/10 transition-all rounded-md" aria-label="Instagram">
                   <Instagram className="w-5 h-5 text-white" />
                 </a>
-                <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-[#ff8c5a] hover:bg-[#ff8c5a]/10 transition-all" aria-label="LinkedIn">
+                <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-[#ff8c5a] hover:bg-[#ff8c5a]/10 transition-all rounded-md" aria-label="LinkedIn">
                   <Linkedin className="w-5 h-5 text-white" />
                 </a>
-                <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-[#ff8c5a] hover:bg-[#ff8c5a]/10 transition-all" aria-label="Facebook">
+                <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-[#ff8c5a] hover:bg-[#ff8c5a]/10 transition-all rounded-md" aria-label="Facebook">
                   <Facebook className="w-5 h-5 text-white" />
                 </a>
               </div>

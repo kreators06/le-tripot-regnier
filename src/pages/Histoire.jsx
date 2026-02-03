@@ -49,7 +49,7 @@ export default function Histoire() {
               className="flex gap-8 items-start"
             >
               <div className="flex-shrink-0">
-                <div className="w-20 h-20 bg-[#ff8c5a] flex items-center justify-center">
+                <div className="w-20 h-20 bg-[#ff8c5a] flex items-center justify-center rounded-lg">
                   <Calendar className="w-8 h-8 text-white" />
                 </div>
               </div>
@@ -74,7 +74,7 @@ export default function Histoire() {
               className="flex gap-8 items-start"
             >
               <div className="flex-shrink-0">
-                <div className="w-20 h-20 bg-[#ff8c5a] flex items-center justify-center">
+                <div className="w-20 h-20 bg-[#ff8c5a] flex items-center justify-center rounded-lg">
                   <Building2 className="w-8 h-8 text-white" />
                 </div>
               </div>
@@ -99,7 +99,7 @@ export default function Histoire() {
               className="flex gap-8 items-start"
             >
               <div className="flex-shrink-0">
-                <div className="w-20 h-20 bg-[#ff8c5a] flex items-center justify-center">
+                <div className="w-20 h-20 bg-[#ff8c5a] flex items-center justify-center rounded-lg">
                   <Award className="w-8 h-8 text-white" />
                 </div>
               </div>
@@ -138,7 +138,7 @@ export default function Histoire() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-[#F5F5F0] p-8 text-left mt-8"
+            className="bg-[#F5F5F0] p-8 text-left mt-8 rounded-lg"
           >
             <p className="text-lg text-gray-700 leading-relaxed text-justify">
               Son nom rend hommage au <strong>Tripot Régnier</strong>, célèbre jeu de paume construit 
@@ -181,6 +181,64 @@ export default function Histoire() {
             >
               <p className="text-5xl font-bold text-[#ff8c5a] mb-2">700m²</p>
               <p className="text-gray-400">Entièrement rénovés</p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Un lieu hybride et moderne Section */}
+      <section className="py-24 px-6 bg-[#F5F5F0]">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left side - Text & Stats */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="text-left"
+            >
+              <h2 className="text-3xl md:text-4xl font-semibold text-[#0D0D0D] mb-6 tracking-wide">
+                Un lieu hybride et moderne
+              </h2>
+              <p className="text-gray-600 leading-relaxed mb-8 text-justify">
+                Entièrement pensés selon les codes de l'évènementiel, les 700 m² qui composent le Tripot Régnier ont été conçus à partir des technologies les plus modernes du secteur de l'événementiel et du digital.
+              </p>
+              
+              {/* Stats Grid */}
+              <div className="grid grid-cols-3 gap-6 mb-8">
+                <div className="text-left">
+                  <p className="text-4xl font-bold text-[#ff8c5a] mb-1">700</p>
+                  <p className="text-sm text-gray-500">m² d'espace</p>
+                </div>
+                <div className="text-left">
+                  <p className="text-4xl font-bold text-[#ff8c5a] mb-1">500</p>
+                  <p className="text-sm text-gray-500">personnes max</p>
+                </div>
+                <div className="text-left">
+                  <p className="text-4xl font-bold text-[#ff8c5a] mb-1">1904</p>
+                  <p className="text-sm text-gray-500">bâtiment historique</p>
+                </div>
+              </div>
+              
+              {/* Additional stat */}
+              <div className="inline-block bg-[#ff8c5a] text-white px-6 py-3 rounded-lg">
+                <p className="text-2xl font-bold">120</p>
+                <p className="text-xs">ans d'histoire</p>
+              </div>
+            </motion.div>
+            
+            {/* Right side - Image */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <img 
+                src="https://images.unsplash.com/photo-1519167758481-83f29da8c2f0?w=800&auto=format"
+                alt="Salle principale Le Tripot Régnier"
+                className="w-full h-[400px] object-cover rounded-lg shadow-xl"
+              />
             </motion.div>
           </div>
         </div>

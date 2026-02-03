@@ -9,7 +9,7 @@ export default function TestimonialCard({ quote, author, company, index = 0 }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.15, duration: 0.5 }}
-      className="bg-white p-8 relative group hover:shadow-xl transition-shadow duration-500 text-left"
+      className="bg-white p-8 relative group hover:shadow-xl transition-shadow duration-500 text-left rounded-lg"
     >
       <Quote className="w-10 h-10 text-[#ff8c5a]/30 absolute top-6 right-6" />
       
@@ -18,7 +18,7 @@ export default function TestimonialCard({ quote, author, company, index = 0 }) {
       </p>
       
       <div className="flex items-center gap-4">
-        <div className="w-12 h-12 bg-gradient-to-br from-[#ff8c5a] to-[#e67a47] flex items-center justify-center text-white font-medium">
+        <div className="w-12 h-12 bg-gradient-to-br from-[#ff8c5a] to-[#e67a47] flex items-center justify-center text-white font-medium rounded-md">
           {author.charAt(0)}
         </div>
         <div>

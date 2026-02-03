@@ -373,6 +373,153 @@ export default function Capacites() {
         </div>
       </section>
 
+      {/* Nos Avantages Section */}
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <SectionTitle 
+            title="Nos Avantages"
+            subtitle="Un lieu entièrement équipé pour vos événements"
+            align="left"
+          />
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            {/* Entrée véhicules */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-left"
+            >
+              <div className="w-16 h-16 bg-[#ff8c5a]/10 flex items-center justify-center mb-4 rounded-lg">
+                <Truck className="w-8 h-8 text-[#ff8c5a]" />
+              </div>
+              <h3 className="text-lg font-semibold text-[#0D0D0D] mb-2">Entrée véhicules</h3>
+              <p className="text-gray-600 text-sm">Exposition possible dans la salle</p>
+            </motion.div>
+            
+            {/* Vestiaire équipé */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-left"
+            >
+              <div className="w-16 h-16 bg-[#ff8c5a]/10 flex items-center justify-center mb-4 rounded-lg">
+                <Shield className="w-8 h-8 text-[#ff8c5a]" />
+              </div>
+              <h3 className="text-lg font-semibold text-[#0D0D0D] mb-2">Vestiaire équipé</h3>
+              <p className="text-gray-600 text-sm">Capacité 450 personnes</p>
+            </motion.div>
+            
+            {/* Matériel audiovisuel */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-left"
+            >
+              <div className="w-16 h-16 bg-[#ff8c5a]/10 flex items-center justify-center mb-4 rounded-lg">
+                <Monitor className="w-8 h-8 text-[#ff8c5a]" />
+              </div>
+              <h3 className="text-lg font-semibold text-[#0D0D0D] mb-2">Matériel audiovisuel</h3>
+              <p className="text-gray-600 text-sm">Équipement complet inclus</p>
+            </motion.div>
+            
+            {/* Office traiteur */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="text-left"
+            >
+              <div className="w-16 h-16 bg-[#ff8c5a]/10 flex items-center justify-center mb-4 rounded-lg">
+                <Maximize2 className="w-8 h-8 text-[#ff8c5a]" />
+              </div>
+              <h3 className="text-lg font-semibold text-[#0D0D0D] mb-2">Office traiteur</h3>
+              <p className="text-gray-600 text-sm">Cuisine professionnelle équipée</p>
+            </motion.div>
+            
+            {/* Loge aménagée */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="text-left"
+            >
+              <div className="w-16 h-16 bg-[#ff8c5a]/10 flex items-center justify-center mb-4 rounded-lg">
+                <Accessibility className="w-8 h-8 text-[#ff8c5a]" />
+              </div>
+              <h3 className="text-lg font-semibold text-[#0D0D0D] mb-2">Loge aménagée</h3>
+              <p className="text-gray-600 text-sm">Avec accès privatif</p>
+            </motion.div>
+            
+            {/* Bar aménagé */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+              className="text-left"
+            >
+              <div className="w-16 h-16 bg-[#ff8c5a]/10 flex items-center justify-center mb-4 rounded-lg">
+                <Speaker className="w-8 h-8 text-[#ff8c5a]" />
+              </div>
+              <h3 className="text-lg font-semibold text-[#0D0D0D] mb-2">Bar aménagé</h3>
+              <p className="text-gray-600 text-sm">Service professionnel</p>
+            </motion.div>
+            
+            {/* Fumoir */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6 }}
+              className="text-left"
+            >
+              <div className="w-16 h-16 bg-[#ff8c5a]/10 flex items-center justify-center mb-4 rounded-lg">
+                <Lightbulb className="w-8 h-8 text-[#ff8c5a]" />
+              </div>
+              <h3 className="text-lg font-semibold text-[#0D0D0D] mb-2">Fumoir</h3>
+              <p className="text-gray-600 text-sm">Espace dédié</p>
+            </motion.div>
+            
+            {/* Climatisation */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.7 }}
+              className="text-left"
+            >
+              <div className="w-16 h-16 bg-[#ff8c5a]/10 flex items-center justify-center mb-4 rounded-lg">
+                <Layers className="w-8 h-8 text-[#ff8c5a]" />
+              </div>
+              <h3 className="text-lg font-semibold text-[#0D0D0D] mb-2">Climatisation</h3>
+              <p className="text-gray-600 text-sm">Chauffage et traitement air</p>
+            </motion.div>
+            
+            {/* Fibre optique */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.8 }}
+              className="text-left"
+            >
+              <div className="w-16 h-16 bg-[#ff8c5a]/10 flex items-center justify-center mb-4 rounded-lg">
+                <Monitor className="w-8 h-8 text-[#ff8c5a]" />
+              </div>
+              <h3 className="text-lg font-semibold text-[#0D0D0D] mb-2">Fibre optique</h3>
+              <p className="text-gray-600 text-sm">Wi-Fi très haut débit</p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Banner */}
       <CTABanner 
         title="Des questions sur nos équipements ?"
