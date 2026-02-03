@@ -246,10 +246,10 @@ export default function Capacites() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-[#F5F5F0] p-8 text-left"
+              className="bg-[#F5F5F0] p-8 text-left rounded-lg"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-[#ff8c5a]/20 flex items-center justify-center">
+                <div className="w-12 h-12 bg-[#ff8c5a]/20 flex items-center justify-center rounded-lg">
                   <Lightbulb className="w-6 h-6 text-[#ff8c5a]" />
                 </div>
                 <h3 className="text-xl font-semibold text-[#0D0D0D]">Éclairage</h3>
@@ -270,10 +270,10 @@ export default function Capacites() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="bg-[#F5F5F0] p-8 text-left"
+              className="bg-[#F5F5F0] p-8 text-left rounded-lg"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-[#ff8c5a]/20 flex items-center justify-center">
+                <div className="w-12 h-12 bg-[#ff8c5a]/20 flex items-center justify-center rounded-lg">
                   <Monitor className="w-6 h-6 text-[#ff8c5a]" />
                 </div>
                 <h3 className="text-xl font-semibold text-[#0D0D0D]">Vidéo</h3>
@@ -294,10 +294,10 @@ export default function Capacites() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-[#F5F5F0] p-8 text-left"
+              className="bg-[#F5F5F0] p-8 text-left rounded-lg"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-[#ff8c5a]/20 flex items-center justify-center">
+                <div className="w-12 h-12 bg-[#ff8c5a]/20 flex items-center justify-center rounded-lg">
                   <Speaker className="w-6 h-6 text-[#ff8c5a]" />
                 </div>
                 <h3 className="text-xl font-semibold text-[#0D0D0D]">Son</h3>
@@ -355,14 +355,14 @@ export default function Capacites() {
             viewport={{ once: true }}
             className="flex flex-col md:flex-row items-start justify-start gap-8"
           >
-            <div className="flex items-center gap-4 px-8 py-4 bg-white/5 text-left">
+            <div className="flex items-center gap-4 px-8 py-4 bg-white/5 text-left rounded-lg">
               <Shield className="w-8 h-8 text-[#ff8c5a]" />
               <div>
                 <p className="text-white font-medium">Normes ERP</p>
                 <p className="text-gray-400 text-sm">Établissement Recevant du Public</p>
               </div>
             </div>
-            <div className="flex items-center gap-4 px-8 py-4 bg-white/5 text-left">
+            <div className="flex items-center gap-4 px-8 py-4 bg-white/5 text-left rounded-lg">
               <Accessibility className="w-8 h-8 text-[#ff8c5a]" />
               <div>
                 <p className="text-white font-medium">Accessibilité PMR</p>
