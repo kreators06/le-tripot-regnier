@@ -18,15 +18,15 @@ export default function CTABanner({
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      className={`py-20 px-6 ${isDark ? 'bg-[#0D0D0D]' : 'bg-[#F5F5F0]'}`}
+      className={`py-32 px-8 ${isDark ? 'bg-[#0D0D0D]' : 'bg-[#F9F9F7]'}`}
     >
-      <div className="max-w-4xl mx-auto text-left">
+      <div className="max-w-5xl mx-auto text-left">
         <motion.h2 
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-          className={`text-3xl md:text-4xl font-semibold tracking-wide mb-4 ${isDark ? 'text-white' : 'text-[#0D0D0D]'}`}
+          transition={{ delay: 0.1, duration: 0.6 }}
+          className={`text-4xl md:text-5xl font-medium tracking-tight mb-6 ${isDark ? 'text-white' : 'text-[#0D0D0D]'}`}
         >
           {title}
         </motion.h2>
@@ -36,8 +36,8 @@ export default function CTABanner({
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className={`text-lg mb-8 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className={`text-xl mb-12 font-light ${isDark ? 'text-white/70' : 'text-gray-500'}`}
           >
             {subtitle}
           </motion.p>
@@ -52,17 +52,17 @@ export default function CTABanner({
         >
           <Link 
             to={createPageUrl('Contact')}
-            className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#ff8c5a] text-white font-medium tracking-wide hover:bg-[#e67a47] transition-all duration-300 border border-[#ff8c5a] hover:border-[#e67a47] rounded-md"
+            className="group inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#ff8c5a] text-white font-medium tracking-tight hover:bg-[#e67a47] transition-all duration-500 rounded-md hover:shadow-xl hover:shadow-[#ff8c5a]/20"
           >
             {primaryText}
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-500" />
           </Link>
           
           <Link 
             to={createPageUrl('Contact')}
-            className={`group inline-flex items-center justify-center gap-2 px-8 py-4 border ${isDark ? 'border-white/30 text-white hover:bg-white/10' : 'border-[#0D0D0D]/30 text-[#0D0D0D] hover:bg-[#0D0D0D]/5'} font-medium tracking-wide transition-all duration-300 rounded-md`}
+            className={`group inline-flex items-center justify-center gap-3 px-10 py-5 border ${isDark ? 'border-white/20 text-white hover:bg-white/5' : 'border-[#0D0D0D]/20 text-[#0D0D0D] hover:bg-[#0D0D0D]/5'} font-medium tracking-tight transition-all duration-500 rounded-md`}
           >
-            <Calendar className="w-4 h-4" />
+            <Calendar className="w-5 h-5" />
             {secondaryText}
           </Link>
         </motion.div>

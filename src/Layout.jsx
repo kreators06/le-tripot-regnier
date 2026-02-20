@@ -41,10 +41,13 @@ export default function Layout({ children, currentPageName }) {
         
         body {
           font-family: 'Poppins', sans-serif;
+          letter-spacing: -0.01em;
         }
-        
+
         h1, h2, h3, h4, h5, h6 {
           font-family: 'Poppins', sans-serif;
+          letter-spacing: -0.02em;
+          font-weight: 500;
         }
         
         .nav-link {
@@ -82,26 +85,26 @@ export default function Layout({ children, currentPageName }) {
       `}</style>
 
       {/* Header */}
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${headerBg}`}>
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center justify-between h-20">
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${headerBg} border-b border-white/5`}>
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="flex items-center justify-between h-24">
             {/* Logo */}
-            <Link to={createPageUrl('Home')} className="flex items-center gap-3">
-              <div className="w-14 h-14 bg-[#ff8c5a] flex items-center justify-center rounded-md">
-                <span className="text-white font-bold text-2xl">TR</span>
+            <Link to={createPageUrl('Home')} className="flex items-center gap-3 group">
+              <div className="w-12 h-12 bg-[#ff8c5a] flex items-center justify-center rounded-md transition-all duration-300 group-hover:bg-[#e67a47]">
+                <span className="text-white font-semibold text-xl tracking-tight">TR</span>
               </div>
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center gap-8">
+            <nav className="hidden lg:flex items-center gap-10">
               {navLinks.map((link) => (
                 <Link
                   key={link.page}
                   to={createPageUrl(link.page)}
-                  className={`nav-link text-sm tracking-wide transition-colors ${
+                  className={`nav-link text-sm font-medium tracking-tight transition-colors ${
                     currentPageName === link.page 
                       ? 'text-[#ff8c5a] active' 
-                      : 'text-white/90 hover:text-white'
+                      : 'text-white/80 hover:text-white'
                   }`}
                 >
                   {link.name}
@@ -113,9 +116,9 @@ export default function Layout({ children, currentPageName }) {
             <div className="hidden lg:block">
               <Link
                 to={createPageUrl('Contact')}
-                className="px-6 py-2.5 bg-[#ff8c5a] text-white text-sm font-medium tracking-wide hover:bg-[#e67a47] transition-colors border border-[#ff8c5a] hover:border-[#e67a47] rounded-md"
+                className="px-8 py-3 bg-[#ff8c5a] text-white text-sm font-medium tracking-tight hover:bg-[#e67a47] transition-all duration-300 hover:shadow-lg hover:shadow-[#ff8c5a]/20 rounded-md"
               >
-                NOUS CONTACTER
+                Nous contacter
               </Link>
             </div>
 
@@ -182,8 +185,8 @@ export default function Layout({ children, currentPageName }) {
       <main>{children}</main>
 
       {/* Footer */}
-      <footer className="bg-[#0D0D0D] text-white">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+      <footer className="bg-[#0D0D0D] text-white border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-8 py-24">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             {/* Brand */}
             <div>

@@ -18,23 +18,17 @@ export default function SectionTitle({
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className={`mb-12 ${alignClass}`}
+      transition={{ duration: 0.6 }}
+      className={`mb-16 ${alignClass}`}
     >
-      <h2 className={`text-3xl md:text-4xl font-semibold tracking-wide mb-4 ${light ? 'text-white' : 'text-[#0D0D0D]'}`}>
+      <h2 className={`text-4xl md:text-5xl font-medium tracking-tight mb-6 ${light ? 'text-white' : 'text-[#0D0D0D]'}`}>
         {title}
       </h2>
       {subtitle && (
-        <p className={`text-lg max-w-2xl ${light ? 'text-gray-300' : 'text-gray-600'}`}>
+        <p className={`text-xl max-w-2xl font-light ${light ? 'text-white/70' : 'text-gray-500'}`}>
           {subtitle}
         </p>
       )}
-      <motion.div 
-        initial={{ scaleX: 0 }}
-        whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.2, duration: 0.5 }}
-        className={`w-20 h-0.5 bg-[#ff8c5a] mt-6 ${align === 'center' ? 'mx-auto' : ''}`}
-      />
     </motion.div>
   );
 }
