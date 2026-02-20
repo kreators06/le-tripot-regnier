@@ -35,19 +35,19 @@ export default function Layout({ children, currentPageName }) {
   const headerBg = isScrolled || !isHome ? 'bg-[#0D0D0D]/95 backdrop-blur-md' : 'bg-transparent';
 
   return (
-    <div className="min-h-screen bg-[#F5F5F0]">
+    <div className="min-h-screen bg-white">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap');
         
         body {
-          font-family: 'Poppins', sans-serif;
-          letter-spacing: -0.01em;
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
         }
-
+        
         h1, h2, h3, h4, h5, h6 {
-          font-family: 'Poppins', sans-serif;
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
           letter-spacing: -0.02em;
-          font-weight: 500;
         }
         
         .nav-link {
@@ -85,13 +85,13 @@ export default function Layout({ children, currentPageName }) {
       `}</style>
 
       {/* Header */}
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${headerBg} border-b border-white/5`}>
-        <div className="max-w-7xl mx-auto px-8">
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${headerBg}`}>
+        <div className="max-w-7xl mx-auto px-8 md:px-16">
           <div className="flex items-center justify-between h-24">
             {/* Logo */}
             <Link to={createPageUrl('Home')} className="flex items-center gap-3 group">
-              <div className="w-12 h-12 bg-[#ff8c5a] flex items-center justify-center rounded-md transition-all duration-300 group-hover:bg-[#e67a47]">
-                <span className="text-white font-semibold text-xl tracking-tight">TR</span>
+              <div className="w-12 h-12 bg-white flex items-center justify-center border border-[#0D0D0D]/10 transition-all duration-300 group-hover:border-[#ff8c5a]">
+                <span className="text-[#0D0D0D] font-light text-xl tracking-wider">TR</span>
               </div>
             </Link>
 
@@ -101,10 +101,10 @@ export default function Layout({ children, currentPageName }) {
                 <Link
                   key={link.page}
                   to={createPageUrl(link.page)}
-                  className={`nav-link text-sm font-medium tracking-tight transition-colors ${
+                  className={`text-xs tracking-[0.15em] uppercase transition-colors font-light ${
                     currentPageName === link.page 
-                      ? 'text-[#ff8c5a] active' 
-                      : 'text-white/80 hover:text-white'
+                      ? 'text-[#ff8c5a]' 
+                      : 'text-white/90 hover:text-white'
                   }`}
                 >
                   {link.name}
@@ -116,9 +116,9 @@ export default function Layout({ children, currentPageName }) {
             <div className="hidden lg:block">
               <Link
                 to={createPageUrl('Contact')}
-                className="px-8 py-3 bg-[#ff8c5a] text-white text-sm font-medium tracking-tight hover:bg-[#e67a47] transition-all duration-300 hover:shadow-lg hover:shadow-[#ff8c5a]/20 rounded-md"
+                className="px-6 py-3 bg-white text-[#0D0D0D] text-xs font-normal tracking-[0.15em] uppercase hover:bg-[#ff8c5a] hover:text-white transition-all duration-500"
               >
-                Nous contacter
+                CONTACT
               </Link>
             </div>
 
@@ -185,8 +185,8 @@ export default function Layout({ children, currentPageName }) {
       <main>{children}</main>
 
       {/* Footer */}
-      <footer className="bg-[#0D0D0D] text-white border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-8 py-24">
+      <footer className="bg-[#0D0D0D] text-white">
+        <div className="max-w-7xl mx-auto px-6 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             {/* Brand */}
             <div>
