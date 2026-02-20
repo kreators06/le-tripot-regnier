@@ -190,7 +190,7 @@ export default function Home() {
 
 
       {/* Spaces Section */}
-      <section id="nos-espaces" className="py-20 md:py-28 px-6 bg-white overflow-hidden">
+      <section id="nos-espaces" className="py-20 md:py-28 px-6 bg-white overflow-visible">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -210,15 +210,15 @@ export default function Home() {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Premier espace - Large - Sticky */}
-            <div className="lg:sticky lg:top-32">
+            <div className="lg:sticky lg:top-32 lg:h-[600px]">
               <motion.div
                 initial={{ opacity: 0, x: -40 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-                className="group"
+                className="group h-full"
               >
-                <div className="relative h-[600px] overflow-hidden">
+                <div className="relative h-full overflow-hidden">
                   <motion.img
                     src={spaces[0].image}
                     alt={spaces[0].title}
@@ -243,56 +243,28 @@ export default function Home() {
             </div>
 
             {/* Autres espaces - Stacking cards */}
-            <div className="space-y-6">
+            <div className="relative">
               {spaces.slice(1).map((space, index) => (
                 <div 
                   key={space.title}
-                  className="sticky transition-all duration-700 ease-out"
-                  style={{ 
-                    top: `${6 + index * 1.5}rem`,
-                    zIndex: spaces.length - index
-                  }}
+                  className="mb-[400px] last:mb-0"
                 >
-                  <motion.div
-                    initial={{ opacity: 0, y: 80, scale: 0.92 }}
-                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                    viewport={{ once: false, margin: "-15%", amount: 0.3 }}
-                    transition={{ 
-                      duration: 0.8, 
-                      ease: [0.16, 1, 0.3, 1],
-                      opacity: { duration: 0.5 }
-                    }}
-                    className="bg-white group shadow-xl hover:shadow-2xl transition-shadow duration-500"
-                    style={{
-                      transformOrigin: "top center"
+                  <div
+                    className="sticky bg-white shadow-2xl"
+                    style={{ 
+                      top: `calc(8rem + ${index * 1.5}rem)`,
                     }}
                   >
-                    <div className="relative h-80 overflow-hidden mb-6">
-                      <motion.img
+                    <div className="relative h-80 overflow-hidden">
+                      <img
                         src={space.image}
                         alt={space.title}
-                        className="w-full h-full object-cover"
-                        initial={{ scale: 1.1 }}
-                        whileInView={{ scale: 1 }}
-                        viewport={{ once: false, margin: "-15%" }}
-                        transition={{ duration: 1, ease: "easeOut" }}
-                        whileHover={{ scale: 1.08 }}
+                        className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                       />
-                      <motion.div 
-                        className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"
-                        initial={{ opacity: 0.7 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 0.6 }}
-                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                     </div>
                     
-                    <motion.div 
-                      className="text-left px-2 pb-6"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: false, margin: "-15%" }}
-                      transition={{ duration: 0.6, delay: 0.2 }}
-                    >
+                    <div className="p-6 bg-white">
                       <div className="flex items-baseline justify-between mb-3">
                         <h3 className="text-[#0D0D0D] text-2xl font-semibold tracking-tight">{space.title}</h3>
                         {space.surface && (
@@ -302,8 +274,8 @@ export default function Home() {
                       {space.description && (
                         <p className="text-gray-600 text-sm leading-relaxed font-light">{space.description}</p>
                       )}
-                    </motion.div>
-                  </motion.div>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
