@@ -153,9 +153,9 @@ export default function Home() {
             <p className="text-sm md:text-base text-white/80 tracking-[0.3em] uppercase mb-8 font-light">
               Événementiel Premium — Paris 15ème
             </p>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl text-white font-light tracking-tight mb-10 leading-[1.1]">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl text-white font-semibold tracking-tight mb-10 leading-[1.1]">
               Salle parisienne où vos<br />
-              <span className="text-[#ff8c5a] font-normal">événements prennent vie</span>
+              <span className="text-[#ff8c5a]">événements prennent vie</span>
             </h1>
           </motion.div>
 
@@ -176,7 +176,7 @@ export default function Home() {
           >
             <a
               href="#nos-espaces"
-              className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-[#0D0D0D] font-normal tracking-wider text-sm hover:bg-[#ff8c5a] hover:text-white transition-all duration-500 shadow-lg hover:shadow-2xl"
+              className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-[#0D0D0D] font-semibold tracking-wider text-sm hover:bg-[#ff8c5a] hover:text-white transition-all duration-500 shadow-lg hover:shadow-2xl rounded-lg"
             >
               DÉCOUVRIR LE LIEU
               <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
@@ -202,7 +202,7 @@ export default function Home() {
 
 
       {/* Spaces Section */}
-      <section id="nos-espaces" className="py-32 md:py-40 px-8 md:px-16 bg-white">
+      <section id="nos-espaces" className="py-32 md:py-40 px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -211,19 +211,77 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-20"
           >
-            <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Espaces</p>
-            <h2 className="text-3xl md:text-5xl font-light text-[#0D0D0D] tracking-tight mb-6">
-              Nos <span className="font-normal text-[#ff8c5a]">Espaces</span>
+            <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Nos espaces</p>
+            <h2 className="text-4xl md:text-6xl font-semibold text-[#0D0D0D] tracking-tight mb-6">
+              700m² <span className="text-[#ff8c5a]">modulables</span>
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto font-light">
-              Découvrez les différents espaces modulables du Tripot Régnier
+            <p className="text-gray-600 max-w-2xl mx-auto font-light text-lg">
+              Des espaces pensés pour s'adapter à tous vos événements
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-            {spaces.map((space, index) => (
-              <SpaceCard key={space.title} {...space} index={index} />
-            ))}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Premier espace - Large */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="lg:row-span-2 group"
+            >
+              <div className="relative h-[600px] overflow-hidden mb-6 rounded-lg">
+                <motion.img
+                  src={spaces[0].image}
+                  alt={spaces[0].title}
+                  className="w-full h-full object-cover"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div className="absolute bottom-8 left-8 right-8">
+                  <h3 className="text-white text-3xl font-semibold tracking-tight mb-2">{spaces[0].title}</h3>
+                  <p className="text-[#ff8c5a] text-lg font-medium mb-3">{spaces[0].surface}</p>
+                  <p className="text-white/90 text-sm leading-relaxed">{spaces[0].description}</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Autres espaces */}
+            <div className="grid grid-cols-1 gap-12">
+              {spaces.slice(1).map((space, index) => (
+                <motion.div
+                  key={space.title}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: (index + 1) * 0.1, duration: 0.7 }}
+                  className="group"
+                >
+                  <div className="relative h-72 overflow-hidden mb-6 rounded-lg">
+                    <motion.img
+                      src={space.image}
+                      alt={space.title}
+                      className="w-full h-full object-cover"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.8, ease: "easeOut" }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  </div>
+                  
+                  <div className="text-left">
+                    <div className="flex items-baseline justify-between mb-3">
+                      <h3 className="text-[#0D0D0D] text-2xl font-semibold tracking-tight">{space.title}</h3>
+                      {space.surface && (
+                        <p className="text-[#ff8c5a] text-sm font-medium">{space.surface}</p>
+                      )}
+                    </div>
+                    {space.description && (
+                      <p className="text-gray-600 text-sm leading-relaxed font-light">{space.description}</p>
+                    )}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
