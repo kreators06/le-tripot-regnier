@@ -202,14 +202,14 @@ export default function Home() {
 
 
       {/* Spaces Section */}
-      <section id="nos-espaces" className="py-32 md:py-40 px-8 md:px-16 bg-[#FAFAFA]">
+      <section id="nos-espaces" className="py-20 md:py-28 px-6 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-24"
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="text-center mb-16"
           >
             <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Nos Espaces</p>
             <h2 className="text-4xl md:text-6xl font-bold text-[#0D0D0D] tracking-tight mb-6">
@@ -222,20 +222,22 @@ export default function Home() {
           
           {/* Featured Main Space */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="mb-12"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            className="mb-10"
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div className="relative h-[500px] overflow-hidden group">
-                <img
+              <div className="relative h-[500px] overflow-hidden group rounded">
+                <motion.img
                   src={spaces[0].image}
                   alt={spaces[0].title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover"
+                  whileHover={{ scale: 1.08 }}
+                  transition={{ duration: 0.7, ease: "easeOut" }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent group-hover:from-black/90 transition-all duration-500" />
               </div>
               <div className="lg:pl-12 text-left">
                 <div className="inline-block px-4 py-1.5 bg-[#ff8c5a]/10 text-[#ff8c5a] text-xs tracking-wider uppercase mb-6 rounded-full">
@@ -253,29 +255,31 @@ export default function Home() {
           </motion.div>
 
           {/* Secondary Spaces Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {spaces.slice(1).map((space, index) => (
               <motion.div
                 key={space.title}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: index * 0.06, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 className="group"
               >
-                <div className="relative h-80 overflow-hidden mb-6">
-                  <img
+                <div className="relative h-80 overflow-hidden mb-5 rounded">
+                  <motion.img
                     src={space.image}
                     alt={space.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover"
+                    whileHover={{ scale: 1.08 }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent group-hover:from-black/80 transition-all duration-500" />
                 </div>
                 <div className="text-left">
-                  <div className="flex items-baseline justify-between mb-3">
+                  <div className="flex items-baseline justify-between mb-2">
                     <h4 className="text-xl font-semibold text-[#0D0D0D] tracking-tight">{space.title}</h4>
                     {space.surface && (
-                      <p className="text-[#ff8c5a] text-sm font-semibold">{space.surface}</p>
+                      <p className="text-[#ff8c5a] text-sm font-medium">{space.surface}</p>
                     )}
                   </div>
                   {space.description && (
