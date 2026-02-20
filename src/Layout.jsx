@@ -39,11 +39,12 @@ export default function Layout({ children, currentPageName }) {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
         
-        * {
-          scroll-behavior: smooth !important;
+        html {
+          scroll-behavior: smooth;
+          scroll-padding-top: 6rem;
         }
 
-        html {
+        *, *::before, *::after {
           scroll-behavior: smooth;
         }
 
@@ -51,6 +52,12 @@ export default function Layout({ children, currentPageName }) {
           font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+          html {
+            scroll-behavior: smooth;
+          }
         }
         
         h1, h2, h3, h4, h5, h6 {
