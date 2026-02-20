@@ -131,97 +131,96 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Video Background */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
+        {/* Large Image Background */}
         <div className="absolute inset-0">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover scale-105"
-            poster="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1920&auto=format"
-          >
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-people-at-a-party-dancing-in-the-dark-4553-large.mp4" type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-black/80" />
+          <img
+            src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1920&auto=format"
+            alt="Le Tripot Régnier"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 max-w-6xl mx-auto px-8 text-left">
+        <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 py-32 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl text-white font-medium tracking-tight mb-8 leading-[1.1]">
+            <p className="text-sm md:text-base text-white/80 tracking-[0.3em] uppercase mb-8 font-light">
+              Événementiel Premium — Paris 15ème
+            </p>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl text-white font-light tracking-tight mb-10 leading-[1.1]">
               Salle parisienne où vos<br />
-              <span className="text-[#ff8c5a]">événements prennent vie</span>
+              <span className="text-[#ff8c5a] font-normal">événements prennent vie</span>
             </h1>
           </motion.div>
 
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            className="text-xl md:text-2xl text-white/80 max-w-3xl mb-12 leading-relaxed font-light"
+            className="text-base md:text-lg text-white/90 max-w-2xl mx-auto mb-12 leading-relaxed font-light"
           >
-            700m² d'élégance Art Déco et Industriel au cœur de Paris
+            700m² modulables alliant Art Déco et Industriel au cœur de Paris. 
+            Un lieu unique entièrement rénové pour sublimer vos événements.
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
           >
             <a
               href="#nos-espaces"
-              className="group inline-flex items-center gap-3 px-12 py-5 bg-white text-[#0D0D0D] font-medium tracking-tight text-lg hover:bg-white/90 transition-all duration-500 rounded-md hover:shadow-2xl hover:shadow-white/20"
+              className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-[#0D0D0D] font-normal tracking-wider text-sm hover:bg-[#ff8c5a] hover:text-white transition-all duration-500 shadow-lg hover:shadow-2xl"
             >
-              Découvrir nos espaces
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-500" />
+              DÉCOUVRIR LE LIEU
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
             </a>
           </motion.div>
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Minimal Scroll Indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          transition={{ delay: 1.5 }}
+          className="absolute bottom-12 left-1/2 -translate-x-1/2"
         >
-          <div className="w-6 h-10 border-2 border-white/30 flex items-start justify-center p-2 rounded-full">
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ repeat: Infinity, duration: 1.5 }}
-              className="w-1 h-2 bg-[#ff8c5a] rounded-full"
-            />
-          </div>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+            className="w-px h-16 bg-gradient-to-b from-transparent via-white to-transparent"
+          />
         </motion.div>
       </section>
 
 
 
       {/* Spaces Section */}
-      <section id="nos-espaces" className="py-32 px-8 bg-white">
+      <section id="nos-espaces" className="py-32 md:py-40 px-8 md:px-16 bg-white">
         <div className="max-w-7xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-20 text-left"
+            transition={{ duration: 0.8 }}
+            className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-6 text-[#0D0D0D]">
-              Nos Espaces Modulables
+            <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Espaces</p>
+            <h2 className="text-3xl md:text-5xl font-light text-[#0D0D0D] tracking-tight mb-6">
+              Nos <span className="font-normal text-[#ff8c5a]">Espaces</span>
             </h2>
-            <p className="text-xl text-gray-500 font-light max-w-2xl">
-              700m² à configurer selon vos besoins
+            <p className="text-gray-600 max-w-2xl mx-auto font-light">
+              Découvrez les différents espaces modulables du Tripot Régnier
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
             {spaces.map((space, index) => (
               <SpaceCard key={space.title} {...space} index={index} />
             ))}
@@ -230,49 +229,50 @@ export default function Home() {
       </section>
 
       {/* Configurations Section */}
-      <section className="py-32 px-8 bg-[#F9F9F7]">
+      <section className="py-32 md:py-40 px-8 md:px-16 bg-[#FAFAFA]">
         <div className="max-w-7xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-20 text-left"
+            transition={{ duration: 0.8 }}
+            className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-6 text-[#0D0D0D]">
-              Configurations Possibles
+            <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Configurations</p>
+            <h2 className="text-3xl md:text-5xl font-light text-[#0D0D0D] tracking-tight mb-6">
+              Adaptable à vos <span className="font-normal text-[#ff8c5a]">besoins</span>
             </h2>
-            <p className="text-xl text-gray-500 font-light max-w-2xl">
-              Une salle qui s'adapte à tous vos événements
+            <p className="text-gray-600 max-w-2xl mx-auto font-light">
+              Notre salle s'adapte à tous vos événements avec une capacité jusqu'à 500 personnes
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
             {configurations.map((config, index) => (
               <motion.div
                 key={config.name}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white group overflow-hidden hover:shadow-xl transition-shadow duration-300 rounded-lg"
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+                className="group"
               >
-                <div className="relative h-48 overflow-hidden rounded-t-lg">
+                <div className="relative h-80 overflow-hidden mb-6">
                   <img 
                     src={config.image}
                     alt={config.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-4 left-4">
-                    <div className="w-10 h-10 bg-[#ff8c5a] flex items-center justify-center mb-2 rounded-md">
-                      <config.icon className="w-5 h-5 text-[#0D0D0D]" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-8 h-8 bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20">
+                        <config.icon className="w-4 h-4 text-white" />
+                      </div>
                     </div>
+                    <h3 className="text-white text-xl font-light tracking-wide mb-1">{config.name}</h3>
+                    <p className="text-white/80 text-sm font-light">{config.capacity}</p>
                   </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="font-medium text-[#0D0D0D] text-lg mb-1">{config.name}</h3>
-                  <p className="text-[#ff8c5a] font-medium">{config.capacity}</p>
                 </div>
               </motion.div>
             ))}
@@ -282,93 +282,83 @@ export default function Home() {
 
 
 
-      {/* Nos Clients Section */}
-      <section className="py-32 px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            {/* Texte à gauche */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-left"
-            >
-              <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-6 text-[#0D0D0D]">
-                Nos Clients
-              </h2>
-              <p className="text-xl text-gray-500 font-light max-w-2xl mb-12">
-                Ils nous ont fait confiance pour leurs événements
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link 
-                  to={createPageUrl('Engagements')}
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#ff8c5a] text-white font-medium tracking-tight hover:bg-[#e67a47] transition-all duration-500 rounded-md hover:shadow-xl hover:shadow-[#ff8c5a]/20"
-                >
-                  Nos engagements
-                </Link>
-                
-                <Link 
-                  to={createPageUrl('Contact')}
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-[#0D0D0D]/20 text-[#0D0D0D] hover:bg-[#0D0D0D]/5 font-medium tracking-tight transition-all duration-500 rounded-md"
-                >
-                  Nous contacter
-                </Link>
-              </div>
-            </motion.div>
-            
-            {/* Roue à droite */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="flex items-center justify-center"
-            >
-              <div className="w-full max-w-lg aspect-square bg-white border-2 border-dashed border-gray-300 flex items-center justify-center rounded-lg">
-                <div className="text-center p-8">
-                  <p className="text-gray-500 text-lg mb-2">Emplacement réservé</p>
-                  <p className="text-gray-400 text-sm">Visuel roue des logos clients</p>
-                  <p className="text-gray-400 text-xs mt-2">Format recommandé : carré (ex: 800x800px)</p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
       {/* Testimonials Section */}
-      <section className="py-32 px-8 bg-[#F9F9F7]">
+      <section className="py-32 md:py-40 px-8 md:px-16 bg-white">
         <div className="max-w-7xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-20 text-left"
+            transition={{ duration: 0.8 }}
+            className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-6 text-[#0D0D0D]">
-              Ils nous font confiance
+            <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Témoignages</p>
+            <h2 className="text-3xl md:text-5xl font-light text-[#0D0D0D] tracking-tight mb-6">
+              Ils nous font <span className="font-normal text-[#ff8c5a]">confiance</span>
             </h2>
-            <p className="text-xl text-gray-500 font-light max-w-2xl">
-              Découvrez les retours de nos clients
-            </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {testimonials.map((testimonial, index) => (
-              <TestimonialCard key={index} {...testimonial} index={index} />
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.15, duration: 0.6 }}
+                className="text-left"
+              >
+                <p className="text-gray-700 text-base leading-relaxed mb-8 font-light italic">
+                  "{testimonial.quote}"
+                </p>
+                
+                <div className="pt-6 border-t border-gray-200">
+                  <p className="text-[#0D0D0D] font-normal text-sm mb-1">{testimonial.author}</p>
+                  <p className="text-gray-500 text-xs font-light">{testimonial.company}</p>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Banner */}
-      <CTABanner 
-        title="Venez découvrir le lieu"
-        subtitle="Organisez votre prochain événement dans un cadre unique au cœur de Paris"
-      />
+      {/* CTA Section */}
+      <section className="py-32 md:py-40 px-8 md:px-16 bg-[#0D0D0D]">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-5xl text-white font-light tracking-tight mb-8">
+              Venez découvrir le <span className="font-normal text-[#ff8c5a]">lieu</span>
+            </h2>
+            <p className="text-white/80 text-lg mb-12 font-light max-w-2xl mx-auto">
+              Organisez votre prochain événement dans un cadre unique au cœur de Paris
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                to={createPageUrl('Contact')}
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-[#0D0D0D] font-normal tracking-wider text-sm hover:bg-[#ff8c5a] hover:text-white transition-all duration-500"
+              >
+                NOUS CONTACTER
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              
+              <Link 
+                to={createPageUrl('Engagements')}
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-white/30 text-white font-normal tracking-wider text-sm hover:bg-white/10 transition-all duration-500"
+              >
+                NOS ENGAGEMENTS
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+
     </div>
   );
 }
