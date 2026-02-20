@@ -111,7 +111,7 @@ export default function Layout({ children, currentPageName }) {
               ))}
               <Link
                 to={createPageUrl('Contact')}
-                className="px-6 py-2.5 bg-[#ff8c5a] text-white text-xs font-semibold tracking-[0.12em] uppercase hover:bg-[#e67a47] transition-all duration-300 rounded-lg"
+                className="px-6 py-2.5 bg-[#ff8c5a] text-white text-xs font-semibold tracking-[0.12em] uppercase hover:bg-[#e67a47] transition-all duration-300 rounded"
               >
                 CONTACT
               </Link>
@@ -167,7 +167,7 @@ export default function Layout({ children, currentPageName }) {
                 >
                   <Link
                     to={createPageUrl('Contact')}
-                    className="block w-full py-3 bg-[#ff8c5a] text-white text-center font-medium tracking-wide rounded-md"
+                    className="block w-full py-3 bg-[#ff8c5a] text-white text-center font-medium tracking-wide rounded"
                   >
                     NOUS CONTACTER
                   </Link>

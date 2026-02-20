@@ -176,10 +176,10 @@ export default function Home() {
           >
             <a
               href="#nos-espaces"
-              className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-[#0D0D0D] font-semibold tracking-wider text-sm hover:bg-[#ff8c5a] hover:text-white transition-all duration-500 shadow-lg hover:shadow-2xl rounded-lg"
+              className="group inline-flex items-center gap-3 px-10 py-4 bg-white text-[#0D0D0D] font-semibold tracking-wider text-sm hover:bg-[#ff8c5a] hover:text-white transition-all duration-300 shadow-xl hover:shadow-2xl rounded"
             >
               DÉCOUVRIR LE LIEU
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
             </a>
           </motion.div>
         </div>
@@ -289,14 +289,14 @@ export default function Home() {
       </section>
 
       {/* Configurations Section */}
-      <section className="py-32 md:py-40 px-8 md:px-16 bg-[#FAFAFA]">
+      <section className="py-20 md:py-28 px-6 bg-[#FAFAFA] overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-20"
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="text-center mb-16"
           >
             <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Configurations</p>
             <h2 className="text-3xl md:text-5xl font-semibold text-[#0D0D0D] tracking-tight mb-6">
@@ -307,32 +307,36 @@ export default function Home() {
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {configurations.map((config, index) => (
               <motion.div
                 key={config.name}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: index * 0.06, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 className="group"
               >
-                <div className="relative h-80 overflow-hidden mb-6">
+                <div className="relative h-80 overflow-hidden rounded">
                   <img 
                     src={config.image}
                     alt={config.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                  <div className="absolute bottom-6 left-6 right-6">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-[#ff8c5a]/80 transition-all duration-500" />
+                  <motion.div 
+                    className="absolute bottom-6 left-6 right-6"
+                    whileHover={{ y: -8 }}
+                    transition={{ duration: 0.3 }}
+                  >
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="w-8 h-8 bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20">
-                        <config.icon className="w-4 h-4 text-white" />
+                      <div className="w-9 h-9 bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20 rounded">
+                        <config.icon className="w-5 h-5 text-white" />
                       </div>
                     </div>
-                    <h3 className="text-white text-xl font-light tracking-wide mb-1">{config.name}</h3>
-                    <p className="text-white/80 text-sm font-light">{config.capacity}</p>
-                  </div>
+                    <h3 className="text-white text-xl font-semibold tracking-tight mb-1">{config.name}</h3>
+                    <p className="text-white/90 text-sm font-light">{config.capacity}</p>
+                  </motion.div>
                 </div>
               </motion.div>
             ))}
@@ -343,14 +347,14 @@ export default function Home() {
 
 
       {/* Testimonials Section */}
-      <section className="py-32 md:py-40 px-8 md:px-16 bg-white">
+      <section className="py-20 md:py-28 px-6 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-20"
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="text-center mb-16"
           >
             <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Témoignages</p>
             <h2 className="text-3xl md:text-5xl font-semibold text-[#0D0D0D] tracking-tight mb-6">
@@ -358,22 +362,26 @@ export default function Home() {
             </h2>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.15, duration: 0.6 }}
-                className="text-left"
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: index * 0.08, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                className="text-left p-8 bg-[#FAFAFA] hover:bg-white border border-transparent hover:border-gray-200 transition-all duration-300 rounded group"
               >
-                <p className="text-gray-700 text-base leading-relaxed mb-8 font-light italic">
+                <motion.p 
+                  className="text-gray-700 text-base leading-relaxed mb-8 font-light italic"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
+                >
                   "{testimonial.quote}"
-                </p>
+                </motion.p>
                 
                 <div className="pt-6 border-t border-gray-200">
-                  <p className="text-[#0D0D0D] font-normal text-sm mb-1">{testimonial.author}</p>
+                  <p className="text-[#0D0D0D] font-medium text-sm mb-1">{testimonial.author}</p>
                   <p className="text-gray-500 text-xs font-light">{testimonial.company}</p>
                 </div>
               </motion.div>
@@ -383,33 +391,38 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 md:py-40 px-8 md:px-16 bg-[#0D0D0D]">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative py-24 md:py-32 px-6 bg-[#0D0D0D] overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#ff8c5a] rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#ff8c5a] rounded-full blur-3xl" />
+        </div>
+        
+        <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h2 className="text-3xl md:text-5xl text-white font-semibold tracking-tight mb-8">
+            <h2 className="text-3xl md:text-5xl text-white font-semibold tracking-tight mb-6">
               Venez découvrir le <span className="text-[#ff8c5a]">lieu</span>
             </h2>
-            <p className="text-white/90 text-lg mb-12 font-normal max-w-2xl mx-auto">
+            <p className="text-white/80 text-lg mb-10 font-light max-w-2xl mx-auto">
               Organisez votre prochain événement dans un cadre unique au cœur de Paris
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 to={createPageUrl('Contact')}
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-[#0D0D0D] font-semibold tracking-wide text-sm hover:bg-[#ff8c5a] hover:text-white transition-all duration-500 rounded-lg"
+                className="group inline-flex items-center justify-center gap-3 px-10 py-4 bg-white text-[#0D0D0D] font-semibold tracking-wide text-sm hover:bg-[#ff8c5a] hover:text-white transition-all duration-300 rounded shadow-lg hover:shadow-2xl"
               >
                 NOUS CONTACTER
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
               </Link>
               
               <Link 
                 to={createPageUrl('Engagements')}
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-white/30 text-white font-semibold tracking-wide text-sm hover:bg-white/10 transition-all duration-500 rounded-lg"
+                className="inline-flex items-center justify-center gap-3 px-10 py-4 border border-white/30 text-white font-semibold tracking-wide text-sm hover:bg-white/10 hover:border-white/50 transition-all duration-300 rounded"
               >
                 NOS ENGAGEMENTS
               </Link>
