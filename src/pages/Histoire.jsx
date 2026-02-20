@@ -8,7 +8,7 @@ export default function Histoire() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative py-32 px-6 bg-[#0D0D0D] overflow-hidden">
+      <section className="relative py-24 px-6 bg-[#0D0D0D] overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img 
             src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=1920&auto=format"
@@ -38,20 +38,27 @@ export default function Histoire() {
       </section>
 
       {/* Timeline Section */}
-      <section className="py-24 px-6 bg-[#F5F5F0]">
-        <div className="max-w-4xl mx-auto">
-          <div className="space-y-16">
+      <section className="py-20 px-6 bg-[#F5F5F0] relative overflow-hidden">
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-2/3 bg-[#ff8c5a]/5 rounded-l-full blur-3xl" />
+        
+        <div className="max-w-4xl mx-auto relative z-10">
+          <div className="space-y-12">
             {/* 1900s */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
               className="flex gap-8 items-start"
             >
               <div className="flex-shrink-0">
-                <div className="w-20 h-20 bg-[#ff8c5a] flex items-center justify-center rounded-lg">
+                <motion.div 
+                  className="w-20 h-20 bg-[#ff8c5a] flex items-center justify-center"
+                  whileHover={{ scale: 1.05, rotate: 5 }}
+                  transition={{ duration: 0.3 }}
+                >
                   <Calendar className="w-8 h-8 text-white" />
-                </div>
+                </motion.div>
               </div>
               <div className="flex-1 text-left">
                 <div className="inline-block px-4 py-1 bg-[#ff8c5a]/20 text-[#ff8c5a] text-sm font-medium tracking-wide mb-4">
@@ -70,13 +77,18 @@ export default function Histoire() {
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
               className="flex gap-8 items-start"
             >
               <div className="flex-shrink-0">
-                <div className="w-20 h-20 bg-[#ff8c5a] flex items-center justify-center rounded-lg">
+                <motion.div 
+                  className="w-20 h-20 bg-[#ff8c5a] flex items-center justify-center"
+                  whileHover={{ scale: 1.05, rotate: -5 }}
+                  transition={{ duration: 0.3 }}
+                >
                   <Building2 className="w-8 h-8 text-white" />
-                </div>
+                </motion.div>
               </div>
               <div className="flex-1 text-left">
                 <div className="inline-block px-4 py-1 bg-[#ff8c5a]/20 text-[#ff8c5a] text-sm font-medium tracking-wide mb-4">
@@ -95,13 +107,18 @@ export default function Histoire() {
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
               className="flex gap-8 items-start"
             >
               <div className="flex-shrink-0">
-                <div className="w-20 h-20 bg-[#ff8c5a] flex items-center justify-center rounded-lg">
+                <motion.div 
+                  className="w-20 h-20 bg-[#ff8c5a] flex items-center justify-center"
+                  whileHover={{ scale: 1.05, rotate: 5 }}
+                  transition={{ duration: 0.3 }}
+                >
                   <Award className="w-8 h-8 text-white" />
-                </div>
+                </motion.div>
               </div>
               <div className="flex-1 text-left">
                 <div className="inline-block px-4 py-1 bg-[#ff8c5a]/20 text-[#ff8c5a] text-sm font-medium tracking-wide mb-4">
@@ -127,7 +144,7 @@ export default function Histoire() {
       </section>
 
       {/* Origine du nom */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-20 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <SectionTitle 
             title="Origine du Nom"
@@ -137,8 +154,9 @@ export default function Histoire() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="bg-[#F5F5F0] p-8 text-left mt-8 rounded-lg"
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+            className="bg-[#F5F5F0] p-8 text-left mt-8"
           >
             <p className="text-lg text-gray-700 leading-relaxed text-justify">
               Son nom rend hommage au <strong>Tripot Régnier</strong>, célèbre jeu de paume construit 
@@ -150,33 +168,36 @@ export default function Histoire() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 px-6 bg-[#0D0D0D]">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-16 px-6 bg-[#0D0D0D] relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,140,90,0.1),transparent_70%)]" />
+        
+        <div className="max-w-6xl mx-auto relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
               className="text-center"
             >
               <p className="text-5xl font-bold text-[#ff8c5a] mb-2">1904</p>
               <p className="text-gray-400">Construction du bâtiment</p>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ delay: 0.1, duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
               className="text-center"
             >
               <p className="text-5xl font-bold text-[#ff8c5a] mb-2">2016</p>
               <p className="text-gray-400">Ouverture du Tripot Régnier</p>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ delay: 0.2, duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
               className="text-center"
             >
               <p className="text-5xl font-bold text-[#ff8c5a] mb-2">700m²</p>
@@ -187,14 +208,15 @@ export default function Histoire() {
       </section>
 
       {/* Un lieu hybride et moderne Section */}
-      <section className="py-24 px-6 bg-[#F5F5F0]">
+      <section className="py-20 px-6 bg-[#F5F5F0]">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left side - Text & Stats */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
               className="text-left"
             >
               <h2 className="text-3xl md:text-4xl font-semibold text-[#0D0D0D] mb-6 tracking-wide">
@@ -221,7 +243,7 @@ export default function Histoire() {
               </div>
               
               {/* Additional stat */}
-              <div className="inline-block bg-[#ff8c5a] text-white px-6 py-3 rounded-lg">
+              <div className="inline-block bg-[#ff8c5a] text-white px-6 py-3">
                 <p className="text-2xl font-bold">120</p>
                 <p className="text-xs">ans d'histoire</p>
               </div>
@@ -231,13 +253,16 @@ export default function Histoire() {
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative"
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+              className="relative group"
             >
-              <img 
+              <motion.img 
                 src="https://images.unsplash.com/photo-1519167758481-83f29da8c2f0?w=800&auto=format"
                 alt="Salle principale Le Tripot Régnier"
-                className="w-full h-[400px] object-cover rounded-lg shadow-xl"
+                className="w-full h-[400px] object-cover shadow-xl"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.5 }}
               />
             </motion.div>
           </div>

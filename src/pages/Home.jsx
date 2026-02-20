@@ -97,18 +97,6 @@ const configurations = [
   }
 ];
 
-const advantages = [
-  { icon: Car, title: "Entrée véhicules", description: "Exposition possible dans la salle" },
-  { icon: Shirt, title: "Vestiaire équipé", description: "Capacité 450 personnes" },
-  { icon: Speaker, title: "Matériel audiovisuel", description: "Équipement complet inclus" },
-  { icon: ChefHat, title: "Office traiteur", description: "Cuisine professionnelle équipée" },
-  { icon: DoorOpen, title: "Loge aménagée", description: "Avec accès privatif" },
-  { icon: Wine, title: "Bar aménagé", description: "Service professionnel" },
-  { icon: Cigarette, title: "Fumoir", description: "Espace dédié" },
-  { icon: Thermometer, title: "Climatisation", description: "Chauffage et traitement air" },
-  { icon: Wifi, title: "Fibre optique", description: "Wi-Fi très haut débit" }
-];
-
 const testimonials = [
   {
     quote: "Un lieu exceptionnel qui a su sublimer notre événement d'entreprise. L'équipe est professionnelle et réactive. Le cadre Art Déco apporte une touche unique.",
@@ -144,7 +132,7 @@ export default function Home() {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 py-32 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-32 text-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -176,10 +164,10 @@ export default function Home() {
           >
             <a
               href="#nos-espaces"
-              className="group inline-flex items-center gap-3 px-10 py-4 bg-white text-[#0D0D0D] font-semibold tracking-wider text-sm hover:bg-[#ff8c5a] hover:text-white transition-all duration-300 shadow-xl hover:shadow-2xl rounded"
+              className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-[#0D0D0D] font-semibold tracking-wider text-sm hover:bg-[#ff8c5a] hover:text-white transition-all duration-500 shadow-lg hover:shadow-2xl"
             >
               DÉCOUVRIR LE LIEU
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
             </a>
           </motion.div>
         </div>
@@ -207,99 +195,103 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="text-center mb-16"
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+            className="text-center mb-20"
           >
-            <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Nos Espaces</p>
-            <h2 className="text-4xl md:text-6xl font-bold text-[#0D0D0D] tracking-tight mb-6">
+            <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Nos espaces</p>
+            <h2 className="text-4xl md:text-6xl font-semibold text-[#0D0D0D] tracking-tight mb-6">
               700m² <span className="text-[#ff8c5a]">modulables</span>
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-lg font-light">
+            <p className="text-gray-600 max-w-2xl mx-auto font-light text-lg">
               Des espaces pensés pour s'adapter à tous vos événements
             </p>
           </motion.div>
           
-          {/* Featured Main Space */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="mb-10"
-          >
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div className="relative h-[500px] overflow-hidden group rounded">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Premier espace - Large */}
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+              className="lg:row-span-2 group"
+            >
+              <div className="relative h-[600px] overflow-hidden">
                 <motion.img
                   src={spaces[0].image}
                   alt={spaces[0].title}
                   className="w-full h-full object-cover"
                   whileHover={{ scale: 1.08 }}
-                  transition={{ duration: 0.7, ease: "easeOut" }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent group-hover:from-black/90 transition-all duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                <motion.div 
+                  className="absolute bottom-8 left-8 right-8"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3, duration: 0.5 }}
+                >
+                  <h3 className="text-white text-3xl font-semibold tracking-tight mb-2">{spaces[0].title}</h3>
+                  <p className="text-[#ff8c5a] text-lg font-medium mb-3">{spaces[0].surface}</p>
+                  <p className="text-white/90 text-sm leading-relaxed">{spaces[0].description}</p>
+                </motion.div>
               </div>
-              <div className="lg:pl-12 text-left">
-                <div className="inline-block px-4 py-1.5 bg-[#ff8c5a]/10 text-[#ff8c5a] text-xs tracking-wider uppercase mb-6 rounded-full">
-                  Espace Principal
-                </div>
-                <h3 className="text-3xl md:text-4xl font-bold text-[#0D0D0D] mb-4 tracking-tight">
-                  {spaces[0].title}
-                </h3>
-                <p className="text-[#ff8c5a] text-xl font-semibold mb-6">{spaces[0].surface}</p>
-                <p className="text-gray-600 text-lg leading-relaxed font-light">
-                  {spaces[0].description}
-                </p>
-              </div>
-            </div>
-          </motion.div>
+            </motion.div>
 
-          {/* Secondary Spaces Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {spaces.slice(1).map((space, index) => (
-              <motion.div
-                key={space.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: index * 0.06, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                className="group"
-              >
-                <div className="relative h-80 overflow-hidden mb-5 rounded">
-                  <motion.img
-                    src={space.image}
-                    alt={space.title}
-                    className="w-full h-full object-cover"
-                    whileHover={{ scale: 1.08 }}
-                    transition={{ duration: 0.7, ease: "easeOut" }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent group-hover:from-black/80 transition-all duration-500" />
-                </div>
-                <div className="text-left">
-                  <div className="flex items-baseline justify-between mb-2">
-                    <h4 className="text-xl font-semibold text-[#0D0D0D] tracking-tight">{space.title}</h4>
-                    {space.surface && (
-                      <p className="text-[#ff8c5a] text-sm font-medium">{space.surface}</p>
+            {/* Autres espaces */}
+            <div className="grid grid-cols-1 gap-12">
+              {spaces.slice(1).map((space, index) => (
+                <motion.div
+                  key={space.title}
+                  initial={{ opacity: 0, x: 40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ delay: index * 0.1, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+                  className="group"
+                >
+                  <div className="relative h-72 overflow-hidden mb-6">
+                    <motion.img
+                      src={space.image}
+                      alt={space.title}
+                      className="w-full h-full object-cover"
+                      whileHover={{ scale: 1.08 }}
+                      transition={{ duration: 0.6, ease: "easeOut" }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300" />
+                  </div>
+                  
+                  <div className="text-left">
+                    <div className="flex items-baseline justify-between mb-3">
+                      <h3 className="text-[#0D0D0D] text-2xl font-semibold tracking-tight">{space.title}</h3>
+                      {space.surface && (
+                        <p className="text-[#ff8c5a] text-sm font-medium">{space.surface}</p>
+                      )}
+                    </div>
+                    {space.description && (
+                      <p className="text-gray-600 text-sm leading-relaxed font-light">{space.description}</p>
                     )}
                   </div>
-                  {space.description && (
-                    <p className="text-gray-600 text-sm leading-relaxed font-light">{space.description}</p>
-                  )}
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Configurations Section */}
-      <section className="py-20 md:py-28 px-6 bg-[#FAFAFA] overflow-hidden">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-20 md:py-28 px-6 bg-[#FAFAFA] relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#ff8c5a]/5 to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#ff8c5a]/3 rounded-full blur-3xl pointer-events-none" />
+        
+        <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
             className="text-center mb-16"
           >
             <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Configurations</p>
@@ -311,30 +303,32 @@ export default function Home() {
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {configurations.map((config, index) => (
               <motion.div
                 key={config.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: index * 0.06, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                className="group"
+                transition={{ delay: index * 0.08, duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+                className="group cursor-pointer"
               >
-                <div className="relative h-80 overflow-hidden rounded">
-                  <img 
+                <div className="relative h-80 overflow-hidden">
+                  <motion.img 
                     src={config.image}
                     alt={config.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                    className="w-full h-full object-cover"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:from-[#ff8c5a]/80 transition-all duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
                   <motion.div 
                     className="absolute bottom-6 left-6 right-6"
-                    whileHover={{ y: -8 }}
+                    whileHover={{ y: -4 }}
                     transition={{ duration: 0.3 }}
                   >
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="w-9 h-9 bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20 rounded">
+                      <div className="w-10 h-10 bg-[#ff8c5a]/20 backdrop-blur-sm flex items-center justify-center border border-[#ff8c5a]/30 group-hover:bg-[#ff8c5a] group-hover:border-[#ff8c5a] transition-all duration-300">
                         <config.icon className="w-5 h-5 text-white" />
                       </div>
                     </div>
@@ -351,13 +345,13 @@ export default function Home() {
 
 
       {/* Testimonials Section */}
-      <section className="py-20 md:py-28 px-6 bg-white overflow-hidden">
+      <section className="py-20 md:py-28 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
             className="text-center mb-16"
           >
             <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Témoignages</p>
@@ -373,19 +367,15 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: index * 0.08, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                className="text-left p-8 bg-[#FAFAFA] hover:bg-white border border-transparent hover:border-gray-200 transition-all duration-300 rounded group"
+                transition={{ delay: index * 0.1, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+                className="text-left"
               >
-                <motion.p 
-                  className="text-gray-700 text-base leading-relaxed mb-8 font-light italic"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
-                >
+                <p className="text-gray-700 text-base leading-relaxed mb-8 font-light italic">
                   "{testimonial.quote}"
-                </motion.p>
+                </p>
                 
                 <div className="pt-6 border-t border-gray-200">
-                  <p className="text-[#0D0D0D] font-medium text-sm mb-1">{testimonial.author}</p>
+                  <p className="text-[#0D0D0D] font-normal text-sm mb-1">{testimonial.author}</p>
                   <p className="text-gray-500 text-xs font-light">{testimonial.company}</p>
                 </div>
               </motion.div>
@@ -395,38 +385,36 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-24 md:py-32 px-6 bg-[#0D0D0D] overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#ff8c5a] rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#ff8c5a] rounded-full blur-3xl" />
-        </div>
+      <section className="py-20 md:py-28 px-6 bg-[#0D0D0D] relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,140,90,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(255,140,90,0.05),transparent_50%)]" />
         
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <h2 className="text-3xl md:text-5xl text-white font-semibold tracking-tight mb-6">
+            <h2 className="text-3xl md:text-5xl text-white font-semibold tracking-tight mb-8">
               Venez découvrir le <span className="text-[#ff8c5a]">lieu</span>
             </h2>
-            <p className="text-white/80 text-lg mb-10 font-light max-w-2xl mx-auto">
+            <p className="text-white/90 text-lg mb-12 font-normal max-w-2xl mx-auto">
               Organisez votre prochain événement dans un cadre unique au cœur de Paris
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 to={createPageUrl('Contact')}
-                className="group inline-flex items-center justify-center gap-3 px-10 py-4 bg-white text-[#0D0D0D] font-semibold tracking-wide text-sm hover:bg-[#ff8c5a] hover:text-white transition-all duration-300 rounded shadow-lg hover:shadow-2xl"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-[#0D0D0D] font-semibold tracking-wide text-sm hover:bg-[#ff8c5a] hover:text-white transition-all duration-300"
               >
                 NOUS CONTACTER
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                <ArrowRight className="w-4 h-4" />
               </Link>
               
               <Link 
                 to={createPageUrl('Engagements')}
-                className="inline-flex items-center justify-center gap-3 px-10 py-4 border border-white/30 text-white font-semibold tracking-wide text-sm hover:bg-white/10 hover:border-white/50 transition-all duration-300 rounded"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-white/30 text-white font-semibold tracking-wide text-sm hover:bg-white/10 transition-all duration-300"
               >
                 NOS ENGAGEMENTS
               </Link>
