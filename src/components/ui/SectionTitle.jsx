@@ -21,11 +21,11 @@ export default function SectionTitle({
       transition={{ duration: 0.6 }}
       className={`mb-16 ${alignClass}`}
     >
-      <h2 className={`text-4xl md:text-5xl font-medium tracking-tight mb-6 ${light ? 'text-white' : 'text-[#0D0D0D]'}`}>
+      <h2 className={`text-4xl md:text-5xl font-semibold tracking-tight mb-6 ${light ? 'text-white' : 'text-[#0D0D0D]'}`}>
         {title}
       </h2>
       {subtitle && (
-        <p className={`text-xl max-w-2xl font-light ${light ? 'text-white/70' : 'text-gray-500'}`}>
+        <p className={`text-xl max-w-2xl font-normal ${light ? 'text-white/90' : 'text-gray-600'}`}>
           {subtitle}
         </p>
       )}
