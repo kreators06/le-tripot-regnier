@@ -197,7 +197,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-            className="text-center mb-20"
+            className="text-center mb-20 sticky top-0 bg-white z-50 py-8"
           >
             <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Nos espaces</p>
             <h2 className="text-4xl md:text-6xl font-semibold text-[#0D0D0D] tracking-tight mb-6">
@@ -247,7 +247,7 @@ export default function Home() {
               {spaces.slice(1).map((space, index) => (
                 <div 
                   key={space.title}
-                  className="mb-[200px] last:mb-0"
+                  className="mb-[80px] last:mb-0"
                 >
                   <div
                     className="sticky bg-white"
