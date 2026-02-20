@@ -23,13 +23,13 @@ export default function SpaceCard({ title, surface, image, description, index = 
       
       <div className="text-left">
         <div className="flex items-baseline justify-between mb-3">
-          <h3 className="text-[#0D0D0D] text-xl font-light tracking-wide">{title}</h3>
+          <h3 className="text-[#0D0D0D] text-xl font-medium tracking-wide">{title}</h3>
           {surface && (
-            <p className="text-[#ff8c5a] text-sm font-light">{surface}</p>
+            <p className="text-[#ff8c5a] text-sm font-medium">{surface}</p>
           )}
         </div>
         {description && (
-          <p className="text-gray-600 text-sm leading-relaxed font-light">{description}</p>
+          <p className="text-gray-600 text-sm leading-relaxed font-normal">{description}</p>
         )}
       </div>
     </motion.div>

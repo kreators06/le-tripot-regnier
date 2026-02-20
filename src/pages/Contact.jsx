@@ -112,7 +112,7 @@ export default function Contact() {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl text-white font-bold tracking-tight mb-6"
+            className="text-4xl md:text-6xl text-white font-semibold tracking-tight mb-6"
           >
             Contactez-<span className="text-[#ff8c5a]">nous</span>
           </motion.h1>
@@ -120,7 +120,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-white/90 leading-relaxed"
+            className="text-xl text-white/90 leading-relaxed font-normal"
           >
             Parlons de votre projet et créons ensemble un événement inoubliable
           </motion.p>
@@ -254,7 +254,7 @@ export default function Contact() {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-[#ff8c5a] hover:bg-[#e67a47] text-white py-6 text-lg font-semibold tracking-wide border border-[#ff8c5a] hover:border-[#e67a47] rounded-md"
+                    className="w-full bg-[#ff8c5a] hover:bg-[#e67a47] text-white py-6 text-lg font-medium tracking-wide border border-[#ff8c5a] hover:border-[#e67a47] rounded-lg"
                   >
                     {isSubmitting ? (
                       <>
@@ -281,7 +281,7 @@ export default function Contact() {
             >
               {/* Google Map */}
               <div>
-                <h3 className="text-2xl font-semibold text-[#0D0D0D] mb-6 tracking-wide text-left">
+                <h3 className="text-2xl font-semibold text-[#0D0D0D] mb-6 tracking-tight text-left">
                   Notre <span className="text-[#ff8c5a]">localisation</span>
                 </h3>
                 <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
@@ -300,7 +300,7 @@ export default function Contact() {
 
               {/* Booking Widget Placeholder */}
               <div>
-                <h3 className="text-2xl font-semibold text-[#0D0D0D] mb-6 tracking-wide text-left">
+                <h3 className="text-2xl font-semibold text-[#0D0D0D] mb-6 tracking-tight text-left">
                   Réserver <span className="text-[#ff8c5a]">une visite</span>
                 </h3>
                 <div className="bg-[#F5F5F0] p-8 rounded-lg text-left shadow-md">
@@ -314,7 +314,7 @@ export default function Contact() {
                     Intégration du widget Joy pour la prise de rendez-vous en ligne
                   </p>
                   <Button
-                    className="bg-[#0D0D0D] hover:bg-[#2A2A2A] text-white rounded-md"
+                    className="bg-[#0D0D0D] hover:bg-[#2A2A2A] text-white rounded-lg"
                   >
                     Prendre rendez-vous
                   </Button>
