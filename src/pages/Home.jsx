@@ -131,92 +131,96 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Video Background */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
+        {/* Large Image Background */}
         <div className="absolute inset-0">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
+          <img
+            src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1920&auto=format"
+            alt="Le Tripot Régnier"
             className="w-full h-full object-cover"
-            poster="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1920&auto=format"
-          >
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-people-at-a-party-dancing-in-the-dark-4553-large.mp4" type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-black/60" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+          />
+          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 max-w-5xl mx-auto px-6 text-left">
+        <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 py-32 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1, ease: "easeOut" }}
           >
-            <h1 className="text-3xl md:text-5xl lg:text-6xl text-white font-semibold tracking-wide mb-6 leading-tight">
+            <p className="text-sm md:text-base text-white/80 tracking-[0.3em] uppercase mb-8 font-light">
+              Événementiel Premium — Paris 15ème
+            </p>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl text-white font-light tracking-tight mb-10 leading-[1.1]">
               Salle parisienne où vos<br />
-              <span className="text-[#ff8c5a]">événements prennent vie.</span>
+              <span className="text-[#ff8c5a] font-normal">événements prennent vie</span>
             </h1>
           </motion.div>
 
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg md:text-xl text-gray-200 max-w-3xl mb-10 leading-relaxed text-justify"
+            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+            className="text-base md:text-lg text-white/90 max-w-2xl mx-auto mb-12 leading-relaxed font-light"
           >
-            Situé dans le 15ème arrondissement de Paris, notre salle de réception est entièrement équipée 
-            en son, lumières et projections vidéo. Inspiré de l'Art Déco et Industriel, ce bâtiment de 1904 
-            a été entièrement rénové, ce qui en fait un lieu unique à Paris.
+            700m² modulables alliant Art Déco et Industriel au cœur de Paris. 
+            Un lieu unique entièrement rénové pour sublimer vos événements.
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
           >
             <a
               href="#nos-espaces"
-              className="group inline-flex items-center gap-3 px-10 py-5 bg-[#ff8c5a] text-white font-medium tracking-wide text-lg hover:bg-[#e67a47] transition-all duration-300 border border-[#ff8c5a] hover:border-[#e67a47] rounded-md"
+              className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-[#0D0D0D] font-normal tracking-wider text-sm hover:bg-[#ff8c5a] hover:text-white transition-all duration-500 shadow-lg hover:shadow-2xl"
             >
-              Découvrir le lieu
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+              DÉCOUVRIR LE LIEU
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
             </a>
           </motion.div>
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Minimal Scroll Indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          transition={{ delay: 1.5 }}
+          className="absolute bottom-12 left-1/2 -translate-x-1/2"
         >
-          <div className="w-6 h-10 border-2 border-white/30 flex items-start justify-center p-2 rounded-full">
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ repeat: Infinity, duration: 1.5 }}
-              className="w-1 h-2 bg-[#ff8c5a] rounded-full"
-            />
-          </div>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+            className="w-px h-16 bg-gradient-to-b from-transparent via-white to-transparent"
+          />
         </motion.div>
       </section>
 
 
 
       {/* Spaces Section */}
-      <section id="nos-espaces" className="py-24 px-6 bg-[#0D0D0D]">
+      <section id="nos-espaces" className="py-32 md:py-40 px-8 md:px-16 bg-white">
         <div className="max-w-7xl mx-auto">
-          <SectionTitle 
-            title="Nos Espaces"
-            subtitle="Découvrez les différents espaces modulables du Tripot Régnier"
-            light
-            align="left"
-          />
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-20"
+          >
+            <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Espaces</p>
+            <h2 className="text-3xl md:text-5xl font-light text-[#0D0D0D] tracking-tight mb-6">
+              Nos <span className="font-normal text-[#ff8c5a]">Espaces</span>
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto font-light">
+              Découvrez les différents espaces modulables du Tripot Régnier
+            </p>
+          </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
             {spaces.map((space, index) => (
               <SpaceCard key={space.title} {...space} index={index} />
             ))}
