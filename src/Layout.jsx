@@ -39,6 +39,10 @@ export default function Layout({ children, currentPageName }) {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
         
+        html {
+          scroll-behavior: smooth;
+        }
+
         body {
           font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
           -webkit-font-smoothing: antialiased;

@@ -247,10 +247,10 @@ export default function Home() {
               {spaces.slice(1).map((space, index) => (
                 <div 
                   key={space.title}
-                  className="mb-[400px] last:mb-0"
+                  className="mb-[200px] last:mb-0"
                 >
                   <div
-                    className="sticky bg-white shadow-2xl"
+                    className="sticky bg-white"
                     style={{ 
                       top: `calc(8rem + ${index * 1.5}rem)`,
                     }}
