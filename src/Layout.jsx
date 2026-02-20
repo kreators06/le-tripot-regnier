@@ -37,17 +37,16 @@ export default function Layout({ children, currentPageName }) {
   return (
     <div className="min-h-screen bg-white">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
         
         body {
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
         
         h1, h2, h3, h4, h5, h6 {
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-          letter-spacing: -0.02em;
+          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
         }
         
         .nav-link {
@@ -90,8 +89,8 @@ export default function Layout({ children, currentPageName }) {
           <div className="flex items-center justify-between h-24">
             {/* Logo */}
             <Link to={createPageUrl('Home')} className="flex items-center gap-3 group">
-              <div className="w-12 h-12 bg-white flex items-center justify-center border border-[#0D0D0D]/10 transition-all duration-300 group-hover:border-[#ff8c5a]">
-                <span className="text-[#0D0D0D] font-light text-xl tracking-wider">TR</span>
+              <div className="w-12 h-12 bg-white flex items-center justify-center border border-[#0D0D0D]/10 transition-all duration-300 group-hover:border-[#ff8c5a] rounded-md">
+                <span className="text-[#0D0D0D] font-medium text-xl tracking-wider">TR</span>
               </div>
             </Link>
 
@@ -101,10 +100,10 @@ export default function Layout({ children, currentPageName }) {
                 <Link
                   key={link.page}
                   to={createPageUrl(link.page)}
-                  className={`text-xs tracking-[0.15em] uppercase transition-colors font-light ${
+                  className={`text-xs tracking-[0.12em] uppercase transition-colors font-medium ${
                     currentPageName === link.page 
                       ? 'text-[#ff8c5a]' 
-                      : 'text-white/90 hover:text-white'
+                      : 'text-white hover:text-white/90'
                   }`}
                 >
                   {link.name}
@@ -112,15 +111,7 @@ export default function Layout({ children, currentPageName }) {
               ))}
             </nav>
 
-            {/* CTA Button */}
-            <div className="hidden lg:block">
-              <Link
-                to={createPageUrl('Contact')}
-                className="px-6 py-3 bg-white text-[#0D0D0D] text-xs font-normal tracking-[0.15em] uppercase hover:bg-[#ff8c5a] hover:text-white transition-all duration-500"
-              >
-                CONTACT
-              </Link>
-            </div>
+
 
             {/* Mobile Menu Button */}
             <button
