@@ -243,36 +243,56 @@ export default function Home() {
             </div>
 
             {/* Autres espaces - Stacking cards */}
-            <div className="space-y-8">
+            <div className="space-y-6">
               {spaces.slice(1).map((space, index) => (
                 <div 
                   key={space.title}
-                  className="sticky"
-                  style={{ top: `${8 + index * 2}rem` }}
+                  className="sticky transition-all duration-700 ease-out"
+                  style={{ 
+                    top: `${6 + index * 1.5}rem`,
+                    zIndex: spaces.length - index
+                  }}
                 >
                   <motion.div
-                    initial={{ opacity: 0, y: 60, scale: 0.95 }}
+                    initial={{ opacity: 0, y: 80, scale: 0.92 }}
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                    viewport={{ once: false, margin: "-20%" }}
+                    viewport={{ once: false, margin: "-15%", amount: 0.3 }}
                     transition={{ 
-                      duration: 0.6, 
-                      ease: [0.25, 0.1, 0.25, 1],
-                      delay: index * 0.05
+                      duration: 0.8, 
+                      ease: [0.16, 1, 0.3, 1],
+                      opacity: { duration: 0.5 }
                     }}
-                    className="bg-white group"
+                    className="bg-white group shadow-xl hover:shadow-2xl transition-shadow duration-500"
+                    style={{
+                      transformOrigin: "top center"
+                    }}
                   >
-                    <div className="relative h-80 overflow-hidden mb-6 shadow-lg">
+                    <div className="relative h-80 overflow-hidden mb-6">
                       <motion.img
                         src={space.image}
                         alt={space.title}
                         className="w-full h-full object-cover"
+                        initial={{ scale: 1.1 }}
+                        whileInView={{ scale: 1 }}
+                        viewport={{ once: false, margin: "-15%" }}
+                        transition={{ duration: 1, ease: "easeOut" }}
                         whileHover={{ scale: 1.08 }}
-                        transition={{ duration: 0.6, ease: "easeOut" }}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent group-hover:from-black/80 transition-all duration-500" />
+                      <motion.div 
+                        className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"
+                        initial={{ opacity: 0.7 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ duration: 0.6 }}
+                      />
                     </div>
                     
-                    <div className="text-left px-2">
+                    <motion.div 
+                      className="text-left px-2 pb-6"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: false, margin: "-15%" }}
+                      transition={{ duration: 0.6, delay: 0.2 }}
+                    >
                       <div className="flex items-baseline justify-between mb-3">
                         <h3 className="text-[#0D0D0D] text-2xl font-semibold tracking-tight">{space.title}</h3>
                         {space.surface && (
@@ -282,7 +302,7 @@ export default function Home() {
                       {space.description && (
                         <p className="text-gray-600 text-sm leading-relaxed font-light">{space.description}</p>
                       )}
-                    </div>
+                    </motion.div>
                   </motion.div>
                 </div>
               ))}
