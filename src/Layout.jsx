@@ -96,7 +96,7 @@ export default function Layout({ children, currentPageName }) {
 
             {/* Desktop Nav */}
             <nav className="hidden lg:flex items-center gap-10">
-              {navLinks.map((link) => (
+              {navLinks.slice(0, -1).map((link) => (
                 <Link
                   key={link.page}
                   to={createPageUrl(link.page)}
@@ -109,10 +109,9 @@ export default function Layout({ children, currentPageName }) {
                   {link.name}
                 </Link>
               ))}
-
               <Link
                 to={createPageUrl('Contact')}
-                className="ml-4 px-6 py-2.5 bg-[#ff8c5a] text-white text-xs font-semibold tracking-[0.12em] uppercase hover:bg-[#e67a47] transition-all duration-300 rounded-lg"
+                className="px-6 py-2.5 bg-[#ff8c5a] text-white text-xs font-semibold tracking-[0.12em] uppercase hover:bg-[#e67a47] transition-all duration-300 rounded-lg"
               >
                 CONTACT
               </Link>
