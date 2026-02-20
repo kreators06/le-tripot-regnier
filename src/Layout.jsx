@@ -109,6 +109,13 @@ export default function Layout({ children, currentPageName }) {
                   {link.name}
                 </Link>
               ))}
+
+              <Link
+                to={createPageUrl('Contact')}
+                className="ml-4 px-6 py-2.5 bg-[#ff8c5a] text-white text-xs font-semibold tracking-[0.12em] uppercase hover:bg-[#e67a47] transition-all duration-300 rounded-lg"
+              >
+                CONTACT
+              </Link>
             </nav>
 
 

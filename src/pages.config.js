@@ -49,28 +49,28 @@
  */
 import CGU from './pages/CGU';
 import Capacites from './pages/Capacites';
-import Contact from './pages/Contact';
-import Engagements from './pages/Engagements';
 import Equipe from './pages/Equipe';
 import Galerie from './pages/Galerie';
 import Histoire from './pages/Histoire';
-import Home from './pages/Home';
 import MentionsLegales from './pages/MentionsLegales';
 import PolitiqueConfidentialite from './pages/PolitiqueConfidentialite';
+import Contact from './pages/Contact';
+import Engagements from './pages/Engagements';
+import Home from './pages/Home';
 import __Layout from './Layout.jsx';
 
 
 export const PAGES = {
     "CGU": CGU,
     "Capacites": Capacites,
-    "Contact": Contact,
-    "Engagements": Engagements,
     "Equipe": Equipe,
     "Galerie": Galerie,
     "Histoire": Histoire,
-    "Home": Home,
     "MentionsLegales": MentionsLegales,
     "PolitiqueConfidentialite": PolitiqueConfidentialite,
+    "Contact": Contact,
+    "Engagements": Engagements,
+    "Home": Home,
 }
 
 export const pagesConfig = {
