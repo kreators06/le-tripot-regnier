@@ -208,72 +208,83 @@ export default function Home() {
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Premier espace - Large */}
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-              className="lg:row-span-2 group"
-            >
-              <div className="relative h-[600px] overflow-hidden">
-                <motion.img
-                  src={spaces[0].image}
-                  alt={spaces[0].title}
-                  className="w-full h-full object-cover"
-                  whileHover={{ scale: 1.08 }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                <motion.div 
-                  className="absolute bottom-8 left-8 right-8"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3, duration: 0.5 }}
-                >
-                  <h3 className="text-white text-3xl font-semibold tracking-tight mb-2">{spaces[0].title}</h3>
-                  <p className="text-[#ff8c5a] text-lg font-medium mb-3">{spaces[0].surface}</p>
-                  <p className="text-white/90 text-sm leading-relaxed">{spaces[0].description}</p>
-                </motion.div>
-              </div>
-            </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            {/* Premier espace - Large - Sticky */}
+            <div className="lg:sticky lg:top-32">
+              <motion.div
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+                className="group"
+              >
+                <div className="relative h-[600px] overflow-hidden">
+                  <motion.img
+                    src={spaces[0].image}
+                    alt={spaces[0].title}
+                    className="w-full h-full object-cover"
+                    whileHover={{ scale: 1.08 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                  <motion.div 
+                    className="absolute bottom-8 left-8 right-8"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.3, duration: 0.5 }}
+                  >
+                    <h3 className="text-white text-3xl font-semibold tracking-tight mb-2">{spaces[0].title}</h3>
+                    <p className="text-[#ff8c5a] text-lg font-medium mb-3">{spaces[0].surface}</p>
+                    <p className="text-white/90 text-sm leading-relaxed">{spaces[0].description}</p>
+                  </motion.div>
+                </div>
+              </motion.div>
+            </div>
 
-            {/* Autres espaces */}
-            <div className="grid grid-cols-1 gap-12">
+            {/* Autres espaces - Stacking cards */}
+            <div className="space-y-8">
               {spaces.slice(1).map((space, index) => (
-                <motion.div
+                <div 
                   key={space.title}
-                  initial={{ opacity: 0, x: 40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ delay: index * 0.1, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-                  className="group"
+                  className="sticky"
+                  style={{ top: `${8 + index * 2}rem` }}
                 >
-                  <div className="relative h-72 overflow-hidden mb-6">
-                    <motion.img
-                      src={space.image}
-                      alt={space.title}
-                      className="w-full h-full object-cover"
-                      whileHover={{ scale: 1.08 }}
-                      transition={{ duration: 0.6, ease: "easeOut" }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300" />
-                  </div>
-                  
-                  <div className="text-left">
-                    <div className="flex items-baseline justify-between mb-3">
-                      <h3 className="text-[#0D0D0D] text-2xl font-semibold tracking-tight">{space.title}</h3>
-                      {space.surface && (
-                        <p className="text-[#ff8c5a] text-sm font-medium">{space.surface}</p>
+                  <motion.div
+                    initial={{ opacity: 0, y: 60, scale: 0.95 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    viewport={{ once: false, margin: "-20%" }}
+                    transition={{ 
+                      duration: 0.6, 
+                      ease: [0.25, 0.1, 0.25, 1],
+                      delay: index * 0.05
+                    }}
+                    className="bg-white group"
+                  >
+                    <div className="relative h-80 overflow-hidden mb-6 shadow-lg">
+                      <motion.img
+                        src={space.image}
+                        alt={space.title}
+                        className="w-full h-full object-cover"
+                        whileHover={{ scale: 1.08 }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent group-hover:from-black/80 transition-all duration-500" />
+                    </div>
+                    
+                    <div className="text-left px-2">
+                      <div className="flex items-baseline justify-between mb-3">
+                        <h3 className="text-[#0D0D0D] text-2xl font-semibold tracking-tight">{space.title}</h3>
+                        {space.surface && (
+                          <p className="text-[#ff8c5a] text-sm font-medium">{space.surface}</p>
+                        )}
+                      </div>
+                      {space.description && (
+                        <p className="text-gray-600 text-sm leading-relaxed font-light">{space.description}</p>
                       )}
                     </div>
-                    {space.description && (
-                      <p className="text-gray-600 text-sm leading-relaxed font-light">{space.description}</p>
-                    )}
-                  </div>
-                </motion.div>
+                  </motion.div>
+                </div>
               ))}
             </div>
           </div>
