@@ -52,7 +52,7 @@ export default function Galerie() {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl text-white font-semibold tracking-wide mb-6"
+            className="text-4xl md:text-6xl text-white font-bold tracking-tight mb-6"
           >
             Notre <span className="text-[#ff8c5a]">Galerie</span>
           </motion.h1>
@@ -60,7 +60,7 @@ export default function Galerie() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-gray-200 leading-relaxed"
+            className="text-xl text-white/90 leading-relaxed"
           >
             Découvrez l'ambiance unique du Tripot Régnier à travers nos photos
           </motion.p>

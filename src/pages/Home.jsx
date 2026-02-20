@@ -239,10 +239,10 @@ export default function Home() {
             className="text-center mb-20"
           >
             <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Configurations</p>
-            <h2 className="text-3xl md:text-5xl font-light text-[#0D0D0D] tracking-tight mb-6">
-              Adaptable à vos <span className="font-normal text-[#ff8c5a]">besoins</span>
+            <h2 className="text-3xl md:text-5xl font-semibold text-[#0D0D0D] tracking-tight mb-6">
+              Adaptable à vos <span className="text-[#ff8c5a]">besoins</span>
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto font-light">
+            <p className="text-gray-600 max-w-2xl mx-auto font-normal">
               Notre salle s'adapte à tous vos événements avec une capacité jusqu'à 500 personnes
             </p>
           </motion.div>
@@ -293,8 +293,8 @@ export default function Home() {
             className="text-center mb-20"
           >
             <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Témoignages</p>
-            <h2 className="text-3xl md:text-5xl font-light text-[#0D0D0D] tracking-tight mb-6">
-              Ils nous font <span className="font-normal text-[#ff8c5a]">confiance</span>
+            <h2 className="text-3xl md:text-5xl font-semibold text-[#0D0D0D] tracking-tight mb-6">
+              Ils nous font <span className="text-[#ff8c5a]">confiance</span>
             </h2>
           </motion.div>
           
@@ -331,17 +331,17 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-5xl text-white font-light tracking-tight mb-8">
-              Venez découvrir le <span className="font-normal text-[#ff8c5a]">lieu</span>
+            <h2 className="text-3xl md:text-5xl text-white font-semibold tracking-tight mb-8">
+              Venez découvrir le <span className="text-[#ff8c5a]">lieu</span>
             </h2>
-            <p className="text-white/80 text-lg mb-12 font-light max-w-2xl mx-auto">
+            <p className="text-white/90 text-lg mb-12 font-normal max-w-2xl mx-auto">
               Organisez votre prochain événement dans un cadre unique au cœur de Paris
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 to={createPageUrl('Contact')}
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-[#0D0D0D] font-normal tracking-wider text-sm hover:bg-[#ff8c5a] hover:text-white transition-all duration-500"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-[#0D0D0D] font-semibold tracking-wide text-sm hover:bg-[#ff8c5a] hover:text-white transition-all duration-500 rounded-md"
               >
                 NOUS CONTACTER
                 <ArrowRight className="w-4 h-4" />
@@ -349,7 +349,7 @@ export default function Home() {
               
               <Link 
                 to={createPageUrl('Engagements')}
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-white/30 text-white font-normal tracking-wider text-sm hover:bg-white/10 transition-all duration-500"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-white/30 text-white font-semibold tracking-wide text-sm hover:bg-white/10 transition-all duration-500 rounded-md"
               >
                 NOS ENGAGEMENTS
               </Link>
