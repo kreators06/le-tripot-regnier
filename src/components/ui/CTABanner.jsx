@@ -52,7 +52,7 @@ export default function CTABanner({
         >
           <Link 
             to={createPageUrl('Contact')}
-            className="group inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#ff8c5a] text-white font-medium tracking-tight hover:bg-[#e67a47] transition-all duration-500 rounded-lg hover:shadow-xl hover:shadow-[#ff8c5a]/20"
+            className="group inline-flex items-center justify-center gap-3 px-10 py-5 bg-[#ff8c5a] text-white font-semibold tracking-tight hover:bg-[#e67a47] transition-all duration-500 rounded-md hover:shadow-xl hover:shadow-[#ff8c5a]/20"
           >
             {primaryText}
             <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-500" />
@@ -60,7 +60,7 @@ export default function CTABanner({
           
           <Link 
             to={createPageUrl('Contact')}
-            className={`group inline-flex items-center justify-center gap-3 px-10 py-5 border ${isDark ? 'border-white/20 text-white hover:bg-white/5' : 'border-[#0D0D0D]/20 text-[#0D0D0D] hover:bg-[#0D0D0D]/5'} font-medium tracking-tight transition-all duration-500 rounded-lg`}
+            className={`group inline-flex items-center justify-center gap-3 px-10 py-5 border ${isDark ? 'border-white/20 text-white hover:bg-white/5' : 'border-[#0D0D0D]/20 text-[#0D0D0D] hover:bg-[#0D0D0D]/5'} font-semibold tracking-tight transition-all duration-500 rounded-md`}
           >
             <Calendar className="w-5 h-5" />
             {secondaryText}

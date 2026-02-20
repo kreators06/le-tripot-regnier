@@ -341,7 +341,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 to={createPageUrl('Contact')}
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-[#0D0D0D] font-medium tracking-wider text-sm hover:bg-[#ff8c5a] hover:text-white transition-all duration-500 rounded-lg"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-[#0D0D0D] font-semibold tracking-wide text-sm hover:bg-[#ff8c5a] hover:text-white transition-all duration-500 rounded-md"
               >
                 NOUS CONTACTER
                 <ArrowRight className="w-4 h-4" />
@@ -349,7 +349,7 @@ export default function Home() {
               
               <Link 
                 to={createPageUrl('Engagements')}
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-white/30 text-white font-medium tracking-wider text-sm hover:bg-white/10 transition-all duration-500 rounded-lg"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-white/30 text-white font-semibold tracking-wide text-sm hover:bg-white/10 transition-all duration-500 rounded-md"
               >
                 NOS ENGAGEMENTS
               </Link>
