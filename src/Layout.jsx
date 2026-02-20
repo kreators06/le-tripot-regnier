@@ -89,7 +89,7 @@ export default function Layout({ children, currentPageName }) {
           <div className="flex items-center justify-between h-24">
             {/* Logo */}
             <Link to={createPageUrl('Home')} className="flex items-center gap-3 group">
-              <div className="w-12 h-12 bg-white flex items-center justify-center border border-[#0D0D0D]/10 transition-all duration-300 group-hover:border-[#ff8c5a] rounded-md">
+              <div className="w-12 h-12 bg-white flex items-center justify-center border border-[#0D0D0D]/10 transition-all duration-300 group-hover:border-[#ff8c5a]">
                 <span className="text-[#0D0D0D] font-medium text-xl tracking-wider">TR</span>
               </div>
             </Link>
@@ -188,7 +188,7 @@ export default function Layout({ children, currentPageName }) {
             {/* Brand */}
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-[#ff8c5a] flex items-center justify-center rounded-md">
+                <div className="w-12 h-12 bg-[#ff8c5a] flex items-center justify-center">
                   <span className="text-white font-bold text-xl">TR</span>
                 </div>
               </div>
@@ -243,13 +243,13 @@ export default function Layout({ children, currentPageName }) {
             <div>
               <h4 className="text-[#ff8c5a] font-medium mb-6 tracking-wide">Suivez-nous</h4>
               <div className="flex gap-4">
-                <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-[#ff8c5a] hover:bg-[#ff8c5a]/10 transition-all rounded-md" aria-label="Instagram">
+                <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-[#ff8c5a] hover:bg-[#ff8c5a]/10 transition-all" aria-label="Instagram">
                   <Instagram className="w-5 h-5 text-white" />
                 </a>
-                <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-[#ff8c5a] hover:bg-[#ff8c5a]/10 transition-all rounded-md" aria-label="LinkedIn">
+                <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-[#ff8c5a] hover:bg-[#ff8c5a]/10 transition-all" aria-label="LinkedIn">
                   <Linkedin className="w-5 h-5 text-white" />
                 </a>
-                <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-[#ff8c5a] hover:bg-[#ff8c5a]/10 transition-all rounded-md" aria-label="Facebook">
+                <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-[#ff8c5a] hover:bg-[#ff8c5a]/10 transition-all" aria-label="Facebook">
                   <Facebook className="w-5 h-5 text-white" />
                 </a>
               </div>
