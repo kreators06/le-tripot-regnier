@@ -402,8 +402,29 @@ export default function Home() {
 
 
 
+      {/* Logistique Section */}
+      <section className="py-20 md:py-28 px-6 bg-white" aria-label="Logistique hors-norme lancements de produits accès véhicules">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.4 }}
+            className="text-center mb-16"
+          >
+            <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Capacités logistiques</p>
+            <h2 className="text-3xl md:text-5xl font-semibold text-[#0D0D0D] tracking-tight mb-6">
+              Lancements Automobiles et <span style={{ color: COLORS.ACCENT_COLOR }}>Accès Véhicules</span>
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto font-light text-lg">
+              Accès véhicule direct en salle principale pour lancements produits, expositions automobiles et logistique extraordinaire
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Testimonials Section */}
-      <section className="py-20 md:py-28 px-6 bg-white">
+      <section className="py-20 md:py-28 px-6 bg-[#FAFAFA]">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
