@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { motion } from 'framer-motion';
@@ -117,6 +117,16 @@ const testimonials = [
 ];
 
 export default function Home() {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.log("Autoplay bloqué:", error);
+      });
+    }
+  }, []);
+
   return (
     <div>
       {/* Hero Section */}
@@ -124,14 +134,15 @@ export default function Home() {
         {/* Video Background */}
         <div className="absolute inset-0">
           <video
+            ref={videoRef}
             autoPlay
             loop
             muted
             playsInline
+            preload="auto"
             poster={IMAGES.home.heroPoster}
             className="w-full h-full object-cover"
           >
-            <source src={IMAGES.home.heroVideo} type="video/quicktime" />
             <source src={IMAGES.home.heroVideo} type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-black/40" />
