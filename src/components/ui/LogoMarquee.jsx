@@ -1,12 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { IMAGES } from '@/components/config/images';
 
 export default function LogoMarquee() {
-  // 10 logos monochromes
-  const logos = Array.from({ length: 10 }, (_, i) => ({
-    name: `Brand ${i + 1}`,
-    url: `https://via.placeholder.com/140x70/ffffff/ffffff?text=Brand${i + 1}`,
-  }));
+  // Récupérer les logos depuis la config centralisée
+  const logos = IMAGES.logos;
 
   // Tripler les logos pour un défilement vraiment infini et fluide
   const duplicatedLogos = [...logos, ...logos, ...logos];
