@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { Menu, X, Phone, Mail, MapPin, Instagram, Linkedin, Facebook } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { COLORS } from '@/components/config/colors';
 
 const navLinks = [
   { name: 'Histoire', page: 'Histoire' },
@@ -75,10 +76,10 @@ export default function Layout({ children, currentPageName }) {
           left: 0;
           width: 0;
           height: 1px;
-          background: #ff8c5a;
+          background: ${COLORS.ACCENT_COLOR};
           transition: width 0.3s ease;
         }
-        
+
         .nav-link:hover::after,
         .nav-link.active::after {
           width: 100%;
@@ -93,7 +94,7 @@ export default function Layout({ children, currentPageName }) {
         }
         
         ::-webkit-scrollbar-thumb {
-          background: #ff8c5a;
+          background: ${COLORS.ACCENT_COLOR};
           border-radius: 4px;
         }
       `}</style>
@@ -119,16 +120,23 @@ export default function Layout({ children, currentPageName }) {
                   to={createPageUrl(link.page)}
                   className={`text-xs tracking-[0.12em] uppercase transition-colors font-medium ${
                     currentPageName === link.page 
-                      ? 'text-[#ff8c5a]' 
+                      ? '' 
                       : 'text-white hover:text-white/90'
                   }`}
+                  style={currentPageName === link.page ? { color: COLORS.ACCENT_COLOR } : {}}
                 >
                   {link.name}
                 </Link>
               ))}
               <Link
                 to={createPageUrl('Contact')}
-                className="px-6 py-2.5 bg-[#ff8c5a] text-white text-xs font-semibold tracking-[0.12em] uppercase hover:bg-[#e67a47] transition-all duration-300 rounded"
+                className="px-6 py-2.5 text-white text-xs font-semibold tracking-[0.12em] uppercase transition-all duration-300 rounded"
+                style={{ 
+                  backgroundColor: COLORS.ACCENT_COLOR,
+                  borderColor: COLORS.ACCENT_COLOR
+                }}
+                onMouseEnter={(e) => e.target.style.backgroundColor = COLORS.ACCENT_COLOR_HOVER}
+                onMouseLeave={(e) => e.target.style.backgroundColor = COLORS.ACCENT_COLOR}
               >
                 CONTACT
               </Link>
@@ -168,9 +176,10 @@ export default function Layout({ children, currentPageName }) {
                       to={createPageUrl(link.page)}
                       className={`block py-3 text-lg tracking-wide ${
                         currentPageName === link.page 
-                          ? 'text-[#ff8c5a]' 
+                          ? '' 
                           : 'text-white/90'
                       }`}
+                      style={currentPageName === link.page ? { color: COLORS.ACCENT_COLOR } : {}}
                     >
                       {link.name}
                     </Link>
@@ -184,7 +193,8 @@ export default function Layout({ children, currentPageName }) {
                 >
                   <Link
                     to={createPageUrl('Contact')}
-                    className="block w-full py-3 bg-[#ff8c5a] text-white text-center font-medium tracking-wide rounded"
+                    className="block w-full py-3 text-white text-center font-medium tracking-wide rounded"
+                    style={{ backgroundColor: COLORS.ACCENT_COLOR }}
                   >
                     NOUS CONTACTER
                   </Link>
@@ -205,7 +215,7 @@ export default function Layout({ children, currentPageName }) {
             {/* Brand */}
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-[#ff8c5a] flex items-center justify-center">
+                <div className="w-12 h-12 flex items-center justify-center" style={{ backgroundColor: COLORS.ACCENT_COLOR }}>
                   <span className="text-white font-bold text-xl">TR</span>
                 </div>
               </div>
@@ -216,7 +226,7 @@ export default function Layout({ children, currentPageName }) {
 
             {/* Navigation */}
             <div>
-              <h4 className="text-[#ff8c5a] font-medium mb-6 tracking-wide">Navigation</h4>
+              <h4 className="font-medium mb-6 tracking-wide" style={{ color: COLORS.ACCENT_COLOR }}>Navigation</h4>
               <ul className="space-y-3 text-left">
                 {navLinks.map((link) => (
                   <li key={link.page}>
@@ -233,22 +243,22 @@ export default function Layout({ children, currentPageName }) {
 
             {/* Contact */}
             <div>
-              <h4 className="text-[#ff8c5a] font-medium mb-6 tracking-wide">Contact</h4>
+              <h4 className="font-medium mb-6 tracking-wide" style={{ color: COLORS.ACCENT_COLOR }}>Contact</h4>
               <ul className="space-y-4 text-left">
                 <li className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-[#ff8c5a] flex-shrink-0 mt-0.5" />
+                  <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: COLORS.ACCENT_COLOR }} />
                   <span className="text-gray-400 text-sm">
                     Paris 15ème arrondissement
                   </span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-[#ff8c5a]" />
+                  <Phone className="w-5 h-5" style={{ color: COLORS.ACCENT_COLOR }} />
                   <a href="tel:+33100000000" className="text-gray-400 hover:text-white transition-colors text-sm">
                     +33 1 00 00 00 00
                   </a>
                 </li>
                 <li className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-[#ff8c5a]" />
+                  <Mail className="w-5 h-5" style={{ color: COLORS.ACCENT_COLOR }} />
                   <a href="mailto:contact@tripotregnier.fr" className="text-gray-400 hover:text-white transition-colors text-sm">
                     contact@tripotregnier.fr
                   </a>
@@ -258,15 +268,51 @@ export default function Layout({ children, currentPageName }) {
 
             {/* Social */}
             <div>
-              <h4 className="text-[#ff8c5a] font-medium mb-6 tracking-wide">Suivez-nous</h4>
+              <h4 className="font-medium mb-6 tracking-wide" style={{ color: COLORS.ACCENT_COLOR }}>Suivez-nous</h4>
               <div className="flex gap-4">
-                <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-[#ff8c5a] hover:bg-[#ff8c5a]/10 transition-all" aria-label="Instagram">
+                <a 
+                  href="#" 
+                  className="w-10 h-10 border border-white/20 flex items-center justify-center transition-all" 
+                  aria-label="Instagram"
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = COLORS.ACCENT_COLOR;
+                    e.currentTarget.style.backgroundColor = `${COLORS.ACCENT_COLOR}10`;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)';
+                    e.currentTarget.style.backgroundColor = 'transparent';
+                  }}
+                >
                   <Instagram className="w-5 h-5 text-white" />
                 </a>
-                <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-[#ff8c5a] hover:bg-[#ff8c5a]/10 transition-all" aria-label="LinkedIn">
+                <a 
+                  href="#" 
+                  className="w-10 h-10 border border-white/20 flex items-center justify-center transition-all" 
+                  aria-label="LinkedIn"
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = COLORS.ACCENT_COLOR;
+                    e.currentTarget.style.backgroundColor = `${COLORS.ACCENT_COLOR}10`;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)';
+                    e.currentTarget.style.backgroundColor = 'transparent';
+                  }}
+                >
                   <Linkedin className="w-5 h-5 text-white" />
                 </a>
-                <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:border-[#ff8c5a] hover:bg-[#ff8c5a]/10 transition-all" aria-label="Facebook">
+                <a 
+                  href="#" 
+                  className="w-10 h-10 border border-white/20 flex items-center justify-center transition-all" 
+                  aria-label="Facebook"
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = COLORS.ACCENT_COLOR;
+                    e.currentTarget.style.backgroundColor = `${COLORS.ACCENT_COLOR}10`;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)';
+                    e.currentTarget.style.backgroundColor = 'transparent';
+                  }}
+                >
                   <Facebook className="w-5 h-5 text-white" />
                 </a>
               </div>

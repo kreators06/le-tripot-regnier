@@ -25,6 +25,7 @@ import TestimonialCard from '@/components/ui/TestimonialCard';
 import FeatureIcon from '@/components/ui/FeatureIcon';
 import CTABanner from '@/components/ui/CTABanner';
 import { IMAGES } from '@/components/config/images';
+import { COLORS } from '@/components/config/colors';
 
 const spaces = [
   {
@@ -174,7 +175,7 @@ export default function Home() {
             </p>
             <h1 className="text-5xl md:text-6xl lg:text-7xl text-white font-bold tracking-tight mb-10 leading-[1.1]">
               Salle parisienne où vos<br />
-              <span className="text-[#ff8c5a]">événements prennent vie</span>
+              <span style={{ color: COLORS.ACCENT_COLOR }}>événements prennent vie</span>
             </h1>
           </motion.div>
 
@@ -195,7 +196,9 @@ export default function Home() {
           >
             <a
               href="#nos-espaces"
-              className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-[#0D0D0D] font-semibold tracking-wider text-sm hover:bg-[#ff8c5a] hover:text-white transition-all duration-500 shadow-lg hover:shadow-2xl"
+              className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-[#0D0D0D] font-semibold tracking-wider text-sm hover:text-white transition-all duration-500 shadow-lg hover:shadow-2xl"
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}
             >
               DÉCOUVRIR LE LIEU
               <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
@@ -232,7 +235,7 @@ export default function Home() {
           >
             <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Nos espaces</p>
             <h2 className="text-4xl md:text-6xl font-semibold text-[#0D0D0D] tracking-tight mb-6">
-              700m² <span className="text-[#ff8c5a]">modulables</span>
+              700m² <span style={{ color: COLORS.ACCENT_COLOR }}>modulables</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto font-light text-lg">
               Des espaces pensés pour s'adapter à tous vos événements
@@ -266,7 +269,7 @@ export default function Home() {
                     transition={{ delay: 0.3, duration: 0.5 }}
                   >
                     <h3 className="text-white text-3xl font-semibold tracking-tight mb-2">{spaces[0].title}</h3>
-                    <p className="text-[#ff8c5a] text-lg font-medium mb-3">{spaces[0].surface}</p>
+                    <p className="text-lg font-medium mb-3" style={{ color: COLORS.ACCENT_COLOR }}>{spaces[0].surface}</p>
                     <p className="text-white/90 text-sm leading-relaxed">{spaces[0].description}</p>
                   </motion.div>
                 </div>
@@ -299,7 +302,7 @@ export default function Home() {
                       <div className="flex items-baseline justify-between mb-3">
                         <h3 className="text-[#0D0D0D] text-2xl font-semibold tracking-tight">{space.title}</h3>
                         {space.surface && (
-                          <p className="text-[#ff8c5a] text-sm font-medium">{space.surface}</p>
+                          <p className="text-sm font-medium" style={{ color: COLORS.ACCENT_COLOR }}>{space.surface}</p>
                         )}
                       </div>
                       {space.description && (
@@ -330,7 +333,7 @@ export default function Home() {
           >
             <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Configurations</p>
             <h2 className="text-3xl md:text-5xl font-semibold text-[#0D0D0D] tracking-tight mb-6">
-              Adaptable à vos <span className="text-[#ff8c5a]">besoins</span>
+              Adaptable à vos <span style={{ color: COLORS.ACCENT_COLOR }}>besoins</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto font-normal">
               Notre salle s'adapte à tous vos événements avec une capacité jusqu'à 500 personnes
@@ -362,7 +365,21 @@ export default function Home() {
                     transition={{ duration: 0.3 }}
                   >
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 bg-[#ff8c5a]/20 backdrop-blur-sm flex items-center justify-center border border-[#ff8c5a]/30 group-hover:bg-[#ff8c5a] group-hover:border-[#ff8c5a] transition-all duration-300">
+                      <div 
+                        className="w-10 h-10 backdrop-blur-sm flex items-center justify-center border transition-all duration-300"
+                        style={{ 
+                          backgroundColor: `${COLORS.ACCENT_COLOR}20`,
+                          borderColor: `${COLORS.ACCENT_COLOR}30`
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR;
+                          e.currentTarget.style.borderColor = COLORS.ACCENT_COLOR;
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.backgroundColor = `${COLORS.ACCENT_COLOR}20`;
+                          e.currentTarget.style.borderColor = `${COLORS.ACCENT_COLOR}30`;
+                        }}
+                      >
                         <config.icon className="w-5 h-5 text-white" />
                       </div>
                     </div>
@@ -390,7 +407,7 @@ export default function Home() {
           >
             <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Témoignages</p>
             <h2 className="text-3xl md:text-5xl font-semibold text-[#0D0D0D] tracking-tight mb-6">
-              Ils nous font <span className="text-[#ff8c5a]">confiance</span>
+              Ils nous font <span style={{ color: COLORS.ACCENT_COLOR }}>confiance</span>
             </h2>
           </motion.div>
           
@@ -420,8 +437,18 @@ export default function Home() {
 
       {/* CTA Section */}
       <section className="py-20 md:py-28 px-6 bg-[#0D0D0D] relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,140,90,0.1),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(255,140,90,0.05),transparent_50%)]" />
+        <div 
+          className="absolute inset-0" 
+          style={{ 
+            background: `radial-gradient(circle at 30% 50%, ${COLORS.ACCENT_COLOR}10, transparent 50%)`
+          }} 
+        />
+        <div 
+          className="absolute inset-0" 
+          style={{ 
+            background: `radial-gradient(circle at 70% 50%, ${COLORS.ACCENT_COLOR}05, transparent 50%)`
+          }} 
+        />
         
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.div
@@ -431,7 +458,7 @@ export default function Home() {
             transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <h2 className="text-3xl md:text-5xl text-white font-semibold tracking-tight mb-8">
-              Venez découvrir le <span className="text-[#ff8c5a]">lieu</span>
+              Venez découvrir le <span style={{ color: COLORS.ACCENT_COLOR }}>lieu</span>
             </h2>
             <p className="text-white/90 text-lg mb-12 font-normal max-w-2xl mx-auto">
               Organisez votre prochain événement dans un cadre unique au cœur de Paris
@@ -440,7 +467,9 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 to={createPageUrl('Contact')}
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-[#0D0D0D] font-semibold tracking-wide text-sm hover:bg-[#ff8c5a] hover:text-white transition-all duration-300"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-[#0D0D0D] font-semibold tracking-wide text-sm hover:text-white transition-all duration-300"
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}
               >
                 NOUS CONTACTER
                 <ArrowRight className="w-4 h-4" />
