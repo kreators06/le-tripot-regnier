@@ -50,10 +50,10 @@ export default function LogoMarquee() {
           
           {/* Second set for seamless loop */}
           {logos.map((logo, index) => (
-            <div
-              key={`logo-2-${index}`}
-              className="flex-shrink-0 w-32 h-16 md:w-40 md:h-20 flex items-center justify-center px-2"
-            >
+           <div
+             key={`logo-2-${index}`}
+             className="flex-shrink-0 w-20 h-12 md:w-40 md:h-20 flex items-center justify-center px-2"
+           >
               <img
                 src={logo.url}
                 alt={logo.name}
