@@ -140,7 +140,7 @@ export default function Home() {
       <SEOMetadata />
       <MobileCtaBar />
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white" aria-label="Section héros">
         {/* Video Background */}
         <div className="absolute inset-0">
           <video
