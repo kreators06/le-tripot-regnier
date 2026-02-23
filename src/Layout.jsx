@@ -104,9 +104,11 @@ export default function Layout({ children, currentPageName }) {
           <div className="flex items-center justify-between h-24">
             {/* Logo */}
             <Link to={createPageUrl('Home')} className="flex items-center gap-3 group">
-              <div className="w-12 h-12 bg-white flex items-center justify-center border border-[#0D0D0D]/10 transition-all duration-300 group-hover:border-[#ff8c5a]">
-                <span className="text-[#0D0D0D] font-medium text-xl tracking-wider">TR</span>
-              </div>
+              <img 
+                src="https://le-tr.polairestudios.com/assets/Logo-blanc.png" 
+                alt="Le Tripot Régnier" 
+                className="h-12 w-auto transition-opacity duration-300 group-hover:opacity-80"
+              />
             </Link>
 
             {/* Desktop Nav */}
