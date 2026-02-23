@@ -17,7 +17,8 @@ import {
   Wine,
   Cigarette,
   Thermometer,
-  Wifi
+  Wifi,
+  ChevronDown
 } from 'lucide-react';
 import SectionTitle from '@/components/ui/SectionTitle';
 import SpaceCard from '@/components/ui/SpaceCard';
@@ -206,19 +207,21 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Minimal Scroll Indicator */}
-        <motion.div
+        {/* Scroll Indicator */}
+        <motion.a
+          href="#nos-espaces"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2"
+          className="absolute bottom-12 left-1/2 -translate-x-1/2 cursor-pointer"
         >
           <motion.div
-            animate={{ y: [0, 8, 0] }}
+            animate={{ y: [0, 10, 0] }}
             transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-            className="w-px h-16 bg-gradient-to-b from-transparent via-white to-transparent"
-          />
-        </motion.div>
+          >
+            <ChevronDown className="w-8 h-8 text-white/80" />
+          </motion.div>
+        </motion.a>
       </section>
 
 
