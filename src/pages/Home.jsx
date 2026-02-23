@@ -223,7 +223,7 @@ export default function Home() {
 
 
       {/* Spaces Section */}
-      <section id="nos-espaces" className="py-20 md:py-28 px-6 bg-white overflow-visible">
+      <section id="nos-espaces" className="py-20 md:py-28 px-6 bg-white overflow-visible" aria-label="Espaces modulables et capacités de réception">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -234,10 +234,10 @@ export default function Home() {
           >
             <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Nos espaces</p>
             <h2 className="text-4xl md:text-6xl font-semibold text-[#0D0D0D] tracking-tight mb-6">
-              700m² <span style={{ color: COLORS.ACCENT_COLOR }}>modulables</span>
+              Espaces Modulables et Capacités de <span style={{ color: COLORS.ACCENT_COLOR }}>Réception</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto font-light text-lg">
-              Des espaces pensés pour s'adapter à tous vos événements
+              Salle principale 400m², mezzanine 65m², hall d'accueil 90m². Capacité totale jusqu'à 450 personnes.
             </p>
           </motion.div>
           
