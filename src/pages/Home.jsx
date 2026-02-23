@@ -247,7 +247,7 @@ export default function Home() {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Premier espace - Large - Sticky */}
-            <div className="lg:sticky lg:top-32 lg:h-[600px]">
+            <div className="lg:sticky lg:top-32 h-[500px] md:h-[600px]">
               <motion.div
                 initial={{ opacity: 0, x: -40 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -255,7 +255,7 @@ export default function Home() {
                 transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
                 className="group h-full"
               >
-                <div className="relative h-full overflow-hidden">
+                <div className="relative h-full overflow-hidden rounded-lg">
                   <motion.img
                     src={spaces[0].image}
                     alt={spaces[0].title}
@@ -263,17 +263,17 @@ export default function Home() {
                     whileHover={{ scale: 1.08 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
                   <motion.div 
-                    className="absolute bottom-8 left-8 right-8"
+                    className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.3, duration: 0.5 }}
                   >
-                    <h3 className="text-white text-3xl font-semibold tracking-tight mb-2">{spaces[0].title}</h3>
-                    <p className="text-lg font-medium mb-3" style={{ color: COLORS.ACCENT_COLOR }}>{spaces[0].surface}</p>
-                    <p className="text-white/90 text-sm leading-relaxed">{spaces[0].description}</p>
+                    <h3 className="text-white text-2xl md:text-3xl font-semibold tracking-tight mb-2">{spaces[0].title}</h3>
+                    <p className="text-base md:text-lg font-medium mb-2 md:mb-3" style={{ color: COLORS.ACCENT_COLOR }}>{spaces[0].surface}</p>
+                    <p className="text-white/95 text-sm md:text-base leading-relaxed">{spaces[0].description}</p>
                   </motion.div>
                 </div>
               </motion.div>
