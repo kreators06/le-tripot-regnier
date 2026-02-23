@@ -126,16 +126,17 @@ export default function Contact() {
         
         <div className="relative z-10 max-w-4xl mx-auto text-left">
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
             className="text-4xl md:text-6xl text-white font-bold tracking-tight mb-6"
           >
             Contactez-<span style={{ color: COLORS.ACCENT_COLOR }}>nous</span>
           </motion.h1>
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
+            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
             className="text-xl text-white/90 leading-relaxed"
           >
             Parlons de votre projet et créons ensemble un événement inoubliable
