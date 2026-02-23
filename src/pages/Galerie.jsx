@@ -69,8 +69,8 @@ export default function Galerie() {
       </section>
 
       {/* Gallery Section */}
-      <section className="py-16 px-6 bg-[#F5F5F0]">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-16 px-4 bg-[#F5F5F0]">
+        <div className="max-w-[1600px] mx-auto">
           {/* Filters */}
           <div className="flex gap-4 mb-12 flex-wrap">
             {categories.map((category) => (
@@ -102,13 +102,13 @@ export default function Galerie() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className="break-inside-avoid group relative cursor-pointer overflow-hidden rounded-lg"
+                  className="break-inside-avoid group relative cursor-pointer overflow-hidden rounded-md"
                   onClick={() => setSelectedImage(image)}
                 >
                   <img
                     src={image.src}
                     alt={image.alt}
-                    className="w-full transition-transform duration-500 group-hover:scale-110 rounded-lg"
+                    className="w-full transition-transform duration-500 group-hover:scale-110 rounded-md"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
                     <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
