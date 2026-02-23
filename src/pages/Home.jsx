@@ -234,7 +234,7 @@ vos événements prennent vie
 
             <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Nos espaces</p>
             <h2 className="text-4xl md:text-6xl font-semibold text-[#0D0D0D] tracking-tight mb-6">
-              Espaces Modulables et Capacités de <span style={{ color: COLORS.ACCENT_COLOR }}>Réception</span>
+              Capacités modulables des <span style={{ color: COLORS.ACCENT_COLOR }}>espaces</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto font-light text-lg">
               Salle principale 400m², mezzanine 65m², hall d'accueil 90m². Capacité totale jusqu'à 450 personnes.
@@ -463,38 +463,6 @@ vos événements prennent vie
         </div>
       </section>
 
-      {/* Localisation Section */}
-      <section className="py-20 md:py-28 px-6 bg-white" aria-label="Localisation accessibilité et services dans le 15ème arrondissement">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.4 }}
-            className="text-center">
-
-            <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Localisation & Accessibilité</p>
-            <h2 className="text-3xl md:text-5xl font-semibold text-[#0D0D0D] tracking-tight mb-6">
-              10-12 rue Mathurin Régnier, <span style={{ color: COLORS.ACCENT_COLOR }}>Paris 75015</span>
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto font-light text-lg mb-8">
-              Entièrement accessible PMR. Ascenseur, toilettes accessibles, stationnement PMR à proximité. Transports: Métro ligne 8 (Boucicaut, Lourmel), RER C (Pont de Garigliano).
-            </p>
-            <a
-              href="https://maps.google.com/?q=10-12+rue+Mathurin+Régnier+75015+Paris"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 text-[#0D0D0D] font-semibold text-sm tracking-wide hover:bg-gray-50 transition-all duration-300">
-
-              Voir sur Google Maps
-            </a>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <FAQAccordion />
-
       {/* CTA Section */}
       <section className="py-20 md:py-28 px-6 bg-[#0D0D0D] relative overflow-hidden">
         <div
@@ -546,6 +514,37 @@ vos événements prennent vie
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <FAQAccordion />
+
+      {/* Localisation Section */}
+      <section className="py-20 md:py-28 px-6 bg-white" aria-label="Localisation accessibilité et services dans le 15ème arrondissement">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.4 }}
+            className="text-center">
+
+            <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Localisation & Accessibilité</p>
+            <h2 className="text-3xl md:text-5xl font-semibold text-[#0D0D0D] tracking-tight mb-6">
+              10-12 rue Mathurin Régnier, <span style={{ color: COLORS.ACCENT_COLOR }}>Paris 75015</span>
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto font-light text-lg mb-8">
+              Entièrement accessible PMR. Ascenseur, toilettes accessibles, stationnement PMR à proximité. Transports: Métro ligne 8 (Boucicaut, Lourmel), RER C (Pont de Garigliano).
+            </p>
+            <a
+              href="https://maps.google.com/?q=10-12+rue+Mathurin+Régnier+75015+Paris"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 text-[#0D0D0D] font-semibold text-sm tracking-wide hover:bg-gray-50 transition-all duration-300">
+
+              Voir sur Google Maps
+            </a>
+          </motion.div>
+        </div>
+      </section>
 
     </div>);
 
