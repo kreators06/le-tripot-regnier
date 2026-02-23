@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import SectionTitle from '@/components/ui/SectionTitle';
 import CTABanner from '@/components/ui/CTABanner';
+import { COLORS } from '@/components/config/colors';
 
 const pillars = [
   {
@@ -79,7 +80,7 @@ export default function Engagements() {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-6xl text-white font-bold tracking-tight mb-6"
           >
-            Nos <span className="text-[#ff8c5a]">Engagements</span>
+            Nos <span style={{ color: COLORS.ACCENT_COLOR }}>Engagements</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -113,9 +114,13 @@ export default function Engagements() {
                 transition={{ delay: index * 0.15 }}
                 className="bg-white p-8 relative group overflow-hidden rounded-lg"
               >
-                <div className="absolute top-0 left-0 w-full h-1 bg-[#ff8c5a]" />
+                <div className="absolute top-0 left-0 w-full h-1" style={{ backgroundColor: COLORS.ACCENT_COLOR }} />
                 
-                <div className="w-16 h-16 bg-[#0D0D0D] flex items-center justify-center mb-6 group-hover:bg-[#ff8c5a] transition-colors duration-300 rounded-lg">
+                <div 
+                  className="w-16 h-16 bg-[#0D0D0D] flex items-center justify-center mb-6 transition-colors duration-300 rounded-lg"
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#0D0D0D'}
+                >
                   <pillar.icon className="w-8 h-8 text-white" />
                 </div>
                 
@@ -130,7 +135,7 @@ export default function Engagements() {
                 <ul className="space-y-2 text-left">
                   {pillar.points.map((point) => (
                     <li key={point} className="flex items-center gap-3 text-sm text-gray-700">
-                      <span className="w-1.5 h-1.5 bg-[#ff8c5a]" />
+                      <span className="w-1.5 h-1.5" style={{ backgroundColor: COLORS.ACCENT_COLOR }} />
                       {point}
                     </li>
                   ))}
@@ -160,8 +165,13 @@ export default function Engagements() {
                 transition={{ delay: index * 0.1 }}
                 className="text-left p-6 bg-[#F5F5F0] group hover:bg-[#0D0D0D] transition-colors duration-300 rounded-lg"
               >
-                <div className="w-14 h-14 bg-[#ff8c5a]/20 flex items-center justify-center mb-4 group-hover:bg-[#ff8c5a]/30 transition-colors rounded-lg">
-                  <action.icon className="w-7 h-7 text-[#ff8c5a]" />
+                <div 
+                  className="w-14 h-14 flex items-center justify-center mb-4 transition-colors rounded-lg"
+                  style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20` }}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = `${COLORS.ACCENT_COLOR}30`}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = `${COLORS.ACCENT_COLOR}20`}
+                >
+                  <action.icon className="w-7 h-7" style={{ color: COLORS.ACCENT_COLOR }} />
                 </div>
                 <h3 className="font-medium text-[#0D0D0D] group-hover:text-white transition-colors mb-2 text-sm">
                   {action.title}
@@ -186,7 +196,7 @@ export default function Engagements() {
               viewport={{ once: true }}
               className="text-left"
             >
-              <Wind className="w-12 h-12 text-[#ff8c5a] mb-6" />
+              <Wind className="w-12 h-12 mb-6" style={{ color: COLORS.ACCENT_COLOR }} />
               <h3 className="text-3xl font-semibold text-white mb-4 tracking-wide">
                 Qualité de l'Air
               </h3>
@@ -197,15 +207,15 @@ export default function Engagements() {
               </p>
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-gray-200">
-                  <span className="w-2 h-2 bg-[#ff8c5a]" />
+                  <span className="w-2 h-2" style={{ backgroundColor: COLORS.ACCENT_COLOR }} />
                   Système CTA avec détecteurs CO2
                 </li>
                 <li className="flex items-center gap-3 text-gray-200">
-                  <span className="w-2 h-2 bg-[#ff8c5a]" />
+                  <span className="w-2 h-2" style={{ backgroundColor: COLORS.ACCENT_COLOR }} />
                   Renouvellement automatisé
                 </li>
                 <li className="flex items-center gap-3 text-gray-200">
-                  <span className="w-2 h-2 bg-[#ff8c5a]" />
+                  <span className="w-2 h-2" style={{ backgroundColor: COLORS.ACCENT_COLOR }} />
                   Traitement de l'air optimisé
                 </li>
               </ul>
@@ -218,7 +228,7 @@ export default function Engagements() {
               viewport={{ once: true }}
               className="text-left"
             >
-              <Volume2 className="w-12 h-12 text-[#ff8c5a] mb-6" />
+              <Volume2 className="w-12 h-12 mb-6" style={{ color: COLORS.ACCENT_COLOR }} />
               <h3 className="text-3xl font-semibold text-white mb-4 tracking-wide">
                 Acoustique Soignée
               </h3>
@@ -229,15 +239,15 @@ export default function Engagements() {
               </p>
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-gray-200">
-                  <span className="w-2 h-2 bg-[#ff8c5a]" />
+                  <span className="w-2 h-2" style={{ backgroundColor: COLORS.ACCENT_COLOR }} />
                   Salle anti-vibratile certifiée
                 </li>
                 <li className="flex items-center gap-3 text-gray-200">
-                  <span className="w-2 h-2 bg-[#ff8c5a]" />
+                  <span className="w-2 h-2" style={{ backgroundColor: COLORS.ACCENT_COLOR }} />
                   Validation ingénieur acousticien
                 </li>
                 <li className="flex items-center gap-3 text-gray-200">
-                  <span className="w-2 h-2 bg-[#ff8c5a]" />
+                  <span className="w-2 h-2" style={{ backgroundColor: COLORS.ACCENT_COLOR }} />
                   Isolation phonique premium
                 </li>
               </ul>

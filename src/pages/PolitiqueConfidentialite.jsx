@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { COLORS } from '@/components/config/colors';
 
 export default function PolitiqueConfidentialite() {
   return (
@@ -12,7 +13,7 @@ export default function PolitiqueConfidentialite() {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl text-white font-semibold tracking-wide mb-4"
           >
-            Politique de <span className="text-[#ff8c5a]">Confidentialité</span>
+            Politique de <span style={{ color: COLORS.ACCENT_COLOR }}>Confidentialité</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}

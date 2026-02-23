@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { COLORS } from '@/components/config/colors';
 
 export default function CGU() {
   return (
@@ -12,7 +13,7 @@ export default function CGU() {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl text-white font-semibold tracking-wide mb-4"
           >
-            Conditions Générales <span className="text-[#ff8c5a]">d'Utilisation</span>
+            Conditions Générales <span style={{ color: COLORS.ACCENT_COLOR }}>d'Utilisation</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
