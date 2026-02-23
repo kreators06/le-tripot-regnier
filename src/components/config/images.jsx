@@ -18,7 +18,7 @@ export const IMAGES = {
   // ==========================================
   home: {
     // Vidéo de fond du hero
-    heroVideo: "https://assets.mixkit.co/videos/preview/mixkit-people-at-a-party-dancing-in-the-dark-4553-large.mp4",
+    heroVideo: "http://le-tr.polairestudios.com/assets/VIDEO_TR.mov",
     // Image de secours si la vidéo ne charge pas
     heroPoster: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1920&auto=format",
   },
