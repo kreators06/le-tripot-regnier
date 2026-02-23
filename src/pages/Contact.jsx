@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
+import ReCAPTCHA from 'react-google-recaptcha';
 import { 
   MapPin, 
   Phone, 
@@ -56,6 +57,8 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState(null);
+  const recaptchaRef = useRef();
 
   const handleChange = (e) => {
     setFormData({
@@ -73,6 +76,12 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    if (!captchaToken) {
+      alert('Veuillez valider le captcha');
+      return;
+    }
+    
     setIsSubmitting(true);
     
     // Simulate form submission
@@ -93,7 +102,13 @@ export default function Contact() {
         subject: '',
         message: ''
       });
+      setCaptchaToken(null);
+      recaptchaRef.current?.reset();
     }, 3000);
+  };
+
+  const handleCaptchaChange = (token) => {
+    setCaptchaToken(token);
   };
 
   return (
@@ -253,6 +268,14 @@ export default function Contact() {
                       rows={6}
                       className="border-gray-300 focus:border-[#ff8c5a] focus:ring-[#ff8c5a] resize-none"
                       placeholder="Votre message (merci d'indiquer la date de l'événement, les horaires et nombre de personnes)..."
+                    />
+                  </div>
+
+                  <div className="flex justify-center">
+                    <ReCAPTCHA
+                      ref={recaptchaRef}
+                      sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                      onChange={handleCaptchaChange}
                     />
                   </div>
 
