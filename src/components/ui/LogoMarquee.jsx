@@ -1,23 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React from 'react';
 import { IMAGES } from '@/components/config/images';
 
 export default function LogoMarquee() {
   const logos = IMAGES.logos;
-  const [isMobile, setIsMobile] = useState(false);
-  
-  // Tripler les logos pour une boucle vraiment seamless
-  const tripleLogos = [...logos, ...logos, ...logos];
-  
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-  
-  // Desktop: 48s | Mobile: 16s
-  const duration = isMobile ? 16 : 48;
+  // Doubler les logos pour une boucle seamless
+  const doubleLogos = [...logos, ...logos];
 
   return (
     <div className="w-full">
@@ -27,19 +14,38 @@ export default function LogoMarquee() {
         </h3>
       </div>
       
-      <div className="overflow-hidden bg-white">
-        <motion.div
-          className="flex gap-6 md:gap-12"
-          style={{ x: 0 }}
-          animate={{ x: "-33.33%" }}
-          transition={{
-            duration,
-            repeat: Infinity,
-            ease: "linear",
-            repeatType: "reverse"
-          }}
-        >
-          {tripleLogos.map((logo, index) => (
+      <style>{`
+        @keyframes marquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(calc(-50%));
+          }
+        }
+        
+        .marquee-container {
+          overflow: hidden;
+          background: white;
+        }
+        
+        .marquee-content {
+          display: flex;
+          gap: 1.5rem;
+          animation: marquee 48s linear infinite;
+        }
+        
+        @media (max-width: 767px) {
+          .marquee-content {
+            animation: marquee 16s linear infinite;
+            gap: 1rem;
+          }
+        }
+      `}</style>
+      
+      <div className="marquee-container">
+        <div className="marquee-content">
+          {doubleLogos.map((logo, index) => (
             <div
               key={index}
               className="flex-shrink-0 w-24 h-12 md:w-40 md:h-20 flex items-center justify-center px-2"
@@ -51,7 +57,7 @@ export default function LogoMarquee() {
               />
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </div>
   );
