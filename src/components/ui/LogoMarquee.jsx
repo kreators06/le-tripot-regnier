@@ -1,17 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { IMAGES } from '@/components/config/images';
 
 export default function LogoMarquee() {
   const logos = IMAGES.logos;
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
+  
+  // Tripler les logos pour une boucle vraiment seamless
+  const tripleLogos = [...logos, ...logos, ...logos];
 
   return (
     <div className="w-full">
@@ -23,37 +18,21 @@ export default function LogoMarquee() {
       
       <div className="overflow-hidden bg-white">
         <motion.div
-          className="flex gap-8 md:gap-16 will-change-transform"
+          className="flex gap-6 md:gap-12"
           initial={{ x: 0 }}
-          animate={{ x: '-50%' }}
-          key={isMobile ? 'mobile' : 'desktop'}
+          animate={{ x: `-${100 * (logos.length / tripleLogos.length)}%` }}
           transition={{
-            duration: isMobile ? 3 : 40,
+            duration: 60,
             repeat: Infinity,
             ease: "linear",
             repeatType: "loop"
           }}
         >
-          {/* First set */}
-          {logos.map((logo, index) => (
-           <div
-             key={`logo-1-${index}`}
-             className="flex-shrink-0 w-20 h-12 md:w-40 md:h-20 flex items-center justify-center px-2"
-           >
-              <img
-                src={logo.url}
-                alt={logo.name}
-                className="h-full w-auto object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
-              />
-            </div>
-          ))}
-          
-          {/* Second set for seamless loop */}
-          {logos.map((logo, index) => (
-           <div
-             key={`logo-2-${index}`}
-             className="flex-shrink-0 w-20 h-12 md:w-40 md:h-20 flex items-center justify-center px-2"
-           >
+          {tripleLogos.map((logo, index) => (
+            <div
+              key={index}
+              className="flex-shrink-0 w-24 h-12 md:w-40 md:h-20 flex items-center justify-center px-2"
+            >
               <img
                 src={logo.url}
                 alt={logo.name}
