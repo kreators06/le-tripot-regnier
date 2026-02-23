@@ -27,7 +27,7 @@ export default function LogoMarquee() {
           initial={{ x: 0 }}
           animate={{ x: '-50%' }}
           transition={{
-            duration: isMobile ? 6 : 40,
+            duration: isMobile ? 3 : 40,
             repeat: Infinity,
             ease: "linear",
             repeatType: "loop"
