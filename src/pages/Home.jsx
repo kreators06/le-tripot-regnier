@@ -338,12 +338,12 @@ export default function Home() {
             transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
             className="text-center mb-16"
           >
-            <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Configurations</p>
+            <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Configurations événementielles</p>
             <h2 className="text-3xl md:text-5xl font-semibold text-[#0D0D0D] tracking-tight mb-6">
-              Adaptable à vos <span style={{ color: COLORS.ACCENT_COLOR }}>besoins</span>
+              Infrastructures <span style={{ color: COLORS.ACCENT_COLOR }}>Techniques Complètes</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto font-normal">
-              Notre salle s'adapte à tous vos événements avec une capacité jusqu'à 500 personnes
+              Mur LED immersif, système audiovisuel professionnel, cuisine complète, bar aménagé et espace fumeurs dédié
             </p>
           </motion.div>
           
