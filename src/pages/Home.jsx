@@ -25,6 +25,7 @@ import SpaceCard from '@/components/ui/SpaceCard';
 import TestimonialCard from '@/components/ui/TestimonialCard';
 import FeatureIcon from '@/components/ui/FeatureIcon';
 import CTABanner from '@/components/ui/CTABanner';
+import LogoMarquee from '@/components/ui/LogoMarquee';
 import { IMAGES } from '@/components/config/images';
 import { COLORS } from '@/components/config/colors';
 
