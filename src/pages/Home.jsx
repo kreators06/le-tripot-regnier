@@ -299,9 +299,9 @@ export default function Home() {
                     
                     <div className="p-6 bg-white">
                       <div className="flex items-baseline justify-between mb-3">
-                        <h3 className="text-[#0D0D0D] text-2xl font-semibold tracking-tight">{space.title}</h3>
+                        <h3 className="text-[#0D0D0D] text-lg font-semibold tracking-tight">{space.title}</h3>
                         {space.surface && (
-                          <p className="text-sm font-medium" style={{ color: COLORS.ACCENT_COLOR }}>{space.surface}</p>
+                          <p className="text-xs font-medium" style={{ color: COLORS.ACCENT_COLOR }}>{space.surface}</p>
                         )}
                       </div>
                       {space.description && (
