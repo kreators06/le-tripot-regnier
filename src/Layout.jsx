@@ -215,9 +215,11 @@ export default function Layout({ children, currentPageName }) {
             {/* Brand */}
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 flex items-center justify-center" style={{ backgroundColor: COLORS.ACCENT_COLOR }}>
-                  <span className="text-white font-bold text-xl">TR</span>
-                </div>
+                <img 
+                  src="https://le-tr.polairestudios.com/assets/Logo-blanc.png" 
+                  alt="Le Tripot Régnier" 
+                  className="h-12 w-auto"
+                />
               </div>
               <p className="text-gray-400 text-sm leading-relaxed text-left">
                 Salle événementielle parisienne de 700m² alliant style Art Déco et Industriel.
@@ -248,19 +250,19 @@ export default function Layout({ children, currentPageName }) {
                 <li className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: COLORS.ACCENT_COLOR }} />
                   <span className="text-gray-400 text-sm">
-                    Paris 15ème arrondissement
+                    10 – 12 rue Mathurin Régnier<br />75015 Paris
                   </span>
                 </li>
                 <li className="flex items-center gap-3">
                   <Phone className="w-5 h-5" style={{ color: COLORS.ACCENT_COLOR }} />
-                  <a href="tel:+33100000000" className="text-gray-400 hover:text-white transition-colors text-sm">
-                    +33 1 00 00 00 00
+                  <a href="tel:+33145260458" className="text-gray-400 hover:text-white transition-colors text-sm">
+                    01 45 26 04 58
                   </a>
                 </li>
                 <li className="flex items-center gap-3">
                   <Mail className="w-5 h-5" style={{ color: COLORS.ACCENT_COLOR }} />
-                  <a href="mailto:contact@tripotregnier.fr" className="text-gray-400 hover:text-white transition-colors text-sm">
-                    contact@tripotregnier.fr
+                  <a href="mailto:contact@letripotregnier.fr" className="text-gray-400 hover:text-white transition-colors text-sm">
+                    contact@letripotregnier.fr
                   </a>
                 </li>
               </ul>
