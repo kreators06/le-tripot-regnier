@@ -172,8 +172,7 @@ export default function Home() {
               Événementiel Premium — Paris 15ème
             </p>
             <h1 className="text-5xl md:text-6xl lg:text-7xl text-white font-bold tracking-tight mb-10 leading-[1.1]">
-              Salle parisienne où vos<br />
-              <span style={{ color: COLORS.ACCENT_COLOR }}>événements prennent vie</span>
+              Le Tripot Régnier : Espace Événementiel Atypique et Industriel à Paris 15
             </h1>
           </motion.div>
 
