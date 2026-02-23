@@ -267,9 +267,9 @@ export default function Home() {
                     viewport={{ once: true }}
                     transition={{ delay: 0.3, duration: 0.5 }}
                   >
-                    <h3 className="text-white text-2xl md:text-3xl font-semibold tracking-tight mb-2">{spaces[0].title}</h3>
-                    <p className="text-base md:text-lg font-medium mb-2 md:mb-3" style={{ color: COLORS.ACCENT_COLOR }}>{spaces[0].surface}</p>
-                    <p className="text-white/95 text-sm md:text-base leading-relaxed">{spaces[0].description}</p>
+                    <h3 className="text-white text-2xl md:text-3xl font-semibold tracking-tight mb-2">La Salle Principale de 400m²</h3>
+                    <p className="text-base md:text-lg font-medium mb-2 md:mb-3" style={{ color: COLORS.ACCENT_COLOR }}>400 m² | Capacité jusqu'à 450 pers.</p>
+                    <p className="text-white/95 text-sm md:text-base leading-relaxed">Espace modulable avec béton ciré, accès direct véhicule, mur LED immersif et équipements audiovisuels professionnels.</p>
                   </motion.div>
                 </div>
               </motion.div>
