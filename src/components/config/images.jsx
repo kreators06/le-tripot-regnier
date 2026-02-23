@@ -183,6 +183,54 @@ export const IMAGES = {
   galerie: {
     hero: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1920&auto=format",
   },
+
+  // ==========================================
+  // LOGOS MARQUEE - PAGE D'ACCUEIL HERO
+  // ==========================================
+  // Modifier facilement cette section pour ajouter/changer les logos
+  // Les logos seront affichés en version monochromes et inversés
+  logos: [
+    {
+      name: "Partner 1",
+      url: "https://images.unsplash.com/photo-1633356122544-f134ef2944f1?w=200&auto=format",
+    },
+    {
+      name: "Partner 2",
+      url: "https://images.unsplash.com/photo-1633356122544-f134ef2944f1?w=200&auto=format",
+    },
+    {
+      name: "Partner 3",
+      url: "https://images.unsplash.com/photo-1633356122544-f134ef2944f1?w=200&auto=format",
+    },
+    {
+      name: "Partner 4",
+      url: "https://images.unsplash.com/photo-1633356122544-f134ef2944f1?w=200&auto=format",
+    },
+    {
+      name: "Partner 5",
+      url: "https://images.unsplash.com/photo-1633356122544-f134ef2944f1?w=200&auto=format",
+    },
+    {
+      name: "Partner 6",
+      url: "https://images.unsplash.com/photo-1633356122544-f134ef2944f1?w=200&auto=format",
+    },
+    {
+      name: "Partner 7",
+      url: "https://images.unsplash.com/photo-1633356122544-f134ef2944f1?w=200&auto=format",
+    },
+    {
+      name: "Partner 8",
+      url: "https://images.unsplash.com/photo-1633356122544-f134ef2944f1?w=200&auto=format",
+    },
+    {
+      name: "Partner 9",
+      url: "https://images.unsplash.com/photo-1633356122544-f134ef2944f1?w=200&auto=format",
+    },
+    {
+      name: "Partner 10",
+      url: "https://images.unsplash.com/photo-1633356122544-f134ef2944f1?w=200&auto=format",
+    },
+  ],
 };
 
 export default IMAGES;
