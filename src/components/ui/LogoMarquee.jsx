@@ -19,7 +19,7 @@ export default function LogoMarquee() {
           className="flex gap-8 md:gap-16"
           animate={{ x: ['0%', '-50%'] }}
           transition={{
-            duration: 60,
+            duration: 35,
             repeat: Infinity,
             ease: "linear"
           }}
