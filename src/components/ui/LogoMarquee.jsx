@@ -29,15 +29,14 @@ export default function LogoMarquee() {
       
       <div className="overflow-hidden bg-white">
         <motion.div
-          key={isMobile ? 'mobile' : 'desktop'}
           className="flex gap-6 md:gap-12"
-          initial={{ x: 0 }}
+          style={{ x: 0 }}
           animate={{ x: "-33.33%" }}
           transition={{
             duration,
             repeat: Infinity,
             ease: "linear",
-            repeatType: "loop"
+            repeatType: "reverse"
           }}
         >
           {tripleLogos.map((logo, index) => (
