@@ -42,7 +42,7 @@ export default function Histoire() {
       <section className="py-20 px-6 bg-[#F5F5F0] relative overflow-hidden">
         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-2/3 rounded-l-full blur-3xl" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}05` }} />
         
-        <div className="max-w-7xl mx-auto relative z-10">
+        <div className="max-w-[1400px] mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             
             {/* Colonne Gauche - Timeline */}
@@ -81,10 +81,10 @@ export default function Histoire() {
                   </motion.div>
                 </div>
                 <div className="flex-1 text-left">
-                  <div className="inline-block px-3 py-1 text-xs font-medium tracking-wide mb-3" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20`, color: COLORS.ACCENT_COLOR }}>
+                  <div className="inline-block px-3 py-1 text-xs font-medium tracking-wide" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20`, color: COLORS.ACCENT_COLOR }}>
                     DÉBUT DU XXe SIÈCLE
                   </div>
-                  <h3 className="text-xl font-semibold text-[#0D0D0D] mb-3">Bains-douches et Laverie</h3>
+                  <h3 className="text-xl font-semibold text-[#0D0D0D] mt-3 mb-3">Bains-douches et Laverie</h3>
                   <p className="text-gray-600 leading-relaxed text-justify">
                     Le bâtiment servait de bains-douches et laverie pour les premiers HLM parisiens. 
                     Cette fonction sociale témoigne du développement urbain et de l'amélioration 
@@ -112,10 +112,10 @@ export default function Histoire() {
                   </motion.div>
                 </div>
                 <div className="flex-1 text-left">
-                  <div className="inline-block px-3 py-1 text-xs font-medium tracking-wide mb-3" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20`, color: COLORS.ACCENT_COLOR }}>
+                  <div className="inline-block px-3 py-1 text-xs font-medium tracking-wide" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20`, color: COLORS.ACCENT_COLOR }}>
                     PÉRIODE INDUSTRIELLE
                   </div>
-                  <h3 className="text-xl font-semibold text-[#0D0D0D] mb-3">Site Industriel</h3>
+                  <h3 className="text-xl font-semibold text-[#0D0D0D] mt-3 mb-3">Site Industriel</h3>
                   <p className="text-gray-600 leading-relaxed text-justify">
                     Après sa fonction initiale, le bâtiment a été reconverti en site industriel, 
                     s'inscrivant dans la transformation économique du quartier. Cette période 
@@ -143,10 +143,10 @@ export default function Histoire() {
                   </motion.div>
                 </div>
                 <div className="flex-1 text-left">
-                  <div className="inline-block px-3 py-1 text-xs font-medium tracking-wide mb-3" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20`, color: COLORS.ACCENT_COLOR }}>
+                  <div className="inline-block px-3 py-1 text-xs font-medium tracking-wide" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20`, color: COLORS.ACCENT_COLOR }}>
                     2016
                   </div>
-                  <h3 className="text-xl font-semibold text-[#0D0D0D] mb-3">Le Tripot Régnier</h3>
+                  <h3 className="text-xl font-semibold text-[#0D0D0D] mt-3 mb-3">Le Tripot Régnier</h3>
                   <p className="text-gray-600 leading-relaxed text-justify mb-3">
                     Situé rue Mathurin Régnier, dans le 15e arrondissement de Paris, Le Tripot Régnier 
                     est un lieu chargé d'histoire. Anciennement bains-douches et laverie des premiers 
@@ -172,16 +172,23 @@ export default function Histoire() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
-                className="bg-white p-8 shadow-lg"
+                className="bg-white shadow-lg overflow-hidden"
               >
-                <h3 className="text-2xl font-semibold text-[#0D0D0D] mb-6 text-left">
-                  Origine du <span style={{ color: COLORS.ACCENT_COLOR }}>Nom</span>
-                </h3>
-                <p className="text-lg text-gray-700 leading-relaxed text-justify">
-                  Son nom rend hommage au <strong>Tripot Régnier</strong>, célèbre jeu de paume construit 
-                  en 1573 par Jacques Régnier, père du poète Mathurin Régnier. Ce clin d'œil historique 
-                  ancre notre lieu dans l'héritage culturel parisien tout en lui donnant une identité unique.
-                </p>
+                <img 
+                  src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&auto=format"
+                  alt="Histoire du Tripot Régnier"
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-8">
+                  <h3 className="text-2xl font-semibold text-[#0D0D0D] mb-6 text-left">
+                    Origine du <span style={{ color: COLORS.ACCENT_COLOR }}>Nom</span>
+                  </h3>
+                  <p className="text-lg text-gray-700 leading-relaxed text-justify">
+                    Son nom rend hommage au <strong>Tripot Régnier</strong>, célèbre jeu de paume construit 
+                    en 1573 par Jacques Régnier, père du poète Mathurin Régnier. Ce clin d'œil historique 
+                    ancre notre lieu dans l'héritage culturel parisien tout en lui donnant une identité unique.
+                  </p>
+                </div>
               </motion.div>
 
               {/* Stats Cards */}
@@ -238,73 +245,46 @@ export default function Histoire() {
                   </motion.div>
                 </div>
               </motion.div>
+
+              {/* Un lieu hybride et moderne */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1], delay: 0.4 }}
+                className="bg-white shadow-lg overflow-hidden"
+              >
+                <img 
+                  src="https://images.unsplash.com/photo-1519167758481-83f29da8c2f0?w=800&auto=format"
+                  alt="Le Tripot Régnier - Lieu hybride et moderne"
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-8">
+                  <h3 className="text-2xl font-semibold text-[#0D0D0D] mb-4 text-left">
+                    Un lieu hybride et <span style={{ color: COLORS.ACCENT_COLOR }}>moderne</span>
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed text-justify mb-6">
+                    Entièrement pensés selon les codes de l'évènementiel, les 700 m² qui composent le Tripot Régnier ont été conçus à partir des technologies les plus modernes du secteur de l'événementiel et du digital.
+                  </p>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="text-left">
+                      <p className="text-3xl font-bold" style={{ color: COLORS.ACCENT_COLOR }}>700m²</p>
+                      <p className="text-sm text-gray-500">d'espace événementiel</p>
+                    </div>
+                    <div className="text-left">
+                      <p className="text-3xl font-bold" style={{ color: COLORS.ACCENT_COLOR }}>500</p>
+                      <p className="text-sm text-gray-500">personnes maximum</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
             </div>
 
           </div>
         </div>
       </section>
 
-      {/* Un lieu hybride et moderne Section */}
-      <section className="py-20 px-6 bg-[#F5F5F0]">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left side - Text & Stats */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-              className="text-left"
-            >
-              <h2 className="text-3xl md:text-4xl font-semibold text-[#0D0D0D] mb-6 tracking-wide">
-                Un lieu hybride et moderne
-              </h2>
-              <p className="text-gray-600 leading-relaxed mb-8 text-justify">
-                Entièrement pensés selon les codes de l'évènementiel, les 700 m² qui composent le Tripot Régnier ont été conçus à partir des technologies les plus modernes du secteur de l'événementiel et du digital.
-              </p>
-              
-              {/* Stats Grid */}
-              <div className="grid grid-cols-3 gap-6 mb-8">
-                <div className="text-left">
-                  <p className="text-4xl font-bold mb-1" style={{ color: COLORS.ACCENT_COLOR }}>700</p>
-                  <p className="text-sm text-gray-500">m² d'espace</p>
-                </div>
-                <div className="text-left">
-                  <p className="text-4xl font-bold mb-1" style={{ color: COLORS.ACCENT_COLOR }}>500</p>
-                  <p className="text-sm text-gray-500">personnes max</p>
-                </div>
-                <div className="text-left">
-                  <p className="text-4xl font-bold mb-1" style={{ color: COLORS.ACCENT_COLOR }}>1904</p>
-                  <p className="text-sm text-gray-500">bâtiment historique</p>
-                </div>
-              </div>
-              
-              {/* Additional stat */}
-              <div className="inline-block text-white px-6 py-3" style={{ backgroundColor: COLORS.ACCENT_COLOR }}>
-                <p className="text-2xl font-bold">120</p>
-                <p className="text-xs">ans d'histoire</p>
-              </div>
-            </motion.div>
-            
-            {/* Right side - Image */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-              className="relative group"
-            >
-              <motion.img 
-                src="https://images.unsplash.com/photo-1519167758481-83f29da8c2f0?w=800&auto=format"
-                alt="Salle principale Le Tripot Régnier"
-                className="w-full h-[400px] object-cover shadow-xl"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.5 }}
-              />
-            </motion.div>
-          </div>
-        </div>
-      </section>
+
 
       {/* CTA Banner */}
       <CTABanner 
