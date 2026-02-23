@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { IMAGES } from '@/components/config/images';
 
 export default function LogoMarquee() {
   const logos = IMAGES.logos;
+  const [isMobile, setIsMobile] = useState(false);
   
   // Tripler les logos pour une boucle vraiment seamless
   const tripleLogos = [...logos, ...logos, ...logos];
+  
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+  
+  // Desktop: 60s * 0.8 = 48s | Mobile: 48s / 2 = 24s
+  const duration = isMobile ? 24 : 48;
 
   return (
     <div className="w-full">
