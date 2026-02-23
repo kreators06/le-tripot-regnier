@@ -204,11 +204,11 @@ export const IMAGES = {
     },
     {
       name: "Partner 4",
-      url: "https://images.unsplash.com/vector-1769600878556-890ba1bf6d04?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      url: "https://imgs.search.brave.com/AONEhzmGmn7LySzQyLXQb_Rxiv4DkEB7mWpBPSWB-dE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Y2l0eXBuZy5jb20v/cHVibGljL3VwbG9h/ZHMvcHJldmlldy9q/ZWVwLXdoaXRlLWxv/Z28tcG5nLTcwMTc1/MTY5NDc3MjA0M211/c2NyZzZ6NG8ucG5n",
     },
     {
       name: "Partner 5",
-      url: "https://images.unsplash.com/vector-1769600878556-890ba1bf6d04?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      url: "https://imgs.search.brave.com/AQCSg80s7IixwERF7giXNnDnmm8RoC8zHFjnMcwT7fI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bGlibG9nby5jb20v/aW1nLWxvZ28vZGU1/Mzc5ZDBhOS1kZWxz/ZXktbG9nby1kZWxz/ZXktZGVsc2V5LXBh/cmlzLWxvZ28tcG5n/LWNsaXBhcnQtZnVs/bC1zaXplLWNsaXBh/cnQucG5n",
     },
     {
       name: "Partner 6",
@@ -216,7 +216,7 @@ export const IMAGES = {
     },
     {
       name: "Partner 7",
-      url: "https://images.unsplash.com/vector-1769600878556-890ba1bf6d04?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      url: "https://imgs.search.brave.com/h_ceMApD9mjrNgwXCV2nLneBGeWca9q3nYIvFzYkq5o/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZmF2cG5nLmNvbS8y/NS8xNi8yMi9ncm91/cGUtYnBjZS1iYW5r/LWxvZ28tYnJhbmQt/cG9ydGFibGUtbmV0/d29yay1ncmFwaGlj/cy1wbmctZmF2cG5n/LTREUDVneDd0d2hh/V2JBaWRkbkV0a0d3/ZWkuanBn",
     },
     {
       name: "Partner 8",
