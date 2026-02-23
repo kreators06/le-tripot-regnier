@@ -24,6 +24,7 @@ import SpaceCard from '@/components/ui/SpaceCard';
 import TestimonialCard from '@/components/ui/TestimonialCard';
 import FeatureIcon from '@/components/ui/FeatureIcon';
 import CTABanner from '@/components/ui/CTABanner';
+import { IMAGES } from '@/components/config/images';
 
 const spaces = [
   {
@@ -120,13 +121,18 @@ export default function Home() {
     <div>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
-        {/* Large Image Background */}
+        {/* Video Background */}
         <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1920&auto=format"
-            alt="Le Tripot Régnier"
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster={IMAGES.home.heroPoster}
             className="w-full h-full object-cover"
-          />
+          >
+            <source src={IMAGES.home.heroVideo} type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-black/40" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
         </div>
