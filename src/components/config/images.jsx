@@ -20,7 +20,7 @@ export const IMAGES = {
     // Vidéo de fond du hero
     heroVideo: "http://le-tr.polairestudios.com/assets/VIDEO_TR.mov",
     // Image de secours si la vidéo ne charge pas
-    heroPoster: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1920&auto=format",
+    heroPoster: "http://le-tr.polairestudios.com/assets/VIDEO_TR.mov",
   },
 
   // ==========================================
