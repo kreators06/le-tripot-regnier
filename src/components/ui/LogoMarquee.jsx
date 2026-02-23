@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { IMAGES } from '@/components/config/images';
 
 export default function LogoMarquee() {
-  // Récupérer les logos depuis la config centralisée
   const logos = IMAGES.logos;
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   return (
     <div className="w-full">
@@ -17,11 +24,12 @@ export default function LogoMarquee() {
       <div className="overflow-hidden bg-white">
         <motion.div
           className="flex gap-8 md:gap-16"
-          animate={{ x: ['0%', '-50%'] }}
+          animate={{ x: ['0%', '-100%'] }}
           transition={{
-            duration: 12,
+            duration: isMobile ? 15 : 40,
             repeat: Infinity,
-            ease: "linear"
+            ease: "linear",
+            repeatType: "loop"
           }}
         >
           {/* First set */}
