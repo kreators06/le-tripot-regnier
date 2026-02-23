@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import ReCAPTCHA from 'react-google-recaptcha';
+import { base44 } from '@/api/base44Client';
 import { 
   MapPin, 
   Phone, 
@@ -84,27 +85,34 @@ export default function Contact() {
     
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        company: '',
-        subject: '',
-        message: ''
+    try {
+      await base44.integrations.Core.SendEmail({
+        to: 'axel.duret@polairestudios.com',
+        subject: `Nouveau message - ${formData.subject}`,
+        body: `Nom: ${formData.lastName} ${formData.firstName}\nEmail: ${formData.email}\nTéléphone: ${formData.phone}\nSociété: ${formData.company}\nSujet: ${formData.subject}\n\nMessage:\n${formData.message}`
       });
-      setCaptchaToken(null);
-      recaptchaRef.current?.reset();
-    }, 3000);
+      
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          company: '',
+          subject: '',
+          message: ''
+        });
+        setCaptchaToken(null);
+        recaptchaRef.current?.reset();
+      }, 3000);
+    } catch (error) {
+      setIsSubmitting(false);
+      alert('Erreur lors de l\'envoi du message. Veuillez réessayer.');
+    }
   };
 
   const handleCaptchaChange = (token) => {
