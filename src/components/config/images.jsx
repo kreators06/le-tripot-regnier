@@ -204,7 +204,7 @@ export const IMAGES = {
     },
     {
       name: "Partner 4",
-      url: "https://imgs.search.brave.com/AONEhzmGmn7LySzQyLXQb_Rxiv4DkEB7mWpBPSWB-dE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Y2l0eXBuZy5jb20v/cHVibGljL3VwbG9h/ZHMvcHJldmlldy9q/ZWVwLXdoaXRlLWxv/Z28tcG5nLTcwMTc1/MTY5NDc3MjA0M211/c2NyZzZ6NG8ucG5n",
+      url: "https://imgs.search.brave.com/MwMZmvDhZjaIxrx0yMsqhJeArh9TW7WY7kbJhXcGdeI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuc2Vla2xvZ28u/Y29tL2xvZ28tcG5n/LzcvMi9qZWVwLWxv/Z28tcG5nX3NlZWts/b2dvLTc1Mjg0LnBu/Zw",
     },
     {
       name: "Partner 5",
@@ -220,7 +220,7 @@ export const IMAGES = {
     },
     {
       name: "Partner 8",
-      url: "https://images.unsplash.com/vector-1769600878556-890ba1bf6d04?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      url: "https://imgs.search.brave.com/Pk9ZnqasutWC2jB88_SqBgw9Uzfp1o9BXxbvS6NkAqY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pY29u/bG9nb3ZlY3Rvci5j/b20vdXBsb2Fkcy9p/bWFnZXMvMjAyNS8w/My9zbS02N2M5NGY4/ZmJlOGMwLUNkaXNj/b3VudC53ZWJw",
     },
     {
       name: "Partner 9",
