@@ -316,13 +316,16 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Trust Signals Section */}
+      <TrustSignals />
+
       {/* Logo Marquee Section */}
       <section className="py-16 md:py-24 px-6 bg-white border-t border-gray-100 overflow-hidden">
         <LogoMarquee />
       </section>
 
       {/* Configurations Section */}
-      <section className="py-20 md:py-28 px-6 bg-[#FAFAFA] relative overflow-hidden">
+      <section className="py-20 md:py-28 px-6 bg-[#FAFAFA] relative overflow-hidden" aria-label="Infrastructures techniques, audiovisuelles et traiteur">
         {/* Background decoration */}
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#ff8c5a]/5 to-transparent pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#ff8c5a]/3 rounded-full blur-3xl pointer-events-none" />
