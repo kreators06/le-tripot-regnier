@@ -26,6 +26,7 @@ export default function LogoMarquee() {
           className="flex gap-8 md:gap-16 will-change-transform"
           initial={{ x: 0 }}
           animate={{ x: '-50%' }}
+          key={isMobile ? 'mobile' : 'desktop'}
           transition={{
             duration: isMobile ? 3 : 40,
             repeat: Infinity,
