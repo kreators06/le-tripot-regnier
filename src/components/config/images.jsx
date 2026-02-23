@@ -192,43 +192,43 @@ export const IMAGES = {
   logos: [
     {
       name: "Partner 1",
-      url: "https://images.unsplash.com/photo-1633356122544-f134ef2944f1?w=200&auto=format",
+      url: "https://images.unsplash.com/vector-1769600878556-890ba1bf6d04?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       name: "Partner 2",
-      url: "https://images.unsplash.com/photo-1633356122544-f134ef2944f1?w=200&auto=format",
+      url: "https://images.unsplash.com/vector-1769600878556-890ba1bf6d04?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       name: "Partner 3",
-      url: "https://images.unsplash.com/photo-1633356122544-f134ef2944f1?w=200&auto=format",
+      url: "https://images.unsplash.com/vector-1769600878556-890ba1bf6d04?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       name: "Partner 4",
-      url: "https://images.unsplash.com/photo-1633356122544-f134ef2944f1?w=200&auto=format",
+      url: "https://images.unsplash.com/vector-1769600878556-890ba1bf6d04?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       name: "Partner 5",
-      url: "https://images.unsplash.com/photo-1633356122544-f134ef2944f1?w=200&auto=format",
+      url: "https://images.unsplash.com/vector-1769600878556-890ba1bf6d04?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       name: "Partner 6",
-      url: "https://images.unsplash.com/photo-1633356122544-f134ef2944f1?w=200&auto=format",
+      url: "https://images.unsplash.com/vector-1769600878556-890ba1bf6d04?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       name: "Partner 7",
-      url: "https://images.unsplash.com/photo-1633356122544-f134ef2944f1?w=200&auto=format",
+      url: "https://images.unsplash.com/vector-1769600878556-890ba1bf6d04?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       name: "Partner 8",
-      url: "https://images.unsplash.com/photo-1633356122544-f134ef2944f1?w=200&auto=format",
+      url: "https://images.unsplash.com/vector-1769600878556-890ba1bf6d04?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       name: "Partner 9",
-      url: "https://images.unsplash.com/photo-1633356122544-f134ef2944f1?w=200&auto=format",
+      url: "https://images.unsplash.com/vector-1769600878556-890ba1bf6d04?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       name: "Partner 10",
-      url: "https://images.unsplash.com/photo-1633356122544-f134ef2944f1?w=200&auto=format",
+      url: "https://images.unsplash.com/vector-1769600878556-890ba1bf6d04?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
   ],
 };
