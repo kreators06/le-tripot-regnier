@@ -27,10 +27,10 @@ export default function LogoMarquee() {
           initial={{ x: 0 }}
           animate={{ x: '-50%' }}
           transition={{
-            duration: isMobile ? 8 : 80,
+            duration: isMobile ? 6 : 40,
             repeat: Infinity,
             ease: "linear",
-            repeatType: "reverse"
+            repeatType: "loop"
           }}
         >
           {/* First set */}
