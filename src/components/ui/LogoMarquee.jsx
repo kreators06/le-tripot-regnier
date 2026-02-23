@@ -24,7 +24,7 @@ export default function LogoMarquee() {
       <div className="overflow-hidden bg-white">
         <motion.div
           className="flex gap-8 md:gap-16"
-          animate={{ x: ['0%', '-100%'] }}
+          animate={{ x: ['0%', '-50%'] }}
           transition={{
             duration: isMobile ? 4 : 100,
             repeat: Infinity,
