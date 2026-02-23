@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { ArrowRight, Calendar } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { COLORS } from '@/components/config/colors';
 
 export default function CTABanner({ 
   title = "Venez découvrir le lieu",
@@ -53,7 +54,10 @@ export default function CTABanner({
         >
           <Link 
             to={createPageUrl('Contact')}
-            className="group inline-flex items-center justify-center gap-3 px-10 py-4 bg-[#ff8c5a] text-white font-semibold tracking-tight hover:bg-[#e67a47] transition-all duration-300 rounded hover:shadow-lg"
+            className="group inline-flex items-center justify-center gap-3 px-10 py-4 text-white font-semibold tracking-tight transition-all duration-300 rounded hover:shadow-lg"
+            style={{ backgroundColor: COLORS.ACCENT_COLOR }}
+            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR_HOVER}
+            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR}
           >
             {primaryText}
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />

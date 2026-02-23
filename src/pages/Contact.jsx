@@ -15,6 +15,7 @@ import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Label } from '@/components/ui/label';
 import SectionTitle from '@/components/ui/SectionTitle';
+import { COLORS } from '@/components/config/colors';
 
 const contactInfo = [
   {
@@ -114,7 +115,7 @@ export default function Contact() {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-6xl text-white font-bold tracking-tight mb-6"
           >
-            Contactez-<span className="text-[#ff8c5a]">nous</span>
+            Contactez-<span style={{ color: COLORS.ACCENT_COLOR }}>nous</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -164,7 +165,8 @@ export default function Contact() {
                         value={formData.lastName}
                         onChange={handleChange}
                         required
-                        className="border-gray-300 focus:border-[#ff8c5a] focus:ring-[#ff8c5a]"
+                        style={{ '--tw-ring-color': COLORS.ACCENT_COLOR }}
+                        className="border-gray-300 focus:border-[currentColor] focus:ring-[currentColor]"
                       />
                     </div>
                     <div className="space-y-2">
@@ -175,7 +177,8 @@ export default function Contact() {
                         value={formData.firstName}
                         onChange={handleChange}
                         required
-                        className="border-gray-300 focus:border-[#ff8c5a] focus:ring-[#ff8c5a]"
+                        style={{ '--tw-ring-color': COLORS.ACCENT_COLOR }}
+                        className="border-gray-300 focus:border-[currentColor] focus:ring-[currentColor]"
                       />
                     </div>
                   </div>
@@ -190,7 +193,8 @@ export default function Contact() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="border-gray-300 focus:border-[#ff8c5a] focus:ring-[#ff8c5a]"
+                        style={{ '--tw-ring-color': COLORS.ACCENT_COLOR }}
+                        className="border-gray-300 focus:border-[currentColor] focus:ring-[currentColor]"
                       />
                     </div>
                     <div className="space-y-2">
@@ -202,7 +206,8 @@ export default function Contact() {
                         value={formData.phone}
                         onChange={handleChange}
                         required
-                        className="border-gray-300 focus:border-[#ff8c5a] focus:ring-[#ff8c5a]"
+                        style={{ '--tw-ring-color': COLORS.ACCENT_COLOR }}
+                        className="border-gray-300 focus:border-[currentColor] focus:ring-[currentColor]"
                       />
                     </div>
                   </div>
@@ -254,7 +259,19 @@ export default function Contact() {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-[#ff8c5a] hover:bg-[#e67a47] text-white py-6 text-lg font-semibold tracking-wide border border-[#ff8c5a] hover:border-[#e67a47] rounded-lg"
+                    className="w-full text-white py-6 text-lg font-semibold tracking-wide border rounded-lg"
+                    style={{ 
+                      backgroundColor: COLORS.ACCENT_COLOR, 
+                      borderColor: COLORS.ACCENT_COLOR 
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR_HOVER;
+                      e.currentTarget.style.borderColor = COLORS.ACCENT_COLOR_HOVER;
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR;
+                      e.currentTarget.style.borderColor = COLORS.ACCENT_COLOR;
+                    }}
                   >
                     {isSubmitting ? (
                       <>
@@ -282,7 +299,7 @@ export default function Contact() {
               {/* Google Map */}
               <div>
                 <h3 className="text-2xl font-semibold text-[#0D0D0D] mb-6 tracking-wide text-left">
-                  Notre <span className="text-[#ff8c5a]">localisation</span>
+                  Notre <span style={{ color: COLORS.ACCENT_COLOR }}>localisation</span>
                 </h3>
                 <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
                   <iframe
@@ -301,11 +318,11 @@ export default function Contact() {
               {/* Booking Widget Placeholder */}
               <div>
                 <h3 className="text-2xl font-semibold text-[#0D0D0D] mb-6 tracking-wide text-left">
-                  Réserver <span className="text-[#ff8c5a]">une visite</span>
+                  Réserver <span style={{ color: COLORS.ACCENT_COLOR }}>une visite</span>
                 </h3>
                 <div className="bg-[#F5F5F0] p-8 rounded-lg text-left shadow-md">
-                  <div className="w-16 h-16 bg-[#ff8c5a]/20 flex items-center justify-center mb-4 rounded-lg">
-                    <Clock className="w-8 h-8 text-[#ff8c5a]" />
+                  <div className="w-16 h-16 flex items-center justify-center mb-4 rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20` }}>
+                    <Clock className="w-8 h-8" style={{ color: COLORS.ACCENT_COLOR }} />
                   </div>
                   <h4 className="text-lg font-medium text-[#0D0D0D] mb-2">
                     Module de réservation
@@ -338,7 +355,12 @@ export default function Contact() {
                 transition={{ delay: index * 0.1 }}
                 className="bg-white p-6 text-left group hover:shadow-lg transition-shadow duration-300 rounded-lg"
               >
-                <div className="w-14 h-14 bg-[#0D0D0D] flex items-center justify-center mb-4 group-hover:bg-[#ff8c5a] transition-colors duration-300 rounded-lg">
+                <div 
+                  className="w-14 h-14 bg-[#0D0D0D] flex items-center justify-center mb-4 transition-colors duration-300 rounded-lg"
+                  style={{ '--hover-bg': COLORS.ACCENT_COLOR }}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#0D0D0D'}
+                >
                   <info.icon className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="font-medium text-[#0D0D0D] mb-2">{info.title}</h3>

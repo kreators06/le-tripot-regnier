@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import SectionTitle from '@/components/ui/SectionTitle';
 import CTABanner from '@/components/ui/CTABanner';
+import { COLORS } from '@/components/config/colors';
 
 const spaces = [
   { name: "Salle Principale", surface: "400 m²", description: "Espace modulable équipé (son, lumière, projection vidéo) dotée d'un bar et d'un fumoir intérieur." },
@@ -71,7 +72,7 @@ export default function Capacites() {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-6xl text-white font-bold tracking-tight mb-6"
           >
-            Capacités & <span className="text-[#ff8c5a]">Équipements</span>
+            Capacités & <span style={{ color: COLORS.ACCENT_COLOR }}>Équipements</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -100,7 +101,7 @@ export default function Capacites() {
               viewport={{ once: true }}
               className="bg-white p-8 text-center group hover:shadow-xl transition-shadow duration-300 rounded-lg"
             >
-              <p className="text-4xl font-semibold text-[#ff8c5a] mb-2">700m²</p>
+              <p className="text-4xl font-semibold mb-2" style={{ color: COLORS.ACCENT_COLOR }}>700m²</p>
               <p className="text-sm text-gray-600">ESPACE TOTAL</p>
             </motion.div>
             
@@ -111,7 +112,7 @@ export default function Capacites() {
               transition={{ delay: 0.1 }}
               className="bg-white p-8 text-center group hover:shadow-xl transition-shadow duration-300 rounded-lg"
             >
-              <p className="text-4xl font-semibold text-[#ff8c5a] mb-2">90m²</p>
+              <p className="text-4xl font-semibold mb-2" style={{ color: COLORS.ACCENT_COLOR }}>90m²</p>
               <p className="text-sm text-gray-600">HALL D'ACCUEIL</p>
             </motion.div>
             
@@ -122,7 +123,7 @@ export default function Capacites() {
               transition={{ delay: 0.2 }}
               className="bg-white p-8 text-center group hover:shadow-xl transition-shadow duration-300 rounded-lg"
             >
-              <p className="text-4xl font-semibold text-[#ff8c5a] mb-2">400m²</p>
+              <p className="text-4xl font-semibold mb-2" style={{ color: COLORS.ACCENT_COLOR }}>400m²</p>
               <p className="text-sm text-gray-600">SALLE PRINCIPALE</p>
             </motion.div>
             
@@ -133,7 +134,7 @@ export default function Capacites() {
               transition={{ delay: 0.3 }}
               className="bg-white p-8 text-center group hover:shadow-xl transition-shadow duration-300 rounded-lg"
             >
-              <p className="text-4xl font-semibold text-[#ff8c5a] mb-2">65m²</p>
+              <p className="text-4xl font-semibold mb-2" style={{ color: COLORS.ACCENT_COLOR }}>65m²</p>
               <p className="text-sm text-gray-600">MEZZANINE</p>
             </motion.div>
           </div>
@@ -161,7 +162,7 @@ export default function Capacites() {
               >
                 <h3 className="text-xl font-semibold text-[#0D0D0D] mb-2">{space.name}</h3>
                 {space.surface && (
-                  <p className="text-lg font-medium text-[#ff8c5a] mb-3">{space.surface}</p>
+                  <p className="text-lg font-medium mb-3" style={{ color: COLORS.ACCENT_COLOR }}>{space.surface}</p>
                 )}
                 <p className="text-gray-600 leading-relaxed">{space.description}</p>
               </motion.div>
@@ -180,12 +181,12 @@ export default function Capacites() {
               viewport={{ once: true }}
               className="text-left"
             >
-              <div className="inline-block px-4 py-1 bg-[#ff8c5a]/20 text-[#ff8c5a] text-sm tracking-wide mb-6">
+              <div className="inline-block px-4 py-1 text-sm tracking-wide mb-6" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20`, color: COLORS.ACCENT_COLOR }}>
                 INNOVATION
               </div>
               <h2 className="text-4xl font-semibold text-white mb-6 tracking-wide">
                 Mur LED<br />
-                <span className="text-[#ff8c5a]">Immersif</span>
+                <span style={{ color: COLORS.ACCENT_COLOR }}>Immersif</span>
               </h2>
               <p className="text-gray-300 leading-relaxed mb-6">
                 Notre plateau virtuel modulable avec projection immersive sur mur LED 
@@ -194,15 +195,15 @@ export default function Capacites() {
               </p>
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-gray-200">
-                  <span className="w-2 h-2 bg-[#ff8c5a]" />
+                  <span className="w-2 h-2" style={{ backgroundColor: COLORS.ACCENT_COLOR }} />
                   Décors 3D personnalisables
                 </li>
                 <li className="flex items-center gap-3 text-gray-200">
-                  <span className="w-2 h-2 bg-[#ff8c5a]" />
+                  <span className="w-2 h-2" style={{ backgroundColor: COLORS.ACCENT_COLOR }} />
                   Captation visuelle haute définition
                 </li>
                 <li className="flex items-center gap-3 text-gray-200">
-                  <span className="w-2 h-2 bg-[#ff8c5a]" />
+                  <span className="w-2 h-2" style={{ backgroundColor: COLORS.ACCENT_COLOR }} />
                   Expérience immersive unique
                 </li>
               </ul>
@@ -221,8 +222,8 @@ export default function Capacites() {
                   className="w-full h-full object-cover opacity-80"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-20 h-20 border-2 border-[#ff8c5a] flex items-center justify-center bg-black/50">
-                    <Layers className="w-8 h-8 text-[#ff8c5a]" />
+                  <div className="w-20 h-20 border-2 flex items-center justify-center bg-black/50" style={{ borderColor: COLORS.ACCENT_COLOR }}>
+                    <Layers className="w-8 h-8" style={{ color: COLORS.ACCENT_COLOR }} />
                   </div>
                 </div>
               </div>
@@ -249,15 +250,15 @@ export default function Capacites() {
               className="bg-[#F5F5F0] p-8 text-left rounded-lg"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-[#ff8c5a]/20 flex items-center justify-center rounded-lg">
-                  <Lightbulb className="w-6 h-6 text-[#ff8c5a]" />
+                <div className="w-12 h-12 flex items-center justify-center rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20` }}>
+                  <Lightbulb className="w-6 h-6" style={{ color: COLORS.ACCENT_COLOR }} />
                 </div>
                 <h3 className="text-xl font-semibold text-[#0D0D0D]">Éclairage</h3>
               </div>
               <ul className="space-y-3">
                 {lighting.map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-gray-600 text-sm">
-                    <span className="w-1.5 h-1.5 bg-[#ff8c5a] mt-2 flex-shrink-0" />
+                    <span className="w-1.5 h-1.5 mt-2 flex-shrink-0" style={{ backgroundColor: COLORS.ACCENT_COLOR }} />
                     {item}
                   </li>
                 ))}
@@ -273,15 +274,15 @@ export default function Capacites() {
               className="bg-[#F5F5F0] p-8 text-left rounded-lg"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-[#ff8c5a]/20 flex items-center justify-center rounded-lg">
-                  <Monitor className="w-6 h-6 text-[#ff8c5a]" />
+                <div className="w-12 h-12 flex items-center justify-center rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20` }}>
+                  <Monitor className="w-6 h-6" style={{ color: COLORS.ACCENT_COLOR }} />
                 </div>
                 <h3 className="text-xl font-semibold text-[#0D0D0D]">Vidéo</h3>
               </div>
               <ul className="space-y-3">
                 {video.map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-gray-600 text-sm">
-                    <span className="w-1.5 h-1.5 bg-[#ff8c5a] mt-2 flex-shrink-0" />
+                    <span className="w-1.5 h-1.5 mt-2 flex-shrink-0" style={{ backgroundColor: COLORS.ACCENT_COLOR }} />
                     {item}
                   </li>
                 ))}
@@ -297,15 +298,15 @@ export default function Capacites() {
               className="bg-[#F5F5F0] p-8 text-left rounded-lg"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-[#ff8c5a]/20 flex items-center justify-center rounded-lg">
-                  <Speaker className="w-6 h-6 text-[#ff8c5a]" />
+                <div className="w-12 h-12 flex items-center justify-center rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20` }}>
+                  <Speaker className="w-6 h-6" style={{ color: COLORS.ACCENT_COLOR }} />
                 </div>
                 <h3 className="text-xl font-semibold text-[#0D0D0D]">Son</h3>
               </div>
               <ul className="space-y-3">
                 {sound.map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-gray-600 text-sm">
-                    <span className="w-1.5 h-1.5 bg-[#ff8c5a] mt-2 flex-shrink-0" />
+                    <span className="w-1.5 h-1.5 mt-2 flex-shrink-0" style={{ backgroundColor: COLORS.ACCENT_COLOR }} />
                     {item}
                   </li>
                 ))}
@@ -335,7 +336,7 @@ export default function Capacites() {
                 className="bg-white p-6 flex items-start gap-4 text-left rounded-lg"
               >
                 <div className="w-12 h-12 bg-[#0D0D0D] flex items-center justify-center flex-shrink-0 rounded-lg">
-                  <item.icon className="w-5 h-5 text-[#ff8c5a]" />
+                  <item.icon className="w-5 h-5" style={{ color: COLORS.ACCENT_COLOR }} />
                 </div>
                 <p className="text-gray-700 text-sm leading-relaxed pt-3">
                   {item.text}
@@ -390,8 +391,8 @@ export default function Capacites() {
               viewport={{ once: true }}
               className="text-left"
             >
-              <div className="w-16 h-16 bg-[#ff8c5a]/10 flex items-center justify-center mb-4 rounded-lg">
-                <Truck className="w-8 h-8 text-[#ff8c5a]" />
+              <div className="w-16 h-16 flex items-center justify-center mb-4 rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}10` }}>
+                <Truck className="w-8 h-8" style={{ color: COLORS.ACCENT_COLOR }} />
               </div>
               <h3 className="text-lg font-semibold text-[#0D0D0D] mb-2">Entrée véhicules</h3>
               <p className="text-gray-600 text-sm">Exposition possible dans la salle</p>
@@ -405,8 +406,8 @@ export default function Capacites() {
               transition={{ delay: 0.1 }}
               className="text-left"
             >
-              <div className="w-16 h-16 bg-[#ff8c5a]/10 flex items-center justify-center mb-4 rounded-lg">
-                <Shield className="w-8 h-8 text-[#ff8c5a]" />
+              <div className="w-16 h-16 flex items-center justify-center mb-4 rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}10` }}>
+                <Shield className="w-8 h-8" style={{ color: COLORS.ACCENT_COLOR }} />
               </div>
               <h3 className="text-lg font-semibold text-[#0D0D0D] mb-2">Vestiaire équipé</h3>
               <p className="text-gray-600 text-sm">Capacité 450 personnes</p>
@@ -420,8 +421,8 @@ export default function Capacites() {
               transition={{ delay: 0.2 }}
               className="text-left"
             >
-              <div className="w-16 h-16 bg-[#ff8c5a]/10 flex items-center justify-center mb-4 rounded-lg">
-                <Monitor className="w-8 h-8 text-[#ff8c5a]" />
+              <div className="w-16 h-16 flex items-center justify-center mb-4 rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}10` }}>
+                <Monitor className="w-8 h-8" style={{ color: COLORS.ACCENT_COLOR }} />
               </div>
               <h3 className="text-lg font-semibold text-[#0D0D0D] mb-2">Matériel audiovisuel</h3>
               <p className="text-gray-600 text-sm">Équipement complet inclus</p>
@@ -435,8 +436,8 @@ export default function Capacites() {
               transition={{ delay: 0.3 }}
               className="text-left"
             >
-              <div className="w-16 h-16 bg-[#ff8c5a]/10 flex items-center justify-center mb-4 rounded-lg">
-                <Maximize2 className="w-8 h-8 text-[#ff8c5a]" />
+              <div className="w-16 h-16 flex items-center justify-center mb-4 rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}10` }}>
+                <Maximize2 className="w-8 h-8" style={{ color: COLORS.ACCENT_COLOR }} />
               </div>
               <h3 className="text-lg font-semibold text-[#0D0D0D] mb-2">Office traiteur</h3>
               <p className="text-gray-600 text-sm">Cuisine professionnelle équipée</p>
@@ -450,8 +451,8 @@ export default function Capacites() {
               transition={{ delay: 0.4 }}
               className="text-left"
             >
-              <div className="w-16 h-16 bg-[#ff8c5a]/10 flex items-center justify-center mb-4 rounded-lg">
-                <Accessibility className="w-8 h-8 text-[#ff8c5a]" />
+              <div className="w-16 h-16 flex items-center justify-center mb-4 rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}10` }}>
+                <Accessibility className="w-8 h-8" style={{ color: COLORS.ACCENT_COLOR }} />
               </div>
               <h3 className="text-lg font-semibold text-[#0D0D0D] mb-2">Loge aménagée</h3>
               <p className="text-gray-600 text-sm">Avec accès privatif</p>
@@ -465,8 +466,8 @@ export default function Capacites() {
               transition={{ delay: 0.5 }}
               className="text-left"
             >
-              <div className="w-16 h-16 bg-[#ff8c5a]/10 flex items-center justify-center mb-4 rounded-lg">
-                <Speaker className="w-8 h-8 text-[#ff8c5a]" />
+              <div className="w-16 h-16 flex items-center justify-center mb-4 rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}10` }}>
+                <Speaker className="w-8 h-8" style={{ color: COLORS.ACCENT_COLOR }} />
               </div>
               <h3 className="text-lg font-semibold text-[#0D0D0D] mb-2">Bar aménagé</h3>
               <p className="text-gray-600 text-sm">Service professionnel</p>
@@ -480,8 +481,8 @@ export default function Capacites() {
               transition={{ delay: 0.6 }}
               className="text-left"
             >
-              <div className="w-16 h-16 bg-[#ff8c5a]/10 flex items-center justify-center mb-4 rounded-lg">
-                <Lightbulb className="w-8 h-8 text-[#ff8c5a]" />
+              <div className="w-16 h-16 flex items-center justify-center mb-4 rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}10` }}>
+                <Lightbulb className="w-8 h-8" style={{ color: COLORS.ACCENT_COLOR }} />
               </div>
               <h3 className="text-lg font-semibold text-[#0D0D0D] mb-2">Fumoir</h3>
               <p className="text-gray-600 text-sm">Espace dédié</p>
@@ -495,8 +496,8 @@ export default function Capacites() {
               transition={{ delay: 0.7 }}
               className="text-left"
             >
-              <div className="w-16 h-16 bg-[#ff8c5a]/10 flex items-center justify-center mb-4 rounded-lg">
-                <Layers className="w-8 h-8 text-[#ff8c5a]" />
+              <div className="w-16 h-16 flex items-center justify-center mb-4 rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}10` }}>
+                <Layers className="w-8 h-8" style={{ color: COLORS.ACCENT_COLOR }} />
               </div>
               <h3 className="text-lg font-semibold text-[#0D0D0D] mb-2">Climatisation</h3>
               <p className="text-gray-600 text-sm">Chauffage et traitement air</p>
@@ -510,8 +511,8 @@ export default function Capacites() {
               transition={{ delay: 0.8 }}
               className="text-left"
             >
-              <div className="w-16 h-16 bg-[#ff8c5a]/10 flex items-center justify-center mb-4 rounded-lg">
-                <Monitor className="w-8 h-8 text-[#ff8c5a]" />
+              <div className="w-16 h-16 flex items-center justify-center mb-4 rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}10` }}>
+                <Monitor className="w-8 h-8" style={{ color: COLORS.ACCENT_COLOR }} />
               </div>
               <h3 className="text-lg font-semibold text-[#0D0D0D] mb-2">Fibre optique</h3>
               <p className="text-gray-600 text-sm">Wi-Fi très haut débit</p>

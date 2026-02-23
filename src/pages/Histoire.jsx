@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Calendar, Building2, Award } from 'lucide-react';
 import SectionTitle from '@/components/ui/SectionTitle';
 import CTABanner from '@/components/ui/CTABanner';
+import { COLORS } from '@/components/config/colors';
 
 export default function Histoire() {
   return (
@@ -24,7 +25,7 @@ export default function Histoire() {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-6xl text-white font-bold tracking-tight mb-6"
           >
-            Notre <span className="text-[#ff8c5a]">Histoire</span>
+            Notre <span style={{ color: COLORS.ACCENT_COLOR }}>Histoire</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -39,7 +40,7 @@ export default function Histoire() {
 
       {/* Timeline Section */}
       <section className="py-20 px-6 bg-[#F5F5F0] relative overflow-hidden">
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-2/3 bg-[#ff8c5a]/5 rounded-l-full blur-3xl" />
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-2/3 rounded-l-full blur-3xl" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}05` }} />
         
         <div className="max-w-4xl mx-auto relative z-10">
           <div className="space-y-12">
@@ -53,7 +54,8 @@ export default function Histoire() {
             >
               <div className="flex-shrink-0">
                 <motion.div 
-                  className="w-20 h-20 bg-[#ff8c5a] flex items-center justify-center"
+                  className="w-20 h-20 flex items-center justify-center"
+                  style={{ backgroundColor: COLORS.ACCENT_COLOR }}
                   whileHover={{ scale: 1.05, rotate: 5 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -61,7 +63,7 @@ export default function Histoire() {
                 </motion.div>
               </div>
               <div className="flex-1 text-left">
-                <div className="inline-block px-4 py-1 bg-[#ff8c5a]/20 text-[#ff8c5a] text-sm font-medium tracking-wide mb-4">
+                <div className="inline-block px-4 py-1 text-sm font-medium tracking-wide mb-4" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20`, color: COLORS.ACCENT_COLOR }}>
                   DÉBUT DU XXe SIÈCLE
                 </div>
                 <h3 className="text-2xl font-semibold text-[#0D0D0D] mb-4">Bains-douches et Laverie</h3>
@@ -83,7 +85,8 @@ export default function Histoire() {
             >
               <div className="flex-shrink-0">
                 <motion.div 
-                  className="w-20 h-20 bg-[#ff8c5a] flex items-center justify-center"
+                  className="w-20 h-20 flex items-center justify-center"
+                  style={{ backgroundColor: COLORS.ACCENT_COLOR }}
                   whileHover={{ scale: 1.05, rotate: -5 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -91,7 +94,7 @@ export default function Histoire() {
                 </motion.div>
               </div>
               <div className="flex-1 text-left">
-                <div className="inline-block px-4 py-1 bg-[#ff8c5a]/20 text-[#ff8c5a] text-sm font-medium tracking-wide mb-4">
+                <div className="inline-block px-4 py-1 text-sm font-medium tracking-wide mb-4" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20`, color: COLORS.ACCENT_COLOR }}>
                   PÉRIODE INDUSTRIELLE
                 </div>
                 <h3 className="text-2xl font-semibold text-[#0D0D0D] mb-4">Site Industriel</h3>
@@ -113,7 +116,8 @@ export default function Histoire() {
             >
               <div className="flex-shrink-0">
                 <motion.div 
-                  className="w-20 h-20 bg-[#ff8c5a] flex items-center justify-center"
+                  className="w-20 h-20 flex items-center justify-center"
+                  style={{ backgroundColor: COLORS.ACCENT_COLOR }}
                   whileHover={{ scale: 1.05, rotate: 5 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -121,7 +125,7 @@ export default function Histoire() {
                 </motion.div>
               </div>
               <div className="flex-1 text-left">
-                <div className="inline-block px-4 py-1 bg-[#ff8c5a]/20 text-[#ff8c5a] text-sm font-medium tracking-wide mb-4">
+                <div className="inline-block px-4 py-1 text-sm font-medium tracking-wide mb-4" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20`, color: COLORS.ACCENT_COLOR }}>
                   2016
                 </div>
                 <h3 className="text-2xl font-semibold text-[#0D0D0D] mb-4">Le Tripot Régnier</h3>
@@ -169,7 +173,7 @@ export default function Histoire() {
 
       {/* Stats Section */}
       <section className="py-16 px-6 bg-[#0D0D0D] relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,140,90,0.1),transparent_70%)]" />
+        <div className="absolute inset-0" style={{ background: `radial-gradient(circle at 50% 50%, ${COLORS.ACCENT_COLOR}10, transparent 70%)` }} />
         
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
@@ -180,7 +184,7 @@ export default function Histoire() {
               transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
               className="text-center"
             >
-              <p className="text-5xl font-bold text-[#ff8c5a] mb-2">1904</p>
+              <p className="text-5xl font-bold mb-2" style={{ color: COLORS.ACCENT_COLOR }}>1904</p>
               <p className="text-gray-400">Construction du bâtiment</p>
             </motion.div>
             <motion.div
@@ -190,7 +194,7 @@ export default function Histoire() {
               transition={{ delay: 0.1, duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
               className="text-center"
             >
-              <p className="text-5xl font-bold text-[#ff8c5a] mb-2">2016</p>
+              <p className="text-5xl font-bold mb-2" style={{ color: COLORS.ACCENT_COLOR }}>2016</p>
               <p className="text-gray-400">Ouverture du Tripot Régnier</p>
             </motion.div>
             <motion.div
@@ -200,7 +204,7 @@ export default function Histoire() {
               transition={{ delay: 0.2, duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
               className="text-center"
             >
-              <p className="text-5xl font-bold text-[#ff8c5a] mb-2">700m²</p>
+              <p className="text-5xl font-bold mb-2" style={{ color: COLORS.ACCENT_COLOR }}>700m²</p>
               <p className="text-gray-400">Entièrement rénovés</p>
             </motion.div>
           </div>
@@ -229,21 +233,21 @@ export default function Histoire() {
               {/* Stats Grid */}
               <div className="grid grid-cols-3 gap-6 mb-8">
                 <div className="text-left">
-                  <p className="text-4xl font-bold text-[#ff8c5a] mb-1">700</p>
+                  <p className="text-4xl font-bold mb-1" style={{ color: COLORS.ACCENT_COLOR }}>700</p>
                   <p className="text-sm text-gray-500">m² d'espace</p>
                 </div>
                 <div className="text-left">
-                  <p className="text-4xl font-bold text-[#ff8c5a] mb-1">500</p>
+                  <p className="text-4xl font-bold mb-1" style={{ color: COLORS.ACCENT_COLOR }}>500</p>
                   <p className="text-sm text-gray-500">personnes max</p>
                 </div>
                 <div className="text-left">
-                  <p className="text-4xl font-bold text-[#ff8c5a] mb-1">1904</p>
+                  <p className="text-4xl font-bold mb-1" style={{ color: COLORS.ACCENT_COLOR }}>1904</p>
                   <p className="text-sm text-gray-500">bâtiment historique</p>
                 </div>
               </div>
               
               {/* Additional stat */}
-              <div className="inline-block bg-[#ff8c5a] text-white px-6 py-3">
+              <div className="inline-block text-white px-6 py-3" style={{ backgroundColor: COLORS.ACCENT_COLOR }}>
                 <p className="text-2xl font-bold">120</p>
                 <p className="text-xs">ans d'histoire</p>
               </div>
