@@ -216,7 +216,7 @@ export const IMAGES = {
     },
     {
       name: "Partner 7",
-      url: "https://imgs.search.brave.com/h_ceMApD9mjrNgwXCV2nLneBGeWca9q3nYIvFzYkq5o/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZmF2cG5nLmNvbS8y/NS8xNi8yMi9ncm91/cGUtYnBjZS1iYW5r/LWxvZ28tYnJhbmQt/cG9ydGFibGUtbmV0/d29yay1ncmFwaGlj/cy1wbmctZmF2cG5n/LTREUDVneDd0d2hh/V2JBaWRkbkV0a0d3/ZWkuanBn",
+      url: "https://imgs.search.brave.com/fsR70YCmL7Td0rEv5p58ZiBiYJ_QH4AGW_UbcGTLLIU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMud2l4c3RhdGlj/LmNvbS9tZWRpYS84/YTQyMzFfODkxZGVk/ZmNkMDQ0NGI4ZDhl/MDA1Yzg1YWUzNzYz/MDF-bXYyLnBuZy92/MS9maWxsL3dfNDE2/LGhfMjQ4LGFsX2Ms/cV84NSx1c21fMC42/Nl8xLjAwXzAuMDEs/ZW5jX2F2aWYscXVh/bGl0eV9hdXRvL0Jv/bmpvdXJfZWRpdGVk/LnBuZw",
     },
     {
       name: "Partner 8",
