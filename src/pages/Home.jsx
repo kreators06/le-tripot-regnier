@@ -208,11 +208,6 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Logo Marquee */}
-        <div className="absolute bottom-32 left-0 right-0">
-          <LogoMarquee />
-        </div>
-
         {/* Scroll Indicator */}
         <motion.a
           href="#nos-espaces"
@@ -324,6 +319,11 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Logo Marquee Section */}
+      <section className="py-16 md:py-24 px-6 bg-white border-t border-gray-100 overflow-hidden">
+        <LogoMarquee />
       </section>
 
       {/* Configurations Section */}
