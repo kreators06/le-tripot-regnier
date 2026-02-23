@@ -19,8 +19,8 @@ export const COLORS = {
   // COULEUR D'ACCENT PRINCIPALE
   // ⚠️ Changez cette valeur pour modifier la couleur sur tout le site
   // ==========================================
-  ACCENT_COLOR: "#e1bf58ff",
-  ACCENT_COLOR_HOVER: "#8b8156ff", // Version plus foncée pour le hover
+  ACCENT_COLOR: "#d4b351ff",
+  ACCENT_COLOR_HOVER: "#b89b46ff", // Version plus foncée pour le hover
   
   // ==========================================
   // COULEURS PRINCIPALES (à ne pas modifier sauf besoin spécifique)
