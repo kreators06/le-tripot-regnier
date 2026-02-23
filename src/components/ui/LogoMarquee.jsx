@@ -33,7 +33,7 @@ export default function LogoMarquee() {
               <img
                 src={logo.url}
                 alt={logo.name}
-                className="h-full w-auto object-contain grayscale opacity-70 hover:opacity-100 transition-opacity duration-300"
+                className="h-full w-auto object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
               />
             </div>
           ))}
@@ -47,7 +47,7 @@ export default function LogoMarquee() {
               <img
                 src={logo.url}
                 alt={logo.name}
-                className="h-full w-auto object-contain grayscale opacity-70 hover:opacity-100 transition-opacity duration-300"
+                className="h-full w-auto object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
               />
             </div>
           ))}
