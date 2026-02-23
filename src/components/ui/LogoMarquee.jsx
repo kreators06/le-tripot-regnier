@@ -6,43 +6,53 @@ export default function LogoMarquee() {
   // Récupérer les logos depuis la config centralisée
   const logos = IMAGES.logos;
 
-  // Tripler les logos pour un défilement vraiment infini et fluide
-  const duplicatedLogos = [...logos, ...logos, ...logos];
-
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
-      className="mt-20 pt-12 border-t border-white/20 px-4 md:px-0"
-    >
-      <p className="text-xs tracking-[0.3em] uppercase text-white/60 text-center mb-8 font-light">
-        Références & Partenaires
-      </p>
-      <div className="relative w-full overflow-hidden">
+    <div className="w-full">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <h3 className="text-center text-xs tracking-[0.3em] uppercase text-gray-500 mb-10 md:mb-12 font-light">
+          Références & Partenaires
+        </h3>
+      </div>
+      
+      <div className="overflow-hidden bg-white">
         <motion.div
-          className="flex gap-8 md:gap-12 py-4 md:py-6"
-          animate={{ x: ['0%', '-33.333%'] }}
+          className="flex gap-8 md:gap-16"
+          animate={{ x: [0, -100 * logos.length + '%'] }}
           transition={{
-            duration: 30,
+            duration: 40,
             repeat: Infinity,
-            ease: 'linear',
+            ease: "linear"
           }}
         >
-          {duplicatedLogos.map((logo, index) => (
+          {/* First set */}
+          {logos.map((logo, index) => (
             <div
-              key={`${logo.name}-${index}`}
-              className="flex-shrink-0 h-14 md:h-20 flex items-center justify-center grayscale opacity-50 hover:opacity-100 transition-opacity duration-300"
+              key={`logo-1-${index}`}
+              className="flex-shrink-0 w-32 h-16 md:w-40 md:h-20 flex items-center justify-center px-2"
             >
               <img
                 src={logo.url}
                 alt={logo.name}
-                className="h-full w-auto object-contain filter brightness-0 invert"
+                className="h-full w-auto object-contain grayscale opacity-70 hover:opacity-100 transition-opacity duration-300"
+              />
+            </div>
+          ))}
+          
+          {/* Second set for seamless loop */}
+          {logos.map((logo, index) => (
+            <div
+              key={`logo-2-${index}`}
+              className="flex-shrink-0 w-32 h-16 md:w-40 md:h-20 flex items-center justify-center px-2"
+            >
+              <img
+                src={logo.url}
+                alt={logo.name}
+                className="h-full w-auto object-contain grayscale opacity-70 hover:opacity-100 transition-opacity duration-300"
               />
             </div>
           ))}
         </motion.div>
       </div>
-    </motion.div>
+    </div>
   );
 }
