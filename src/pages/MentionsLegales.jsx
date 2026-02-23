@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import SectionTitle from '@/components/ui/SectionTitle';
+import { COLORS } from '@/components/config/colors';
 
 export default function MentionsLegales() {
   return (
