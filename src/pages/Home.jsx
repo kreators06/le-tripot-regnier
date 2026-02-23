@@ -2,15 +2,15 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { motion } from 'framer-motion';
-import { 
-  ArrowRight, 
-  Users, 
-  Utensils, 
-  Presentation, 
-  PartyPopper, 
+import {
+  ArrowRight,
+  Users,
+  Utensils,
+  Presentation,
+  PartyPopper,
   Store,
-  ChevronDown
-} from 'lucide-react';
+  ChevronDown } from
+'lucide-react';
 import SectionTitle from '@/components/ui/SectionTitle';
 import SpaceCard from '@/components/ui/SpaceCard';
 import TestimonialCard from '@/components/ui/TestimonialCard';
@@ -24,94 +24,94 @@ import { IMAGES } from '@/components/config/images';
 import { COLORS } from '@/components/config/colors';
 
 const spaces = [
-  {
-    title: "Salle Principale",
-    surface: "400 m²",
-    image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&auto=format",
-    description: "Espace modulable avec béton ciré et équipements audiovisuels complets"
-  },
-  {
-    title: "Bar Aménagé",
-    surface: "",
-    image: "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=800&auto=format",
-    description: "Bar design entièrement équipé pour vos cocktails"
-  },
-  {
-    title: "Mezzanine",
-    surface: "65 m²",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format",
-    description: "Espace en hauteur offrant une vue panoramique"
-  },
-  {
-    title: "Espace Lounge",
-    surface: "",
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&auto=format",
-    description: "Coin détente avec mobilier contemporain"
-  },
-  {
-    title: "Loge Aménagée",
-    surface: "",
-    image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&auto=format",
-    description: "Loge privative avec accès dédié"
-  },
-  {
-    title: "Vestiaire",
-    surface: "450 pers.",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format",
-    description: "Vestiaire équipé avec capacité de 450 personnes"
-  }
-];
+{
+  title: "Salle Principale",
+  surface: "400 m²",
+  image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&auto=format",
+  description: "Espace modulable avec béton ciré et équipements audiovisuels complets"
+},
+{
+  title: "Bar Aménagé",
+  surface: "",
+  image: "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=800&auto=format",
+  description: "Bar design entièrement équipé pour vos cocktails"
+},
+{
+  title: "Mezzanine",
+  surface: "65 m²",
+  image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format",
+  description: "Espace en hauteur offrant une vue panoramique"
+},
+{
+  title: "Espace Lounge",
+  surface: "",
+  image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&auto=format",
+  description: "Coin détente avec mobilier contemporain"
+},
+{
+  title: "Loge Aménagée",
+  surface: "",
+  image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&auto=format",
+  description: "Loge privative avec accès dédié"
+},
+{
+  title: "Vestiaire",
+  surface: "450 pers.",
+  image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format",
+  description: "Vestiaire équipé avec capacité de 450 personnes"
+}];
+
 
 const configurations = [
-  { 
-    icon: Users, 
-    name: "Défilé", 
-    capacity: "< 200 pers.",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format"
-  },
-  { 
-    icon: Utensils, 
-    name: "Dîner assis", 
-    capacity: "< 220 pers.",
-    image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&auto=format"
-  },
-  { 
-    icon: Presentation, 
-    name: "Conférence", 
-    capacity: "< 250 pers.",
-    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format"
-  },
-  { 
-    icon: PartyPopper, 
-    name: "Cocktail / Soirée", 
-    capacity: "< 500 pers.",
-    image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&auto=format"
-  },
-  { 
-    icon: Store, 
-    name: "Showroom", 
-    capacity: "Sur mesure",
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&auto=format"
-  }
-];
+{
+  icon: Users,
+  name: "Défilé",
+  capacity: "< 200 pers.",
+  image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format"
+},
+{
+  icon: Utensils,
+  name: "Dîner assis",
+  capacity: "< 220 pers.",
+  image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&auto=format"
+},
+{
+  icon: Presentation,
+  name: "Conférence",
+  capacity: "< 250 pers.",
+  image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format"
+},
+{
+  icon: PartyPopper,
+  name: "Cocktail / Soirée",
+  capacity: "< 500 pers.",
+  image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&auto=format"
+},
+{
+  icon: Store,
+  name: "Showroom",
+  capacity: "Sur mesure",
+  image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&auto=format"
+}];
+
 
 const testimonials = [
-  {
-    quote: "Un lieu exceptionnel qui a su sublimer notre événement d'entreprise. L'équipe est professionnelle et réactive. Le cadre Art Déco apporte une touche unique.",
-    author: "Marie Dupont",
-    company: "Directrice Événementiel, L'Oréal"
-  },
-  {
-    quote: "Nous avons organisé notre soirée de lancement dans ce lieu magique. L'acoustique parfaite et les équipements techniques sont un vrai plus.",
-    author: "Thomas Bernard",
-    company: "CEO, StartupTech"
-  },
-  {
-    quote: "Le Tripot Régnier a dépassé toutes nos attentes. L'espace modulable nous a permis de créer exactement l'ambiance recherchée.",
-    author: "Sophie Martin",
-    company: "Wedding Planner"
-  }
-];
+{
+  quote: "Un lieu exceptionnel qui a su sublimer notre événement d'entreprise. L'équipe est professionnelle et réactive. Le cadre Art Déco apporte une touche unique.",
+  author: "Marie Dupont",
+  company: "Directrice Événementiel, L'Oréal"
+},
+{
+  quote: "Nous avons organisé notre soirée de lancement dans ce lieu magique. L'acoustique parfaite et les équipements techniques sont un vrai plus.",
+  author: "Thomas Bernard",
+  company: "CEO, StartupTech"
+},
+{
+  quote: "Le Tripot Régnier a dépassé toutes nos attentes. L'espace modulable nous a permis de créer exactement l'ambiance recherchée.",
+  author: "Sophie Martin",
+  company: "Wedding Planner"
+}];
+
 
 export default function Home() {
   const videoRef = useRef(null);
@@ -121,7 +121,7 @@ export default function Home() {
     if (video) {
       video.addEventListener('loadeddata', () => {
         console.log("Vidéo chargée avec succès");
-        video.play().catch(error => {
+        video.play().catch((error) => {
           console.log("Autoplay bloqué:", error);
         });
       });
@@ -152,8 +152,8 @@ export default function Home() {
             preload="auto"
             poster={IMAGES.home.heroPoster}
             className="w-full h-full object-cover"
-            crossOrigin="anonymous"
-          >
+            crossOrigin="anonymous">
+
             <source src={IMAGES.home.heroVideo} type="video/mp4" />
             Votre navigateur ne supporte pas la lecture de vidéos.
           </video>
@@ -166,13 +166,13 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-          >
+            transition={{ duration: 1, ease: "easeOut" }}>
+
             <p className="text-sm md:text-base text-white/80 tracking-[0.3em] uppercase mb-8 font-light">
               Événementiel Premium — Paris 15ème
             </p>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl text-white font-bold tracking-tight mb-10 leading-[1.1]">
-              Le Tripot Régnier : Espace Événementiel Atypique et Industriel à Paris 15
+            <h1 className="text-5xl md:text-6xl lg:text-7xl text-white font-bold tracking-tight mb-10 leading-[1.1]">Salle parisienne où 
+vos événements prennent vie
             </h1>
           </motion.div>
 
@@ -180,8 +180,8 @@ export default function Home() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            className="text-base md:text-lg text-white/90 max-w-2xl mx-auto mb-12 leading-relaxed font-light"
-          >
+            className="text-base md:text-lg text-white/90 max-w-2xl mx-auto mb-12 leading-relaxed font-light">
+
             700m² modulables alliant Art Déco et Industriel au cœur de Paris. 
             Un lieu unique entièrement rénové pour sublimer vos événements.
           </motion.p>
@@ -189,14 +189,14 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
-          >
+            transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}>
+
             <a
               href="#nos-espaces"
               className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-[#0D0D0D] font-semibold tracking-wider text-sm hover:text-white transition-all duration-500 shadow-lg hover:shadow-2xl"
               onMouseEnter={(e) => e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}
-            >
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}>
+
               DÉCOUVRIR LE LIEU
               <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
             </a>
@@ -209,12 +209,12 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer"
-        >
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer">
+
           <motion.div
             animate={{ y: [0, 10, 0] }}
-            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-          >
+            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}>
+
             <ChevronDown className="w-8 h-8 text-white/80" />
           </motion.div>
         </motion.a>
@@ -230,8 +230,8 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-            className="text-center mb-20"
-          >
+            className="text-center mb-20">
+
             <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Nos espaces</p>
             <h2 className="text-4xl md:text-6xl font-semibold text-[#0D0D0D] tracking-tight mb-6">
               Espaces Modulables et Capacités de <span style={{ color: COLORS.ACCENT_COLOR }}>Réception</span>
@@ -249,24 +249,24 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-                className="group h-full"
-              >
+                className="group h-full">
+
                 <div className="relative h-full overflow-hidden rounded-lg">
                   <motion.img
                     src={spaces[0].image}
                     alt={spaces[0].title}
                     className="w-full h-full object-cover"
                     whileHover={{ scale: 1.08 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                  />
+                    transition={{ duration: 0.6, ease: "easeOut" }} />
+
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
-                  <motion.div 
+                  <motion.div
                     className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: 0.3, duration: 0.5 }}
-                  >
+                    transition={{ delay: 0.3, duration: 0.5 }}>
+
                     <h3 className="text-white text-2xl md:text-3xl font-semibold tracking-tight mb-2">La Salle Principale de 400m²</h3>
                     <p className="text-base md:text-lg font-medium mb-2 md:mb-3" style={{ color: COLORS.ACCENT_COLOR }}>400 m² | Capacité jusqu'à 450 pers.</p>
                     <p className="text-white/95 text-sm md:text-base leading-relaxed">Espace modulable avec béton ciré, accès direct véhicule, mur LED immersif et équipements audiovisuels professionnels.</p>
@@ -277,40 +277,40 @@ export default function Home() {
 
             {/* Autres espaces - Stacking cards */}
             <div className="relative">
-              {spaces.slice(1).map((space, index) => (
-                <div 
-                  key={space.title}
-                  className="mb-[80px] last:mb-0"
-                >
+              {spaces.slice(1).map((space, index) =>
+              <div
+                key={space.title}
+                className="mb-[80px] last:mb-0">
+
                   <div
-                    className="sticky bg-white"
-                    style={{ 
-                      top: `calc(8rem + ${index * 1.5}rem)`,
-                    }}
-                  >
+                  className="sticky bg-white"
+                  style={{
+                    top: `calc(8rem + ${index * 1.5}rem)`
+                  }}>
+
                     <div className="relative h-80 overflow-hidden">
                       <img
-                        src={space.image}
-                        alt={space.title}
-                        className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-                      />
+                      src={space.image}
+                      alt={space.title}
+                      className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" />
+
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                     </div>
                     
                     <div className="p-6 bg-white">
                       <div className="flex items-baseline justify-between mb-3">
                         <h3 className="text-[#0D0D0D] text-lg font-semibold tracking-tight">{space.title}</h3>
-                        {space.surface && (
-                          <p className="text-xs font-medium" style={{ color: COLORS.ACCENT_COLOR }}>{space.surface}</p>
-                        )}
+                        {space.surface &&
+                      <p className="text-xs font-medium" style={{ color: COLORS.ACCENT_COLOR }}>{space.surface}</p>
+                      }
                       </div>
-                      {space.description && (
-                        <p className="text-gray-600 text-sm leading-relaxed font-light">{space.description}</p>
-                      )}
+                      {space.description &&
+                    <p className="text-gray-600 text-sm leading-relaxed font-light">{space.description}</p>
+                    }
                     </div>
                   </div>
                 </div>
-              ))}
+              )}
             </div>
           </div>
         </div>
@@ -336,8 +336,8 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-            className="text-center mb-16"
-          >
+            className="text-center mb-16">
+
             <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Configurations événementielles</p>
             <h2 className="text-3xl md:text-5xl font-semibold text-[#0D0D0D] tracking-tight mb-6">
               Infrastructures <span style={{ color: COLORS.ACCENT_COLOR }}>Techniques Complètes</span>
@@ -348,45 +348,45 @@ export default function Home() {
           </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {configurations.map((config, index) => (
-              <motion.div
-                key={config.name}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ delay: index * 0.05, duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-                className="group cursor-pointer"
-              >
+            {configurations.map((config, index) =>
+            <motion.div
+              key={config.name}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ delay: index * 0.05, duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+              className="group cursor-pointer">
+
                 <div className="relative h-80 overflow-hidden">
-                  <motion.img 
-                    src={config.image}
-                    alt={config.name}
-                    className="w-full h-full object-cover"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.5, ease: "easeOut" }}
-                  />
+                  <motion.img
+                  src={config.image}
+                  alt={config.name}
+                  className="w-full h-full object-cover"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }} />
+
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-                  <motion.div 
-                    className="absolute bottom-6 left-6 right-6"
-                    whileHover={{ y: -4 }}
-                    transition={{ duration: 0.3 }}
-                  >
+                  <motion.div
+                  className="absolute bottom-6 left-6 right-6"
+                  whileHover={{ y: -4 }}
+                  transition={{ duration: 0.3 }}>
+
                     <div className="flex items-center gap-3 mb-3">
-                      <div 
-                        className="w-10 h-10 backdrop-blur-sm flex items-center justify-center border transition-all duration-300"
-                        style={{ 
-                          backgroundColor: `${COLORS.ACCENT_COLOR}20`,
-                          borderColor: `${COLORS.ACCENT_COLOR}30`
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR;
-                          e.currentTarget.style.borderColor = COLORS.ACCENT_COLOR;
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.backgroundColor = `${COLORS.ACCENT_COLOR}20`;
-                          e.currentTarget.style.borderColor = `${COLORS.ACCENT_COLOR}30`;
-                        }}
-                      >
+                      <div
+                      className="w-10 h-10 backdrop-blur-sm flex items-center justify-center border transition-all duration-300"
+                      style={{
+                        backgroundColor: `${COLORS.ACCENT_COLOR}20`,
+                        borderColor: `${COLORS.ACCENT_COLOR}30`
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR;
+                        e.currentTarget.style.borderColor = COLORS.ACCENT_COLOR;
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = `${COLORS.ACCENT_COLOR}20`;
+                        e.currentTarget.style.borderColor = `${COLORS.ACCENT_COLOR}30`;
+                      }}>
+
                         <config.icon className="w-5 h-5 text-white" />
                       </div>
                     </div>
@@ -395,7 +395,7 @@ export default function Home() {
                   </motion.div>
                 </div>
               </motion.div>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -403,25 +403,25 @@ export default function Home() {
 
 
       {/* Logistique Section */}
-      <section className="py-20 md:py-28 px-6 bg-white" aria-label="Logistique hors-norme lancements de produits accès véhicules">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.4 }}
-            className="text-center mb-16"
-          >
-            <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Capacités logistiques</p>
-            <h2 className="text-3xl md:text-5xl font-semibold text-[#0D0D0D] tracking-tight mb-6">
-              Lancements Automobiles et <span style={{ color: COLORS.ACCENT_COLOR }}>Accès Véhicules</span>
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto font-light text-lg">
-              Accès véhicule direct en salle principale pour lancements produits, expositions automobiles et logistique extraordinaire
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       {/* Testimonials Section */}
       <section className="py-20 md:py-28 px-6 bg-[#FAFAFA]">
@@ -431,8 +431,8 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-            className="text-center mb-16"
-          >
+            className="text-center mb-16">
+
             <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Témoignages</p>
             <h2 className="text-3xl md:text-5xl font-semibold text-[#0D0D0D] tracking-tight mb-6">
               Ils nous font <span style={{ color: COLORS.ACCENT_COLOR }}>confiance</span>
@@ -440,15 +440,15 @@ export default function Home() {
           </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ delay: index * 0.05, duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-                className="text-left"
-              >
+            {testimonials.map((testimonial, index) =>
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ delay: index * 0.05, duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+              className="text-left">
+
                 <p className="text-gray-700 text-base leading-relaxed mb-8 font-light italic">
                   "{testimonial.quote}"
                 </p>
@@ -458,7 +458,7 @@ export default function Home() {
                   <p className="text-gray-500 text-xs font-light">{testimonial.company}</p>
                 </div>
               </motion.div>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -471,8 +471,8 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.4 }}
-            className="text-center"
-          >
+            className="text-center">
+
             <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Localisation & Accessibilité</p>
             <h2 className="text-3xl md:text-5xl font-semibold text-[#0D0D0D] tracking-tight mb-6">
               10-12 rue Mathurin Régnier, <span style={{ color: COLORS.ACCENT_COLOR }}>Paris 75015</span>
@@ -480,12 +480,12 @@ export default function Home() {
             <p className="text-gray-600 max-w-2xl mx-auto font-light text-lg mb-8">
               Entièrement accessible PMR. Ascenseur, toilettes accessibles, stationnement PMR à proximité. Transports: Métro ligne 8 (Boucicaut, Lourmel), RER C (Pont de Garigliano).
             </p>
-            <a 
+            <a
               href="https://maps.google.com/?q=10-12+rue+Mathurin+Régnier+75015+Paris"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 text-[#0D0D0D] font-semibold text-sm tracking-wide hover:bg-gray-50 transition-all duration-300"
-            >
+              className="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 text-[#0D0D0D] font-semibold text-sm tracking-wide hover:bg-gray-50 transition-all duration-300">
+
               Voir sur Google Maps
             </a>
           </motion.div>
@@ -497,26 +497,26 @@ export default function Home() {
 
       {/* CTA Section */}
       <section className="py-20 md:py-28 px-6 bg-[#0D0D0D] relative overflow-hidden">
-        <div 
-          className="absolute inset-0" 
-          style={{ 
+        <div
+          className="absolute inset-0"
+          style={{
             background: `radial-gradient(circle at 30% 50%, ${COLORS.ACCENT_COLOR}10, transparent 50%)`
-          }} 
-        />
-        <div 
-          className="absolute inset-0" 
-          style={{ 
+          }} />
+
+        <div
+          className="absolute inset-0"
+          style={{
             background: `radial-gradient(circle at 70% 50%, ${COLORS.ACCENT_COLOR}05, transparent 50%)`
-          }} 
-        />
+          }} />
+
         
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-          >
+            transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}>
+
             <h2 className="text-3xl md:text-5xl text-white font-semibold tracking-tight mb-8">
               Venez découvrir le <span style={{ color: COLORS.ACCENT_COLOR }}>lieu</span>
             </h2>
@@ -525,20 +525,20 @@ export default function Home() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
+              <Link
                 to={createPageUrl('Contact')}
                 className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-[#0D0D0D] font-semibold tracking-wide text-sm hover:text-white transition-all duration-300"
                 onMouseEnter={(e) => e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}
-              >
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}>
+
                 NOUS CONTACTER
                 <ArrowRight className="w-4 h-4" />
               </Link>
               
-              <Link 
+              <Link
                 to={createPageUrl('Engagements')}
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-white/30 text-white font-semibold tracking-wide text-sm hover:bg-white/10 transition-all duration-300"
-              >
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-white/30 text-white font-semibold tracking-wide text-sm hover:bg-white/10 transition-all duration-300">
+
                 NOS ENGAGEMENTS
               </Link>
             </div>
@@ -547,6 +547,6 @@ export default function Home() {
       </section>
 
 
-    </div>
-  );
+    </div>);
+
 }
