@@ -16,8 +16,8 @@ export default function LogoMarquee() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
   
-  // Desktop: 60s * 0.8 = 48s | Mobile: 48s / 2 = 24s
-  const duration = isMobile ? 24 : 48;
+  // Desktop: 48s | Mobile: 24s / 1.5 = 16s
+  const duration = isMobile ? 16 : 48;
 
   return (
     <div className="w-full">
