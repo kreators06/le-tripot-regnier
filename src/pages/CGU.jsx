@@ -163,9 +163,11 @@ export default function CGU() {
               <div className="bg-[#F5F5F0] p-6 rounded-lg mt-6">
                 <p className="text-gray-700">
                   <strong>Contact :</strong><br />
-                  Le Tripot Régnier<br />
-                  Paris 15ème arrondissement, 75015 Paris<br />
-                  Email : contact@tripotregnier.fr
+                  ROMAIN MONTI RACING (LE TRIPOT RÉGNIER)<br />
+                  10 rue Mathurin Régnier, 75015 Paris<br />
+                  SIRET : 529 266 645 00025<br />
+                  Email : contact@letripotregnier.fr<br />
+                  Tél : 01 45 26 04 58
                 </p>
               </div>
             </motion.div>

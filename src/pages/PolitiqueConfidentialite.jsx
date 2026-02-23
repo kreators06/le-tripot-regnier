@@ -130,7 +130,7 @@ export default function PolitiqueConfidentialite() {
                 <li><strong>Droit de limitation :</strong> limiter le traitement de vos données</li>
               </ul>
               <p className="text-gray-700 leading-relaxed mt-4">
-                Pour exercer ces droits, contactez-nous à : <strong>contact@tripotregnier.fr</strong>
+                Pour exercer ces droits, contactez-nous à : <strong>contact@letripotregnier.fr</strong>
               </p>
             </motion.div>
 
@@ -167,9 +167,16 @@ export default function PolitiqueConfidentialite() {
               viewport={{ once: true }}
             >
               <h2 className="text-2xl font-semibold text-[#0D0D0D] mb-4">9. Contact et réclamation</h2>
-              <p className="text-gray-700 leading-relaxed">
-                Pour toute question relative à cette politique, contactez-nous :<br />
-                <strong>Email :</strong> contact@tripotregnier.fr<br /><br />
+              <div className="bg-[#F5F5F0] p-6 rounded-lg">
+                <p className="text-gray-700">
+                  <strong>Responsable de traitement :</strong> ROMAIN MONTI RACING (LE TRIPOT RÉGNIER)<br />
+                  <strong>Adresse :</strong> 10 rue Mathurin Régnier, 75015 Paris<br />
+                  <strong>SIRET :</strong> 529 266 645 00025<br />
+                  <strong>Email :</strong> contact@letripotregnier.fr<br />
+                  <strong>Téléphone :</strong> 01 45 26 04 58
+                </p>
+              </div>
+              <p className="text-gray-700 leading-relaxed mt-4">
                 Vous avez également le droit d'introduire une réclamation auprès de la CNIL 
                 (Commission Nationale de l'Informatique et des Libertés).
               </p>
