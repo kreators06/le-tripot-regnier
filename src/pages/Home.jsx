@@ -232,8 +232,8 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
             className="text-center mb-20"
           >
             <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Nos espaces</p>
@@ -251,8 +251,8 @@ export default function Home() {
               <motion.div
                 initial={{ opacity: 0, x: -40 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
                 className="group h-full"
               >
                 <div className="relative h-full overflow-hidden">
@@ -349,8 +349,8 @@ export default function Home() {
                 key={config.name}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: index * 0.08, duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ delay: index * 0.05, duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
                 className="group cursor-pointer"
               >
                 <div className="relative h-80 overflow-hidden">
@@ -420,8 +420,8 @@ export default function Home() {
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: index * 0.1, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ delay: index * 0.05, duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
                 className="text-left"
               >
                 <p className="text-gray-700 text-base leading-relaxed mb-8 font-light italic">
