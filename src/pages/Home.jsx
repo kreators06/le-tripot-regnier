@@ -131,6 +131,7 @@ export default function Home() {
             poster={IMAGES.home.heroPoster}
             className="w-full h-full object-cover"
           >
+            <source src={IMAGES.home.heroVideo} type="video/quicktime" />
             <source src={IMAGES.home.heroVideo} type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-black/40" />
