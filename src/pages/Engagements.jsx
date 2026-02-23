@@ -76,16 +76,17 @@ export default function Engagements() {
         
         <div className="relative z-10 max-w-4xl mx-auto text-left">
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
             className="text-4xl md:text-6xl text-white font-bold tracking-tight mb-6"
           >
             Nos <span style={{ color: COLORS.ACCENT_COLOR }}>Engagements</span>
           </motion.h1>
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
+            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
             className="text-xl text-white/90 leading-relaxed"
           >
             Un positionnement RSE fort pour un événementiel responsable. 
@@ -110,8 +111,8 @@ export default function Engagements() {
                 key={pillar.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.15 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ delay: index * 0.08, duration: 0.4 }}
                 className="bg-white p-8 relative group overflow-hidden rounded-lg"
               >
                 <div className="absolute top-0 left-0 w-full h-1" style={{ backgroundColor: COLORS.ACCENT_COLOR }} />
@@ -161,8 +162,8 @@ export default function Engagements() {
                 key={action.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ delay: index * 0.05, duration: 0.3 }}
                 className="text-left p-6 bg-[#F5F5F0] group hover:bg-[#0D0D0D] transition-colors duration-300 rounded-lg"
               >
                 <div 
@@ -193,7 +194,8 @@ export default function Engagements() {
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.4 }}
               className="text-left"
             >
               <Wind className="w-12 h-12 mb-6" style={{ color: COLORS.ACCENT_COLOR }} />
@@ -225,7 +227,8 @@ export default function Engagements() {
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.4 }}
               className="text-left"
             >
               <Volume2 className="w-12 h-12 mb-6" style={{ color: COLORS.ACCENT_COLOR }} />
