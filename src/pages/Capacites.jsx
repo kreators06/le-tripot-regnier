@@ -357,14 +357,14 @@ export default function Capacites() {
             className="flex flex-col md:flex-row items-start justify-start gap-8"
           >
             <div className="flex items-center gap-4 px-8 py-4 bg-white/5 text-left rounded-lg">
-              <Shield className="w-8 h-8 text-[#ff8c5a]" />
+              <Shield className="w-8 h-8" style={{ color: COLORS.ACCENT_COLOR }} />
               <div>
                 <p className="text-white font-medium">Normes ERP</p>
                 <p className="text-gray-400 text-sm">Établissement Recevant du Public</p>
               </div>
             </div>
             <div className="flex items-center gap-4 px-8 py-4 bg-white/5 text-left rounded-lg">
-              <Accessibility className="w-8 h-8 text-[#ff8c5a]" />
+              <Accessibility className="w-8 h-8" style={{ color: COLORS.ACCENT_COLOR }} />
               <div>
                 <p className="text-white font-medium">Accessibilité PMR</p>
                 <p className="text-gray-400 text-sm">Personnes à Mobilité Réduite</p>
