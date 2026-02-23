@@ -31,13 +31,16 @@ export default function MentionsLegales() {
             >
               <h2 className="text-2xl font-semibold text-[#0D0D0D] mb-4">1. Éditeur du site</h2>
               <div className="bg-[#F5F5F0] p-6 rounded-lg">
-                <p className="text-gray-700 mb-2"><strong>Raison sociale :</strong> Le Tripot Régnier SAS</p>
-                <p className="text-gray-700 mb-2"><strong>Siège social :</strong> Paris 15ème arrondissement, 75015 Paris, France</p>
-                <p className="text-gray-700 mb-2"><strong>SIRET :</strong> 000 000 000 00000</p>
-                <p className="text-gray-700 mb-2"><strong>Capital social :</strong> 10 000 €</p>
-                <p className="text-gray-700 mb-2"><strong>Numéro TVA :</strong> FR 00 000000000</p>
-                <p className="text-gray-700 mb-2"><strong>Directeur de la publication :</strong> [Nom du directeur]</p>
-                <p className="text-gray-700"><strong>Contact :</strong> contact@tripotregnier.fr</p>
+                <p className="text-gray-700 mb-2"><strong>Raison sociale :</strong> ROMAIN MONTI RACING</p>
+                <p className="text-gray-700 mb-2"><strong>Nom commercial :</strong> LE TRIPOT RÉGNIER</p>
+                <p className="text-gray-700 mb-2"><strong>Forme juridique :</strong> Société par actions simplifiée</p>
+                <p className="text-gray-700 mb-2"><strong>Siège social :</strong> 10 rue Mathurin Régnier, 75015 Paris, France</p>
+                <p className="text-gray-700 mb-2"><strong>SIREN :</strong> 529 266 645</p>
+                <p className="text-gray-700 mb-2"><strong>SIRET :</strong> 529 266 645 00025</p>
+                <p className="text-gray-700 mb-2"><strong>Numéro TVA :</strong> FR60529266645</p>
+                <p className="text-gray-700 mb-2"><strong>APE :</strong> 8230Z - Organisation de foires, salons professionnels et congrès</p>
+                <p className="text-gray-700 mb-2"><strong>Directeur de la publication :</strong> Romain MONTI</p>
+                <p className="text-gray-700"><strong>Contact :</strong> contact@letripotregnier.fr - 01 45 26 04 58</p>
               </div>
             </motion.div>
 

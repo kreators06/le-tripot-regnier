@@ -23,12 +23,12 @@ const contactInfo = [
     icon: MapPin,
     title: "Adresse",
     content: "LE TRIPOT RÉGNIER",
-    subContent: "10-12 rue Mathurin Régnier 75015 PARIS"
+    subContent: "10 – 12 rue Mathurin Régnier 75015 PARIS"
   },
   {
     icon: Phone,
     title: "Téléphone",
-    content: "06.61.06.07.10",
+    content: "01 45 26 04 58",
     subContent: "Du lundi au vendredi"
   },
   {
