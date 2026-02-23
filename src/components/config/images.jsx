@@ -18,9 +18,9 @@ export const IMAGES = {
   // ==========================================
   home: {
     // Vidéo de fond du hero
-    heroVideo: "http://le-tr.polairestudios.com/assets/VIDEO_TR.mov",
+    heroVideo: "http://le-tr.polairestudios.com/assets/VIDEO_TR.mp4",
     // Image de secours si la vidéo ne charge pas
-    heroPoster: "http://le-tr.polairestudios.com/assets/VIDEO_TR.mov",
+    heroPoster: "https://letripotregnier.fr/site/wp-content/uploads/2017/02/tripotregnier-slider-2.jpg",
   },
 
   // ==========================================
