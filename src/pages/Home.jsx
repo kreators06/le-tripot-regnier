@@ -120,10 +120,21 @@ export default function Home() {
   const videoRef = useRef(null);
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(error => {
-        console.log("Autoplay bloqué:", error);
+    const video = videoRef.current;
+    if (video) {
+      video.addEventListener('loadeddata', () => {
+        console.log("Vidéo chargée avec succès");
+        video.play().catch(error => {
+          console.log("Autoplay bloqué:", error);
+        });
       });
+
+      video.addEventListener('error', (e) => {
+        console.error("Erreur de chargement vidéo:", e);
+      });
+
+      // Force le chargement
+      video.load();
     }
   }, []);
 
@@ -142,8 +153,10 @@ export default function Home() {
             preload="auto"
             poster={IMAGES.home.heroPoster}
             className="w-full h-full object-cover"
+            crossOrigin="anonymous"
           >
             <source src={IMAGES.home.heroVideo} type="video/mp4" />
+            Votre navigateur ne supporte pas la lecture de vidéos.
           </video>
           <div className="absolute inset-0 bg-black/40" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
