@@ -136,7 +136,9 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
+    <div role="main">
+      <SEOMetadata />
+      <MobileCtaBar />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
         {/* Video Background */}
