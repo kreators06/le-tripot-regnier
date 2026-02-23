@@ -23,13 +23,14 @@ export default function LogoMarquee() {
       
       <div className="overflow-hidden bg-white">
         <motion.div
-          className="flex gap-8 md:gap-16"
-          animate={{ x: ['0%', '-50%'] }}
+          className="flex gap-8 md:gap-16 will-change-transform"
+          initial={{ x: 0 }}
+          animate={{ x: '-50%' }}
           transition={{
-            duration: isMobile ? 4 : 100,
+            duration: isMobile ? 8 : 80,
             repeat: Infinity,
             ease: "linear",
-            repeatType: "loop"
+            repeatType: "reverse"
           }}
         >
           {/* First set */}
