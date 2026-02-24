@@ -233,10 +233,23 @@ vos événements prennent vie
 
             <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Nos espaces</p>
             <h2 className="text-4xl md:text-6xl font-semibold text-[#0D0D0D] tracking-tight mb-6">
-              Découvrez les différents <span style={{ color: COLORS.ACCENT_COLOR }}>espaces</span> du Tripot Régnier
+              Découvrez nos différents <span style={{ color: COLORS.ACCENT_COLOR }}>espaces</span>
             </h2>
           </motion.div>
           
+          {/* Bouton Galerie Sticky */}
+          <div className="sticky top-32 z-20 flex justify-end mb-8 pointer-events-none">
+            <Link
+              to={createPageUrl('Galerie')}
+              className="pointer-events-auto px-6 py-3 bg-white text-[#0D0D0D] font-semibold tracking-wide text-sm hover:text-white transition-all duration-300 shadow-lg rounded-lg flex items-center gap-2"
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}
+            >
+              VOIR LA GALERIE PHOTOS
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Premier espace - Large - Sticky */}
             <div className="lg:sticky lg:top-32 h-[500px] md:h-[600px]">
