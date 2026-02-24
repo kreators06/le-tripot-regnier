@@ -109,7 +109,7 @@ export default function Layout({ children, currentPageName }) {
             {/* Logo */}
             <Link to={createPageUrl('Home')} className="flex items-center gap-3 group">
               <img 
-                src="https://le-tr.polairestudios.com/assets/Logo-blanc.png" 
+                src="https://letripotregnier.fr/assets/logo.png" 
                 alt="Le Tripot Régnier" 
                 className="h-12 w-auto transition-opacity duration-300 group-hover:opacity-80"
               />
@@ -222,7 +222,7 @@ export default function Layout({ children, currentPageName }) {
             <div>
               <div className="flex items-center gap-3 mb-6">
                 <img 
-                  src="https://le-tr.polairestudios.com/assets/Logo-blanc.png" 
+                  src="https://letripotregnier.fr/assets/logo.png" 
                   alt="Le Tripot Régnier" 
                   className="h-12 w-auto"
                 />

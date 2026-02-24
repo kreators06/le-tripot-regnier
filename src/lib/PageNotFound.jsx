@@ -14,7 +14,7 @@ export default function PageNotFound() {
           transition={{ duration: 0.6 }}
         >
           <img 
-            src="https://le-tr.polairestudios.com/assets/Logo-blanc.png" 
+            src="https://letripotregnier.fr/assets/logo.png" 
             alt="Le Tripot Régnier" 
             className="h-16 w-auto mx-auto mb-12"
           />

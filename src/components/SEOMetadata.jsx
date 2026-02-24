@@ -22,7 +22,7 @@ export default function SEOMetadata() {
     const ogTags = {
       'og:title': 'Le Tripot Régnier | Salle Événementielle Atypique Paris 15',
       'og:description': descriptionContent,
-      'og:image': 'https://le-tr.polairestudios.com/assets/Logo-blanc.png',
+      'og:image': 'https://letripotregnier.fr/assets/logo.png',
       'og:url': 'https://letripotregnier.fr',
       'og:type': 'website',
       'og:site_name': 'Le Tripot Régnier'
@@ -42,7 +42,7 @@ export default function SEOMetadata() {
       'twitter:card': 'summary_large_image',
       'twitter:title': 'Le Tripot Régnier | Salle Événementielle Paris 15',
       'twitter:description': descriptionContent,
-      'twitter:image': 'https://le-tr.polairestudios.com/assets/Logo-blanc.png'
+      'twitter:image': 'https://letripotregnier.fr/assets/logo.png'
     };
     Object.entries(twitterTags).forEach(([name, content]) => {
       let tag = document.querySelector(`meta[name="${name}"]`);

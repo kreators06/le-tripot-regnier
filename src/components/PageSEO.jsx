@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const OG_IMAGE = "https://le-tr.polairestudios.com/assets/Logo-blanc.png";
+const OG_IMAGE = "https://letripotregnier.fr/assets/logo.png";
 
 function setMetaTag(selector, createAttr, content) {
   let el = document.querySelector(selector);
