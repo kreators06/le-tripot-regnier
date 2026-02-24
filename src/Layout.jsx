@@ -5,7 +5,7 @@ import { Menu, X, Phone, Mail, MapPin, Instagram, Linkedin, Facebook } from 'luc
 import { motion, AnimatePresence } from 'framer-motion';
 import { COLORS } from '@/components/config/colors';
 import CookieConsent from '@/components/CookieConsent';
-import { useLanguage } from '@/components/LanguageContext';
+import { LanguageProvider, useLanguage } from '@/components/LanguageContext';
 
 const navLinks = [
   { nameKey: 'histoire', page: 'Histoire' },
@@ -15,7 +15,7 @@ const navLinks = [
   { nameKey: 'contact', page: 'Contact' },
 ];
 
-export default function Layout({ children, currentPageName }) {
+function LayoutContent({ children, currentPageName }) {
   const { language, setLanguage, t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -371,5 +371,13 @@ export default function Layout({ children, currentPageName }) {
         </div>
       </footer>
     </div>
+  );
+}
+
+export default function Layout({ children, currentPageName }) {
+  return (
+    <LanguageProvider>
+      <LayoutContent children={children} currentPageName={currentPageName} />
+    </LanguageProvider>
   );
 }
