@@ -182,8 +182,7 @@ vos événements prennent vie
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
             className="text-base md:text-lg text-white/90 max-w-2xl mx-auto mb-12 leading-relaxed font-light">
 
-            700m² modulables alliant Art Déco et Industriel au cœur de Paris. 
-            Un lieu unique entièrement rénové pour sublimer vos événements.
+            Situé dans le 15ème arrondissement de Paris, notre salle de réception est entièrement équipée en son, lumières et projections vidéo. Inspiré de l'Art Déco et Industriel, ce bâtiment de 1904 a été entièrement rénové, ce qui en fait un lieu unique à Paris pour accueillir des événements variés.
           </motion.p>
 
           <motion.div
