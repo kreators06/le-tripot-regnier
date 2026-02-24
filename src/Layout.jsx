@@ -34,8 +34,8 @@ export default function Layout({ children, currentPageName }) {
 
 
 
-  const isHome = currentPageName === 'Home';
-  const headerBg = isScrolled || !isHome ? 'bg-[#0D0D0D]/95 backdrop-blur-md' : 'bg-transparent';
+  const hasTransparentHero = currentPageName === 'Home' || currentPageName === 'Contact';
+  const headerBg = isScrolled || !hasTransparentHero ? 'bg-[#0D0D0D]/95 backdrop-blur-md' : 'bg-transparent';
 
   return (
     <div className="min-h-screen bg-white">
