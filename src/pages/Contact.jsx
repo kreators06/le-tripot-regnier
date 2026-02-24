@@ -110,226 +110,184 @@ export default function Contact() {
 
   return (
     <div className="pt-20">
-      {/* Hero Section */}
-      <section className="relative py-32 px-6 bg-[#0D0D0D] overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <img 
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&auto=format"
-            alt="Contact Le Tripot Régnier"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0D0D0D] via-[#0D0D0D]/90 to-[#0D0D0D]/70" />
-        
-        <div className="relative z-10 max-w-4xl mx-auto text-left">
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="text-4xl md:text-6xl text-white font-bold tracking-tight mb-6"
-          >
-            Contactez-<span style={{ color: COLORS.ACCENT_COLOR }}>nous</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            className="text-xl text-white/90 leading-relaxed"
-          >
-            Parlons de votre projet et créons ensemble un événement inoubliable
-          </motion.p>
-        </div>
-      </section>
-
-      {/* Booking Widget Section */}
+      {/* Main Contact Section */}
       <section className="py-24 px-6 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0D0D0D] mb-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+            {/* Left Column - Booking Widget */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0D0D0D] mb-4 text-left">
                 Réservez <span style={{ color: COLORS.ACCENT_COLOR }}>votre visite</span>
               </h2>
-              <p className="text-gray-600 text-lg">
-                Découvrez nos espaces en personne et imaginez votre événement
+              <p className="text-gray-600 text-lg mb-8 text-left">
+                Découvrez nos espaces en personne
               </p>
-            </div>
-            
-            <div className="bg-white rounded-xl overflow-hidden shadow-xl border border-gray-100" style={{ height: '650px' }}>
-              <iframe
-                src="https://prvt.re/wypgGL"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                title="Module de réservation Le Tripot Régnier"
-                loading="lazy"
-              />
-            </div>
-          </motion.div>
-        </div>
-      </section>
+              
+              <div className="bg-white rounded-xl overflow-hidden shadow-xl border border-gray-100" style={{ height: '700px' }}>
+                <iframe
+                  src="https://prvt.re/wypgGL"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  title="Module de réservation Le Tripot Régnier"
+                  loading="lazy"
+                />
+              </div>
+            </motion.div>
 
-      {/* Contact Form Section */}
-      <section className="py-24 px-6 bg-[#F5F5F0]">
-        <div className="max-w-3xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0D0D0D] mb-4">
-                Une <span style={{ color: COLORS.ACCENT_COLOR }}>question</span> ?
-              </h2>
-              <p className="text-gray-600 text-lg">
-                Envoyez-nous un message et nous vous répondrons rapidement
-              </p>
-            </div>
+            {/* Right Column - Contact Form & Map */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-12"
+            >
+              {/* Contact Form */}
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-[#0D0D0D] mb-4 text-left">
+                  Une <span style={{ color: COLORS.ACCENT_COLOR }}>question</span> ?
+                </h2>
+                <p className="text-gray-600 text-lg mb-8 text-left">
+                  Envoyez-nous un message
+                </p>
 
-            {isSubmitted ? (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="bg-white border-2 rounded-xl p-10 text-center shadow-lg"
-                style={{ borderColor: COLORS.ACCENT_COLOR }}
-              >
-                <CheckCircle className="w-20 h-20 mx-auto mb-6" style={{ color: COLORS.ACCENT_COLOR }} />
-                <h3 className="text-2xl font-semibold text-[#0D0D0D] mb-3">Message envoyé !</h3>
-                <p className="text-gray-600 text-lg">Nous vous répondrons dans les plus brefs délais.</p>
-              </motion.div>
-            ) : (
-              <form onSubmit={handleSubmit} className="bg-white rounded-xl p-8 md:p-10 shadow-lg space-y-6">
-                <div className="space-y-2">
-                  <Label htmlFor="name" className="text-[#0D0D0D] font-medium">Nom complet *</Label>
-                  <Input
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    placeholder="Votre nom"
-                    style={{ '--tw-ring-color': COLORS.ACCENT_COLOR }}
-                    className="border-gray-300 focus:border-[currentColor] focus:ring-[currentColor] py-3"
+                {isSubmitted ? (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="bg-white border-2 rounded-xl p-8 text-center shadow-lg"
+                    style={{ borderColor: COLORS.ACCENT_COLOR }}
+                  >
+                    <CheckCircle className="w-16 h-16 mx-auto mb-4" style={{ color: COLORS.ACCENT_COLOR }} />
+                    <h3 className="text-xl font-semibold text-[#0D0D0D] mb-2">Message envoyé !</h3>
+                    <p className="text-gray-600">Nous vous répondrons rapidement.</p>
+                  </motion.div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="bg-white rounded-xl p-6 md:p-8 shadow-lg space-y-5">
+                    <div className="space-y-2">
+                      <Label htmlFor="name" className="text-[#0D0D0D] font-medium">Nom complet *</Label>
+                      <Input
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        placeholder="Votre nom"
+                        style={{ '--tw-ring-color': COLORS.ACCENT_COLOR }}
+                        className="border-gray-300 focus:border-[currentColor] focus:ring-[currentColor] py-2.5"
+                      />
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="email" className="text-[#0D0D0D] font-medium">Email *</Label>
+                        <Input
+                          id="email"
+                          name="email"
+                          type="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          required
+                          placeholder="votre@email.com"
+                          style={{ '--tw-ring-color': COLORS.ACCENT_COLOR }}
+                          className="border-gray-300 focus:border-[currentColor] focus:ring-[currentColor] py-2.5"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="phone" className="text-[#0D0D0D] font-medium">Téléphone *</Label>
+                        <Input
+                          id="phone"
+                          name="phone"
+                          type="tel"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          required
+                          placeholder="06 12 34 56 78"
+                          style={{ '--tw-ring-color': COLORS.ACCENT_COLOR }}
+                          className="border-gray-300 focus:border-[currentColor] focus:ring-[currentColor] py-2.5"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="message" className="text-[#0D0D0D] font-medium">Message *</Label>
+                      <Textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
+                        rows={4}
+                        style={{ '--tw-ring-color': COLORS.ACCENT_COLOR }}
+                        className="border-gray-300 focus:border-[currentColor] focus:ring-[currentColor] resize-none"
+                        placeholder="Décrivez votre projet..."
+                      />
+                    </div>
+
+                    <div className="flex justify-center pt-1">
+                      <ReCAPTCHA
+                        ref={recaptchaRef}
+                        sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                        onChange={handleCaptchaChange}
+                      />
+                    </div>
+
+                    <Button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full text-white py-4 text-base font-semibold tracking-wide rounded-lg transition-all"
+                      style={{ 
+                        backgroundColor: COLORS.ACCENT_COLOR, 
+                        borderColor: COLORS.ACCENT_COLOR 
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR_HOVER;
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR;
+                      }}
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="w-5 h-5 mr-2 animate-spin inline" />
+                          Envoi en cours...
+                        </>
+                      ) : (
+                        <>
+                          <Send className="w-5 h-5 mr-2 inline" />
+                          Envoyer
+                        </>
+                      )}
+                    </Button>
+                  </form>
+                )}
+              </div>
+
+              {/* Map under contact form */}
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold text-[#0D0D0D] mb-4 text-left">
+                  <span style={{ color: COLORS.ACCENT_COLOR }}>Emplacement</span>
+                </h3>
+                <p className="text-gray-600 mb-6 text-left">10 – 12 rue Mathurin Régnier, 75015 Paris</p>
+                <div className="aspect-video bg-gray-200 rounded-xl overflow-hidden shadow-lg">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.9747391667996!2d2.2903743!3d48.8479287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67a7b6e3e5e5f%3A0x5e0e0e0e0e0e0e0!2s10%20Rue%20Mathurin%20R%C3%A9gnier%2C%2075015%20Paris!5e0!3m2!1sfr!2sfr!4v1708444800000!5m2!1sfr!2sfr"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Le Tripot Régnier - 10-12 rue Mathurin Régnier 75015 Paris"
                   />
                 </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="email" className="text-[#0D0D0D] font-medium">Email *</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      placeholder="votre@email.com"
-                      style={{ '--tw-ring-color': COLORS.ACCENT_COLOR }}
-                      className="border-gray-300 focus:border-[currentColor] focus:ring-[currentColor] py-3"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="phone" className="text-[#0D0D0D] font-medium">Téléphone *</Label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                      placeholder="06 12 34 56 78"
-                      style={{ '--tw-ring-color': COLORS.ACCENT_COLOR }}
-                      className="border-gray-300 focus:border-[currentColor] focus:ring-[currentColor] py-3"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="message" className="text-[#0D0D0D] font-medium">Message *</Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={5}
-                    style={{ '--tw-ring-color': COLORS.ACCENT_COLOR }}
-                    className="border-gray-300 focus:border-[currentColor] focus:ring-[currentColor] resize-none"
-                    placeholder="Décrivez votre projet (type d'événement, date, nombre de personnes...)"
-                  />
-                </div>
-
-                <div className="flex justify-center pt-2">
-                  <ReCAPTCHA
-                    ref={recaptchaRef}
-                    sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
-                    onChange={handleCaptchaChange}
-                  />
-                </div>
-
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full text-white py-5 text-base font-semibold tracking-wide rounded-lg transition-all"
-                  style={{ 
-                    backgroundColor: COLORS.ACCENT_COLOR, 
-                    borderColor: COLORS.ACCENT_COLOR 
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR_HOVER;
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR;
-                  }}
-                >
-                  {isSubmitting ? (
-                    <>
-                      <Loader2 className="w-5 h-5 mr-2 animate-spin inline" />
-                      Envoi en cours...
-                    </>
-                  ) : (
-                    <>
-                      <Send className="w-5 h-5 mr-2 inline" />
-                      Envoyer le message
-                    </>
-                  )}
-                </Button>
-              </form>
-            )}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Map Section */}
-      <section className="py-16 px-6 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-3xl font-bold text-[#0D0D0D] mb-3">
-                Notre <span style={{ color: COLORS.ACCENT_COLOR }}>localisation</span>
-              </h2>
-              <p className="text-gray-600">10 – 12 rue Mathurin Régnier, 75015 Paris</p>
-            </div>
-            <div className="aspect-video bg-gray-200 rounded-xl overflow-hidden shadow-lg">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.9747391667996!2d2.2903743!3d48.8479287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67a7b6e3e5e5f%3A0x5e0e0e0e0e0e0e0!2s10%20Rue%20Mathurin%20R%C3%A9gnier%2C%2075015%20Paris!5e0!3m2!1sfr!2sfr!4v1708444800000!5m2!1sfr!2sfr"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Le Tripot Régnier - 10-12 rue Mathurin Régnier 75015 Paris"
-              />
-            </div>
-          </motion.div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
