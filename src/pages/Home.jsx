@@ -33,31 +33,31 @@ const spaces = [
 {
   title: "Bar",
   surface: "",
-  image: "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=800&auto=format",
+  image: IMAGES.spaces.bar.src,
   description: "Bar équipé : four, machine à glaçons, réfrigérateur."
 },
 {
   title: "Mezzanine",
   surface: "65 m²",
-  image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format",
+  image: IMAGES.spaces.mezzanine.src,
   description: "Espace en hauteur offrant une vue panoramique sur la salle."
 },
 {
   title: "Espace Lounge",
   surface: "",
-  image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&auto=format",
+  image: IMAGES.spaces.espaceLounge.src,
   description: "Espace détente situé en prolongation de la mezzanine."
 },
 {
   title: "Loge Privée",
   surface: "",
-  image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&auto=format",
+  image: IMAGES.spaces.logePrivee.src,
   description: "Loge avec accès privé comprenant : écran TV pour visualiser en direct l'évènement, canapé, toilettes, douche, lavabo."
 },
 {
   title: "Vestiaire",
   surface: "450 pers.",
-  image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format",
+  image: IMAGES.spaces.vestiaire.src,
   description: "Vestiaire équipé avec capacité de 450 personnes"
 }];
 
