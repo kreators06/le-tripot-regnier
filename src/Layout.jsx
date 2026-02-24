@@ -28,7 +28,7 @@ export default function Layout({ children, currentPageName }) {
 
   // Scroll to top on page change
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'instant' });
     setMobileMenuOpen(false);
   }, [location.pathname]);
 
