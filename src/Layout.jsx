@@ -36,10 +36,17 @@ export default function Layout({ children, currentPageName }) {
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://unpkg.com/website-carbon-badges@1.1.3/b.min.js';
-    script.defer = true;
-    document.body.appendChild(script);
+    script.async = true;
+    document.head.appendChild(script);
+    
+    script.onload = () => {
+      console.log('Carbon badge script loaded');
+    };
+    
     return () => {
-      document.body.removeChild(script);
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
     };
   }, []);
 
