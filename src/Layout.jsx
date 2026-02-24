@@ -8,9 +8,9 @@ import CookieConsent from '@/components/CookieConsent';
 
 const navLinks = [
   { name: 'Histoire', page: 'Histoire' },
-  { name: 'Galerie', page: 'Galerie' },
-  { name: 'Capacités', page: 'Capacites' },
-  { name: 'Engagements', page: 'Engagements' },
+  { name: 'Galerie Photos', page: 'Galerie' },
+  { name: 'Espaces & Équipements', page: 'Capacites' },
+  { name: 'Nos Engagements', page: 'Engagements' },
   { name: 'Contact', page: 'Contact' },
 ];
 
@@ -131,7 +131,6 @@ export default function Layout({ children, currentPageName }) {
                   {link.name}
                 </Link>
               ))}
-              
               <Link
                 to={createPageUrl('Contact')}
                 className="px-6 py-2.5 text-white text-xs font-semibold tracking-[0.12em] uppercase transition-all duration-300 rounded"
@@ -169,7 +168,7 @@ export default function Layout({ children, currentPageName }) {
               className="lg:hidden bg-[#0D0D0D] border-t border-white/10"
             >
               <nav className="flex flex-col py-6 px-6">
-                {navLinks.map((link, i) => (
+                {navLinks.slice(0, -1).map((link, i) => (
                   <motion.div
                     key={link.page}
                     initial={{ opacity: 0, x: -20 }}
@@ -189,6 +188,20 @@ export default function Layout({ children, currentPageName }) {
                     </Link>
                   </motion.div>
                 ))}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: navLinks.length * 0.05 }}
+                  className="mt-4"
+                >
+                  <Link
+                    to={createPageUrl('Contact')}
+                    className="block w-full py-3 text-white text-center font-medium tracking-wide rounded"
+                    style={{ backgroundColor: COLORS.ACCENT_COLOR }}
+                  >
+                    NOUS CONTACTER
+                  </Link>
+                </motion.div>
               </nav>
             </motion.div>
           )}
@@ -215,7 +228,7 @@ export default function Layout({ children, currentPageName }) {
                 />
               </div>
               <p className="text-gray-400 text-sm leading-relaxed text-left">
-                Salle événementielle d'exception au cœur de Paris 15ème
+                Salle événementielle parisienne de 700m² alliant style Art Déco et Industriel.
               </p>
             </div>
 
@@ -319,8 +332,8 @@ export default function Layout({ children, currentPageName }) {
               © {new Date().getFullYear()} Le Tripot Régnier. Tous droits réservés.
             </p>
             <div className="flex flex-wrap gap-6 text-sm">
-              <Link to={createPageUrl('MentionsLegales')} className="text-gray-500 hover:text-white transition-colors">Mentions Légales</Link>
-              <Link to={createPageUrl('PolitiqueConfidentialite')} className="text-gray-500 hover:text-white transition-colors">Politique de Confidentialité</Link>
+              <Link to={createPageUrl('MentionsLegales')} className="text-gray-500 hover:text-white transition-colors">Mentions légales</Link>
+              <Link to={createPageUrl('PolitiqueConfidentialite')} className="text-gray-500 hover:text-white transition-colors">Politique de confidentialité</Link>
               <Link to={createPageUrl('CGU')} className="text-gray-500 hover:text-white transition-colors">CGU</Link>
             </div>
           </div>
