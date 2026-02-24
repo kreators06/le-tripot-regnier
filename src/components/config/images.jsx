@@ -28,23 +28,23 @@ export const IMAGES = {
       alt: "Grande salle événementielle Le Tripot Régnier"
     },
     bar: {
-      src: "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=800&auto=format",
+      src: "https://letripotregnier.fr/assets/photos/photo-bar.jpg",
       alt: "Bar équipé Le Tripot Régnier"
     },
     mezzanine: {
-      src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format",
+      src: "https://letripotregnier.fr/assets/photos/photo-mezzanine.jpg",
       alt: "Mezzanine Le Tripot Régnier"
     },
     espaceLounge: {
-      src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&auto=format",
+      src: "https://letripotregnier.fr/assets/photos/photo-lounge-etage.jpeg",
       alt: "Espace Lounge Le Tripot Régnier"
     },
     logePrivee: {
-      src: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&auto=format",
+      src: "https://letripotregnier.fr/assets/photos/photo-loge-privee-maquillage.png",
       alt: "Loge Privée Le Tripot Régnier"
     },
     vestiaire: {
-      src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format",
+      src: "https://letripotregnier.fr/assets/photos/photo-vestiaire-tripot-regnier.jpg",
       alt: "Vestiaire Le Tripot Régnier"
     },
   },
