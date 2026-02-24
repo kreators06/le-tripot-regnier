@@ -347,26 +347,20 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Booking Widget Placeholder */}
+              {/* Booking Widget */}
               <div>
                 <h3 className="text-2xl font-semibold text-[#0D0D0D] mb-6 tracking-wide text-left">
                   Réserver <span style={{ color: COLORS.ACCENT_COLOR }}>une visite</span>
                 </h3>
-                <div className="bg-[#F5F5F0] p-8 rounded-lg text-left shadow-md">
-                  <div className="w-16 h-16 flex items-center justify-center mb-4 rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20` }}>
-                    <Clock className="w-8 h-8" style={{ color: COLORS.ACCENT_COLOR }} />
-                  </div>
-                  <h4 className="text-lg font-medium text-[#0D0D0D] mb-2">
-                    Module de réservation
-                  </h4>
-                  <p className="text-gray-600 text-sm mb-4">
-                    Intégration du widget Joy pour la prise de rendez-vous en ligne
-                  </p>
-                  <Button
-                    className="bg-[#0D0D0D] hover:bg-[#2A2A2A] text-white rounded-md"
-                  >
-                    Prendre rendez-vous
-                  </Button>
+                <div className="bg-white rounded-lg overflow-hidden shadow-md" style={{ height: '600px' }}>
+                  <iframe
+                    src="https://prvt.re/wypgGL"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    title="Module de réservation Le Tripot Régnier"
+                    loading="lazy"
+                  />
                 </div>
               </div>
             </motion.div>
