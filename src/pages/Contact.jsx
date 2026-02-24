@@ -139,15 +139,12 @@ export default function Contact() {
               </div>
             </motion.div>
 
-            {/* Right Column - Contact Form & Map */}
+            {/* Right Column - Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="space-y-12"
             >
-              {/* Contact Form */}
-              <div>
                 <h2 className="text-3xl md:text-4xl font-bold text-[#0D0D0D] mb-4 text-left">
                   Une <span style={{ color: COLORS.ACCENT_COLOR }}>question</span> ?
                 </h2>
@@ -265,29 +262,36 @@ export default function Contact() {
                     </Button>
                   </form>
                 )}
-              </div>
 
-              {/* Map under contact form */}
-              <div>
-                <h3 className="text-2xl md:text-3xl font-bold text-[#0D0D0D] mb-4 text-left">
-                  <span style={{ color: COLORS.ACCENT_COLOR }}>Emplacement</span>
-                </h3>
-                <p className="text-gray-600 mb-6 text-left">10 – 12 rue Mathurin Régnier, 75015 Paris</p>
-                <div className="aspect-video bg-gray-200 rounded-xl overflow-hidden shadow-lg">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.9747391667996!2d2.2903743!3d48.8479287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67a7b6e3e5e5f%3A0x5e0e0e0e0e0e0e0!2s10%20Rue%20Mathurin%20R%C3%A9gnier%2C%2075015%20Paris!5e0!3m2!1sfr!2sfr!4v1708444800000!5m2!1sfr!2sfr"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen=""
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Le Tripot Régnier - 10-12 rue Mathurin Régnier 75015 Paris"
-                  />
-                </div>
-              </div>
             </motion.div>
           </div>
+
+          {/* Map Section - Full Width */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-16"
+          >
+            <div className="text-center mb-10">
+              <h3 className="text-2xl md:text-3xl font-bold text-[#0D0D0D] mb-4">
+                <span style={{ color: COLORS.ACCENT_COLOR }}>Emplacement</span>
+              </h3>
+              <p className="text-gray-600">10 – 12 rue Mathurin Régnier, 75015 Paris</p>
+            </div>
+            <div className="aspect-video bg-gray-200 rounded-xl overflow-hidden shadow-lg">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.9747391667996!2d2.2903743!3d48.8479287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67a7b6e3e5e5f%3A0x5e0e0e0e0e0e0e0!2s10%20Rue%20Mathurin%20R%C3%A9gnier%2C%2075015%20Paris!5e0!3m2!1sfr!2sfr!4v1708444800000!5m2!1sfr!2sfr"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Le Tripot Régnier - 10-12 rue Mathurin Régnier 75015 Paris"
+              />
+            </div>
+          </motion.div>
         </div>
       </section>
 
