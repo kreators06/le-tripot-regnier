@@ -135,7 +135,7 @@ export default function Contact() {
   return (
     <div className="pt-20">
       {/* Hero Banner with Video */}
-      <section className="relative py-32 px-6 overflow-hidden min-h-[60vh] flex items-center justify-center">
+      <section className="relative py-24 px-6 overflow-hidden min-h-[40vh] flex items-center justify-center">
         {/* Video Background */}
         <div className="absolute inset-0">
           <video

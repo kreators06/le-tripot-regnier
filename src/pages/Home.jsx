@@ -460,6 +460,33 @@ vos événements prennent vie
             <h2 className="text-3xl md:text-5xl font-semibold text-[#0D0D0D] tracking-tight mb-6">
               Ils nous font <span style={{ color: COLORS.ACCENT_COLOR }}>confiance</span>
             </h2>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="flex justify-center"
+            >
+              <a
+                href="https://www.google.com/maps/place/Le+Tripot+R%C3%A9gnier"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 text-white font-semibold tracking-wide text-sm transition-all duration-300 shadow-lg rounded-lg flex items-center gap-2"
+                style={{ backgroundColor: COLORS.ACCENT_COLOR }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'white';
+                  e.currentTarget.style.color = '#0D0D0D';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR;
+                  e.currentTarget.style.color = 'white';
+                }}
+              >
+                VOIR LES AVIS GOOGLE
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </motion.div>
           </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
