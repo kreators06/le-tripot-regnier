@@ -6,10 +6,6 @@
  * 2. Remplacez l'URL par celle de votre nouvelle image
  * 3. Les changements seront appliqués automatiquement sur tout le site
  * 
- * Sources d'images recommandées :
- * - Unsplash (gratuit) : https://unsplash.com
- * - Pexels (gratuit) : https://pexels.com
- * - Votre propre hébergement (Cloudinary, AWS S3, etc.)
  */
 
 export const IMAGES = {
@@ -20,7 +16,7 @@ export const IMAGES = {
     // Vidéo de fond du hero
     heroVideo: "https://letripotregnier.fr/assets/videos/VIDEO_TR.mp4",
     // Image de secours si la vidéo ne charge pas
-    heroPoster: "https://letripotregnier.fr/assets/photos/tripotregnier-interieur.jpg",
+    heroPoster: "https://letripotregnier.fr/assets/photos/photo-hall-entree-tripot-regnier.jpg",
   },
 
   // ==========================================
