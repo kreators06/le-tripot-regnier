@@ -28,31 +28,31 @@ const spaces = [
   title: "Salle Principale",
   surface: "400 m²",
   image: IMAGES.spaces.grandeSalle.src,
-  description: "Espace modulable avec béton ciré et équipements audiovisuels complets"
+  description: "Espace modulable équipé (son, lumière, projection vidéo) dotée d'un bar et d'un fumoir intérieur."
 },
 {
-  title: "Bar Aménagé",
+  title: "Bar",
   surface: "",
   image: "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=800&auto=format",
-  description: "Bar design entièrement équipé pour vos cocktails"
+  description: "Bar équipé : four, machine à glaçons, réfrigérateur."
 },
 {
   title: "Mezzanine",
   surface: "65 m²",
   image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format",
-  description: "Espace en hauteur offrant une vue panoramique"
+  description: "Espace en hauteur offrant une vue panoramique sur la salle."
 },
 {
   title: "Espace Lounge",
   surface: "",
   image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&auto=format",
-  description: "Coin détente avec mobilier contemporain"
+  description: "Espace détente situé en prolongation de la mezzanine."
 },
 {
-  title: "Loge Aménagée",
+  title: "Loge Privée",
   surface: "",
   image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&auto=format",
-  description: "Loge privative avec accès dédié"
+  description: "Loge avec accès privé comprenant : écran TV pour visualiser en direct l'évènement, canapé, toilettes, douche, lavabo."
 },
 {
   title: "Vestiaire",
@@ -233,11 +233,8 @@ vos événements prennent vie
 
             <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Nos espaces</p>
             <h2 className="text-4xl md:text-6xl font-semibold text-[#0D0D0D] tracking-tight mb-6">
-              Capacités modulables des <span style={{ color: COLORS.ACCENT_COLOR }}>espaces</span>
+              Découvrez les différents <span style={{ color: COLORS.ACCENT_COLOR }}>espaces</span> du Tripot Régnier
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto font-light text-lg">
-              Salle principale 400m², mezzanine 65m², hall d'accueil 90m². Capacité totale jusqu'à 450 personnes.
-            </p>
           </motion.div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
