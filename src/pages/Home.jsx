@@ -281,9 +281,16 @@ vos événements prennent vie
               >
                 <Link
                   to={createPageUrl('Galerie')}
-                  className="w-full px-6 py-3 bg-white text-[#0D0D0D] font-semibold tracking-wide text-sm hover:text-white transition-all duration-300 shadow-lg rounded-lg flex items-center justify-center gap-2"
-                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR}
-                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}
+                  className="w-full px-6 py-3 text-white font-semibold tracking-wide text-sm transition-all duration-300 shadow-lg rounded-lg flex items-center justify-center gap-2"
+                  style={{ backgroundColor: COLORS.ACCENT_COLOR }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = 'white';
+                    e.currentTarget.style.color = '#0D0D0D';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR;
+                    e.currentTarget.style.color = 'white';
+                  }}
                 >
                   VOIR LA GALERIE PHOTOS
                   <ArrowRight className="w-4 h-4" />
