@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { motion } from 'framer-motion';
 import { 
-  Building2, 
+  Car, 
   CheckCircle2, 
   Zap, 
   Users, 
@@ -15,9 +15,9 @@ import { COLORS } from '@/components/config/colors';
 
 const signals = [
   {
-    icon: Building2,
-    title: "Patrimoine 1904",
-    description: "Bâtiment historique aux accents Art Déco et Industriel"
+    icon: Car,
+    title: "Accès voiture",
+    description: "Rentrez jusqu'à 4 voitures dans la salle principale"
   },
   {
     icon: Users,
