@@ -321,13 +321,30 @@ export default function Contact() {
               )}
             </motion.div>
 
-            {/* Map & Booking Widget */}
+            {/* Booking Widget & Map */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               className="space-y-8"
             >
+              {/* Booking Widget */}
+              <div>
+                <h3 className="text-2xl font-semibold text-[#0D0D0D] mb-6 tracking-wide text-left">
+                  Réserver <span style={{ color: COLORS.ACCENT_COLOR }}>une visite</span>
+                </h3>
+                <div className="bg-white rounded-lg overflow-hidden shadow-md" style={{ height: '600px' }}>
+                  <iframe
+                    src="https://prvt.re/wypgGL"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    title="Module de réservation Le Tripot Régnier"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+
               {/* Google Map */}
               <div>
                 <h3 className="text-2xl font-semibold text-[#0D0D0D] mb-6 tracking-wide text-left">
@@ -343,23 +360,6 @@ export default function Contact() {
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     title="Le Tripot Régnier - 10-12 rue Mathurin Régnier 75015 Paris"
-                  />
-                </div>
-              </div>
-
-              {/* Booking Widget */}
-              <div>
-                <h3 className="text-2xl font-semibold text-[#0D0D0D] mb-6 tracking-wide text-left">
-                  Réserver <span style={{ color: COLORS.ACCENT_COLOR }}>une visite</span>
-                </h3>
-                <div className="bg-white rounded-lg overflow-hidden shadow-md" style={{ height: '600px' }}>
-                  <iframe
-                    src="https://prvt.re/wypgGL"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    title="Module de réservation Le Tripot Régnier"
-                    loading="lazy"
                   />
                 </div>
               </div>
