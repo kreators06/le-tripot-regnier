@@ -5,18 +5,16 @@ import { Menu, X, Phone, Mail, MapPin, Instagram, Linkedin, Facebook } from 'luc
 import { motion, AnimatePresence } from 'framer-motion';
 import { COLORS } from '@/components/config/colors';
 import CookieConsent from '@/components/CookieConsent';
-import { LanguageProvider, useLanguage } from '@/components/LanguageContext';
 
 const navLinks = [
-  { nameKey: 'histoire', page: 'Histoire' },
-  { nameKey: 'galerie', page: 'Galerie' },
-  { nameKey: 'capacites', page: 'Capacites' },
-  { nameKey: 'engagements', page: 'Engagements' },
-  { nameKey: 'contact', page: 'Contact' },
+  { name: 'Histoire', page: 'Histoire' },
+  { name: 'Galerie', page: 'Galerie' },
+  { name: 'Capacités', page: 'Capacites' },
+  { name: 'Engagements', page: 'Engagements' },
+  { name: 'Contact', page: 'Contact' },
 ];
 
-function LayoutContent({ children, currentPageName }) {
-  const { language, setLanguage, t } = useLanguage();
+export default function Layout({ children, currentPageName }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -130,19 +128,9 @@ function LayoutContent({ children, currentPageName }) {
                   }`}
                   style={currentPageName === link.page ? { color: COLORS.ACCENT_COLOR } : {}}
                 >
-                  {t.nav[link.nameKey]}
+                  {link.name}
                 </Link>
               ))}
-              
-              {/* Language Switcher */}
-              <button
-                onClick={() => setLanguage(language === 'fr' ? 'en' : 'fr')}
-                className="text-xs tracking-[0.12em] uppercase text-white hover:text-white/90 font-medium transition-colors flex items-center gap-2"
-              >
-                <span className={language === 'fr' ? 'opacity-100' : 'opacity-50'}>FR</span>
-                <span>|</span>
-                <span className={language === 'en' ? 'opacity-100' : 'opacity-50'}>EN</span>
-              </button>
               
               <Link
                 to={createPageUrl('Contact')}
@@ -154,7 +142,7 @@ function LayoutContent({ children, currentPageName }) {
                 onMouseEnter={(e) => e.target.style.backgroundColor = COLORS.ACCENT_COLOR_HOVER}
                 onMouseLeave={(e) => e.target.style.backgroundColor = COLORS.ACCENT_COLOR}
               >
-                {t.nav.contact}
+                CONTACT
               </Link>
             </nav>
 
@@ -181,7 +169,7 @@ function LayoutContent({ children, currentPageName }) {
               className="lg:hidden bg-[#0D0D0D] border-t border-white/10"
             >
               <nav className="flex flex-col py-6 px-6">
-                {navLinks.slice(0, -1).map((link, i) => (
+                {navLinks.map((link, i) => (
                   <motion.div
                     key={link.page}
                     initial={{ opacity: 0, x: -20 }}
@@ -197,42 +185,10 @@ function LayoutContent({ children, currentPageName }) {
                       }`}
                       style={currentPageName === link.page ? { color: COLORS.ACCENT_COLOR } : {}}
                     >
-                      {t.nav[link.nameKey]}
+                      {link.name}
                     </Link>
                   </motion.div>
                 ))}
-                
-                {/* Language Switcher Mobile */}
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: navLinks.length * 0.05 }}
-                  className="mt-4 border-t border-white/10 pt-4"
-                >
-                  <button
-                    onClick={() => setLanguage(language === 'fr' ? 'en' : 'fr')}
-                    className="flex items-center gap-3 py-3 text-lg tracking-wide text-white/90"
-                  >
-                    <span className={language === 'fr' ? 'opacity-100' : 'opacity-50'}>FR</span>
-                    <span>|</span>
-                    <span className={language === 'en' ? 'opacity-100' : 'opacity-50'}>EN</span>
-                  </button>
-                </motion.div>
-                
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: (navLinks.length + 1) * 0.05 }}
-                  className="mt-4"
-                >
-                  <Link
-                    to={createPageUrl('Contact')}
-                    className="block w-full py-3 text-white text-center font-medium tracking-wide rounded"
-                    style={{ backgroundColor: COLORS.ACCENT_COLOR }}
-                  >
-                    {t.nav.contact.toUpperCase()}
-                  </Link>
-                </motion.div>
               </nav>
             </motion.div>
           )}
@@ -259,13 +215,13 @@ function LayoutContent({ children, currentPageName }) {
                 />
               </div>
               <p className="text-gray-400 text-sm leading-relaxed text-left">
-                {t.footer.description}
+                Salle événementielle d'exception au cœur de Paris 15ème
               </p>
             </div>
 
             {/* Navigation */}
             <div>
-              <h4 className="font-medium mb-6 tracking-wide" style={{ color: COLORS.ACCENT_COLOR }}>{t.footer.navigation}</h4>
+              <h4 className="font-medium mb-6 tracking-wide" style={{ color: COLORS.ACCENT_COLOR }}>Navigation</h4>
               <ul className="space-y-3 text-left">
                 {navLinks.map((link) => (
                   <li key={link.page}>
@@ -273,7 +229,7 @@ function LayoutContent({ children, currentPageName }) {
                       to={createPageUrl(link.page)}
                       className="text-gray-400 hover:text-white transition-colors text-sm"
                     >
-                      {t.nav[link.nameKey]}
+                      {link.name}
                     </Link>
                   </li>
                 ))}
@@ -282,7 +238,7 @@ function LayoutContent({ children, currentPageName }) {
 
             {/* Contact */}
             <div>
-              <h4 className="font-medium mb-6 tracking-wide" style={{ color: COLORS.ACCENT_COLOR }}>{t.footer.contact}</h4>
+              <h4 className="font-medium mb-6 tracking-wide" style={{ color: COLORS.ACCENT_COLOR }}>Contact</h4>
               <ul className="space-y-4 text-left">
                 <li className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: COLORS.ACCENT_COLOR }} />
@@ -307,7 +263,7 @@ function LayoutContent({ children, currentPageName }) {
 
             {/* Social */}
             <div>
-              <h4 className="font-medium mb-6 tracking-wide" style={{ color: COLORS.ACCENT_COLOR }}>{t.footer.followUs}</h4>
+              <h4 className="font-medium mb-6 tracking-wide" style={{ color: COLORS.ACCENT_COLOR }}>Suivez-nous</h4>
               <div className="flex gap-4 mb-6">
                 <a 
                   href="#" 
@@ -360,24 +316,16 @@ function LayoutContent({ children, currentPageName }) {
 
           <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
             <p className="text-gray-500 text-sm">
-              © {new Date().getFullYear()} Le Tripot Régnier. {t.footer.rights}
+              © {new Date().getFullYear()} Le Tripot Régnier. Tous droits réservés.
             </p>
             <div className="flex flex-wrap gap-6 text-sm">
-              <Link to={createPageUrl('MentionsLegales')} className="text-gray-500 hover:text-white transition-colors">{t.footer.legal}</Link>
-              <Link to={createPageUrl('PolitiqueConfidentialite')} className="text-gray-500 hover:text-white transition-colors">{t.footer.privacy}</Link>
-              <Link to={createPageUrl('CGU')} className="text-gray-500 hover:text-white transition-colors">{t.footer.terms}</Link>
+              <Link to={createPageUrl('MentionsLegales')} className="text-gray-500 hover:text-white transition-colors">Mentions Légales</Link>
+              <Link to={createPageUrl('PolitiqueConfidentialite')} className="text-gray-500 hover:text-white transition-colors">Politique de Confidentialité</Link>
+              <Link to={createPageUrl('CGU')} className="text-gray-500 hover:text-white transition-colors">CGU</Link>
             </div>
           </div>
         </div>
       </footer>
     </div>
-  );
-}
-
-export default function Layout({ children, currentPageName }) {
-  return (
-    <LanguageProvider>
-      <LayoutContent children={children} currentPageName={currentPageName} />
-    </LanguageProvider>
   );
 }
