@@ -8,15 +8,8 @@ import { IMAGES } from '@/components/config/images';
 
 const galleryImages = IMAGES.gallery;
 
-const categories = ["Tous", "Salle", "Événements", "Architecture"];
-
 export default function Galerie() {
   const [selectedImage, setSelectedImage] = useState(null);
-  const [activeFilter, setActiveFilter] = useState("Tous");
-
-  const filteredImages = activeFilter === "Tous" 
-    ? galleryImages 
-    : galleryImages.filter(img => img.category === activeFilter);
 
   return (
     <div className="pt-20">
@@ -54,30 +47,13 @@ export default function Galerie() {
       {/* Gallery Section */}
       <section className="py-16 px-4 bg-[#F5F5F0]">
         <div className="max-w-[1600px] mx-auto">
-          {/* Filters */}
-          <div className="flex gap-4 mb-12 flex-wrap">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setActiveFilter(category)}
-                className={`px-6 py-2 text-sm tracking-wide transition-all duration-300 rounded-md ${
-                  activeFilter === category
-                    ? 'bg-[#0D0D0D] text-white'
-                    : 'bg-white text-[#0D0D0D] hover:bg-[#0D0D0D]/10'
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-
           {/* Masonry Grid */}
           <motion.div 
             layout
             className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4"
           >
             <AnimatePresence>
-              {filteredImages.map((image, index) => (
+              {galleryImages.map((image, index) => (
                 <motion.div
                   key={image.src}
                   layout
@@ -98,7 +74,6 @@ export default function Galerie() {
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-left">
                     <p className="text-white text-sm">{image.alt}</p>
-                    <p className="text-xs" style={{ color: COLORS.ACCENT_COLOR }}>{image.category}</p>
                   </div>
                 </motion.div>
               ))}
@@ -135,7 +110,6 @@ export default function Galerie() {
             />
             <div className="absolute bottom-6 left-6 text-left">
               <p className="text-white text-lg">{selectedImage.alt}</p>
-              <p className="text-sm" style={{ color: COLORS.ACCENT_COLOR }}>{selectedImage.category}</p>
             </div>
           </motion.div>
         )}

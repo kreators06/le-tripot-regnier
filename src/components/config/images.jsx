@@ -1,3 +1,4 @@
+
 /**
  * CONFIGURATION CENTRALISÉE DES IMAGES DU SITE
  * 
@@ -87,111 +88,75 @@ export const IMAGES = {
   gallery: [
     {
       src: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&auto=format",
-      alt: "Salle principale Le Tripot Régnier",
-      category: "Salle",
-      description: "Vue de la grande salle événementielle avec son style Art Déco"
+      alt: "Salle principale Le Tripot Régnier"
     },
     {
       src: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&auto=format",
-      alt: "Événement soirée Paris",
-      category: "Événements",
-      description: "Soirée festive organisée au Tripot Régnier"
+      alt: "Événement soirée Paris"
     },
     {
       src: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format",
-      alt: "Conférence entreprise",
-      category: "Événements",
-      description: "Conférence professionnelle avec équipements audiovisuels"
+      alt: "Conférence entreprise"
     },
     {
       src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&auto=format",
-      alt: "Réception mariage Paris",
-      category: "Événements",
-      description: "Réception de mariage dans un cadre élégant"
+      alt: "Réception mariage Paris"
     },
     {
       src: "https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=800&auto=format",
-      alt: "Architecture Art Déco",
-      category: "Architecture",
-      description: "Détails architecturaux Art Déco du bâtiment"
+      alt: "Architecture Art Déco"
     },
     {
       src: "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=800&auto=format",
-      alt: "Bar événementiel",
-      category: "Salle",
-      description: "Espace bar pour vos événements"
+      alt: "Bar événementiel"
     },
     {
       src: "https://images.unsplash.com/photo-1478146896981-b80fe463b330?w=800&auto=format",
-      alt: "Cocktail professionnel",
-      category: "Événements",
-      description: "Cocktail networking en configuration debout"
+      alt: "Cocktail professionnel"
     },
     {
       src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format",
-      alt: "Décor intérieur industriel",
-      category: "Architecture",
-      description: "Style industriel moderne du Tripot Régnier"
+      alt: "Décor intérieur industriel"
     },
     {
       src: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800&auto=format",
-      alt: "Soirée dansante",
-      category: "Événements",
-      description: "Piste de danse avec éclairage professionnel"
+      alt: "Soirée dansante"
     },
     {
       src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format",
-      alt: "Espace séminaire",
-      category: "Salle",
-      description: "Configuration pour séminaires d'entreprise"
+      alt: "Espace séminaire"
     },
     {
       src: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&auto=format",
-      alt: "Célébration entreprise",
-      category: "Événements",
-      description: "Événement corporate au Tripot Régnier"
+      alt: "Célébration entreprise"
     },
     {
       src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&auto=format",
-      alt: "Espace lounge",
-      category: "Salle",
-      description: "Zone lounge pour moments de détente"
+      alt: "Espace lounge"
     },
     {
       src: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&auto=format",
-      alt: "Concert privé",
-      category: "Événements",
-      description: "Performance musicale en configuration concert"
+      alt: "Concert privé"
     },
     {
       src: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&auto=format",
-      alt: "Soirée festive",
-      category: "Événements",
-      description: "Ambiance festive avec DJ et éclairages"
+      alt: "Soirée festive"
     },
     {
       src: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&auto=format",
-      alt: "Loge artiste",
-      category: "Salle",
-      description: "Espace privé pour artistes et VIP"
+      alt: "Loge artiste"
     },
     {
       src: "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800&auto=format",
-      alt: "DJ set soirée",
-      category: "Événements",
-      description: "Installation DJ professionnelle"
+      alt: "DJ set soirée"
     },
     {
       src: "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?w=800&auto=format",
-      alt: "Ambiance soirée",
-      category: "Événements",
-      description: "Atmosphère unique pour événements nocturnes"
+      alt: "Ambiance soirée"
     },
     {
       src: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&auto=format",
-      alt: "Performance live",
-      category: "Événements",
-      description: "Spectacle vivant sur scène professionnelle"
+      alt: "Performance live"
     }
   ],
 
@@ -283,7 +248,7 @@ export const IMAGES = {
     },
     {
       name: "Partner 4",
-      url: "https://imgs.search.brave.com/MwMZmvDhZjaIxrx0yMsqhJeArh9TW7WY7kbJhXcGdeI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuc2Vla2xvZ28u/Y29tL2xvZ28tcG5n/LzcvMi9qZWVwLWxv/Z28tcG5nX3NlZWts/b2dvLTc1Mjg0LnBu/Zw",
+      url: "https://imgs.search.brave.com/MwMZmvDhZjaIxrx0yMsqhJeArh9TW7WY7kbJhXcGdeI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuc2Vla2xvZ28u/Y29tL2xvZ28tcG5n/LzcvMi9qZWVwLWlo/Ym0tbG9nby1wbmdf/c2Vla2xvZ28tNzUy/ODQucG5n",
     },
     {
       name: "Partner 5",
