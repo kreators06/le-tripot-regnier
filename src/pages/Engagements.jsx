@@ -15,6 +15,7 @@ import {
 import SectionTitle from '@/components/ui/SectionTitle';
 import CTABanner from '@/components/ui/CTABanner';
 import { COLORS } from '@/components/config/colors';
+import { IMAGES } from '@/components/config/images';
 
 const pillars = [
   {
@@ -67,8 +68,8 @@ export default function Engagements() {
       <section className="relative py-32 px-6 bg-[#0D0D0D] overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img 
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&auto=format"
-            alt="Nos engagements RSE Le Tripot Régnier"
+            src={IMAGES.engagements.hero.src}
+            alt={IMAGES.engagements.hero.alt}
             className="w-full h-full object-cover"
           />
         </div>

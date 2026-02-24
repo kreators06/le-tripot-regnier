@@ -4,6 +4,7 @@ import { Calendar, Building2, Award } from 'lucide-react';
 import SectionTitle from '@/components/ui/SectionTitle';
 import CTABanner from '@/components/ui/CTABanner';
 import { COLORS } from '@/components/config/colors';
+import { IMAGES } from '@/components/config/images';
 
 export default function Histoire() {
   return (
@@ -12,8 +13,8 @@ export default function Histoire() {
       <section className="relative py-24 px-6 bg-[#0D0D0D] overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img 
-            src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=1920&auto=format"
-            alt="Histoire du Tripot Régnier"
+            src={IMAGES.histoire.hero.src}
+            alt={IMAGES.histoire.hero.alt}
             className="w-full h-full object-cover"
           />
         </div>
@@ -176,8 +177,8 @@ export default function Histoire() {
                 className="bg-white shadow-lg overflow-hidden"
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&auto=format"
-                  alt="Histoire du Tripot Régnier"
+                  src={IMAGES.histoire.hero.src}
+                  alt={IMAGES.histoire.hero.alt}
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-8">
@@ -256,8 +257,8 @@ export default function Histoire() {
                 className="bg-white shadow-lg overflow-hidden"
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1519167758481-83f29da8c2f0?w=800&auto=format"
-                  alt="Le Tripot Régnier - Lieu hybride et moderne"
+                  src={IMAGES.histoire.moderne.src}
+                  alt={IMAGES.histoire.moderne.alt}
                   className="w-full h-64 object-cover"
                 />
                 <div className="p-8">

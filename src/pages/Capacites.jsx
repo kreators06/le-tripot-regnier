@@ -13,6 +13,7 @@ import {
 import SectionTitle from '@/components/ui/SectionTitle';
 import CTABanner from '@/components/ui/CTABanner';
 import { COLORS } from '@/components/config/colors';
+import { IMAGES } from '@/components/config/images';
 
 const spaces = [
   { name: "Salle Principale", surface: "400 m²", description: "Espace modulable équipé (son, lumière, projection vidéo) dotée d'un bar et d'un fumoir intérieur." },
@@ -59,8 +60,8 @@ export default function Capacites() {
       <section className="relative py-32 px-6 bg-[#0D0D0D] overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img 
-            src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1920&auto=format"
-            alt="Équipements salle événementielle Paris"
+            src={IMAGES.capacites.hero.src}
+            alt={IMAGES.capacites.hero.alt}
             className="w-full h-full object-cover"
           />
         </div>
@@ -218,8 +219,8 @@ export default function Capacites() {
             >
               <div className="aspect-video bg-gradient-to-br from-[#1A1A1A] to-[#2A2A2A] rounded-lg overflow-hidden shadow-xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=800&auto=format"
-                  alt="Mur LED immersif"
+                  src={IMAGES.capacites.murLED.src}
+                  alt={IMAGES.capacites.murLED.alt}
                   className="w-full h-full object-cover opacity-80"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">

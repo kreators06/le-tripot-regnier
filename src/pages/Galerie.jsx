@@ -4,27 +4,9 @@ import { X, ZoomIn } from 'lucide-react';
 import SectionTitle from '@/components/ui/SectionTitle';
 import CTABanner from '@/components/ui/CTABanner';
 import { COLORS } from '@/components/config/colors';
+import { IMAGES } from '@/components/config/images';
 
-const galleryImages = [
-  { src: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&auto=format", alt: "Salle principale Le Tripot Régnier", category: "Salle" },
-  { src: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&auto=format", alt: "Événement soirée Paris", category: "Événements" },
-  { src: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format", alt: "Conférence entreprise", category: "Événements" },
-  { src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&auto=format", alt: "Réception mariage Paris", category: "Événements" },
-  { src: "https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=800&auto=format", alt: "Architecture Art Déco", category: "Architecture" },
-  { src: "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=800&auto=format", alt: "Bar événementiel", category: "Salle" },
-  { src: "https://images.unsplash.com/photo-1478146896981-b80fe463b330?w=800&auto=format", alt: "Cocktail professionnel", category: "Événements" },
-  { src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format", alt: "Décor intérieur industriel", category: "Architecture" },
-  { src: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800&auto=format", alt: "Soirée dansante", category: "Événements" },
-  { src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format", alt: "Espace séminaire", category: "Salle" },
-  { src: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&auto=format", alt: "Célébration entreprise", category: "Événements" },
-  { src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&auto=format", alt: "Espace lounge", category: "Salle" },
-  { src: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&auto=format", alt: "Concert privé", category: "Événements" },
-  { src: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&auto=format", alt: "Soirée festive", category: "Événements" },
-  { src: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&auto=format", alt: "Loge artiste", category: "Salle" },
-  { src: "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800&auto=format", alt: "DJ set soirée", category: "Événements" },
-  { src: "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?w=800&auto=format", alt: "Ambiance soirée", category: "Événements" },
-  { src: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&auto=format", alt: "Performance live", category: "Événements" }
-];
+const galleryImages = IMAGES.gallery;
 
 const categories = ["Tous", "Salle", "Événements", "Architecture"];
 
@@ -42,8 +24,8 @@ export default function Galerie() {
       <section className="relative py-32 px-6 bg-[#0D0D0D] overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img 
-            src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1920&auto=format"
-            alt="Galerie photos Le Tripot Régnier"
+            src={IMAGES.galerie.hero.src}
+            alt={IMAGES.galerie.hero.alt}
             className="w-full h-full object-cover"
           />
         </div>

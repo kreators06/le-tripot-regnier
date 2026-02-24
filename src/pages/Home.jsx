@@ -27,7 +27,7 @@ const spaces = [
 {
   title: "Salle Principale",
   surface: "400 m²",
-  image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&auto=format",
+  image: IMAGES.spaces.grandeSalle.src,
   description: "Espace modulable avec béton ciré et équipements audiovisuels complets"
 },
 {
@@ -67,31 +67,31 @@ const configurations = [
   icon: Users,
   name: "Défilé",
   capacity: "< 200 pers.",
-  image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format"
+  image: IMAGES.configurations.conference.src
 },
 {
   icon: Utensils,
   name: "Dîner assis",
   capacity: "< 220 pers.",
-  image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&auto=format"
+  image: IMAGES.configurations.dinerAssis.src
 },
 {
   icon: Presentation,
   name: "Conférence",
   capacity: "< 250 pers.",
-  image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format"
+  image: IMAGES.configurations.seminaire.src
 },
 {
   icon: PartyPopper,
   name: "Cocktail / Soirée",
   capacity: "< 500 pers.",
-  image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&auto=format"
+  image: IMAGES.configurations.soiree.src
 },
 {
   icon: Store,
   name: "Showroom",
   capacity: "Sur mesure",
-  image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&auto=format"
+  image: IMAGES.configurations.showroom.src
 }];
 
 
