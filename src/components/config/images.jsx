@@ -20,7 +20,7 @@ export const IMAGES = {
     // Vidéo de fond du hero
     heroVideo: "https://letripotregnier.fr/assets/videos/VIDEO_TR.mp4",
     // Image de secours si la vidéo ne charge pas
-    heroPoster: "https://letripotregnier.fr/site/wp-content/uploads/2017/02/tripotregnier-slider-2.jpg",
+    heroPoster: "https://letripotregnier.fr/assets/photos/tripotregnier-interieur",
   },
 
   // ==========================================
