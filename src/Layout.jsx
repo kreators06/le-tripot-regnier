@@ -167,7 +167,7 @@ export default function Layout({ children, currentPageName }) {
               className="lg:hidden bg-[#0D0D0D] border-t border-white/10"
             >
               <nav className="flex flex-col py-6 px-6">
-                {navLinks.map((link, i) => (
+                {navLinks.slice(0, -1).map((link, i) => (
                   <motion.div
                     key={link.page}
                     initial={{ opacity: 0, x: -20 }}
