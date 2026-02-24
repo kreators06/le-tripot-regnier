@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { createPageUrl } from '@/utils';
 import { motion } from 'framer-motion';
 import { 
   Building2, 
@@ -6,7 +8,8 @@ import {
   Zap, 
   Users, 
   Accessibility, 
-  ShoppingCart 
+  ShoppingCart,
+  ArrowRight
 } from 'lucide-react';
 import { COLORS } from '@/components/config/colors';
 
@@ -28,8 +31,8 @@ const signals = [
   },
   {
     icon: Zap,
-    title: "Infra Technique Lourde",
-    description: "Mur LED immersif, audiovisuel pro, climatisation réversible"
+    title: "Espace tout équipé",
+    description: "Enceintes et projecteur professionnel, climatisation réversible, mur LED immersif, etc"
   },
   {
     icon: ShoppingCart,
@@ -38,8 +41,8 @@ const signals = [
   },
   {
     icon: CheckCircle2,
-    title: "Accès Véhicule",
-    description: "Lancements automobiles et expositions directes en salle"
+    title: "Accès voiture",
+    description: "Rentrez jusqu'à 4 voitures dans la salle"
   }
 ];
 
@@ -58,12 +61,12 @@ export default function TrustSignals() {
             Avantages Exclusifs
           </p>
           <h2 className="text-3xl md:text-4xl font-semibold text-[#0D0D0D] tracking-tight">
-            Capacités <span style={{ color: COLORS.ACCENT_COLOR }}>Distinc</span>
+            Nos <span style={{ color: COLORS.ACCENT_COLOR }}>avantages</span>
           </h2>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {signals.map((signal, index) => {
+          {signals.slice(0, 5).map((signal, index) => {
             const Icon = signal.icon;
             return (
               <motion.div
@@ -96,6 +99,34 @@ export default function TrustSignals() {
               </motion.div>
             );
           })}
+          
+          {/* Bouton vers Espaces & Équipements */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ delay: 0.25, duration: 0.4 }}
+          >
+            <Link
+              to={createPageUrl('Capacites')}
+              className="flex items-center justify-center gap-3 h-full p-6 rounded-lg border-2 transition-all duration-300 text-white hover:shadow-lg group"
+              style={{ 
+                backgroundColor: COLORS.ACCENT_COLOR, 
+                borderColor: COLORS.ACCENT_COLOR 
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'white';
+                e.currentTarget.style.color = '#0D0D0D';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR;
+                e.currentTarget.style.color = 'white';
+              }}
+            >
+              <span className="text-lg font-semibold">Voir tous nos équipements</span>
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </motion.div>
         </div>
       </div>
     </section>
