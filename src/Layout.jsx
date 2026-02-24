@@ -282,7 +282,7 @@ export default function Layout({ children, currentPageName }) {
             {/* Social */}
             <div>
               <h4 className="font-medium mb-6 tracking-wide" style={{ color: COLORS.ACCENT_COLOR }}>Suivez-nous</h4>
-              <div className="flex gap-4">
+              <div className="flex gap-4 mb-6">
                 <a 
                   href="#" 
                   className="w-10 h-10 border border-white/20 flex items-center justify-center transition-all" 
@@ -329,16 +329,14 @@ export default function Layout({ children, currentPageName }) {
                   <Facebook className="w-5 h-5 text-white" />
                 </a>
               </div>
+              <div id="wcb" className="carbonbadge" style={{ transform: 'scale(0.8)', transformOrigin: 'left top' }}></div>
             </div>
           </div>
 
           <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-            <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
-              <p className="text-gray-500 text-sm">
-                © {new Date().getFullYear()} Le Tripot Régnier. Tous droits réservés.
-              </p>
-              <div id="wcb" className="carbonbadge"></div>
-            </div>
+            <p className="text-gray-500 text-sm">
+              © {new Date().getFullYear()} Le Tripot Régnier. Tous droits réservés.
+            </p>
             <div className="flex flex-wrap gap-6 text-sm">
               <Link to={createPageUrl('MentionsLegales')} className="text-gray-500 hover:text-white transition-colors">Mentions légales</Link>
               <Link to={createPageUrl('PolitiqueConfidentialite')} className="text-gray-500 hover:text-white transition-colors">Politique de confidentialité</Link>
