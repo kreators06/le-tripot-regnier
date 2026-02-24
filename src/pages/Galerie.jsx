@@ -47,10 +47,10 @@ export default function Galerie() {
       {/* Gallery Section */}
       <section className="py-16 px-4 bg-[#F5F5F0]">
         <div className="max-w-[1600px] mx-auto">
-          {/* Masonry Grid */}
+          {/* Grid */}
           <motion.div 
             layout
-            className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4"
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
           >
             <AnimatePresence>
               {galleryImages.map((image, index) => (
@@ -61,13 +61,13 @@ export default function Galerie() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className="break-inside-avoid group relative cursor-pointer overflow-hidden rounded-md"
+                  className="group relative cursor-pointer overflow-hidden rounded-md aspect-square md:aspect-[4/3]"
                   onClick={() => setSelectedImage(image)}
                 >
                   <img
                     src={image.src}
                     alt={image.alt}
-                    className="w-full transition-transform duration-500 group-hover:scale-110 rounded-md"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
                     <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
