@@ -28,11 +28,11 @@ export const IMAGES = {
       alt: "Grande salle événementielle Le Tripot Régnier"
     },
     salonVIP: {
-      src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format",
+      src: "https://letripotregnier.fr/assets/photos/",
       alt: "Salon VIP privatif Le Tripot Régnier"
     },
     terrasse: {
-      src: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&auto=format",
+      src: "https://letripotregnier.fr/assets/photos/",
       alt: "Terrasse extérieure Le Tripot Régnier"
     },
   },
@@ -42,27 +42,27 @@ export const IMAGES = {
   // ==========================================
   configurations: {
     cocktail: {
-      src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&auto=format",
+      src: "https://letripotregnier.fr/assets/photos/",
       alt: "Configuration cocktail debout Le Tripot Régnier"
     },
     dinerAssis: {
-      src: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&auto=format",
+      src: "https://letripotregnier.fr/assets/photos/",
       alt: "Configuration dîner assis Le Tripot Régnier"
     },
     seminaire: {
-      src: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format",
+      src: "https://letripotregnier.fr/assets/photos/",
       alt: "Configuration séminaire professionnel Le Tripot Régnier"
     },
     conference: {
-      src: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&auto=format",
+      src: "https://letripotregnier.fr/assets/photos/",
       alt: "Configuration conférence Le Tripot Régnier"
     },
     showroom: {
-      src: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&auto=format",
+      src: "https://letripotregnier.fr/assets/photos/",
       alt: "Configuration showroom produits Le Tripot Régnier"
     },
     soiree: {
-      src: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&auto=format",
+      src: "https://letripotregnier.fr/assets/photos/",
       alt: "Configuration soirée événementielle Le Tripot Régnier"
     },
   },
