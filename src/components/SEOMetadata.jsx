@@ -18,6 +18,42 @@ export default function SEOMetadata() {
       document.head.appendChild(meta);
     }
 
+    // Open Graph tags
+    const ogTags = {
+      'og:title': 'Le Tripot Régnier | Salle Événementielle Atypique Paris 15',
+      'og:description': descriptionContent,
+      'og:image': 'https://le-tr.polairestudios.com/assets/Logo-blanc.png',
+      'og:url': 'https://letripotregnier.fr',
+      'og:type': 'website',
+      'og:site_name': 'Le Tripot Régnier'
+    };
+    Object.entries(ogTags).forEach(([property, content]) => {
+      let tag = document.querySelector(`meta[property="${property}"]`);
+      if (!tag) {
+        tag = document.createElement('meta');
+        tag.setAttribute('property', property);
+        document.head.appendChild(tag);
+      }
+      tag.setAttribute('content', content);
+    });
+
+    // Twitter Card tags
+    const twitterTags = {
+      'twitter:card': 'summary_large_image',
+      'twitter:title': 'Le Tripot Régnier | Salle Événementielle Paris 15',
+      'twitter:description': descriptionContent,
+      'twitter:image': 'https://le-tr.polairestudios.com/assets/Logo-blanc.png'
+    };
+    Object.entries(twitterTags).forEach(([name, content]) => {
+      let tag = document.querySelector(`meta[name="${name}"]`);
+      if (!tag) {
+        tag = document.createElement('meta');
+        tag.setAttribute('name', name);
+        document.head.appendChild(tag);
+      }
+      tag.setAttribute('content', content);
+    });
+
     // Inject JSON-LD Schema
     const schemaScript = document.createElement('script');
     schemaScript.type = 'application/ld+json';

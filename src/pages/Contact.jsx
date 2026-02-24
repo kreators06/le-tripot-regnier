@@ -19,6 +19,7 @@ import { Label } from '@/components/ui/label';
 import SectionTitle from '@/components/ui/SectionTitle';
 import { COLORS } from '@/components/config/colors';
 import { IMAGES } from '@/components/config/images';
+import PageSEO from '@/components/PageSEO';
 
 const contactInfo = [
   {
@@ -134,6 +135,7 @@ export default function Contact() {
 
   return (
     <div>
+      <PageSEO title="Contact & Réservation" description="Contactez Le Tripot Régnier pour privatiser notre salle événementielle de 700m². 10-12 rue Mathurin Régnier, 75015 Paris. Tél: 01 45 26 04 58." />
       {/* Hero Banner with Video */}
       <section className="relative py-32 px-6 overflow-hidden min-h-[50vh] flex items-center justify-center">
         {/* Video Background */}

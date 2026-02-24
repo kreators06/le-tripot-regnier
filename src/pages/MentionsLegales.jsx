@@ -2,10 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import SectionTitle from '@/components/ui/SectionTitle';
 import { COLORS } from '@/components/config/colors';
+import PageSEO from '@/components/PageSEO';
 
 export default function MentionsLegales() {
   return (
     <div className="pt-20">
+      <PageSEO title="Mentions Légales" description="Mentions légales du site Le Tripot Régnier — ROMAIN MONTI RACING, 10 rue Mathurin Régnier, 75015 Paris. SIREN 529 266 645." />
       {/* Hero Section */}
       <section className="py-20 px-6 bg-[#0D0D0D]">
         <div className="max-w-4xl mx-auto text-left">

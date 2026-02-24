@@ -16,6 +16,7 @@ import SectionTitle from '@/components/ui/SectionTitle';
 import CTABanner from '@/components/ui/CTABanner';
 import { COLORS } from '@/components/config/colors';
 import { IMAGES } from '@/components/config/images';
+import PageSEO from '@/components/PageSEO';
 
 const pillars = [
   {
@@ -64,6 +65,7 @@ const ecoActions = [
 export default function Engagements() {
   return (
     <div className="pt-20">
+      <PageSEO title="Nos Engagements RSE" description="Découvrez les engagements RSE du Tripot Régnier : développement durable, économie d'eau, éclairage LED, acoustique professionnelle et qualité de l'air." />
       {/* Hero Section */}
       <section className="relative py-32 px-6 bg-[#0D0D0D] overflow-hidden">
         <div className="absolute inset-0 opacity-20">

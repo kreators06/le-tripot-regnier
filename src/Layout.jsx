@@ -4,6 +4,7 @@ import { createPageUrl } from '@/utils';
 import { Menu, X, Phone, Mail, MapPin, Instagram, Linkedin, Facebook } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { COLORS } from '@/components/config/colors';
+import CookieConsent from '@/components/CookieConsent';
 
 const navLinks = [
   { name: 'Histoire', page: 'Histoire' },
@@ -209,6 +210,9 @@ export default function Layout({ children, currentPageName }) {
 
       {/* Main Content */}
       <main>{children}</main>
+
+      {/* Bandeau Cookies RGPD */}
+      <CookieConsent />
 
       {/* Footer */}
       <footer className="bg-[#0D0D0D] text-white">

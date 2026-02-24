@@ -14,6 +14,7 @@ import SectionTitle from '@/components/ui/SectionTitle';
 import CTABanner from '@/components/ui/CTABanner';
 import { COLORS } from '@/components/config/colors';
 import { IMAGES } from '@/components/config/images';
+import PageSEO from '@/components/PageSEO';
 
 const spaces = [
   { name: "Salle Principale", surface: "400 m²", description: "Espace modulable équipé (son, lumière, projection vidéo) dotée d'un bar et d'un fumoir intérieur." },
@@ -56,6 +57,7 @@ const logistics = [
 export default function Capacites() {
   return (
     <div className="pt-20">
+      <PageSEO title="Espaces & Équipements" description="700m² modulables, mur LED immersif, système son professionnel, éclairage scénique. Découvrez les équipements techniques complets du Tripot Régnier." />
       {/* Hero Section */}
       <section className="relative py-32 px-6 bg-[#0D0D0D] overflow-hidden">
         <div className="absolute inset-0 opacity-20">

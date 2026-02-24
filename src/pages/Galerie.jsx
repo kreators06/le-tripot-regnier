@@ -5,6 +5,7 @@ import SectionTitle from '@/components/ui/SectionTitle';
 import CTABanner from '@/components/ui/CTABanner';
 import { COLORS } from '@/components/config/colors';
 import { IMAGES } from '@/components/config/images';
+import PageSEO from '@/components/PageSEO';
 
 const galleryImages = IMAGES.gallery;
 
@@ -13,6 +14,7 @@ export default function Galerie() {
 
   return (
     <div className="pt-20">
+      <PageSEO title="Galerie Photos" description="Parcourez la galerie photos du Tripot Régnier et découvrez l'ambiance unique de notre salle événementielle de 700m² à Paris 15e." />
       {/* Hero Section */}
       <section className="relative py-32 px-6 bg-[#0D0D0D] overflow-hidden">
         <div className="absolute inset-0 opacity-20">

@@ -1,10 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { COLORS } from '@/components/config/colors';
+import PageSEO from '@/components/PageSEO';
 
 export default function PolitiqueConfidentialite() {
   return (
     <div className="pt-20">
+      <PageSEO title="Politique de Confidentialité" description="Politique de confidentialité et gestion des données personnelles du site Le Tripot Régnier, conforme au RGPD." />
       {/* Hero Section */}
       <section className="py-20 px-6 bg-[#0D0D0D]">
         <div className="max-w-4xl mx-auto text-left">
