@@ -322,9 +322,12 @@ export default function Layout({ children, currentPageName }) {
           </div>
 
           <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-            <p className="text-gray-500 text-sm">
-              © {new Date().getFullYear()} Le Tripot Régnier. Tous droits réservés.
-            </p>
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
+              <p className="text-gray-500 text-sm">
+                © {new Date().getFullYear()} Le Tripot Régnier. Tous droits réservés.
+              </p>
+              <div id="wcb" className="carbonbadge"></div>
+            </div>
             <div className="flex flex-wrap gap-6 text-sm">
               <Link to={createPageUrl('MentionsLegales')} className="text-gray-500 hover:text-white transition-colors">Mentions légales</Link>
               <Link to={createPageUrl('PolitiqueConfidentialite')} className="text-gray-500 hover:text-white transition-colors">Politique de confidentialité</Link>
@@ -332,6 +335,7 @@ export default function Layout({ children, currentPageName }) {
             </div>
           </div>
         </div>
+        <script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
       </footer>
     </div>
   );
