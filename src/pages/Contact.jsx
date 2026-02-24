@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { base44 } from '@/api/base44Client';
@@ -18,6 +18,7 @@ import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import SectionTitle from '@/components/ui/SectionTitle';
 import { COLORS } from '@/components/config/colors';
+import { IMAGES } from '@/components/config/images';
 
 const contactInfo = [
   {
@@ -57,6 +58,19 @@ export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [captchaToken, setCaptchaToken] = useState(null);
   const recaptchaRef = useRef();
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.addEventListener('loadeddata', () => {
+        video.play().catch((error) => {
+          console.log("Autoplay bloqué:", error);
+        });
+      });
+      video.load();
+    }
+  }, []);
 
   const handleChange = (e) => {
     setFormData({
@@ -110,21 +124,42 @@ export default function Contact() {
 
   return (
     <div className="pt-20">
-      {/* Hero Banner */}
-      <section className="relative py-20 px-6 overflow-hidden" style={{ background: `linear-gradient(135deg, ${COLORS.ACCENT_COLOR} 0%, ${COLORS.ACCENT_COLOR_HOVER} 100%)` }}>
-        <div className="max-w-4xl mx-auto text-center">
+      {/* Hero Banner with Video */}
+      <section className="relative py-32 px-6 overflow-hidden min-h-[60vh] flex items-center justify-center">
+        {/* Video Background */}
+        <div className="absolute inset-0">
+          <video
+            ref={videoRef}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            poster={IMAGES.home.heroPoster}
+            className="w-full h-full object-cover"
+            crossOrigin="anonymous"
+          >
+            <source src={IMAGES.home.heroVideo} type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+        </div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-bold text-white mb-4"
+            transition={{ duration: 0.8 }}
+            className="text-4xl md:text-6xl font-bold text-white mb-6"
           >
             Réservez votre visite
           </motion.h1>
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-xl text-white/90"
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="text-xl md:text-2xl text-white/95"
           >
             Découvrez nos espaces de 700m² et imaginez votre événement
           </motion.p>
@@ -144,13 +179,8 @@ export default function Contact() {
               style={{ border: `3px solid ${COLORS.ACCENT_COLOR}` }}
             >
               <div className="mb-6">
-                <div className="inline-block px-4 py-2 rounded-full mb-4" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20` }}>
-                  <span className="text-sm font-semibold uppercase tracking-wide" style={{ color: COLORS.ACCENT_COLOR }}>
-                    Étape 1
-                  </span>
-                </div>
                 <h2 className="text-2xl md:text-3xl font-bold text-[#0D0D0D] mb-3">
-                  Planifiez votre visite
+                  Privatiser la salle
                 </h2>
                 <p className="text-gray-600">
                   Choisissez votre créneau et venez découvrir Le Tripot Régnier
@@ -178,11 +208,6 @@ export default function Contact() {
               className="bg-white rounded-2xl p-8 shadow-lg"
             >
               <div className="mb-6">
-                <div className="inline-block px-4 py-2 rounded-full mb-4 bg-gray-100">
-                  <span className="text-sm font-semibold uppercase tracking-wide text-gray-600">
-                    Étape 2
-                  </span>
-                </div>
                 <h2 className="text-2xl md:text-3xl font-bold text-[#0D0D0D] mb-3">
                   Posez vos questions
                 </h2>
