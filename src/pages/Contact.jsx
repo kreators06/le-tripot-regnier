@@ -63,11 +63,21 @@ export default function Contact() {
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
-      video.addEventListener('loadeddata', () => {
+      video.muted = true;
+      video.playsInline = true;
+      
+      const playVideo = () => {
         video.play().catch((error) => {
           console.log("Autoplay bloqué:", error);
         });
-      });
+      };
+      
+      if (video.readyState >= 3) {
+        playVideo();
+      } else {
+        video.addEventListener('canplay', playVideo, { once: true });
+      }
+      
       video.load();
     }
   }, []);
@@ -134,10 +144,11 @@ export default function Contact() {
             loop
             muted
             playsInline
-            preload="auto"
+            preload="metadata"
             poster={IMAGES.home.heroPoster}
             className="w-full h-full object-cover"
-            crossOrigin="anonymous"
+            webkit-playsinline="true"
+            x5-playsinline="true"
           >
             <source src={IMAGES.home.heroVideo} type="video/mp4" />
           </video>

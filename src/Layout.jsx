@@ -32,23 +32,7 @@ export default function Layout({ children, currentPageName }) {
     setMobileMenuOpen(false);
   }, [location.pathname]);
 
-  // Load carbon badge script
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://unpkg.com/website-carbon-badges@1.1.3/b.min.js';
-    script.async = true;
-    document.head.appendChild(script);
-    
-    script.onload = () => {
-      console.log('Carbon badge script loaded');
-    };
-    
-    return () => {
-      if (document.head.contains(script)) {
-        document.head.removeChild(script);
-      }
-    };
-  }, []);
+
 
   const isHome = currentPageName === 'Home';
   const headerBg = isScrolled || !isHome ? 'bg-[#0D0D0D]/95 backdrop-blur-md' : 'bg-transparent';
@@ -336,7 +320,6 @@ export default function Layout({ children, currentPageName }) {
                   <Facebook className="w-5 h-5 text-white" />
                 </a>
               </div>
-              <div id="wcb" className="carbonbadge" style={{ transform: 'scale(0.8)', transformOrigin: 'left top' }}></div>
             </div>
           </div>
 
