@@ -24,7 +24,7 @@ export const IMAGES = {
   // ==========================================
   spaces: {
     grandeSalle: {
-      src: "https://letripotregnier.fr/assets/photos/photo-salle-vide",
+      src: "https://letripotregnier.fr/assets/photos/photo-salle-vide.jpg",
       alt: "Grande salle événementielle Le Tripot Régnier"
     },
     salonVIP: {
