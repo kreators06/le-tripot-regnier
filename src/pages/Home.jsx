@@ -119,18 +119,21 @@ export default function Home() {
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
-      video.addEventListener('loadeddata', () => {
-        console.log("Vidéo chargée avec succès");
+      video.muted = true;
+      video.playsInline = true;
+      
+      const playVideo = () => {
         video.play().catch((error) => {
           console.log("Autoplay bloqué:", error);
         });
-      });
-
-      video.addEventListener('error', (e) => {
-        console.error("Erreur de chargement vidéo:", e);
-      });
-
-      // Force le chargement
+      };
+      
+      if (video.readyState >= 3) {
+        playVideo();
+      } else {
+        video.addEventListener('canplay', playVideo, { once: true });
+      }
+      
       video.load();
     }
   }, []);
