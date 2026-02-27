@@ -225,120 +225,73 @@ vos événements prennent vie
 
 
       {/* Spaces Section */}
-      <section id="nos-espaces" className="py-20 md:py-28 px-6 bg-white overflow-visible" aria-label="Espaces modulables et capacités de réception">
+      <section id="nos-espaces" className="py-20 md:py-28 px-6 bg-white" aria-label="Espaces modulables et capacités de réception">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-            className="text-center mb-20">
-
+            transition={{ duration: 0.4 }}
+            className="text-center mb-14">
             <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Nos espaces</p>
             <h2 className="text-4xl md:text-6xl font-semibold text-[#0D0D0D] tracking-tight mb-6">
               Découvrez nos différents <span style={{ color: COLORS.ACCENT_COLOR }}>espaces</span>
             </h2>
           </motion.div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            {/* Premier espace - Large - Sticky */}
-            <div className="lg:sticky lg:top-32 space-y-6">
-              <div className="h-[500px] md:h-[600px]">
-                <motion.div
-                  initial={{ opacity: 0, x: -40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-                  className="group h-full">
 
-                  <div className="relative h-full overflow-hidden rounded-lg">
-                    <motion.img
-                      src={spaces[0].image}
-                      alt={spaces[0].title}
-                      className="w-full h-full object-cover"
-                      whileHover={{ scale: 1.08 }}
-                      transition={{ duration: 0.6, ease: "easeOut" }} />
-
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
-                    <motion.div
-                      className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.3, duration: 0.5 }}>
-
-                      <h3 className="text-white text-2xl md:text-3xl font-semibold tracking-tight mb-2">Salle principale</h3>
-                      <p className="text-base md:text-lg font-medium mb-2 md:mb-3" style={{ color: COLORS.ACCENT_COLOR }}>400 m² | Capacité jusqu'à 450 pers.</p>
-                      <p className="text-white/95 text-sm md:text-base leading-relaxed">Espace modulable avec béton ciré, accès direct véhicule, mur LED immersif et équipements audiovisuels professionnels.</p>
-                    </motion.div>
-                  </div>
-                </motion.div>
-              </div>
-              
-              {/* Bouton Galerie */}
+          {/* Grille simple */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {spaces.map((space, index) => (
               <motion.div
+                key={space.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.4, duration: 0.5 }}
+                transition={{ delay: index * 0.07 }}
+                className={`group overflow-hidden rounded-xl ${index === 0 ? 'sm:col-span-2 lg:col-span-2' : ''}`}
               >
-                <Link
-                  to={createPageUrl('Galerie')}
-                  className="w-full px-6 py-3 text-white font-semibold tracking-wide text-sm transition-all duration-300 shadow-lg rounded-lg flex items-center justify-center gap-2"
-                  style={{ backgroundColor: COLORS.ACCENT_COLOR }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = 'white';
-                    e.currentTarget.style.color = '#0D0D0D';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR;
-                    e.currentTarget.style.color = 'white';
-                  }}
-                >
-                  VOIR LA GALERIE PHOTOS
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </motion.div>
-            </div>
-
-            {/* Autres espaces - Stacking cards */}
-            <div className="relative">
-              {spaces.slice(1).map((space, index) =>
-              <div
-                key={space.title}
-                className="mb-[80px] last:mb-0">
-
-                  <div
-                  className="sticky bg-white"
-                  style={{
-                    top: `calc(8rem + ${index * 1.5}rem)`
-                  }}>
-
-                    <div className="relative h-80 overflow-hidden">
-                      <img
-                      src={space.image}
-                      alt={space.title}
-                      className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" />
-
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className={`relative overflow-hidden ${index === 0 ? 'h-72 md:h-96' : 'h-56'}`}>
+                  <img
+                    src={space.image}
+                    alt={space.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <div className="flex items-baseline justify-between gap-2">
+                      <h3 className="text-white text-lg font-semibold">{space.title}</h3>
+                      {space.surface && (
+                        <span className="text-sm font-medium flex-shrink-0" style={{ color: COLORS.ACCENT_COLOR }}>{space.surface}</span>
+                      )}
                     </div>
-                    
-                    <div className="p-6 bg-white">
-                      <div className="flex items-baseline justify-between mb-3">
-                        <h3 className="text-[#0D0D0D] text-lg font-semibold tracking-tight">{space.title}</h3>
-                        {space.surface &&
-                      <p className="text-xs font-medium" style={{ color: COLORS.ACCENT_COLOR }}>{space.surface}</p>
-                      }
-                      </div>
-                      {space.description &&
-                    <p className="text-gray-600 text-sm leading-relaxed font-light">{space.description}</p>
-                    }
-                    </div>
+                    {space.description && (
+                      <p className="text-white/80 text-sm mt-1 leading-relaxed font-light">{space.description}</p>
+                    )}
                   </div>
                 </div>
-              )}
-            </div>
+              </motion.div>
+            ))}
           </div>
+
+          {/* Bouton Galerie */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="mt-10 text-center"
+          >
+            <Link
+              to={createPageUrl('Galerie')}
+              className="inline-flex items-center gap-2 px-8 py-3 text-white font-semibold tracking-wide text-sm transition-all duration-300 rounded-lg"
+              style={{ backgroundColor: COLORS.ACCENT_COLOR }}
+              onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR + 'cc'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR; }}
+            >
+              VOIR LA GALERIE PHOTOS
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </motion.div>
         </div>
       </section>
 
