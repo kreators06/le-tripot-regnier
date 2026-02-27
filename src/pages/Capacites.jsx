@@ -154,32 +154,15 @@ export default function Capacites() {
             align="left"
           />
           
-          <div className="grid grid-cols-1 gap-8 mt-12">
-            {spaces.map((space, index) => (
-              <motion.div
-                key={space.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-0 overflow-hidden rounded-lg shadow-sm border border-gray-100`}
-              >
-                <div className="md:w-1/2 aspect-video md:aspect-auto overflow-hidden">
-                  <img 
-                    src={space.image.src}
-                    alt={space.image.alt}
-                    className="w-full h-full object-cover min-h-[220px]"
-                  />
-                </div>
-                <div className="md:w-1/2 bg-[#F5F5F0] p-8 flex flex-col justify-center text-left">
-                  <h3 className="text-2xl font-semibold text-[#0D0D0D] mb-2">{space.name}</h3>
-                  {space.surface && (
-                    <p className="text-lg font-medium mb-3" style={{ color: COLORS.ACCENT_COLOR }}>{space.surface}</p>
-                  )}
-                  <p className="text-gray-600 leading-relaxed">{space.description}</p>
-                </div>
-              </motion.div>
-            ))}
+          {/* Tabs */}
+          <div className="mt-12">
+            {/* Tab buttons */}
+            <div className="flex flex-wrap gap-2 mb-0 border-b border-gray-200">
+              {spaces.map((space, index) => {
+                const [activeSpace, setActiveSpace] = React.useState(0);
+                return null; // dummy — we declare state outside below
+              })}
+            </div>
           </div>
         </div>
       </section>
