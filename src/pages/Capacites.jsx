@@ -55,6 +55,8 @@ const logistics = [
 ];
 
 export default function Capacites() {
+  const [activeSpace, setActiveSpace] = useState(0);
+
   return (
     <div className="pt-20">
       <PageSEO title="Espaces & Équipements" description="700m² modulables, mur LED immersif, système son professionnel, éclairage scénique. Découvrez les équipements techniques complets du Tripot Régnier." />
