@@ -216,7 +216,8 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.07 }}
-                className="group overflow-hidden rounded-xl"
+                className="group overflow-hidden rounded-xl cursor-pointer"
+                onClick={() => setLightboxImg(space.image)}
               >
                 <div className="relative h-64 overflow-hidden">
                   <img
