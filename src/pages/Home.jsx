@@ -9,12 +9,8 @@ import {
   Presentation,
   PartyPopper,
   Store,
-  ChevronDown } from
-'lucide-react';
-import SectionTitle from '@/components/ui/SectionTitle';
-import SpaceCard from '@/components/ui/SpaceCard';
-import TestimonialCard from '@/components/ui/TestimonialCard';
-import CTABanner from '@/components/ui/CTABanner';
+  ChevronDown
+} from 'lucide-react';
 import LogoMarquee from '@/components/ui/LogoMarquee';
 import SEOMetadata from '@/components/SEOMetadata';
 import TrustSignals from '@/components/TrustSignals';
