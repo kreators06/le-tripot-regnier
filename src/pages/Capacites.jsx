@@ -156,51 +156,34 @@ export default function Capacites() {
             align="left"
           />
 
-          <div className="mt-12">
-            {/* Tab buttons */}
-            <div className="flex flex-wrap gap-1 mb-8">
-              {spaces.map((space, index) => (
-                <button
-                  key={space.name}
-                  onClick={() => setActiveSpace(index)}
-                  className="px-5 py-2.5 text-sm font-medium tracking-wide transition-all duration-200 rounded"
-                  style={
-                    activeSpace === index
-                      ? { backgroundColor: COLORS.ACCENT_COLOR, color: '#fff' }
-                      : { backgroundColor: '#F5F5F0', color: '#555' }
-                  }
-                >
-                  {space.name}
-                </button>
-              ))}
-            </div>
-
-            {/* Active space display */}
-            {spaces[activeSpace] && (
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {spaces.map((space, index) => (
               <motion.div
-                key={activeSpace}
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4 }}
-                className="grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden rounded-xl shadow-md"
+                key={space.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.08 }}
+                className="group overflow-hidden rounded-xl bg-[#F5F5F0]"
               >
-                <div className="aspect-[4/3] lg:aspect-auto overflow-hidden min-h-[320px]">
+                <div className="aspect-[4/3] overflow-hidden">
                   <img
-                    src={spaces[activeSpace].image.src}
-                    alt={spaces[activeSpace].image.alt}
-                    className="w-full h-full object-cover"
+                    src={space.image.src}
+                    alt={space.image.alt}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
-                <div className="bg-[#0D0D0D] p-10 flex flex-col justify-center text-left">
-                  <p className="text-xs tracking-[0.25em] uppercase mb-3" style={{ color: COLORS.ACCENT_COLOR }}>Espace</p>
-                  <h3 className="text-3xl font-semibold text-white mb-3">{spaces[activeSpace].name}</h3>
-                  {spaces[activeSpace].surface && (
-                    <p className="text-xl font-medium mb-4" style={{ color: COLORS.ACCENT_COLOR }}>{spaces[activeSpace].surface}</p>
-                  )}
-                  <p className="text-gray-300 leading-relaxed">{spaces[activeSpace].description}</p>
+                <div className="p-6">
+                  <div className="flex items-baseline justify-between gap-2 mb-2">
+                    <h3 className="text-lg font-semibold text-[#0D0D0D]">{space.name}</h3>
+                    {space.surface && (
+                      <span className="text-sm font-medium flex-shrink-0" style={{ color: COLORS.ACCENT_COLOR }}>{space.surface}</span>
+                    )}
+                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed">{space.description}</p>
                 </div>
               </motion.div>
-            )}
+            ))}
           </div>
         </div>
       </section>
