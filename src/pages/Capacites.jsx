@@ -154,7 +154,7 @@ export default function Capacites() {
             align="left"
           />
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+          <div className="grid grid-cols-1 gap-8 mt-12">
             {spaces.map((space, index) => (
               <motion.div
                 key={space.name}
@@ -162,13 +162,22 @@ export default function Capacites() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-[#F5F5F0] p-8 text-left group hover:shadow-xl transition-shadow duration-300 rounded-lg"
+                className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-0 overflow-hidden rounded-lg shadow-sm border border-gray-100`}
               >
-                <h3 className="text-xl font-semibold text-[#0D0D0D] mb-2">{space.name}</h3>
-                {space.surface && (
-                  <p className="text-lg font-medium mb-3" style={{ color: COLORS.ACCENT_COLOR }}>{space.surface}</p>
-                )}
-                <p className="text-gray-600 leading-relaxed">{space.description}</p>
+                <div className="md:w-1/2 aspect-video md:aspect-auto overflow-hidden">
+                  <img 
+                    src={space.image.src}
+                    alt={space.image.alt}
+                    className="w-full h-full object-cover min-h-[220px]"
+                  />
+                </div>
+                <div className="md:w-1/2 bg-[#F5F5F0] p-8 flex flex-col justify-center text-left">
+                  <h3 className="text-2xl font-semibold text-[#0D0D0D] mb-2">{space.name}</h3>
+                  {space.surface && (
+                    <p className="text-lg font-medium mb-3" style={{ color: COLORS.ACCENT_COLOR }}>{space.surface}</p>
+                  )}
+                  <p className="text-gray-600 leading-relaxed">{space.description}</p>
+                </div>
               </motion.div>
             ))}
           </div>
