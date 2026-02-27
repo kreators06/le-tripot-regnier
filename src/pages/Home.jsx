@@ -248,24 +248,24 @@ vos événements prennent vie
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.07 }}
-                className={`group overflow-hidden rounded-xl ${index === 0 ? 'sm:col-span-2 lg:col-span-2' : ''}`}
+                className="group overflow-hidden rounded-xl"
               >
-                <div className={`relative overflow-hidden ${index === 0 ? 'h-72 md:h-96' : 'h-56'}`}>
+                <div className="relative h-64 overflow-hidden">
                   <img
                     src={space.image}
                     alt={space.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5" />
                   <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <div className="flex items-baseline justify-between gap-2">
-                      <h3 className="text-white text-lg font-semibold">{space.title}</h3>
+                    <div className="flex items-baseline justify-between gap-2 mb-1">
+                      <h3 className="text-white text-base font-semibold drop-shadow-md">{space.title}</h3>
                       {space.surface && (
-                        <span className="text-sm font-medium flex-shrink-0" style={{ color: COLORS.ACCENT_COLOR }}>{space.surface}</span>
+                        <span className="text-xs font-semibold flex-shrink-0 px-2 py-0.5 rounded-full" style={{ backgroundColor: COLORS.ACCENT_COLOR, color: 'white' }}>{space.surface}</span>
                       )}
                     </div>
                     {space.description && (
-                      <p className="text-white/80 text-sm mt-1 leading-relaxed font-light">{space.description}</p>
+                      <p className="text-white/90 text-xs leading-relaxed drop-shadow-sm">{space.description}</p>
                     )}
                   </div>
                 </div>
