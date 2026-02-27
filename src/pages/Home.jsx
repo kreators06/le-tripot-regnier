@@ -79,6 +79,7 @@ const testimonials = [
 
 export default function Home() {
   const videoRef = useRef(null);
+  const [lightboxImg, setLightboxImg] = React.useState(null);
 
   useEffect(() => {
     const video = videoRef.current;
