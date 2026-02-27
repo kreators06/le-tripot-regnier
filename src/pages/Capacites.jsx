@@ -17,11 +17,11 @@ import { IMAGES } from '@/components/config/images';
 import PageSEO from '@/components/PageSEO';
 
 const spaces = [
-  { name: "Salle Principale", surface: "400 m²", description: "Espace modulable équipé (son, lumière, projection vidéo) dotée d'un bar et d'un fumoir intérieur." },
-  { name: "Bar", surface: "", description: "Bar équipé : four, machine à glaçons, réfrigérateur." },
-  { name: "Mezzanine", surface: "65 m²", description: "Espace en hauteur offrant une vue panoramique sur la salle." },
-  { name: "Espace Lounge", surface: "", description: "Espace détente situé en prolongation de la mezzanine." },
-  { name: "Loge", surface: "", description: "Loge avec accès privé comprenant: écran TV pour visualiser en direct l'évènement, canapé, toilettes, douche, lavabo." }
+  { name: "Salle Principale", surface: "400 m²", description: "Espace modulable équipé (son, lumière, projection vidéo) dotée d'un bar et d'un fumoir intérieur.", image: IMAGES.spaces.grandeSalle },
+  { name: "Bar", surface: "", description: "Bar équipé : four, machine à glaçons, réfrigérateur.", image: IMAGES.spaces.bar },
+  { name: "Mezzanine", surface: "65 m²", description: "Espace en hauteur offrant une vue panoramique sur la salle.", image: IMAGES.spaces.mezzanine },
+  { name: "Espace Lounge", surface: "", description: "Espace détente situé en prolongation de la mezzanine.", image: IMAGES.spaces.espaceLounge },
+  { name: "Loge", surface: "", description: "Loge avec accès privé comprenant: écran TV pour visualiser en direct l'évènement, canapé, toilettes, douche, lavabo.", image: IMAGES.spaces.logePrivee }
 ];
 
 const lighting = [
