@@ -224,8 +224,8 @@ vos événements prennent vie
 
 
 
-      {/* Spaces Section */}
-      <section id="nos-espaces" className="py-20 md:py-28 px-6 bg-white" aria-label="Espaces modulables et capacités de réception">
+      {/* Spaces Section - grille cards */}
+      <section id="nos-espaces" className="py-20 md:py-28 px-6 bg-[#FAFAFA]" aria-label="Espaces modulables et capacités de réception">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
