@@ -155,16 +155,52 @@ export default function Capacites() {
             subtitle="Des espaces modulables pour tous vos besoins"
             align="left"
           />
-          
-          {/* Tabs */}
+
           <div className="mt-12">
             {/* Tab buttons */}
-            <div className="flex flex-wrap gap-2 mb-0 border-b border-gray-200">
-              {spaces.map((space, index) => {
-                const [activeSpace, setActiveSpace] = React.useState(0);
-                return null; // dummy — we declare state outside below
-              })}
+            <div className="flex flex-wrap gap-1 mb-8">
+              {spaces.map((space, index) => (
+                <button
+                  key={space.name}
+                  onClick={() => setActiveSpace(index)}
+                  className="px-5 py-2.5 text-sm font-medium tracking-wide transition-all duration-200 rounded"
+                  style={
+                    activeSpace === index
+                      ? { backgroundColor: COLORS.ACCENT_COLOR, color: '#fff' }
+                      : { backgroundColor: '#F5F5F0', color: '#555' }
+                  }
+                >
+                  {space.name}
+                </button>
+              ))}
             </div>
+
+            {/* Active space display */}
+            {spaces[activeSpace] && (
+              <motion.div
+                key={activeSpace}
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
+                className="grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden rounded-xl shadow-md"
+              >
+                <div className="aspect-[4/3] lg:aspect-auto overflow-hidden min-h-[320px]">
+                  <img
+                    src={spaces[activeSpace].image.src}
+                    alt={spaces[activeSpace].image.alt}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="bg-[#0D0D0D] p-10 flex flex-col justify-center text-left">
+                  <p className="text-xs tracking-[0.25em] uppercase mb-3" style={{ color: COLORS.ACCENT_COLOR }}>Espace</p>
+                  <h3 className="text-3xl font-semibold text-white mb-3">{spaces[activeSpace].name}</h3>
+                  {spaces[activeSpace].surface && (
+                    <p className="text-xl font-medium mb-4" style={{ color: COLORS.ACCENT_COLOR }}>{spaces[activeSpace].surface}</p>
+                  )}
+                  <p className="text-gray-300 leading-relaxed">{spaces[activeSpace].description}</p>
+                </div>
+              </motion.div>
+            )}
           </div>
         </div>
       </section>
