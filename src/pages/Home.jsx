@@ -430,23 +430,53 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="text-center"
+            className="text-center mb-12"
           >
             <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Localisation & Accessibilité</p>
             <h2 className="text-3xl md:text-5xl font-semibold text-[#0D0D0D] tracking-tight mb-6">
               10-12 rue Mathurin Régnier, <span style={{ color: COLORS.ACCENT_COLOR }}>Paris 75015</span>
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto font-light text-lg mb-8">
-              Entièrement accessible PMR. Ascenseur, toilettes accessibles, stationnement PMR à proximité. Transports: Métro ligne 8 (Boucicaut, Lourmel), RER C (Pont de Garigliano).
+            <p className="text-gray-600 max-w-2xl mx-auto font-light text-lg">
+              Entièrement accessible PMR. Métro ligne 8 (Boucicaut, Lourmel), RER C (Pont de Garigliano).
             </p>
-            <a
-              href="https://maps.google.com/?q=10-12+rue+Mathurin+Régnier+75015+Paris"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 text-[#0D0D0D] font-semibold text-sm tracking-wide hover:bg-gray-50 transition-all duration-300"
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="rounded-xl overflow-hidden shadow-lg mb-10"
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.9!2d2.2997!3d48.8412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6703f1a5b7c0d%3A0x8f2b2e4f5a6e7d8c!2s10+Rue+Mathurin+R%C3%A9gnier%2C+75015+Paris!5e0!3m2!1sfr!2sfr!4v1700000000000"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Le Tripot Régnier - Google Maps"
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            className="text-center"
+          >
+            <Link
+              to={createPageUrl('Contact')}
+              className="inline-flex items-center gap-3 px-8 py-4 text-white font-semibold tracking-wide text-sm transition-all duration-300 rounded-lg"
+              style={{ backgroundColor: COLORS.ACCENT_COLOR }}
+              onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.85'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; }}
             >
-              Voir sur Google Maps
-            </a>
+              NOUS CONTACTER POUR RÉSERVER
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </motion.div>
         </div>
       </section>
