@@ -401,7 +401,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to={createPageUrl('Contact')}
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-[#0D0D0D] font-semibold tracking-wide text-sm hover:text-white transition-all duration-300"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-[#0D0D0D] font-semibold tracking-wide text-sm hover:text-white transition-all duration-300 rounded-md"
                 onMouseEnter={(e) => e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR}
                 onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}
               >
