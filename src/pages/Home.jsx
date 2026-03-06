@@ -410,7 +410,7 @@ export default function Home() {
               </Link>
               <Link
                 to={createPageUrl('Engagements')}
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-white/30 text-white font-semibold tracking-wide text-sm hover:bg-white/10 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-white/30 text-white font-semibold tracking-wide text-sm hover:bg-white/10 transition-all duration-300 rounded-md"
               >
                 NOS ENGAGEMENTS
               </Link>
