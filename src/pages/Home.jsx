@@ -288,10 +288,10 @@ export default function Home() {
           >
             <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Configurations événementielles</p>
             <h2 className="text-3xl md:text-5xl font-semibold text-[#0D0D0D] tracking-tight mb-6">
-              Infrastructures <span style={{ color: COLORS.ACCENT_COLOR }}>Techniques Complètes</span>
+              Le Tripot Régnier vous accueille <span style={{ color: COLORS.ACCENT_COLOR }}>pour toutes les occasions</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto font-normal">
-              Mur LED immersif, système audiovisuel professionnel, cuisine complète, bar aménagé et espace fumeurs dédié
+              Soirée privée, dîner d'entreprise, conférence, défilé ou showroom — notre salle s'adapte à chaque projet avec un équipement technique complet et une équipe dédiée à la réussite de votre événement.
             </p>
           </motion.div>
 
