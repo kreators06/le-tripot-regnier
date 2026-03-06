@@ -169,7 +169,7 @@ export default function Home() {
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.4 }}>
             <a
               href="#nos-espaces"
-              className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-[#0D0D0D] font-semibold tracking-wider text-sm hover:text-white transition-all duration-500 shadow-lg"
+              className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-[#0D0D0D] font-semibold tracking-wider text-sm hover:text-white transition-all duration-500 shadow-lg rounded-md"
               onMouseEnter={(e) => e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR}
               onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}
             >
