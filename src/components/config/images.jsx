@@ -151,7 +151,7 @@ export const IMAGES = {
   // ==========================================
   contact: {
     hero: {
-      src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&auto=format",
+      src: "https://letripotregnier.fr/assets/photos/photo-salle-vide.jpg",
       alt: "Contactez Le Tripot Régnier Paris 15"
     }
   },
@@ -161,11 +161,11 @@ export const IMAGES = {
   // ==========================================
   histoire: {
     hero: {
-      src: "https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=1920&auto=format",
+      src: "https://letripotregnier.fr/assets/photos/photo-hall-entree-tripot-regnier.jpg",
       alt: "Histoire du Tripot Régnier"
     },
     moderne: {
-      src: "https://images.unsplash.com/photo-1519167758481-83f29da8c2f0?w=800&auto=format",
+      src: "https://letripotregnier.fr/assets/photos/photo-salle-vide.jpg",
       alt: "Le Tripot Régnier aujourd'hui"
     }
   },
@@ -175,11 +175,11 @@ export const IMAGES = {
   // ==========================================
   capacites: {
     hero: {
-      src: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1920&auto=format",
+      src: "https://letripotregnier.fr/assets/photos/photo-salle-vide.jpg",
       alt: "Équipements techniques Le Tripot Régnier"
     },
     murLED: {
-      src: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=800&auto=format",
+      src: "https://letripotregnier.fr/assets/photos/photo-mur-led.jpg",
       alt: "Mur LED professionnel Le Tripot Régnier"
     },
     regie: {
