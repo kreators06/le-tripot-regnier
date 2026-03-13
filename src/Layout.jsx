@@ -120,7 +120,7 @@ export default function Layout({ children, currentPageName }) {
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center gap-10">
+            <nav className="hidden xl:flex items-center gap-7">
               {navLinks.slice(0, -1).map((link) => (
                 <Link
                   key={link.page}
@@ -137,13 +137,19 @@ export default function Layout({ children, currentPageName }) {
               ))}
               <Link
                 to={createPageUrl('Contact')}
-                className="px-6 py-2.5 text-white text-xs font-semibold tracking-[0.12em] uppercase transition-all duration-300 rounded"
-                style={{ 
-                  backgroundColor: COLORS.ACCENT_COLOR,
-                  borderColor: COLORS.ACCENT_COLOR
+                className="px-6 py-2.5 text-xs font-semibold tracking-[0.12em] uppercase transition-all duration-300 rounded-full border-2 bg-transparent"
+                style={{
+                  borderColor: COLORS.ACCENT_COLOR,
+                  color: COLORS.ACCENT_COLOR,
                 }}
-                onMouseEnter={(e) => e.target.style.backgroundColor = COLORS.ACCENT_COLOR_HOVER}
-                onMouseLeave={(e) => e.target.style.backgroundColor = COLORS.ACCENT_COLOR}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR;
+                  e.currentTarget.style.color = 'white';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'transparent';
+                  e.currentTarget.style.color = COLORS.ACCENT_COLOR;
+                }}
               >
                 CONTACT
               </Link>
@@ -154,7 +160,7 @@ export default function Layout({ children, currentPageName }) {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden text-white p-2"
+              className="xl:hidden text-white p-2"
               aria-label="Menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -169,7 +175,7 @@ export default function Layout({ children, currentPageName }) {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden bg-[#0D0D0D] border-t border-white/10"
+              className="xl:hidden bg-[#0D0D0D] border-t border-white/10"
             >
               <nav className="flex flex-col py-6 px-6">
                 {navLinks.slice(0, -1).map((link, i) => (
@@ -232,7 +238,7 @@ export default function Layout({ children, currentPageName }) {
                 />
               </div>
               <p className="text-gray-400 text-sm leading-relaxed text-left">
-                Salle événementielle parisienne de 700m² alliant style Art Déco et Industriel.
+                Salle parisienne où vos événements prennent vie.
               </p>
             </div>
 
