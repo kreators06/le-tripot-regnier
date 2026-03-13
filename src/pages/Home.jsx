@@ -265,18 +265,18 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-12 py-32">
-          <div className="flex flex-col md:flex-row items-center justify-start gap-10 md:gap-16">
+          <div className="flex flex-col md:flex-row items-center md:items-stretch justify-start gap-10 md:gap-16">
             {/* Logo */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1 }}
-              className="flex-shrink-0"
+              className="flex-shrink-0 flex items-center md:items-stretch"
             >
               <img
                 src="https://letripotregnier.fr/assets/logo.png"
                 alt="Le Tripot Régnier"
-                className="w-[110px] md:w-[140px] h-auto"
+                className="w-[110px] md:w-auto md:h-full h-auto object-contain"
               />
             </motion.div>
 
