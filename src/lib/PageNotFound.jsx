@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { createPageUrl } from '@/utils';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import { COLORS } from '@/components/config/colors';
