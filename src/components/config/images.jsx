@@ -57,27 +57,27 @@ export const IMAGES = {
   // ==========================================
   configurations: {
     cocktail: {
-      src: "https://letripotregnier.fr/assets/photos/",
+      src: "https://letripotregnier.fr/assets/photos/photo-cocktail.jpg",
       alt: "Configuration cocktail debout Le Tripot Régnier"
     },
     dinerAssis: {
-      src: "https://letripotregnier.fr/assets/photos/",
+      src: "https://letripotregnier.fr/assets/photos/photo-diner-assis.jpg",
       alt: "Configuration dîner assis Le Tripot Régnier"
     },
     seminaire: {
-      src: "https://letripotregnier.fr/assets/photos/",
+      src: "https://letripotregnier.fr/assets/photos/photo-seminaire.jpg",
       alt: "Configuration séminaire professionnel Le Tripot Régnier"
     },
     conference: {
-      src: "https://letripotregnier.fr/assets/photos/",
+      src: "https://letripotregnier.fr/assets/photos/photo-conference.jpg",
       alt: "Configuration conférence Le Tripot Régnier"
     },
     showroom: {
-      src: "https://letripotregnier.fr/assets/photos/",
+      src: "https://letripotregnier.fr/assets/photos/photo-showroom.jpg",
       alt: "Configuration showroom produits Le Tripot Régnier"
     },
     soiree: {
-      src: "https://letripotregnier.fr/assets/photos/",
+      src: "https://letripotregnier.fr/assets/photos/photo-soiree.jpg",
       alt: "Configuration soirée événementielle Le Tripot Régnier"
     },
   },
