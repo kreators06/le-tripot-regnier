@@ -296,6 +296,7 @@ export default function Home() {
 
             {/* Texte */}
             <motion.div
+              ref={textRef}
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.15 }}
