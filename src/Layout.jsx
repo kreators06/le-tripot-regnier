@@ -7,6 +7,7 @@ import { COLORS } from '@/components/config/colors';
 import CookieConsent from '@/components/CookieConsent';
 
 const navLinks = [
+  { name: 'Accueil', page: 'Home' },
   { name: 'Histoire', page: 'Histoire' },
   { name: 'Galerie Photos', page: 'Galerie' },
   { name: 'Espaces & Équipements', page: 'Capacites' },

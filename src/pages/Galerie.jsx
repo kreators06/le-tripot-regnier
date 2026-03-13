@@ -15,37 +15,6 @@ export default function Galerie() {
   return (
     <div className="pt-20">
       <PageSEO title="Galerie Photos" description="Parcourez la galerie photos du Tripot Régnier et découvrez l'ambiance unique de notre salle événementielle de 700m² à Paris 15e." />
-      {/* Hero Section */}
-      <section className="relative py-32 px-6 bg-[#0D0D0D] overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <img 
-            src={IMAGES.galerie.hero.src}
-            alt={IMAGES.galerie.hero.alt}
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0D0D0D] via-[#0D0D0D]/90 to-[#0D0D0D]/70" />
-        
-        <div className="relative z-10 max-w-4xl mx-auto text-left">
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="text-4xl md:text-6xl text-white font-bold tracking-tight mb-6"
-          >
-            Notre <span style={{ color: COLORS.ACCENT_COLOR }}>Galerie</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            className="text-xl text-white/90 leading-relaxed"
-          >
-            Découvrez l'ambiance unique du Tripot Régnier à travers nos photos
-          </motion.p>
-        </div>
-      </section>
-
       {/* Gallery Section */}
       <section className="py-16 px-4 bg-[#F5F5F0]">
         <div className="max-w-[1600px] mx-auto">
@@ -63,20 +32,20 @@ export default function Galerie() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className="group relative cursor-pointer overflow-hidden rounded-md aspect-square md:aspect-[4/3]"
+                  className="group cursor-pointer"
                   onClick={() => setSelectedImage(image)}
                 >
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
-                    <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="relative overflow-hidden rounded-md aspect-square md:aspect-[4/3]">
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
+                      <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </div>
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-left">
-                    <p className="text-white text-sm">{image.alt}</p>
-                  </div>
+                  <p className="mt-2 text-sm text-gray-500 text-left px-1">{image.alt}</p>
                 </motion.div>
               ))}
             </AnimatePresence>

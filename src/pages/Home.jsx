@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { motion } from 'framer-motion';
-import { ArrowRight, Users, Utensils, Presentation, PartyPopper, Store, ChevronDown, X } from 'lucide-react';
+import { ArrowRight, Users, Utensils, Presentation, PartyPopper, Store, ChevronDown, X, Mic } from 'lucide-react';
 import { AnimatePresence } from 'framer-motion';
 import LogoMarquee from '@/components/ui/LogoMarquee';
 import SEOMetadata from '@/components/SEOMetadata';
@@ -12,51 +12,33 @@ import MobileCtaBar from '@/components/MobileCtaBar';
 import { IMAGES } from '@/components/config/images';
 import { COLORS } from '@/components/config/colors';
 
+const sallePrincipaleImages = [
+  "https://letripotregnier.fr/assets/photos/photo-salle-vide.jpg",
+  "https://letripotregnier.fr/assets/photos/photo-mezzanine.jpg",
+  "https://letripotregnier.fr/assets/photos/photo-lounge-etage.jpeg",
+];
+
 const spaces = [
   {
     title: "Salle Principale",
     surface: "400 m²",
-    image: IMAGES.spaces.grandeSalle.src,
-    description: "Espace modulable équipé (son, lumière, projection vidéo) dotée d'un bar et d'un fumoir intérieur."
+    images: sallePrincipaleImages,
+    description: "Espace modulable équipé (son, lumière, projection vidéo) dotée d'un bar et d'un fumoir intérieur.",
+    isSlider: true
   },
-  {
-    title: "Bar",
-    surface: "",
-    image: IMAGES.spaces.bar.src,
-    description: "Bar équipé : four, machine à glaçons, réfrigérateur."
-  },
-  {
-    title: "Mezzanine",
-    surface: "65 m²",
-    image: IMAGES.spaces.mezzanine.src,
-    description: "Espace en hauteur offrant une vue panoramique sur la salle."
-  },
-  {
-    title: "Espace Lounge",
-    surface: "",
-    image: IMAGES.spaces.espaceLounge.src,
-    description: "Espace détente situé en prolongation de la mezzanine."
-  },
-  {
-    title: "Loge Privée",
-    surface: "",
-    image: IMAGES.spaces.logePrivee.src,
-    description: "Loge avec accès privé comprenant : écran TV, canapé, toilettes, douche, lavabo."
-  },
-  {
-    title: "Vestiaire",
-    surface: "450 pers.",
-    image: IMAGES.spaces.vestiaire.src,
-    description: "Vestiaire équipé avec capacité de 450 personnes"
-  }
+  { title: "Bar", surface: "", image: IMAGES.spaces.bar.src, description: "Bar équipé : four, machine à glaçons, réfrigérateur." },
+  { title: "Mezzanine", surface: "65 m²", image: IMAGES.spaces.mezzanine.src, description: "Espace en hauteur offrant une vue panoramique sur la salle." },
+  { title: "Espace Lounge", surface: "", image: IMAGES.spaces.espaceLounge.src, description: "Espace détente situé en prolongation de la mezzanine." },
+  { title: "Loge Privée", surface: "", image: IMAGES.spaces.logePrivee.src, description: "Loge avec accès privé comprenant : écran TV, canapé, toilettes, douche, lavabo." },
+  { title: "Vestiaire", surface: "450 pers.", image: IMAGES.spaces.vestiaire.src, description: "Vestiaire équipé avec capacité de 450 personnes" }
 ];
 
 const configurations = [
-  { icon: Users, name: "Défilé", capacity: "< 200 pers.", image: IMAGES.configurations.conference.src },
-  { icon: Utensils, name: "Dîner assis", capacity: "< 220 pers.", image: IMAGES.configurations.dinerAssis.src },
-  { icon: Presentation, name: "Conférence", capacity: "< 250 pers.", image: IMAGES.configurations.seminaire.src },
-  { icon: PartyPopper, name: "Cocktail / Soirée", capacity: "< 500 pers.", image: IMAGES.configurations.soiree.src },
-  { icon: Store, name: "Showroom", capacity: "Sur mesure", image: IMAGES.configurations.showroom.src }
+  { icon: Users, name: "Défilé", capacity: "< 200 pers.", image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format" },
+  { icon: Utensils, name: "Dîner assis", capacity: "< 220 pers.", image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&auto=format" },
+  { icon: Presentation, name: "Conférence", capacity: "< 250 pers.", image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&auto=format" },
+  { icon: PartyPopper, name: "Cocktail / Soirée", capacity: "< 500 pers.", image: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&auto=format" },
+  { icon: Store, name: "Showroom", capacity: "Sur mesure", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format" },
 ];
 
 const testimonials = [
@@ -77,9 +59,71 @@ const testimonials = [
   }
 ];
 
+const stats = [
+  { value: "700m²", label: "Espace total" },
+  { value: "400m²", label: "Salle principale" },
+  { value: "500", label: "Personnes max." },
+  { value: "1904", label: "Bâtiment historique" },
+];
+
+function SliderCard({ space, onClick }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const intervalRef = useRef(null);
+
+  const startSlider = () => {
+    intervalRef.current = setInterval(() => {
+      setCurrentIndex(i => (i + 1) % space.images.length);
+    }, 900);
+  };
+
+  const stopSlider = () => {
+    clearInterval(intervalRef.current);
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="group overflow-hidden rounded-xl cursor-pointer"
+      onClick={() => onClick(space.images[currentIndex])}
+      onMouseEnter={startSlider}
+      onMouseLeave={stopSlider}
+    >
+      <div className="relative overflow-hidden" style={{ aspectRatio: '4/3' }}>
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={currentIndex}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            src={space.images[currentIndex]}
+            alt={space.title}
+            className="w-full h-full object-cover"
+          />
+        </AnimatePresence>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5" />
+        <div className="absolute top-3 right-3 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+          {space.images.map((_, i) => (
+            <div key={i} className="w-1.5 h-1.5 rounded-full transition-all" style={{ backgroundColor: i === currentIndex ? COLORS.ACCENT_COLOR : 'rgba(255,255,255,0.5)' }} />
+          ))}
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 p-5">
+          <div className="flex items-baseline justify-between gap-2 mb-1">
+            <h3 className="text-white text-base font-semibold drop-shadow-md">{space.title}</h3>
+            <span className="text-xs font-semibold flex-shrink-0 px-2 py-0.5 rounded-full text-white" style={{ backgroundColor: COLORS.ACCENT_COLOR }}>{space.surface}</span>
+          </div>
+          <p className="text-white/90 text-xs leading-relaxed drop-shadow-sm">{space.description}</p>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 export default function Home() {
   const videoRef = useRef(null);
-  const [lightboxImg, setLightboxImg] = React.useState(null);
+  const [lightboxImg, setLightboxImg] = useState(null);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -97,7 +141,6 @@ export default function Home() {
 
   return (
     <div role="main">
-      {/* Lightbox */}
       <AnimatePresence>
         {lightboxImg && (
           <motion.div
@@ -107,10 +150,7 @@ export default function Home() {
             className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4"
             onClick={() => setLightboxImg(null)}
           >
-            <button
-              className="absolute top-4 right-4 text-white bg-black/50 rounded-full p-2 hover:bg-black/80 transition"
-              onClick={() => setLightboxImg(null)}
-            >
+            <button className="absolute top-4 right-4 text-white bg-black/50 rounded-full p-2 hover:bg-black/80 transition" onClick={() => setLightboxImg(null)}>
               <X className="w-6 h-6" />
             </button>
             <motion.img
@@ -125,22 +165,14 @@ export default function Home() {
           </motion.div>
         )}
       </AnimatePresence>
+
       <SEOMetadata />
       <MobileCtaBar />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden" aria-label="Section héros">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <video
-            ref={videoRef}
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="metadata"
-            poster={IMAGES.home.heroPoster}
-            className="w-full h-full object-cover"
-          >
+          <video ref={videoRef} autoPlay loop muted playsInline preload="metadata" poster={IMAGES.home.heroPoster} className="w-full h-full object-cover">
             <source src={IMAGES.home.heroVideo} type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-black/40" />
@@ -153,7 +185,7 @@ export default function Home() {
               Événementiel Premium — Paris 15ème
             </p>
             <h1 className="text-5xl md:text-6xl lg:text-7xl text-white font-bold tracking-tight mb-10 leading-[1.1]">
-              Salle parisienne où<br />vos événements prennent vie
+              Salle parisienne où<br />vos événements prennent vie.
             </h1>
           </motion.div>
 
@@ -161,22 +193,10 @@ export default function Home() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-base md:text-lg text-white/90 max-w-2xl mx-auto mb-12 leading-relaxed font-light"
+            className="text-white/60 text-sm tracking-widest font-light uppercase"
           >
-            Situé dans le 15ème arrondissement de Paris, notre salle de réception est entièrement équipée en son, lumières et projections vidéo. Inspiré de l'Art Déco et Industriel, ce bâtiment de 1904 a été entièrement rénové, ce qui en fait un lieu unique à Paris pour accueillir des événements variés.
+            Paris 15ème &nbsp;·&nbsp; 700m² &nbsp;·&nbsp; Jusqu'à 500 personnes
           </motion.p>
-
-          <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.4 }}>
-            <a
-              href="#nos-espaces"
-              className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-[#0D0D0D] font-semibold tracking-wider text-sm hover:text-white transition-all duration-500 shadow-lg rounded-md"
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}
-            >
-              DÉCOUVRIR LE LIEU
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
-            </a>
-          </motion.div>
         </div>
 
         <motion.a
@@ -192,68 +212,49 @@ export default function Home() {
         </motion.a>
       </section>
 
-      {/* Spaces Section */}
-      <section id="nos-espaces" className="py-20 md:py-28 px-6 bg-[#FAFAFA]" aria-label="Espaces modulables et capacités de réception">
+      {/* Nos Espaces Section */}
+      <section id="nos-espaces" className="py-20 md:py-28 px-6 bg-[#FAFAFA]">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-            className="text-center mb-14"
-          >
-            <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Nos espaces</p>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
+            <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Découvrez le lieu</p>
             <h2 className="text-4xl md:text-6xl font-semibold text-[#0D0D0D] tracking-tight">
-              Découvrez nos différents <span style={{ color: COLORS.ACCENT_COLOR }}>espaces</span>
+              Nos <span style={{ color: COLORS.ACCENT_COLOR }}>Espaces</span>
             </h2>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {spaces.map((space, index) => (
-              <motion.div
-                key={space.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.07 }}
-                className="group overflow-hidden rounded-xl cursor-pointer"
-                onClick={() => setLightboxImg(space.image)}
-              >
-                <div className="relative h-64 overflow-hidden">
-                  <img
-                    src={space.image}
-                    alt={space.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5" />
-                  <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <div className="flex items-baseline justify-between gap-2 mb-1">
-                      <h3 className="text-white text-base font-semibold drop-shadow-md">{space.title}</h3>
-                      {space.surface && (
-                        <span
-                          className="text-xs font-semibold flex-shrink-0 px-2 py-0.5 rounded-full text-white"
-                          style={{ backgroundColor: COLORS.ACCENT_COLOR }}
-                        >
-                          {space.surface}
-                        </span>
-                      )}
+            {spaces.map((space, index) =>
+              space.isSlider ? (
+                <SliderCard key={space.title} space={space} onClick={setLightboxImg} />
+              ) : (
+                <motion.div
+                  key={space.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.07 }}
+                  className="group overflow-hidden rounded-xl cursor-pointer"
+                  onClick={() => setLightboxImg(space.image)}
+                >
+                  <div className="relative overflow-hidden" style={{ aspectRatio: '4/3' }}>
+                    <img src={space.image} alt={space.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5" />
+                    <div className="absolute bottom-0 left-0 right-0 p-5">
+                      <div className="flex items-baseline justify-between gap-2 mb-1">
+                        <h3 className="text-white text-base font-semibold drop-shadow-md">{space.title}</h3>
+                        {space.surface && (
+                          <span className="text-xs font-semibold flex-shrink-0 px-2 py-0.5 rounded-full text-white" style={{ backgroundColor: COLORS.ACCENT_COLOR }}>{space.surface}</span>
+                        )}
+                      </div>
+                      {space.description && <p className="text-white/90 text-xs leading-relaxed drop-shadow-sm">{space.description}</p>}
                     </div>
-                    {space.description && (
-                      <p className="text-white/90 text-xs leading-relaxed drop-shadow-sm">{space.description}</p>
-                    )}
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              )
+            )}
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="mt-10 text-center"
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-10 text-center">
             <Link
               to={createPageUrl('Galerie')}
               className="inline-flex items-center gap-2 px-8 py-3 text-white font-semibold tracking-wide text-sm transition-all duration-300 rounded-lg"
@@ -268,30 +269,41 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trust Signals Section */}
-      <TrustSignals />
-
-      {/* Logo Marquee Section */}
-      <section className="py-16 md:py-24 px-6 bg-white border-t border-gray-100 overflow-hidden">
-        <LogoMarquee />
+      {/* Capacités / Stats Section - Dark Background */}
+      <section className="py-20 md:py-28 px-6 bg-[#0D0D0D]">
+        <div className="max-w-7xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+            <p className="text-xs tracking-[0.3em] uppercase mb-4 font-light" style={{ color: COLORS.ACCENT_COLOR }}>Le lieu en chiffres</p>
+            <h2 className="text-4xl md:text-5xl font-semibold text-white tracking-tight">Capacités</h2>
+          </motion.div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="text-center"
+              >
+                <p className="text-5xl md:text-7xl font-bold mb-3" style={{ color: COLORS.ACCENT_COLOR }}>{stat.value}</p>
+                <p className="text-white/60 text-sm tracking-widest uppercase">{stat.label}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </section>
 
-      {/* Configurations Section */}
-      <section className="py-20 md:py-28 px-6 bg-[#FAFAFA]" aria-label="Configurations événementielles">
+      {/* Espaces Modulables / Configurations Section */}
+      <section className="py-20 md:py-28 px-6 bg-[#FAFAFA]">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-            className="text-center mb-16"
-          >
-            <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Configurations événementielles</p>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+            <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">ESPACES MODULABLES</p>
             <h2 className="text-3xl md:text-5xl font-semibold text-[#0D0D0D] tracking-tight mb-6">
               Le Tripot Régnier vous accueille <span style={{ color: COLORS.ACCENT_COLOR }}>pour toutes les occasions</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto font-normal">
-              Soirée privée, dîner d'entreprise, conférence, défilé ou showroom — notre salle s'adapte à chaque projet avec un équipement technique complet et une équipe dédiée à la réussite de votre événement.
+              Dîner, soirée, conférence, défilé, showroom, séminaire…
             </p>
           </motion.div>
 
@@ -305,18 +317,11 @@ export default function Home() {
                 transition={{ delay: index * 0.05 }}
                 className="group overflow-hidden rounded-xl"
               >
-                <div className="relative h-64 overflow-hidden">
-                  <img
-                    src={config.image}
-                    alt={config.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
+                <div className="relative overflow-hidden" style={{ aspectRatio: '4/3' }}>
+                  <img src={config.image} alt={config.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5" />
                   <div className="absolute bottom-0 left-0 right-0 p-5 flex items-end gap-3">
-                    <div
-                      className="w-9 h-9 flex-shrink-0 flex items-center justify-center rounded"
-                      style={{ backgroundColor: COLORS.ACCENT_COLOR }}
-                    >
+                    <div className="w-9 h-9 flex-shrink-0 flex items-center justify-center rounded" style={{ backgroundColor: COLORS.ACCENT_COLOR }}>
                       <config.icon className="w-4 h-4 text-white" />
                     </div>
                     <div>
@@ -327,20 +332,48 @@ export default function Home() {
                 </div>
               </motion.div>
             ))}
+
+            {/* 6th card - Votre événement sur-mesure */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="overflow-hidden rounded-xl flex items-center justify-center"
+              style={{ backgroundColor: COLORS.ACCENT_COLOR, aspectRatio: '4/3' }}
+            >
+              <div className="text-center p-8">
+                <Mic className="w-10 h-10 text-white mx-auto mb-4" />
+                <h3 className="text-white text-xl font-semibold mb-2">Votre événement sur-mesure</h3>
+                <p className="text-white/80 text-sm mb-6">Nous adaptons le lieu à votre vision</p>
+                <Link
+                  to={createPageUrl('Contact')}
+                  className="inline-flex items-center gap-2 px-6 py-2.5 bg-white font-semibold text-sm rounded-md transition-all duration-300"
+                  style={{ color: COLORS.ACCENT_COLOR }}
+                  onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#0D0D0D'; e.currentTarget.style.color = 'white'; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'white'; e.currentTarget.style.color = COLORS.ACCENT_COLOR; }}
+                >
+                  Nous contacter
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </motion.div>
           </div>
         </div>
+      </section>
+
+      {/* Équipements Section */}
+      <TrustSignals />
+
+      {/* Logo Marquee Section */}
+      <section className="py-16 md:py-24 px-6 bg-white border-t border-gray-100 overflow-hidden">
+        <LogoMarquee />
       </section>
 
       {/* Testimonials Section */}
       <section className="py-20 md:py-28 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-            className="text-center mb-16"
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
             <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Témoignages</p>
             <h2 className="text-3xl md:text-5xl font-semibold text-[#0D0D0D] tracking-tight mb-8">
               Ils nous font <span style={{ color: COLORS.ACCENT_COLOR }}>confiance</span>
@@ -358,7 +391,6 @@ export default function Home() {
               <ArrowRight className="w-4 h-4" />
             </a>
           </motion.div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <motion.div
@@ -369,9 +401,7 @@ export default function Home() {
                 transition={{ delay: index * 0.05 }}
                 className="text-left"
               >
-                <p className="text-gray-700 text-base leading-relaxed mb-8 font-light italic">
-                  "{testimonial.quote}"
-                </p>
+                <p className="text-gray-700 text-base leading-relaxed mb-8 font-light italic">"{testimonial.quote}"</p>
                 <div className="pt-6 border-t border-gray-200">
                   <p className="text-[#0D0D0D] font-normal text-sm mb-1">{testimonial.author}</p>
                   <p className="text-gray-500 text-xs font-light">{testimonial.company}</p>
@@ -382,104 +412,33 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 md:py-28 px-6 bg-[#0D0D0D] relative overflow-hidden">
-        <div className="absolute inset-0" style={{ background: `radial-gradient(circle at 30% 50%, ${COLORS.ACCENT_COLOR}10, transparent 50%)` }} />
-        <div className="max-w-4xl mx-auto text-center relative z-10">
+      {/* Slim CTA */}
+      <section className="py-12 px-6 bg-[#0D0D0D]">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
+            className="flex flex-col sm:flex-row items-center justify-between gap-6"
           >
-            <h2 className="text-3xl md:text-5xl text-white font-semibold tracking-tight mb-8">
-              Venez découvrir le <span style={{ color: COLORS.ACCENT_COLOR }}>lieu</span>
+            <h2 className="text-2xl md:text-3xl text-white font-semibold tracking-tight text-center sm:text-left">
+              Organiser un événement
             </h2>
-            <p className="text-white/90 text-lg mb-12 font-normal max-w-2xl mx-auto">
-              Organisez votre prochain événement dans un cadre unique au cœur de Paris
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to={createPageUrl('Contact')}
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-[#0D0D0D] font-semibold tracking-wide text-sm hover:text-white transition-all duration-300 rounded-md"
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}
-              >
-                NOUS CONTACTER
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                to={createPageUrl('Engagements')}
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 border border-white/30 text-white font-semibold tracking-wide text-sm hover:bg-white/10 transition-all duration-300 rounded-md"
-              >
-                NOS ENGAGEMENTS
-              </Link>
-            </div>
+            <Link
+              to={createPageUrl('Contact')}
+              className="inline-flex items-center gap-3 px-8 py-4 bg-white text-[#0D0D0D] font-semibold tracking-wide text-sm hover:text-white transition-all duration-300 rounded-md flex-shrink-0"
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}
+            >
+              NOUS CONTACTER
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </motion.div>
         </div>
       </section>
 
       {/* FAQ Section */}
       <FAQAccordion />
-
-      {/* Localisation Section */}
-      <section className="py-20 md:py-28 px-6 bg-white" aria-label="Localisation accessibilité">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-            className="text-center mb-12"
-          >
-            <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Localisation & Accessibilité</p>
-            <h2 className="text-3xl md:text-5xl font-semibold text-[#0D0D0D] tracking-tight mb-6">
-              10-12 rue Mathurin Régnier, <span style={{ color: COLORS.ACCENT_COLOR }}>Paris 75015</span>
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto font-light text-lg">
-              Entièrement accessible PMR. Métro ligne 8 (Boucicaut, Lourmel), RER C (Pont de Garigliano).
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="rounded-xl overflow-hidden shadow-lg mb-10"
-          >
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.9!2d2.2997!3d48.8412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6703f1a5b7c0d%3A0x8f2b2e4f5a6e7d8c!2s10+Rue+Mathurin+R%C3%A9gnier%2C+75015+Paris!5e0!3m2!1sfr!2sfr!4v1700000000000"
-              width="100%"
-              height="450"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Le Tripot Régnier - Google Maps"
-            />
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.2 }}
-            className="text-center"
-          >
-            <Link
-              to={createPageUrl('Contact')}
-              className="inline-flex items-center gap-3 px-8 py-4 text-white font-semibold tracking-wide text-sm transition-all duration-300 rounded-lg"
-              style={{ backgroundColor: COLORS.ACCENT_COLOR }}
-              onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.85'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; }}
-            >
-              NOUS CONTACTER POUR RÉSERVER
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </motion.div>
-        </div>
-      </section>
     </div>
   );
 }

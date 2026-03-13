@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   Maximize2, 
@@ -8,20 +8,23 @@ import {
   Truck, 
   Accessibility,
   Shield,
-  Layers
+  Layers,
+  ArrowRight
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { createPageUrl } from '@/utils';
 import SectionTitle from '@/components/ui/SectionTitle';
-import CTABanner from '@/components/ui/CTABanner';
 import { COLORS } from '@/components/config/colors';
 import { IMAGES } from '@/components/config/images';
 import PageSEO from '@/components/PageSEO';
 
 const spaces = [
+  { name: "Hall d'accueil", surface: "90 m²", description: "Espace d'accueil et de réception des invités.", image: { src: "https://letripotregnier.fr/assets/photos/photo-hall-entree-tripot-regnier.jpg", alt: "Hall d'accueil Le Tripot Régnier" } },
   { name: "Salle Principale", surface: "400 m²", description: "Espace modulable équipé (son, lumière, projection vidéo) dotée d'un bar et d'un fumoir intérieur.", image: IMAGES.spaces.grandeSalle },
   { name: "Bar", surface: "", description: "Bar équipé : four, machine à glaçons, réfrigérateur.", image: IMAGES.spaces.bar },
   { name: "Mezzanine", surface: "65 m²", description: "Espace en hauteur offrant une vue panoramique sur la salle.", image: IMAGES.spaces.mezzanine },
   { name: "Espace Lounge", surface: "", description: "Espace détente situé en prolongation de la mezzanine.", image: IMAGES.spaces.espaceLounge },
-  { name: "Loge", surface: "", description: "Loge avec accès privé comprenant: écran TV pour visualiser en direct l'évènement, canapé, toilettes, douche, lavabo.", image: IMAGES.spaces.logePrivee }
+  { name: "Loge", surface: "", description: "Loge avec accès privé comprenant: écran TV, canapé, toilettes, douche, lavabo.", image: IMAGES.spaces.logePrivee }
 ];
 
 const lighting = [
@@ -55,94 +58,56 @@ const logistics = [
 ];
 
 export default function Capacites() {
-  const [activeSpace, setActiveSpace] = useState(0);
-
   return (
     <div className="pt-20">
       <PageSEO title="Espaces & Équipements" description="700m² modulables, mur LED immersif, système son professionnel, éclairage scénique. Découvrez les équipements techniques complets du Tripot Régnier." />
-      {/* Hero Section */}
-      <section className="relative py-32 px-6 bg-[#0D0D0D] overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <img 
-            src={IMAGES.capacites.hero.src}
-            alt={IMAGES.capacites.hero.alt}
-            className="w-full h-full object-cover"
-          />
+
+      {/* Photo Header - Replacing dark hero */}
+      <div className="grid grid-cols-3 h-64 md:h-80">
+        <div className="overflow-hidden">
+          <img src={IMAGES.spaces.grandeSalle.src} alt="Salle principale" className="w-full h-full object-cover" />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0D0D0D] via-[#0D0D0D]/90 to-[#0D0D0D]/70" />
-        
-        <div className="relative z-10 max-w-4xl mx-auto text-left">
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="text-4xl md:text-6xl text-white font-bold tracking-tight mb-6"
-          >
-            Capacités & <span style={{ color: COLORS.ACCENT_COLOR }}>Équipements</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            className="text-xl text-white/90 leading-relaxed"
-          >
-            Tout ce dont vous avez besoin pour un événement réussi
-          </motion.p>
+        <div className="overflow-hidden">
+          <img src={IMAGES.spaces.mezzanine.src} alt="Mezzanine" className="w-full h-full object-cover" />
+        </div>
+        <div className="overflow-hidden">
+          <img src={IMAGES.spaces.bar.src} alt="Bar" className="w-full h-full object-cover" />
+        </div>
+      </div>
+
+      {/* Page Title */}
+      <section className="py-12 px-6 bg-[#0D0D0D]">
+        <div className="max-w-6xl mx-auto text-left">
+          <h1 className="text-4xl md:text-5xl text-white font-bold tracking-tight">
+            Espaces & <span style={{ color: COLORS.ACCENT_COLOR }}>Équipements</span>
+          </h1>
         </div>
       </section>
 
       {/* Capacités Section */}
       <section className="py-24 px-6 bg-[#F5F5F0]">
         <div className="max-w-6xl mx-auto">
-          <SectionTitle 
-            title="Capacités"
-            subtitle="Nos espaces en chiffres"
-            align="left"
-          />
+          <SectionTitle title="Capacités" align="left" />
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-white p-8 text-center group hover:shadow-xl transition-shadow duration-300 rounded-lg"
-            >
-              <p className="text-4xl font-semibold mb-2" style={{ color: COLORS.ACCENT_COLOR }}>700m²</p>
-              <p className="text-sm text-gray-600">ESPACE TOTAL</p>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="bg-white p-8 text-center group hover:shadow-xl transition-shadow duration-300 rounded-lg"
-            >
-              <p className="text-4xl font-semibold mb-2" style={{ color: COLORS.ACCENT_COLOR }}>90m²</p>
-              <p className="text-sm text-gray-600">HALL D'ACCUEIL</p>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="bg-white p-8 text-center group hover:shadow-xl transition-shadow duration-300 rounded-lg"
-            >
-              <p className="text-4xl font-semibold mb-2" style={{ color: COLORS.ACCENT_COLOR }}>400m²</p>
-              <p className="text-sm text-gray-600">SALLE PRINCIPALE</p>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="bg-white p-8 text-center group hover:shadow-xl transition-shadow duration-300 rounded-lg"
-            >
-              <p className="text-4xl font-semibold mb-2" style={{ color: COLORS.ACCENT_COLOR }}>65m²</p>
-              <p className="text-sm text-gray-600">MEZZANINE</p>
-            </motion.div>
+            {[
+              { value: "700m²", label: "ESPACE TOTAL" },
+              { value: "90m²", label: "HALL D'ACCUEIL" },
+              { value: "400m²", label: "SALLE PRINCIPALE" },
+              { value: "65m²", label: "MEZZANINE" },
+            ].map((item, i) => (
+              <motion.div
+                key={item.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-white p-8 text-center group hover:shadow-xl transition-shadow duration-300 rounded-lg"
+              >
+                <p className="text-4xl font-semibold mb-2" style={{ color: COLORS.ACCENT_COLOR }}>{item.value}</p>
+                <p className="text-sm text-gray-600">{item.label}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -150,13 +115,9 @@ export default function Capacites() {
       {/* Nos Espaces Section */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
-          <SectionTitle 
-            title="Nos Espaces"
-            subtitle="Des espaces modulables pour tous vos besoins"
-            align="left"
-          />
+          <SectionTitle title="Nos Espaces" align="left" />
 
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {spaces.map((space, index) => (
               <motion.div
                 key={space.name}
@@ -164,23 +125,24 @@ export default function Capacites() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08 }}
-                className="group overflow-hidden rounded-xl bg-[#F5F5F0]"
+                className="group overflow-hidden rounded-xl"
               >
-                <div className="aspect-[4/3] overflow-hidden">
+                <div className="relative overflow-hidden" style={{ aspectRatio: '4/3' }}>
                   <img
                     src={space.image.src}
                     alt={space.image.alt}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                </div>
-                <div className="p-6">
-                  <div className="flex items-baseline justify-between gap-2 mb-2">
-                    <h3 className="text-lg font-semibold text-[#0D0D0D]">{space.name}</h3>
-                    {space.surface && (
-                      <span className="text-sm font-medium flex-shrink-0" style={{ color: COLORS.ACCENT_COLOR }}>{space.surface}</span>
-                    )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5" />
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <div className="flex items-baseline justify-between gap-2 mb-1">
+                      <h3 className="text-white text-base font-semibold drop-shadow-md">{space.name}</h3>
+                      {space.surface && (
+                        <span className="text-xs font-semibold flex-shrink-0 px-2 py-0.5 rounded-full text-white" style={{ backgroundColor: COLORS.ACCENT_COLOR }}>{space.surface}</span>
+                      )}
+                    </div>
+                    <p className="text-white/90 text-xs leading-relaxed">{space.description}</p>
                   </div>
-                  <p className="text-gray-600 text-sm leading-relaxed">{space.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -188,56 +150,30 @@ export default function Capacites() {
         </div>
       </section>
 
-      {/* Mur Virtuel Highlight */}
+      {/* Mur LED Highlight */}
       <section className="py-24 px-6 bg-[#0D0D0D]">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="text-left"
-            >
-              <div className="inline-block px-4 py-1 text-sm tracking-wide mb-6" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20`, color: COLORS.ACCENT_COLOR }}>
-                INNOVATION
-              </div>
+            <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="text-left">
+              <div className="inline-block px-4 py-1 text-sm tracking-wide mb-6" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20`, color: COLORS.ACCENT_COLOR }}>INNOVATION</div>
               <h2 className="text-4xl font-semibold text-white mb-6 tracking-wide">
-                Mur LED<br />
-                <span style={{ color: COLORS.ACCENT_COLOR }}>Immersif</span>
+                Mur LED<br /><span style={{ color: COLORS.ACCENT_COLOR }}>Immersif</span>
               </h2>
               <p className="text-gray-300 leading-relaxed mb-6">
-                Notre plateau virtuel modulable avec projection immersive sur mur LED 
-                repousse les limites de la créativité. Créez des décors 3D époustouflants 
-                et réalisez des captations visuelles d'exception.
+                Notre plateau virtuel modulable avec projection immersive sur mur LED repousse les limites de la créativité. Créez des décors 3D époustouflants et réalisez des captations visuelles d'exception.
               </p>
               <ul className="space-y-3">
-                <li className="flex items-center gap-3 text-gray-200">
-                  <span className="w-2 h-2" style={{ backgroundColor: COLORS.ACCENT_COLOR }} />
-                  Décors 3D personnalisables
-                </li>
-                <li className="flex items-center gap-3 text-gray-200">
-                  <span className="w-2 h-2" style={{ backgroundColor: COLORS.ACCENT_COLOR }} />
-                  Captation visuelle haute définition
-                </li>
-                <li className="flex items-center gap-3 text-gray-200">
-                  <span className="w-2 h-2" style={{ backgroundColor: COLORS.ACCENT_COLOR }} />
-                  Expérience immersive unique
-                </li>
+                {["Décors 3D personnalisables", "Captation visuelle haute définition", "Expérience immersive unique"].map(item => (
+                  <li key={item} className="flex items-center gap-3 text-gray-200">
+                    <span className="w-2 h-2 flex-shrink-0" style={{ backgroundColor: COLORS.ACCENT_COLOR }} />
+                    {item}
+                  </li>
+                ))}
               </ul>
             </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
+            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative">
               <div className="aspect-video bg-gradient-to-br from-[#1A1A1A] to-[#2A2A2A] rounded-lg overflow-hidden shadow-xl">
-                <img 
-                  src={IMAGES.capacites.murLED.src}
-                  alt={IMAGES.capacites.murLED.alt}
-                  className="w-full h-full object-cover opacity-80"
-                />
+                <img src={IMAGES.capacites.murLED.src} alt={IMAGES.capacites.murLED.alt} className="w-full h-full object-cover opacity-80" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-20 h-20 border-2 flex items-center justify-center bg-black/50" style={{ borderColor: COLORS.ACCENT_COLOR }}>
                     <Layers className="w-8 h-8" style={{ color: COLORS.ACCENT_COLOR }} />
@@ -249,23 +185,13 @@ export default function Capacites() {
         </div>
       </section>
 
-      {/* Technical Details */}
+      {/* Matériel Audiovisuel */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
-          <SectionTitle 
-            title="Équipements Techniques"
-            subtitle="Du matériel professionnel haut de gamme"
-            align="left"
-          />
+          <SectionTitle title="Matériel audiovisuel" align="left" />
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            {/* Éclairage */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-[#F5F5F0] p-8 text-left rounded-lg"
-            >
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-[#F5F5F0] p-8 text-left rounded-lg">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 flex items-center justify-center rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20` }}>
                   <Lightbulb className="w-6 h-6" style={{ color: COLORS.ACCENT_COLOR }} />
@@ -282,14 +208,7 @@ export default function Capacites() {
               </ul>
             </motion.div>
 
-            {/* Vidéo */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="bg-[#F5F5F0] p-8 text-left rounded-lg"
-            >
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-[#F5F5F0] p-8 text-left rounded-lg">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 flex items-center justify-center rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20` }}>
                   <Monitor className="w-6 h-6" style={{ color: COLORS.ACCENT_COLOR }} />
@@ -306,14 +225,7 @@ export default function Capacites() {
               </ul>
             </motion.div>
 
-            {/* Son */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="bg-[#F5F5F0] p-8 text-left rounded-lg"
-            >
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="bg-[#F5F5F0] p-8 text-left rounded-lg">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 flex items-center justify-center rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20` }}>
                   <Speaker className="w-6 h-6" style={{ color: COLORS.ACCENT_COLOR }} />
@@ -336,12 +248,7 @@ export default function Capacites() {
       {/* Logistics & Access */}
       <section className="py-24 px-6 bg-[#F5F5F0]">
         <div className="max-w-6xl mx-auto">
-          <SectionTitle 
-            title="Logistique & Accès"
-            subtitle="Un lieu pensé pour faciliter votre organisation"
-            align="left"
-          />
-          
+          <SectionTitle title="Logistique & Accès" align="left" />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
             {logistics.map((item, index) => (
               <motion.div
@@ -355,9 +262,7 @@ export default function Capacites() {
                 <div className="w-12 h-12 bg-[#0D0D0D] flex items-center justify-center flex-shrink-0 rounded-lg">
                   <item.icon className="w-5 h-5" style={{ color: COLORS.ACCENT_COLOR }} />
                 </div>
-                <p className="text-gray-700 text-sm leading-relaxed pt-3">
-                  {item.text}
-                </p>
+                <p className="text-gray-700 text-sm leading-relaxed pt-3">{item.text}</p>
               </motion.div>
             ))}
           </div>
@@ -367,12 +272,7 @@ export default function Capacites() {
       {/* Normes */}
       <section className="py-16 px-6 bg-[#0D0D0D]">
         <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-col md:flex-row items-start justify-start gap-8"
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex flex-col md:flex-row items-start justify-start gap-8">
             <div className="flex items-center gap-4 px-8 py-4 bg-white/5 text-left rounded-lg">
               <Shield className="w-8 h-8" style={{ color: COLORS.ACCENT_COLOR }} />
               <div>
@@ -391,159 +291,41 @@ export default function Capacites() {
         </div>
       </section>
 
-      {/* Nos Avantages Section */}
+      {/* Équipements Section */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
-          <SectionTitle 
-            title="Nos Avantages"
-            subtitle="Un lieu entièrement équipé pour vos événements"
-            align="left"
-          />
+          <SectionTitle title="Équipements" align="left" />
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            {/* Entrée véhicules */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-left"
-            >
-              <div className="w-16 h-16 flex items-center justify-center mb-4 rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}10` }}>
-                <Truck className="w-8 h-8" style={{ color: COLORS.ACCENT_COLOR }} />
-              </div>
-              <h3 className="text-lg font-semibold text-[#0D0D0D] mb-2">Entrée véhicules</h3>
-              <p className="text-gray-600 text-sm">Exposition possible dans la salle</p>
-            </motion.div>
-            
-            {/* Vestiaire équipé */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-left"
-            >
-              <div className="w-16 h-16 flex items-center justify-center mb-4 rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}10` }}>
-                <Shield className="w-8 h-8" style={{ color: COLORS.ACCENT_COLOR }} />
-              </div>
-              <h3 className="text-lg font-semibold text-[#0D0D0D] mb-2">Vestiaire équipé</h3>
-              <p className="text-gray-600 text-sm">Capacité 450 personnes</p>
-            </motion.div>
-            
-            {/* Matériel audiovisuel */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="text-left"
-            >
-              <div className="w-16 h-16 flex items-center justify-center mb-4 rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}10` }}>
-                <Monitor className="w-8 h-8" style={{ color: COLORS.ACCENT_COLOR }} />
-              </div>
-              <h3 className="text-lg font-semibold text-[#0D0D0D] mb-2">Matériel audiovisuel</h3>
-              <p className="text-gray-600 text-sm">Équipement complet inclus</p>
-            </motion.div>
-            
-            {/* Office traiteur */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="text-left"
-            >
-              <div className="w-16 h-16 flex items-center justify-center mb-4 rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}10` }}>
-                <Maximize2 className="w-8 h-8" style={{ color: COLORS.ACCENT_COLOR }} />
-              </div>
-              <h3 className="text-lg font-semibold text-[#0D0D0D] mb-2">Office traiteur</h3>
-              <p className="text-gray-600 text-sm">Cuisine professionnelle équipée</p>
-            </motion.div>
-            
-            {/* Loge aménagée */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="text-left"
-            >
-              <div className="w-16 h-16 flex items-center justify-center mb-4 rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}10` }}>
-                <Accessibility className="w-8 h-8" style={{ color: COLORS.ACCENT_COLOR }} />
-              </div>
-              <h3 className="text-lg font-semibold text-[#0D0D0D] mb-2">Loge aménagée</h3>
-              <p className="text-gray-600 text-sm">Avec accès privatif</p>
-            </motion.div>
-            
-            {/* Bar aménagé */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
-              className="text-left"
-            >
-              <div className="w-16 h-16 flex items-center justify-center mb-4 rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}10` }}>
-                <Speaker className="w-8 h-8" style={{ color: COLORS.ACCENT_COLOR }} />
-              </div>
-              <h3 className="text-lg font-semibold text-[#0D0D0D] mb-2">Bar aménagé</h3>
-              <p className="text-gray-600 text-sm">Service professionnel</p>
-            </motion.div>
-            
-            {/* Fumoir */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6 }}
-              className="text-left"
-            >
-              <div className="w-16 h-16 flex items-center justify-center mb-4 rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}10` }}>
-                <Lightbulb className="w-8 h-8" style={{ color: COLORS.ACCENT_COLOR }} />
-              </div>
-              <h3 className="text-lg font-semibold text-[#0D0D0D] mb-2">Fumoir</h3>
-              <p className="text-gray-600 text-sm">Espace dédié</p>
-            </motion.div>
-            
-            {/* Climatisation */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.7 }}
-              className="text-left"
-            >
-              <div className="w-16 h-16 flex items-center justify-center mb-4 rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}10` }}>
-                <Layers className="w-8 h-8" style={{ color: COLORS.ACCENT_COLOR }} />
-              </div>
-              <h3 className="text-lg font-semibold text-[#0D0D0D] mb-2">Climatisation</h3>
-              <p className="text-gray-600 text-sm">Chauffage et traitement air</p>
-            </motion.div>
-            
-            {/* Fibre optique */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.8 }}
-              className="text-left"
-            >
-              <div className="w-16 h-16 flex items-center justify-center mb-4 rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}10` }}>
-                <Monitor className="w-8 h-8" style={{ color: COLORS.ACCENT_COLOR }} />
-              </div>
-              <h3 className="text-lg font-semibold text-[#0D0D0D] mb-2">Fibre optique</h3>
-              <p className="text-gray-600 text-sm">Wi-Fi très haut débit</p>
-            </motion.div>
+            {[
+              { icon: Truck, title: "Entrée véhicules", desc: "Exposition possible dans la salle" },
+              { icon: Shield, title: "Vestiaire équipé", desc: "Capacité 450 personnes" },
+              { icon: Monitor, title: "Matériel audiovisuel", desc: "Équipement complet inclus" },
+              { icon: Maximize2, title: "Office traiteur", desc: "Cuisine professionnelle équipée" },
+              { icon: Accessibility, title: "Loge aménagée", desc: "Avec accès privatif" },
+              { icon: Speaker, title: "Bar aménagé", desc: "Service professionnel" },
+              { icon: Lightbulb, title: "Fumoir", desc: "Espace dédié" },
+              { icon: Layers, title: "Climatisation", desc: "Chauffage et traitement air" },
+              { icon: Monitor, title: "Fibre optique", desc: "Wi-Fi très haut débit" },
+            ].map((item, index) => (
+              <motion.div
+                key={item.title + index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05 }}
+                className="text-left"
+              >
+                <div className="w-16 h-16 flex items-center justify-center mb-4 rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}10` }}>
+                  <item.icon className="w-8 h-8" style={{ color: COLORS.ACCENT_COLOR }} />
+                </div>
+                <h3 className="text-lg font-semibold text-[#0D0D0D] mb-2">{item.title}</h3>
+                <p className="text-gray-600 text-sm">{item.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
-
-      {/* CTA Banner */}
-      <CTABanner 
-        title="Des questions sur nos équipements ?"
-        subtitle="Notre équipe technique est à votre disposition pour vous conseiller"
-        variant="light"
-      />
     </div>
   );
 }

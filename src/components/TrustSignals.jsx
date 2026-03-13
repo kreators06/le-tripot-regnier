@@ -58,10 +58,10 @@ export default function TrustSignals() {
           className="text-center mb-16"
         >
           <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">
-            Avantages Exclusifs
+            Le lieu en détail
           </p>
           <h2 className="text-3xl md:text-4xl font-semibold text-[#0D0D0D] tracking-tight">
-            Nos <span style={{ color: COLORS.ACCENT_COLOR }}>avantages</span>
+            Nos <span style={{ color: COLORS.ACCENT_COLOR }}>Équipements</span>
           </h2>
         </motion.div>
 

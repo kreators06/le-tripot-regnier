@@ -1,8 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { createPageUrl } from '@/utils';
 import { motion } from 'framer-motion';
-import { Calendar, Building2, Award } from 'lucide-react';
-import SectionTitle from '@/components/ui/SectionTitle';
-import CTABanner from '@/components/ui/CTABanner';
+import { ArrowRight } from 'lucide-react';
 import { COLORS } from '@/components/config/colors';
 import { IMAGES } from '@/components/config/images';
 import PageSEO from '@/components/PageSEO';
@@ -11,145 +11,146 @@ export default function Histoire() {
   return (
     <div className="pt-20">
       <PageSEO title="Notre Histoire" description="Découvrez l'histoire du Tripot Régnier, de 1904 à aujourd'hui. Ancien bains-douches devenu lieu événementiel Art Déco de 700m² au cœur de Paris 15e." />
+
       {/* Hero Section */}
       <section className="relative py-24 px-6 bg-[#0D0D0D] overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <img 
-            src={IMAGES.histoire.hero.src}
-            alt={IMAGES.histoire.hero.alt}
-            className="w-full h-full object-cover"
-          />
+          <img src={IMAGES.histoire.hero.src} alt={IMAGES.histoire.hero.alt} className="w-full h-full object-cover" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#0D0D0D] via-[#0D0D0D]/90 to-[#0D0D0D]/70" />
-        
         <div className="relative z-10 max-w-4xl mx-auto text-left">
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="text-4xl md:text-6xl text-white font-bold tracking-tight mb-6"
+            transition={{ duration: 1 }}
+            className="text-4xl md:text-6xl text-white font-bold tracking-tight"
           >
             Notre <span style={{ color: COLORS.ACCENT_COLOR }}>Histoire</span>
           </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            className="text-xl text-white/90 leading-relaxed"
-          >
-            Un lieu chargé d'histoire au cœur du 15ème arrondissement de Paris
-          </motion.p>
         </div>
       </section>
 
-      {/* Bloc 1 : Naissance du lieu */}
+      {/* Main History Section */}
       <section className="py-20 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            {/* Text */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
               className="text-left"
             >
-              <div className="inline-block px-3 py-1 text-xs font-medium tracking-wide mb-4" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20`, color: COLORS.ACCENT_COLOR }}>
-                DÉBUT DU XXe SIÈCLE
+              <p className="text-gray-600 leading-relaxed mb-6 text-lg">
+                Situé rue Mathurin Régnier, dans le 15ᵉ arrondissement de Paris, Le Tripot Régnier est un lieu chargé d'histoire.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                Anciennement bains-douches et laverie des premiers HLM parisiens au début du XXᵉ siècle, puis site industriel, le bâtiment a été entièrement repensé et rénové pour devenir un espace de réception dédié à l'événementiel en 2016.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                Inspiré des univers Art Déco et industriel, nous avons conçu Le Tripot Régnier comme un lieu hybride et contemporain, pensé pour accueillir les événements corporate et culturels d'aujourd'hui.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-10">
+                Entièrement équipé en son, lumière et vidéo, l'espace s'adapte à des formats variés et laisse place à une grande liberté de création.
+              </p>
+
+              <div className="grid grid-cols-2 gap-8 mb-10">
+                <div>
+                  <p className="text-4xl font-bold" style={{ color: COLORS.ACCENT_COLOR }}>1904</p>
+                  <p className="text-sm text-gray-500 mt-1">Construction du bâtiment</p>
+                </div>
+                <div>
+                  <p className="text-4xl font-bold" style={{ color: COLORS.ACCENT_COLOR }}>700m²</p>
+                  <p className="text-sm text-gray-500 mt-1">Entièrement rénovés</p>
+                </div>
+                <div>
+                  <p className="text-4xl font-bold" style={{ color: COLORS.ACCENT_COLOR }}>2016</p>
+                  <p className="text-sm text-gray-500 mt-1">Ouverture du Tripot Régnier</p>
+                </div>
+                <div>
+                  <p className="text-4xl font-bold" style={{ color: COLORS.ACCENT_COLOR }}>500</p>
+                  <p className="text-sm text-gray-500 mt-1">personnes maximum</p>
+                </div>
               </div>
-              <h2 className="text-3xl md:text-4xl font-semibold text-[#0D0D0D] mb-6 tracking-tight">
-                Un bâtiment chargé d'<span style={{ color: COLORS.ACCENT_COLOR }}>histoire</span>
-              </h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                Construit en 1904, le bâtiment servait initialement de bains-douches et laverie pour les premiers HLM parisiens du 15e arrondissement — une fonction sociale essentielle au tournant du siècle.
-              </p>
-              <p className="text-gray-600 leading-relaxed">
-                Après cette période, le lieu fut reconverti en site industriel avant d'être entièrement repensé et rénové en 2016 pour devenir Le Tripot Régnier, espace événementiel contemporain.
-              </p>
+
+              <Link
+                to={createPageUrl('Galerie')}
+                className="inline-flex items-center gap-2 px-6 py-3 text-white font-semibold tracking-wide text-sm rounded-lg transition-all duration-300"
+                style={{ backgroundColor: COLORS.ACCENT_COLOR }}
+                onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.85'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; }}
+              >
+                GALERIE PHOTOS
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </motion.div>
+
+            {/* Images */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="overflow-hidden rounded-lg shadow-lg aspect-[4/3]"
+              className="space-y-4"
             >
-              <img 
-                src={IMAGES.spaces.grandeSalle.src}
-                alt="La salle principale du Tripot Régnier"
-                className="w-full h-full object-cover"
-              />
+              <div className="overflow-hidden rounded-lg shadow-lg aspect-[4/3]">
+                <img
+                  src="https://letripotregnier.fr/assets/photos/photo-hall-entree-tripot-regnier.jpg"
+                  alt="Entrée Art Déco du Tripot Régnier"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="overflow-hidden rounded-lg shadow-lg aspect-[4/3]">
+                <img
+                  src={IMAGES.spaces.grandeSalle.src}
+                  alt="La salle principale du Tripot Régnier"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Bloc 2 : Le Tripot Régnier aujourd'hui */}
+      {/* Origine du nom */}
       <section className="py-20 px-6 bg-[#F5F5F0]">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="overflow-hidden rounded-lg shadow-lg aspect-[4/3] order-2 lg:order-1"
-            >
-              <img 
-                src={IMAGES.spaces.mezzanine.src}
-                alt="Mezzanine du Tripot Régnier"
-                className="w-full h-full object-cover"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-left order-1 lg:order-2"
-            >
-              <div className="inline-block px-3 py-1 text-xs font-medium tracking-wide mb-4" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20`, color: COLORS.ACCENT_COLOR }}>
-                2016 — AUJOURD'HUI
-              </div>
-              <h2 className="text-3xl md:text-4xl font-semibold text-[#0D0D0D] mb-6 tracking-tight">
-                Un lieu hybride et <span style={{ color: COLORS.ACCENT_COLOR }}>contemporain</span>
-              </h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                Inspiré des univers Art Déco et industriel, Le Tripot Régnier a été entièrement pensé selon les codes de l'événementiel moderne. Ses 700 m² intègrent les technologies les plus avancées du secteur.
-              </p>
-              <p className="text-gray-600 leading-relaxed mb-8">
-                Son nom rend hommage au <strong>Tripot Régnier</strong>, célèbre jeu de paume construit en 1573 par Jacques Régnier, père du poète Mathurin Régnier — un clin d'œil à l'héritage culturel parisien.
-              </p>
-              <div className="grid grid-cols-2 gap-6">
-                <div>
-                  <p className="text-3xl font-bold" style={{ color: COLORS.ACCENT_COLOR }}>1904</p>
-                  <p className="text-sm text-gray-500">Construction du bâtiment</p>
-                </div>
-                <div>
-                  <p className="text-3xl font-bold" style={{ color: COLORS.ACCENT_COLOR }}>700m²</p>
-                  <p className="text-sm text-gray-500">Entièrement rénovés</p>
-                </div>
-                <div>
-                  <p className="text-3xl font-bold" style={{ color: COLORS.ACCENT_COLOR }}>2016</p>
-                  <p className="text-sm text-gray-500">Ouverture du Tripot Régnier</p>
-                </div>
-                <div>
-                  <p className="text-3xl font-bold" style={{ color: COLORS.ACCENT_COLOR }}>500</p>
-                  <p className="text-sm text-gray-500">personnes maximum</p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
+        <div className="max-w-4xl mx-auto text-left">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="inline-block px-3 py-1 text-xs font-medium tracking-wide mb-6 rounded" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20`, color: COLORS.ACCENT_COLOR }}>
+              ORIGINE DU NOM
+            </div>
+            <h2 className="text-3xl md:text-4xl font-semibold text-[#0D0D0D] mb-6 tracking-tight">
+              Origine du « Tripot Régnier »
+            </h2>
+            <p className="text-gray-600 leading-relaxed text-lg">
+              Son nom rend hommage au Tripot Régnier, célèbre jeu de paume construit en 1573 par Jacques Régnier, père du poète Mathurin Régnier — un clin d'œil à l'histoire parisienne et à l'esprit de convivialité qui anime le lieu.
+            </p>
+          </motion.div>
         </div>
       </section>
 
-
-
-      {/* CTA Banner */}
-      <CTABanner 
-        title="Découvrez notre lieu chargé d'histoire"
-        subtitle="Organisez votre événement dans un cadre unique alliant patrimoine et modernité"
-        variant="light"
-      />
+      {/* Slim CTA */}
+      <section className="py-12 px-6 bg-[#0D0D0D]">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+            <h2 className="text-2xl md:text-3xl text-white font-semibold tracking-tight text-center sm:text-left">
+              Découvrir l'ambiance unique du Tripot Régnier
+            </h2>
+            <Link
+              to={createPageUrl('Contact')}
+              className="inline-flex items-center gap-3 px-8 py-4 bg-white text-[#0D0D0D] font-semibold tracking-wide text-sm hover:text-white transition-all duration-300 rounded-md flex-shrink-0"
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'white'}
+            >
+              NOUS CONTACTER
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
