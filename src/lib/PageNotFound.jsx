@@ -24,7 +24,7 @@ export default function PageNotFound() {
             La page que vous recherchez n'existe pas ou a été déplacée.
           </p>
           <Link
-            to={createPageUrl('Home')}
+            to="/Home"
             className="inline-flex items-center gap-2 px-8 py-3 text-white font-semibold text-sm tracking-wide transition-all duration-300 rounded"
             style={{ backgroundColor: COLORS.ACCENT_COLOR }}
             onMouseEnter={(e) => e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR_HOVER}
