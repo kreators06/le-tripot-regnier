@@ -110,8 +110,16 @@ export default function Layout({ children, currentPageName }) {
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${headerBg}`}>
         <div className="max-w-7xl mx-auto px-8 md:px-16">
           <div className="flex items-center justify-between h-24">
-            {/* Logo */}
-            <Link to={createPageUrl('Home')} className="flex items-center gap-3 group">
+            {/* Logo — masqué sur Home tant qu'on n'a pas scrollé */}
+            <Link
+              to={createPageUrl('Home')}
+              className="flex items-center gap-3 group"
+              style={{
+                opacity: currentPageName === 'Home' && !isScrolled ? 0 : 1,
+                pointerEvents: currentPageName === 'Home' && !isScrolled ? 'none' : 'auto',
+                transition: 'opacity 0.4s ease',
+              }}
+            >
               <img 
                 src="https://letripotregnier.fr/assets/logo.png" 
                 alt="Le Tripot Régnier" 
