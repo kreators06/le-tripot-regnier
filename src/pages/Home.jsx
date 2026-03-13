@@ -290,7 +290,7 @@ export default function Home() {
               <p className="text-sm md:text-base text-white/80 tracking-[0.3em] uppercase mb-6 font-light">
                 Événementiel Premium — Paris 15ème
               </p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-bold tracking-tight leading-[1.1]">
+              <h1 className="text-3xl md:text-5xl lg:text-5xl text-white font-bold tracking-tight leading-[1.1]">
                 Salle parisienne où<br />vos événements prennent vie.
               </h1>
             </motion.div>
