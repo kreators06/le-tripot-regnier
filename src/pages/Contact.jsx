@@ -1,7 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import ReCAPTCHA from 'react-google-recaptcha';
-import { base44 } from '@/api/base44Client';
 import { MapPin, Phone, Mail, Send, CheckCircle, Loader2, Instagram, Linkedin, Facebook } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -22,8 +20,7 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [captchaToken, setCaptchaToken] = useState(null);
-  const recaptchaRef = useRef();
+  const [submitError, setSubmitError] = useState('');
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -47,28 +44,36 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!captchaToken) {
-      alert('Veuillez valider le captcha');
-      return;
-    }
     setIsSubmitting(true);
-    try {
-      await base44.integrations.Core.SendEmail({
-        to: 'axel.duret@polairestudios.com',
-        subject: 'Nouveau message de contact',
-        body: `Prénom: ${formData.prenom}\nNom: ${formData.nom}\nEmail: ${formData.email}\nTéléphone: ${formData.phone}\nSociété: ${formData.societe}\n\nMessage:\n${formData.message}`
-      });
-      setIsSubmitting(false);
+    setSubmitError('');
+
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        access_key: 'REMPLACER_PAR_VOTRE_CLE',
+        subject: 'Nouvelle demande de contact - Le Tripot Régnier',
+        from_name: 'Site Le Tripot Régnier',
+        prénom: formData.prenom,
+        nom: formData.nom,
+        email: formData.email,
+        téléphone: formData.phone,
+        société: formData.societe,
+        message: formData.message,
+      }),
+    });
+
+    const data = await response.json();
+    setIsSubmitting(false);
+
+    if (data.success) {
       setIsSubmitted(true);
       setTimeout(() => {
         setIsSubmitted(false);
         setFormData({ prenom: '', nom: '', email: '', phone: '', societe: '', message: '' });
-        setCaptchaToken(null);
-        recaptchaRef.current?.reset();
-      }, 3000);
-    } catch (error) {
-      setIsSubmitting(false);
-      alert("Erreur lors de l'envoi du message. Veuillez réessayer.");
+      }, 5000);
+    } else {
+      setSubmitError("Une erreur est survenue. Veuillez réessayer ou nous contacter directement par email.");
     }
   };
 
@@ -131,10 +136,13 @@ export default function Contact() {
                 >
                   <CheckCircle className="w-16 h-16 mx-auto mb-4" style={{ color: COLORS.ACCENT_COLOR }} />
                   <h3 className="text-xl font-semibold text-[#0D0D0D] mb-2">Message envoyé !</h3>
-                  <p className="text-gray-600">Nous vous répondrons rapidement.</p>
+                  <p className="text-gray-600">Merci, votre message a bien été envoyé. Notre équipe vous répondra dans les plus brefs délais.</p>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
+                  {/* Honeypot anti-spam */}
+                  <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
+
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="prenom" className="text-[#0D0D0D] font-medium text-sm">Prénom *</Label>
@@ -170,9 +178,11 @@ export default function Contact() {
                       placeholder="Merci d'indiquer la date de l'événement, les horaires et le nombre de personnes"
                     />
                   </div>
-                  <div className="flex justify-center pt-1">
-                    <ReCAPTCHA ref={recaptchaRef} sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" onChange={(t) => setCaptchaToken(t)} />
-                  </div>
+
+                  {submitError && (
+                    <p className="text-red-500 text-sm">{submitError}</p>
+                  )}
+
                   <Button
                     type="submit"
                     disabled={isSubmitting}
@@ -182,7 +192,7 @@ export default function Contact() {
                     onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR; }}
                   >
                     {isSubmitting ? (
-                      <><Loader2 className="w-5 h-5 mr-2 animate-spin inline" />Envoi...</>
+                      <><Loader2 className="w-5 h-5 mr-2 animate-spin inline" />Envoi en cours...</>
                     ) : (
                       <><Send className="w-5 h-5 mr-2 inline" />Envoyer</>
                     )}
