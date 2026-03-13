@@ -276,7 +276,7 @@ export default function Home() {
               <img
                 src="https://letripotregnier.fr/assets/logo.png"
                 alt="Le Tripot Régnier"
-                className="w-[220px] md:w-[280px] h-auto"
+                className="w-[110px] md:w-[140px] h-auto"
               />
             </motion.div>
 
