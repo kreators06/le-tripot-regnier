@@ -196,20 +196,7 @@ function SliderCard({ space, onClick }) {
 
 export default function Home() {
   const videoRef = useRef(null);
-  const textRef = useRef(null);
-  const [logoHeight, setLogoHeight] = useState(null);
   const [lightboxImg, setLightboxImg] = useState(null);
-
-  useEffect(() => {
-    const updateLogoHeight = () => {
-      if (textRef.current) {
-        setLogoHeight(textRef.current.offsetHeight);
-      }
-    };
-    updateLogoHeight();
-    window.addEventListener('resize', updateLogoHeight);
-    return () => window.removeEventListener('resize', updateLogoHeight);
-  }, []);
 
   useEffect(() => {
     const video = videoRef.current;
