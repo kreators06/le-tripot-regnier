@@ -264,19 +264,37 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-32 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-          >
-            <p className="text-sm md:text-base text-white/80 tracking-[0.3em] uppercase mb-8 font-light">
-              Événementiel Premium — Paris 15ème
-            </p>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl text-white font-bold tracking-tight mb-10 leading-[1.1]">
-              Salle parisienne où<br />vos événements prennent vie.
-            </h1>
-          </motion.div>
+        <div className="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-12 py-32">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20">
+            {/* Logo */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+              className="flex-shrink-0"
+            >
+              <img
+                src="https://letripotregnier.fr/assets/logo.png"
+                alt="Le Tripot Régnier"
+                className="w-[220px] md:w-[280px] h-auto"
+              />
+            </motion.div>
+
+            {/* Texte */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.15 }}
+              className="text-center md:text-left"
+            >
+              <p className="text-sm md:text-base text-white/80 tracking-[0.3em] uppercase mb-6 font-light">
+                Événementiel Premium — Paris 15ème
+              </p>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-bold tracking-tight leading-[1.1]">
+                Salle parisienne où<br />vos événements prennent vie.
+              </h1>
+            </motion.div>
+          </div>
         </div>
 
         <motion.a
