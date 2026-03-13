@@ -1,3 +1,6 @@
+// ─── Capacites ────────────────────────────────────────────────────────────────
+// Page espaces et équipements techniques du Tripot Régnier
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 

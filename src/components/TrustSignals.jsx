@@ -1,3 +1,6 @@
+// ─── TrustSignals ─────────────────────────────────────────────────────────────
+// Grille des équipements et points forts du Tripot Régnier
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';

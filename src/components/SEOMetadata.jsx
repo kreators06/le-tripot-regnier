@@ -1,3 +1,6 @@
+// ─── SEOMetadata ──────────────────────────────────────────────────────────────
+// Injection des métadonnées SEO et Schema.org pour la page d'accueil
+
 import { useEffect } from 'react';
 
 const OG_IMAGE = "https://letripotregnier.fr/images/og-tripot-regnier.jpg";

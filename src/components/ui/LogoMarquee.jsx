@@ -1,3 +1,6 @@
+// ─── LogoMarquee ──────────────────────────────────────────────────────────────
+// Défilement infini des logos partenaires et références
+
 import React from 'react';
 import { IMAGES } from '@/components/config/images';
 

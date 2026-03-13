@@ -1,3 +1,6 @@
+// ─── PolitiqueConfidentialite ─────────────────────────────────────────────────
+// Politique de confidentialité RGPD du site Le Tripot Régnier
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { COLORS } from '@/components/config/colors';

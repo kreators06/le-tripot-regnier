@@ -1,3 +1,6 @@
+// ─── Layout ───────────────────────────────────────────────────────────────────
+// Navigation principale, footer et structure globale du site
+
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { createPageUrl } from '@/utils';

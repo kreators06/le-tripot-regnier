@@ -1,3 +1,6 @@
+// ─── Galerie ──────────────────────────────────────────────────────────────────
+// Galerie photos du Tripot Régnier avec lightbox
+
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ZoomIn } from 'lucide-react';

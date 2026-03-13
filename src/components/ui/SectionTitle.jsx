@@ -1,3 +1,6 @@
+// ─── SectionTitle ─────────────────────────────────────────────────────────────
+// Titre de section réutilisable avec animation d'entrée
+
 import React from 'react';
 import { motion } from 'framer-motion';
 

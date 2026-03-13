@@ -1,3 +1,6 @@
+// ─── CTABanner ────────────────────────────────────────────────────────────────
+// Bandeau call-to-action avec deux liens de navigation
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';

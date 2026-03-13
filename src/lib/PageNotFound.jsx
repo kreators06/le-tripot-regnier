@@ -1,3 +1,6 @@
+// ─── PageNotFound ─────────────────────────────────────────────────────────────
+// Page d'erreur 404 brandée Le Tripot Régnier
+
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';

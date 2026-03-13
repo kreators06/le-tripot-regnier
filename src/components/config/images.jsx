@@ -1,3 +1,5 @@
+// ─── config/images ────────────────────────────────────────────────────────────
+// Configuration centralisée de toutes les images et vidéos du site
 
 /**
  * CONFIGURATION CENTRALISÉE DES IMAGES DU SITE

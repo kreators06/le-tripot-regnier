@@ -1,3 +1,6 @@
+// ─── FAQAccordion ─────────────────────────────────────────────────────────────
+// Accordéon FAQ — questions fréquentes sur le Tripot Régnier
+
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';

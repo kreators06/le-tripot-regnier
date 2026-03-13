@@ -1,3 +1,6 @@
+// ─── Histoire ─────────────────────────────────────────────────────────────────
+// Page histoire et origines du Tripot Régnier
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';

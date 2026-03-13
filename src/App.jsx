@@ -1,3 +1,6 @@
+// ─── App ──────────────────────────────────────────────────────────────────────
+// Routeur principal de l'application Le Tripot Régnier
+
 import { HashRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Layout from './Layout';
 import Home from './pages/Home';

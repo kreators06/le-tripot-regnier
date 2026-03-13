@@ -1,3 +1,6 @@
+// ─── MentionsLegales ──────────────────────────────────────────────────────────
+// Mentions légales du site Le Tripot Régnier
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import SectionTitle from '@/components/ui/SectionTitle';
