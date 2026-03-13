@@ -89,77 +89,61 @@ export const IMAGES = {
   // ==========================================
   gallery: [
     {
-      src: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&auto=format",
-      alt: "Salle principale Le Tripot Régnier"
+      src: "https://letripotregnier.fr/assets/photos/photo-salle-vide.jpg",
+      alt: "Grande salle événementielle Le Tripot Régnier"
     },
     {
-      src: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&auto=format",
-      alt: "Événement soirée Paris"
+      src: "https://letripotregnier.fr/assets/photos/photo-bar.jpg",
+      alt: "Bar équipé Le Tripot Régnier"
     },
     {
-      src: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format",
-      alt: "Conférence entreprise"
+      src: "https://letripotregnier.fr/assets/photos/photo-mezzanine.jpg",
+      alt: "Mezzanine Le Tripot Régnier"
     },
     {
-      src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&auto=format",
-      alt: "Réception mariage Paris"
+      src: "https://letripotregnier.fr/assets/photos/photo-lounge-etage.jpeg",
+      alt: "Espace lounge Le Tripot Régnier"
     },
     {
-      src: "https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=800&auto=format",
-      alt: "Architecture Art Déco"
+      src: "https://letripotregnier.fr/assets/photos/photo-loge-privee-maquillage.png",
+      alt: "Loge privée maquillage Le Tripot Régnier"
     },
     {
-      src: "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=800&auto=format",
-      alt: "Bar événementiel"
+      src: "https://letripotregnier.fr/assets/photos/photo-vestiaire-tripot-regnier.jpg",
+      alt: "Vestiaire Le Tripot Régnier"
     },
     {
-      src: "https://images.unsplash.com/photo-1478146896981-b80fe463b330?w=800&auto=format",
-      alt: "Cocktail professionnel"
+      src: "https://letripotregnier.fr/assets/photos/photo-hall-entree-tripot-regnier.jpg",
+      alt: "Hall d'entrée Le Tripot Régnier"
     },
     {
-      src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format",
-      alt: "Décor intérieur industriel"
+      src: "https://letripotregnier.fr/assets/photos/photo-regie.jpg",
+      alt: "Régie technique Le Tripot Régnier"
     },
     {
-      src: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800&auto=format",
-      alt: "Soirée dansante"
+      src: "https://letripotregnier.fr/assets/photos/photo-cocktail.jpg",
+      alt: "Soirée cocktail Le Tripot Régnier"
     },
     {
-      src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format",
-      alt: "Espace séminaire"
+      src: "https://letripotregnier.fr/assets/photos/photo-diner-assis.jpg",
+      alt: "Dîner assis Le Tripot Régnier"
     },
     {
-      src: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&auto=format",
-      alt: "Célébration entreprise"
+      src: "https://letripotregnier.fr/assets/photos/photo-seminaire.jpg",
+      alt: "Séminaire professionnel Le Tripot Régnier"
     },
     {
-      src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&auto=format",
-      alt: "Espace lounge"
+      src: "https://letripotregnier.fr/assets/photos/photo-conference.jpg",
+      alt: "Conférence Le Tripot Régnier"
     },
     {
-      src: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&auto=format",
-      alt: "Concert privé"
+      src: "https://letripotregnier.fr/assets/photos/photo-showroom.jpg",
+      alt: "Showroom Le Tripot Régnier"
     },
     {
-      src: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&auto=format",
-      alt: "Soirée festive"
+      src: "https://letripotregnier.fr/assets/photos/photo-soiree.jpg",
+      alt: "Soirée événementielle Le Tripot Régnier"
     },
-    {
-      src: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&auto=format",
-      alt: "Loge artiste"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800&auto=format",
-      alt: "DJ set soirée"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?w=800&auto=format",
-      alt: "Ambiance soirée"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&auto=format",
-      alt: "Performance live"
-    }
   ],
 
   // ==========================================
