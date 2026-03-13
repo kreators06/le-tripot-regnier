@@ -265,7 +265,7 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-12 py-32">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20">
+          <div className="flex flex-col md:flex-row items-center justify-start gap-10 md:gap-16">
             {/* Logo */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
