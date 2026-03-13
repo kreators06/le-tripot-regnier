@@ -193,7 +193,7 @@ export const IMAGES = {
   // ==========================================
   engagements: {
     hero: {
-      src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&auto=format",
+      src: "https://letripotregnier.fr/assets/photos/photo-salle-vide.jpg",
       alt: "Engagements RSE Le Tripot Régnier"
     }
   },
@@ -203,7 +203,7 @@ export const IMAGES = {
   // ==========================================
   equipe: {
     hero: {
-      src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&auto=format",
+      src: "https://letripotregnier.fr/assets/photos/photo-hall-entree-tripot-regnier.jpg",
       alt: "Équipe Le Tripot Régnier"
     }
   },
@@ -213,7 +213,7 @@ export const IMAGES = {
   // ==========================================
   galerie: {
     hero: {
-      src: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1920&auto=format",
+      src: "https://letripotregnier.fr/assets/photos/photo-salle-vide.jpg",
       alt: "Galerie photos Le Tripot Régnier"
     }
   },
