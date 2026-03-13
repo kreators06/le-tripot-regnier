@@ -271,19 +271,32 @@ export default function Home() {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1 }}
-              className="flex-shrink-0"
+              className="hidden md:flex flex-shrink-0 items-stretch"
             >
               <img
                 src="https://letripotregnier.fr/assets/logo.png"
                 alt="Le Tripot Régnier"
                 className="w-auto object-contain"
-                style={{ height: logoHeight ? `${logoHeight}px` : '110px' }}
+                style={{ height: '100%', maxHeight: '100%', display: 'block' }}
+              />
+            </motion.div>
+            {/* Logo mobile */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+              className="flex md:hidden flex-shrink-0"
+            >
+              <img
+                src="https://letripotregnier.fr/assets/logo.png"
+                alt="Le Tripot Régnier"
+                className="w-auto object-contain"
+                style={{ height: '110px' }}
               />
             </motion.div>
 
             {/* Texte */}
             <motion.div
-              ref={textRef}
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.15 }}
