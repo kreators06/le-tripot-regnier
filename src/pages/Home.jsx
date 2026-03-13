@@ -202,6 +202,7 @@ export default function Home() {
 
         <motion.a
           href="#nos-espaces"
+          aria-label="Défiler vers le contenu"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
@@ -238,7 +239,7 @@ export default function Home() {
                   onClick={() => setLightboxImg(space.image)}
                 >
                   <div className="relative overflow-hidden" style={{ aspectRatio: '4/3' }}>
-                    <img src={space.image} alt={space.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <img src={space.image} alt={space.title} loading="lazy" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5" />
                     <div className="absolute bottom-0 left-0 right-0 p-5">
                       <div className="flex items-baseline justify-between gap-2 mb-1">
@@ -319,7 +320,7 @@ export default function Home() {
                 className="group overflow-hidden rounded-xl"
               >
                 <div className="relative overflow-hidden" style={{ aspectRatio: '4/3' }}>
-                  <img src={config.image} alt={config.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <img src={config.image} alt={`Configuration ${config.name} au Tripot Régnier`} loading="lazy" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5" />
                   <div className="absolute bottom-0 left-0 right-0 p-5 flex items-end gap-3">
                     <div className="w-9 h-9 flex-shrink-0 flex items-center justify-center rounded" style={{ backgroundColor: COLORS.ACCENT_COLOR }}>

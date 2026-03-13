@@ -282,7 +282,7 @@ export default function Layout({ children, currentPageName }) {
                 <a 
                   href="#" 
                   className="w-10 h-10 border border-white/20 flex items-center justify-center transition-all" 
-                  aria-label="Instagram"
+                  aria-label="Suivez Le Tripot Régnier sur Instagram"
                   onMouseEnter={(e) => {
                     e.currentTarget.style.borderColor = COLORS.ACCENT_COLOR;
                     e.currentTarget.style.backgroundColor = `${COLORS.ACCENT_COLOR}10`;
@@ -297,7 +297,7 @@ export default function Layout({ children, currentPageName }) {
                 <a 
                   href="#" 
                   className="w-10 h-10 border border-white/20 flex items-center justify-center transition-all" 
-                  aria-label="LinkedIn"
+                  aria-label="Suivez Le Tripot Régnier sur LinkedIn"
                   onMouseEnter={(e) => {
                     e.currentTarget.style.borderColor = COLORS.ACCENT_COLOR;
                     e.currentTarget.style.backgroundColor = `${COLORS.ACCENT_COLOR}10`;
@@ -312,7 +312,7 @@ export default function Layout({ children, currentPageName }) {
                 <a 
                   href="#" 
                   className="w-10 h-10 border border-white/20 flex items-center justify-center transition-all" 
-                  aria-label="Facebook"
+                  aria-label="Suivez Le Tripot Régnier sur Facebook"
                   onMouseEnter={(e) => {
                     e.currentTarget.style.borderColor = COLORS.ACCENT_COLOR;
                     e.currentTarget.style.backgroundColor = `${COLORS.ACCENT_COLOR}10`;

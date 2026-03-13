@@ -95,14 +95,16 @@ export default function Histoire() {
               <div className="overflow-hidden rounded-lg shadow-lg aspect-[4/3]">
                 <img
                   src="https://letripotregnier.fr/assets/photos/photo-hall-entree-tripot-regnier.jpg"
-                  alt="Entrée Art Déco du Tripot Régnier"
+                  alt="Hall d'entrée Art Déco du Tripot Régnier, 10-12 rue Mathurin Régnier Paris 15e"
+                  loading="lazy"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="overflow-hidden rounded-lg shadow-lg aspect-[4/3]">
                 <img
                   src={IMAGES.spaces.grandeSalle.src}
-                  alt="La salle principale du Tripot Régnier"
+                  alt="Salle principale du Tripot Régnier en configuration événementielle, 400m²"
+                  loading="lazy"
                   className="w-full h-full object-cover"
                 />
               </div>

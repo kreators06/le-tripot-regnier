@@ -79,7 +79,7 @@ export default function Contact() {
 
   return (
     <div>
-      <PageSEO title="Contact & Réservation" description="Contactez Le Tripot Régnier pour privatiser notre salle événementielle de 700m². 10-12 rue Mathurin Régnier, 75015 Paris." />
+      <PageSEO title="Contact | Le Tripot Régnier" description="Contactez Le Tripot Régnier pour privatiser notre salle événementielle de 700m². 10-12 rue Mathurin Régnier, 75015 Paris — 06.61.06.07.10." />
 
       {/* Hero Banner with Video */}
       <section className="relative py-32 px-6 overflow-hidden min-h-[50vh] flex items-center justify-center">

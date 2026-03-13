@@ -65,13 +65,13 @@ export default function Capacites() {
       {/* Photo Header - Replacing dark hero */}
       <div className="grid grid-cols-3 h-64 md:h-80">
         <div className="overflow-hidden">
-          <img src={IMAGES.spaces.grandeSalle.src} alt="Salle principale" className="w-full h-full object-cover" />
+          <img src={IMAGES.spaces.grandeSalle.src} alt="Salle principale du Tripot Régnier — 400m² modulables" className="w-full h-full object-cover" />
         </div>
         <div className="overflow-hidden">
-          <img src={IMAGES.spaces.mezzanine.src} alt="Mezzanine" className="w-full h-full object-cover" />
+          <img src={IMAGES.spaces.mezzanine.src} alt="Mezzanine du Tripot Régnier — vue panoramique 65m²" loading="lazy" className="w-full h-full object-cover" />
         </div>
         <div className="overflow-hidden">
-          <img src={IMAGES.spaces.bar.src} alt="Bar" className="w-full h-full object-cover" />
+          <img src={IMAGES.spaces.bar.src} alt="Bar équipé du Tripot Régnier" loading="lazy" className="w-full h-full object-cover" />
         </div>
       </div>
 
