@@ -1,153 +1,127 @@
 import { useEffect } from 'react';
 
-export default function SEOMetadata() {
-  useEffect(() => {
-    // Update meta title
-    document.title = "Le Tripot Régnier | Salle Événementielle Atypique Paris 15";
-    
-    // Update or create meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    const descriptionContent = "Privatisez le Tripot Régnier au cœur du 15ème. Espace événementiel industriel Art Déco de 400m2, capacité 450 personnes, accès véhicule et équipement complet.";
-    
-    if (metaDescription) {
-      metaDescription.setAttribute('content', descriptionContent);
-    } else {
-      const meta = document.createElement('meta');
-      meta.name = 'description';
-      meta.content = descriptionContent;
-      document.head.appendChild(meta);
-    }
+const OG_IMAGE = "https://letripotregnier.fr/images/og-tripot-regnier.jpg";
+const TITLE = "Le Tripot Régnier | Salle événementielle Paris 15 — Location privée";
+const DESCRIPTION = "Le Tripot Régnier, salle de réception événementielle à Paris 15e. Espace modulable de 700m² pour soirées privées, dîners d'entreprise, conférences, défilés et showrooms. Son, lumière et vidéo professionnel.";
 
-    // Open Graph tags
-    const ogTags = {
-      'og:title': 'Le Tripot Régnier | Salle Événementielle Atypique Paris 15',
-      'og:description': descriptionContent,
-      'og:image': 'https://letripotregnier.fr/assets/logo.png',
-      'og:url': 'https://letripotregnier.fr',
-      'og:type': 'website',
-      'og:site_name': 'Le Tripot Régnier'
-    };
-    Object.entries(ogTags).forEach(([property, content]) => {
-      let tag = document.querySelector(`meta[property="${property}"]`);
-      if (!tag) {
-        tag = document.createElement('meta');
-        tag.setAttribute('property', property);
-        document.head.appendChild(tag);
+const SCHEMA = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["EventVenue", "LocalBusiness"],
+      "@id": "https://letripotregnier.fr",
+      "name": "Le Tripot Régnier",
+      "description": "Salle de réception événementielle Art Déco et industriel à Paris 15e. Espace modulable pour soirées, conférences, défilés et showrooms.",
+      "url": "https://letripotregnier.fr",
+      "telephone": "+33661060710",
+      "email": "contact@letripotregnier.fr",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "10-12 rue Mathurin Régnier",
+        "addressLocality": "Paris",
+        "addressRegion": "Île-de-France",
+        "postalCode": "75015",
+        "addressCountry": "FR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 48.8422,
+        "longitude": 2.2985
+      },
+      "image": OG_IMAGE,
+      "maximumAttendeeCapacity": 500,
+      "priceRange": "€€€",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "09:00",
+        "closes": "02:00"
       }
-      tag.setAttribute('content', content);
-    });
-
-    // Twitter Card tags
-    const twitterTags = {
-      'twitter:card': 'summary_large_image',
-      'twitter:title': 'Le Tripot Régnier | Salle Événementielle Paris 15',
-      'twitter:description': descriptionContent,
-      'twitter:image': 'https://letripotregnier.fr/assets/logo.png'
-    };
-    Object.entries(twitterTags).forEach(([name, content]) => {
-      let tag = document.querySelector(`meta[name="${name}"]`);
-      if (!tag) {
-        tag = document.createElement('meta');
-        tag.setAttribute('name', name);
-        document.head.appendChild(tag);
-      }
-      tag.setAttribute('content', content);
-    });
-
-    // Inject JSON-LD Schema
-    const schemaScript = document.createElement('script');
-    schemaScript.type = 'application/ld+json';
-    schemaScript.innerHTML = JSON.stringify({
-      "@context": "https://schema.org",
-      "@graph": [
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
         {
-          "@type": ["EventVenue", "LocalBusiness"],
-          "@id": "https://letripotregnier.fr",
-          "name": "Le Tripot Régnier",
-          "description": "Lieu événementiel atypique d'inspiration Art Déco et industrielle pour séminaires, lancements de produits et soirées d'entreprise.",
-          "url": "https://letripotregnier.fr",
-          "telephone": "+33145260458",
-          "email": "contact@letripotregnier.fr",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "10-12 rue Mathurin Régnier",
-            "addressLocality": "Paris",
-            "addressRegion": "Île-de-France",
-            "postalCode": "75015",
-            "addressCountry": "FR"
-          },
-          "priceRange": "€€€",
-          "maximumAttendeeCapacity": 450,
-          "sameAs": [
-            "https://www.instagram.com",
-            "https://www.linkedin.com",
-            "https://www.facebook.com"
-          ],
-          "image": {
-            "@type": "ImageObject",
-            "url": "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1200&auto=format",
-            "width": 1200,
-            "height": 630
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "48.8408",
-            "longitude": "2.2893"
+          "@type": "Question",
+          "name": "Peut-on accéder à la salle avec un véhicule ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, l'accès direct par véhicule est possible grâce aux portes coulissantes de 2,50m x 2,57m et une zone de livraison de 22m devant la salle."
           }
         },
         {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Peut-on accéder à la salle avec un véhicule ?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Oui, l'accès direct par véhicule est possible. La salle principale dispose d'une capacité de passage permettant les lancements automobiles et expositions de véhicules de luxe."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Le lieu est-il accessible PMR ?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Le Tripot Régnier est entièrement conforme aux normes d'accessibilité ERP et PMR, avec ascenseur, toilettes accessibles et accès de plain-pied à tous les espaces."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Quelle est la capacité électrique du bâtiment ?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Nous disposons d'une infrastructure électrique lourde adaptée aux besoins techniques des événements : éclairage LED immersif, systèmes audiovisuels professionnels, chauffage et climatisation réversible."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Y a-t-il des services de traiteur sur place ?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Notre cuisine professionnelle complètement équipée avec chambre froide, fours, plan de travail et espace de service permet les prestations traiteur. Un bar aménagé est également disponible."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Quelle est la taille totale de la salle ?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Le Tripot Régnier compte 700m² modulables : salle principale de 400m², mezzanine de 65m², hall d'accueil de 90m², plus espaces annexes (loge, lounge, vestiaire, bar)."
-              }
-            }
-          ]
+          "@type": "Question",
+          "name": "Le lieu est-il accessible PMR ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le Tripot Régnier est entièrement conforme aux normes ERP et PMR, avec accès de plain-pied à tous les espaces."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelle est la capacité de la salle ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "700m² modulables : salle principale de 400m², mezzanine de 65m², hall d'accueil de 90m². Capacité jusqu'à 500 personnes en cocktail, 220 en dîner assis."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Y a-t-il des services de traiteur sur place ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Une cuisine professionnelle équipée (four, machine à glaçons, réfrigérateur) et un bar aménagé sont disponibles pour vos prestataires traiteur."
+          }
         }
       ]
-    });
-    document.head.appendChild(schemaScript);
+    }
+  ]
+};
+
+function setMeta(selector, createAttr, content) {
+  let el = document.querySelector(selector);
+  if (!el) {
+    el = document.createElement('meta');
+    Object.entries(createAttr).forEach(([k, v]) => el.setAttribute(k, v));
+    document.head.appendChild(el);
+  }
+  el.setAttribute('content', content);
+}
+
+export default function SEOMetadata() {
+  useEffect(() => {
+    document.title = TITLE;
+
+    setMeta('meta[name="description"]', { name: 'description' }, DESCRIPTION);
+    setMeta('meta[name="keywords"]', { name: 'keywords' }, 'salle événementielle Paris, location salle Paris 15, espace réception Paris, salle privatisée soirée, Le Tripot Régnier');
+    setMeta('meta[name="robots"]', { name: 'robots' }, 'index, follow');
+    setMeta('meta[name="author"]', { name: 'author' }, 'Le Tripot Régnier');
+
+    setMeta('meta[property="og:title"]', { property: 'og:title' }, TITLE);
+    setMeta('meta[property="og:description"]', { property: 'og:description' }, DESCRIPTION);
+    setMeta('meta[property="og:image"]', { property: 'og:image' }, OG_IMAGE);
+    setMeta('meta[property="og:url"]', { property: 'og:url' }, 'https://letripotregnier.fr/');
+    setMeta('meta[property="og:type"]', { property: 'og:type' }, 'website');
+    setMeta('meta[property="og:locale"]', { property: 'og:locale' }, 'fr_FR');
+    setMeta('meta[property="og:site_name"]', { property: 'og:site_name' }, 'Le Tripot Régnier');
+
+    setMeta('meta[name="twitter:card"]', { name: 'twitter:card' }, 'summary_large_image');
+    setMeta('meta[name="twitter:title"]', { name: 'twitter:title' }, TITLE);
+    setMeta('meta[name="twitter:description"]', { name: 'twitter:description' }, DESCRIPTION);
+    setMeta('meta[name="twitter:image"]', { name: 'twitter:image' }, OG_IMAGE);
+
+    // JSON-LD Schema
+    const existing = document.getElementById('schema-tripot');
+    if (existing) existing.remove();
+    const script = document.createElement('script');
+    script.id = 'schema-tripot';
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(SCHEMA);
+    document.head.appendChild(script);
 
     return () => {
-      if (document.head.contains(schemaScript)) {
-        document.head.removeChild(schemaScript);
-      }
+      const s = document.getElementById('schema-tripot');
+      if (s) s.remove();
     };
   }, []);
 
