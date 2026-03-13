@@ -266,8 +266,10 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-12 py-32">
-          <div className="flex flex-col md:flex-row items-center justify-start gap-10 md:gap-16">
-            {/* Logo mobile */}
+          {/* Wrapper flex row — items-stretch pour que le logo s'aligne sur la hauteur du texte */}
+          <div className="flex flex-col md:flex-row md:items-stretch justify-start gap-10 md:gap-16">
+
+            {/* Logo mobile uniquement */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -282,27 +284,36 @@ export default function Home() {
               />
             </motion.div>
 
+            {/* Logo desktop — prend la hauteur du bloc texte via align-self: stretch */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+              className="hidden md:flex flex-shrink-0"
+              style={{ alignSelf: 'stretch' }}
+            >
+              <img
+                src="https://letripotregnier.fr/assets/logo.png"
+                alt="Le Tripot Régnier"
+                style={{ height: '100%', width: 'auto', display: 'block', objectFit: 'contain' }}
+              />
+            </motion.div>
+
             {/* Texte */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.15 }}
-              className="text-center md:text-left flex items-center gap-10 md:gap-16"
+              className="text-center md:text-left"
             >
-              {/* Logo desktop — inline avec le texte, hauteur = hauteur de la ligne */}
-              <img
-                src="https://letripotregnier.fr/assets/logo.png"
-                alt="Le Tripot Régnier"
-                className="hidden md:block w-auto object-contain flex-shrink-0"
-                style={{ height: '1lh', minHeight: '80px', maxHeight: '160px' }}
-              />
               <p className="text-sm md:text-base text-white/80 tracking-[0.3em] uppercase mb-6 font-light">
                 Événementiel Premium — Paris 15ème
               </p>
               <h1 className="text-3xl md:text-5xl lg:text-5xl text-white font-bold tracking-tight leading-[1.1]">
                 Salle parisienne où<br />vos événements prennent vie.
               </h1>
-              </motion.div>
+            </motion.div>
+
           </div>
         </div>
 
