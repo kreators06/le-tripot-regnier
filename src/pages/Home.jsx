@@ -302,7 +302,7 @@ export default function Home() {
               <h1 className="text-3xl md:text-5xl lg:text-5xl text-white font-bold tracking-tight leading-[1.1]">
                 Salle parisienne où<br />vos événements prennent vie.
               </h1>
-            </motion.div>
+              </motion.div>
           </div>
         </div>
 
