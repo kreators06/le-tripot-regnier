@@ -197,6 +197,10 @@ export const IMAGES = {
     murLED: {
       src: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=800&auto=format",
       alt: "Mur LED professionnel Le Tripot Régnier"
+    },
+    regie: {
+      src: "https://letripotregnier.fr/assets/photos/photo-regie.jpg",
+      alt: "Régie technique Le Tripot Régnier"
     }
   },
 

@@ -1,97 +1,266 @@
 // ─── Capacites ────────────────────────────────────────────────────────────────
 // Page espaces et équipements techniques du Tripot Régnier
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { 
-  Maximize2, 
-  Lightbulb, 
-  Monitor, 
-  Speaker, 
-  Truck, 
-  Accessibility,
-  Shield,
-  Layers,
-  ArrowRight
-} from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Lightbulb, Monitor, Speaker, Layers, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import SectionTitle from '@/components/ui/SectionTitle';
 import { COLORS } from '@/components/config/colors';
 import { IMAGES } from '@/components/config/images';
 import PageSEO from '@/components/PageSEO';
+import TrustSignals from '@/components/TrustSignals';
 
-const spaces = [
-  { name: "Hall d'accueil", surface: "90 m²", description: "Espace d'accueil et de réception des invités.", image: { src: "https://letripotregnier.fr/assets/photos/photo-hall-entree-tripot-regnier.jpg", alt: "Hall d'accueil Le Tripot Régnier" } },
-  { name: "Salle Principale", surface: "400 m²", description: "Espace modulable équipé (son, lumière, projection vidéo) dotée d'un bar et d'un fumoir intérieur.", image: IMAGES.spaces.grandeSalle },
-  { name: "Bar", surface: "", description: "Bar équipé : four, machine à glaçons, réfrigérateur.", image: IMAGES.spaces.bar },
-  { name: "Mezzanine", surface: "65 m²", description: "Espace en hauteur offrant une vue panoramique sur la salle.", image: IMAGES.spaces.mezzanine },
-  { name: "Espace Lounge", surface: "", description: "Espace détente situé en prolongation de la mezzanine.", image: IMAGES.spaces.espaceLounge },
-  { name: "Loge", surface: "", description: "Loge avec accès privé comprenant: écran TV, canapé, toilettes, douche, lavabo.", image: IMAGES.spaces.logePrivee }
+// ─── Hero Carousel ─────────────────────────────────────────────────────────────
+const heroImages = [
+  IMAGES.spaces.grandeSalle.src,
+  IMAGES.spaces.mezzanine.src,
+  IMAGES.spaces.bar.src,
+  IMAGES.spaces.espaceLounge.src,
+  IMAGES.spaces.logePrivee.src,
+  IMAGES.spaces.vestiaire.src,
+];
+const duplicated = [...heroImages, ...heroImages];
+
+function HeroCarousel() {
+  const [paused, setPaused] = useState(false);
+  return (
+    <div
+      className="relative overflow-hidden h-64 md:h-[420px] pt-24"
+      style={{ background: '#0D0D0D' }}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      <style>{`
+        @keyframes carousel-scroll {
+          0%   { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .carousel-track {
+          display: flex;
+          gap: 12px;
+          width: max-content;
+          animation: carousel-scroll 30s linear infinite;
+        }
+        .carousel-track.paused {
+          animation-play-state: paused;
+        }
+      `}</style>
+      <div className={`carousel-track h-full${paused ? ' paused' : ''}`}>
+        {duplicated.map((src, i) => (
+          <div key={i} className="h-full flex-shrink-0 overflow-hidden rounded-lg" style={{ width: 'clamp(220px, 30vw, 480px)' }}>
+            <img
+              src={src}
+              alt="Le Tripot Régnier"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ))}
+      </div>
+      {/* Gradient edges */}
+      <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#0D0D0D] to-transparent pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#0D0D0D] to-transparent pointer-events-none" />
+    </div>
+  );
+}
+
+// ─── Nos Espaces (identical to Home) ──────────────────────────────────────────
+const sallePrincipaleImages = [
+  "https://letripotregnier.fr/assets/photos/photo-salle-vide.jpg",
+  "https://letripotregnier.fr/assets/photos/photo-mezzanine.jpg",
+  "https://letripotregnier.fr/assets/photos/photo-lounge-etage.jpeg",
 ];
 
+const spaces = [
+  {
+    title: "Salle Principale",
+    surface: "400 m²",
+    images: sallePrincipaleImages,
+    description: "Espace modulable équipé (son, lumière, projection vidéo) dotée d'un bar et d'un fumoir intérieur.",
+    isSlider: true,
+  },
+  {
+    title: "Bar",
+    surface: "",
+    image: IMAGES.spaces.bar.src,
+    description: "Bar équipé : four, machine à glaçons, réfrigérateur.",
+  },
+  {
+    title: "Mezzanine",
+    surface: "65 m²",
+    image: IMAGES.spaces.mezzanine.src,
+    description: "Espace en hauteur offrant une vue panoramique sur la salle.",
+  },
+  {
+    title: "Espace Lounge",
+    surface: "",
+    image: IMAGES.spaces.espaceLounge.src,
+    description: "Espace détente situé en prolongation de la mezzanine.",
+  },
+  {
+    title: "Loge Privée",
+    surface: "",
+    image: IMAGES.spaces.logePrivee.src,
+    description: "Loge avec accès privé comprenant : écran TV, canapé, toilettes, douche, lavabo.",
+  },
+  {
+    title: "Vestiaire",
+    surface: "450 pers.",
+    image: IMAGES.spaces.vestiaire.src,
+    description: "Vestiaire équipé avec capacité de 450 personnes",
+  },
+];
+
+function SliderCard({ space, onClick }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [fading, setFading] = useState(false);
+
+  const goTo = (newIndex, e) => {
+    e.stopPropagation();
+    setFading(true);
+    setTimeout(() => {
+      setCurrentIndex(newIndex);
+      setFading(false);
+    }, 200);
+  };
+
+  const prev = (e) => goTo((currentIndex - 1 + space.images.length) % space.images.length, e);
+  const next = (e) => goTo((currentIndex + 1) % space.images.length, e);
+
+  return (
+    <div className="rounded-xl overflow-hidden cursor-pointer" onClick={() => onClick(space.images[currentIndex])}>
+      <div className="relative overflow-hidden bg-gray-100" style={{ aspectRatio: '4/3' }}>
+        <img
+          src={space.images[currentIndex]}
+          alt={`Salle principale du Tripot Régnier — vue ${currentIndex + 1}`}
+          className="w-full h-full object-cover"
+          style={{ opacity: fading ? 0 : 1, transition: 'opacity 0.25s ease' }}
+        />
+        <button onClick={prev} aria-label="Photo précédente" className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white rounded-full p-1.5 transition-all z-10">
+          <ChevronLeft className="w-4 h-4" />
+        </button>
+        <button onClick={next} aria-label="Photo suivante" className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white rounded-full p-1.5 transition-all z-10">
+          <ChevronRight className="w-4 h-4" />
+        </button>
+        <div className="absolute top-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+          {space.images.map((_, i) => (
+            <div key={i} className="w-1.5 h-1.5 rounded-full transition-all" style={{ backgroundColor: i === currentIndex ? COLORS.ACCENT_COLOR : 'rgba(255,255,255,0.5)' }} />
+          ))}
+        </div>
+        {space.surface && (
+          <span className="absolute top-3 right-3 text-sm font-bold px-3 py-1 rounded-full text-white bg-black">{space.surface}</span>
+        )}
+      </div>
+      <div className="pt-3 pb-2 px-1">
+        <h3 className="text-[#0D0D0D] text-base font-semibold">{space.title}</h3>
+        <p className="text-gray-500 text-sm mt-1 leading-relaxed">{space.description}</p>
+      </div>
+    </div>
+  );
+}
+
+// ─── AV Data ──────────────────────────────────────────────────────────────────
 const lighting = [
   "48 Projecteurs LEDS BEAM Z",
   "8 Automatiques BEAM CHAUVET",
   "4 Projecteurs ETC S4",
   "Machine à fumée",
-  "Pilotage tablette tactile + SUNLITE"
+  "Pilotage tablette tactile + SUNLITE",
 ];
-
 const video = [
   "Écran 16/9 (3m x 1,69m)",
   "Vidéoprojecteur Full HD 6000 lms Panasonic",
   "6 Moniteurs LCD 48\" Samsung",
-  "Retours écrans régie et loge"
+  "Retours écrans régie et loge",
 ];
-
 const sound = [
   "Système HK LINEAR 5 actif",
   "Console YAMAHA 01V",
   "Platines PIONEER CDJ2000 Nexus",
   "Console DJM900",
-  "Micros HF SHURE"
+  "Micros HF SHURE",
 ];
 
-const logistics = [
-  { icon: Truck, text: "Zone de livraison 22m devant la salle" },
-  { icon: Accessibility, text: "Accès plain-pied et PMR" },
-  { icon: Maximize2, text: "Portes coulissantes 2,50m x 2,57m" },
-  { icon: Shield, text: "Charge au sol : 500 kg/m²" }
-];
-
+// ─── Page ──────────────────────────────────────────────────────────────────────
 export default function Capacites() {
+  const [lightboxImg, setLightboxImg] = useState(null);
+
   return (
-    <div className="pt-20">
+    <div>
       <PageSEO title="Espaces & Équipements | Le Tripot Régnier" description="700m² modulables, mur LED immersif, système son professionnel, éclairage scénique. Découvrez les équipements techniques complets du Tripot Régnier." />
 
-      {/* Photo Header - Replacing dark hero */}
-      <div className="grid grid-cols-3 h-64 md:h-80">
-        <div className="overflow-hidden">
-          <img src={IMAGES.spaces.grandeSalle.src} alt="Salle principale du Tripot Régnier — 400m² modulables" className="w-full h-full object-cover" />
-        </div>
-        <div className="overflow-hidden">
-          <img src={IMAGES.spaces.mezzanine.src} alt="Mezzanine du Tripot Régnier — vue panoramique 65m²" loading="lazy" className="w-full h-full object-cover" />
-        </div>
-        <div className="overflow-hidden">
-          <img src={IMAGES.spaces.bar.src} alt="Bar équipé du Tripot Régnier" loading="lazy" className="w-full h-full object-cover" />
-        </div>
-      </div>
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightboxImg && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4"
+            onClick={() => setLightboxImg(null)}
+          >
+            <button className="absolute top-4 right-4 text-white bg-black/50 rounded-full p-2 hover:bg-black/80 transition" onClick={() => setLightboxImg(null)}>
+              <X className="w-6 h-6" />
+            </button>
+            <motion.img
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              src={lightboxImg}
+              alt="Aperçu photo Le Tripot Régnier"
+              className="max-w-full max-h-[90vh] object-contain rounded-lg"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-      {/* Page Title */}
-      <section className="py-12 px-6 bg-[#0D0D0D]">
-        <div className="max-w-6xl mx-auto text-left">
-          <h1 className="text-4xl md:text-5xl text-white font-bold tracking-tight">
-            Espaces & <span style={{ color: COLORS.ACCENT_COLOR }}>Équipements</span>
-          </h1>
+      {/* 1. Hero Carousel */}
+      <HeroCarousel />
+
+      {/* 2. Nos Espaces */}
+      <section className="py-20 md:py-28 px-6 bg-[#FAFAFA]">
+        <div className="max-w-7xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
+            <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">Découvrez le lieu</p>
+            <h2 className="text-4xl md:text-6xl font-semibold text-[#0D0D0D] tracking-tight">
+              Nos <span style={{ color: COLORS.ACCENT_COLOR }}>espaces</span>
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {spaces.map((space) =>
+              space.isSlider ? (
+                <SliderCard key={space.title} space={space} onClick={setLightboxImg} />
+              ) : (
+                <div key={space.title} className="rounded-xl overflow-hidden cursor-pointer group" onClick={() => setLightboxImg(space.image)}>
+                  <div className="relative overflow-hidden bg-gray-100" style={{ aspectRatio: '4/3' }}>
+                    <img
+                      src={space.image}
+                      alt={`${space.title} — Le Tripot Régnier`}
+                      loading="lazy"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    {space.surface && (
+                      <span className="absolute top-3 right-3 text-sm font-bold px-3 py-1 rounded-full text-white bg-black">{space.surface}</span>
+                    )}
+                  </div>
+                  <div className="pt-3 pb-2 px-1">
+                    <h3 className="text-[#0D0D0D] text-base font-semibold">{space.title}</h3>
+                    {space.description && <p className="text-gray-500 text-sm mt-1 leading-relaxed">{space.description}</p>}
+                  </div>
+                </div>
+              )
+            )}
+          </div>
         </div>
       </section>
 
-      {/* Capacités Section */}
+      {/* 3. Capacités */}
       <section className="py-24 px-6 bg-[#F5F5F0]">
         <div className="max-w-6xl mx-auto">
           <SectionTitle title="Capacités" align="left" />
-          
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
             {[
               { value: "700m²", label: "ESPACE TOTAL" },
@@ -115,45 +284,53 @@ export default function Capacites() {
         </div>
       </section>
 
-      {/* Nos Espaces Section */}
+      {/* 4. Matériel audiovisuel */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
-          <SectionTitle title="Nos Espaces" align="left" />
+          <SectionTitle title="Matériel audiovisuel" align="left" />
 
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {spaces.map((space, index) => (
-              <motion.div
-                key={space.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.08 }}
-                className="group overflow-hidden rounded-xl"
-              >
-                <div className="relative overflow-hidden" style={{ aspectRatio: '4/3' }}>
-                  <img
-                    src={space.image.src}
-                    alt={space.image.alt}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5" />
-                  <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <div className="flex items-baseline justify-between gap-2 mb-1">
-                      <h3 className="text-white text-base font-semibold drop-shadow-md">{space.name}</h3>
-                      {space.surface && (
-                        <span className="text-xs font-semibold flex-shrink-0 px-2 py-0.5 rounded-full text-white" style={{ backgroundColor: COLORS.ACCENT_COLOR }}>{space.surface}</span>
-                      )}
-                    </div>
-                    <p className="text-white/90 text-xs leading-relaxed">{space.description}</p>
+          {/* Photo régie technique */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-10 mb-12 overflow-hidden rounded-xl"
+          >
+            <img
+              src={IMAGES.capacites.regie.src}
+              alt={IMAGES.capacites.regie.alt}
+              className="w-full h-64 md:h-80 object-cover"
+            />
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { icon: Lightbulb, label: "Éclairage", items: lighting },
+              { icon: Monitor, label: "Vidéo", items: video, delay: 0.1 },
+              { icon: Speaker, label: "Son", items: sound, delay: 0.2 },
+            ].map(({ icon: Icon, label, items, delay = 0 }) => (
+              <motion.div key={label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay }} className="bg-[#F5F5F0] p-8 text-left rounded-lg">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 flex items-center justify-center rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20` }}>
+                    <Icon className="w-6 h-6" style={{ color: COLORS.ACCENT_COLOR }} />
                   </div>
+                  <h3 className="text-xl font-semibold text-[#0D0D0D]">{label}</h3>
                 </div>
+                <ul className="space-y-3">
+                  {items.map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-gray-600 text-sm">
+                      <span className="w-1.5 h-1.5 mt-2 flex-shrink-0" style={{ backgroundColor: COLORS.ACCENT_COLOR }} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Mur LED Highlight */}
+      {/* 5. Mur LED */}
       <section className="py-24 px-6 bg-[#0D0D0D]">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -188,147 +365,8 @@ export default function Capacites() {
         </div>
       </section>
 
-      {/* Matériel Audiovisuel */}
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <SectionTitle title="Matériel audiovisuel" align="left" />
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-[#F5F5F0] p-8 text-left rounded-lg">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 flex items-center justify-center rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20` }}>
-                  <Lightbulb className="w-6 h-6" style={{ color: COLORS.ACCENT_COLOR }} />
-                </div>
-                <h3 className="text-xl font-semibold text-[#0D0D0D]">Éclairage</h3>
-              </div>
-              <ul className="space-y-3">
-                {lighting.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-gray-600 text-sm">
-                    <span className="w-1.5 h-1.5 mt-2 flex-shrink-0" style={{ backgroundColor: COLORS.ACCENT_COLOR }} />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-[#F5F5F0] p-8 text-left rounded-lg">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 flex items-center justify-center rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20` }}>
-                  <Monitor className="w-6 h-6" style={{ color: COLORS.ACCENT_COLOR }} />
-                </div>
-                <h3 className="text-xl font-semibold text-[#0D0D0D]">Vidéo</h3>
-              </div>
-              <ul className="space-y-3">
-                {video.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-gray-600 text-sm">
-                    <span className="w-1.5 h-1.5 mt-2 flex-shrink-0" style={{ backgroundColor: COLORS.ACCENT_COLOR }} />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="bg-[#F5F5F0] p-8 text-left rounded-lg">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 flex items-center justify-center rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20` }}>
-                  <Speaker className="w-6 h-6" style={{ color: COLORS.ACCENT_COLOR }} />
-                </div>
-                <h3 className="text-xl font-semibold text-[#0D0D0D]">Son</h3>
-              </div>
-              <ul className="space-y-3">
-                {sound.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-gray-600 text-sm">
-                    <span className="w-1.5 h-1.5 mt-2 flex-shrink-0" style={{ backgroundColor: COLORS.ACCENT_COLOR }} />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Logistics & Access */}
-      <section className="py-24 px-6 bg-[#F5F5F0]">
-        <div className="max-w-6xl mx-auto">
-          <SectionTitle title="Logistique & Accès" align="left" />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-            {logistics.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white p-6 flex items-start gap-4 text-left rounded-lg"
-              >
-                <div className="w-12 h-12 bg-[#0D0D0D] flex items-center justify-center flex-shrink-0 rounded-lg">
-                  <item.icon className="w-5 h-5" style={{ color: COLORS.ACCENT_COLOR }} />
-                </div>
-                <p className="text-gray-700 text-sm leading-relaxed pt-3">{item.text}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Normes */}
-      <section className="py-16 px-6 bg-[#0D0D0D]">
-        <div className="max-w-4xl mx-auto">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex flex-col md:flex-row items-start justify-start gap-8">
-            <div className="flex items-center gap-4 px-8 py-4 bg-white/5 text-left rounded-lg">
-              <Shield className="w-8 h-8" style={{ color: COLORS.ACCENT_COLOR }} />
-              <div>
-                <p className="text-white font-medium">Normes ERP</p>
-                <p className="text-gray-400 text-sm">Établissement Recevant du Public</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-4 px-8 py-4 bg-white/5 text-left rounded-lg">
-              <Accessibility className="w-8 h-8" style={{ color: COLORS.ACCENT_COLOR }} />
-              <div>
-                <p className="text-white font-medium">Accessibilité PMR</p>
-                <p className="text-gray-400 text-sm">Personnes à Mobilité Réduite</p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Équipements Section */}
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <SectionTitle title="Équipements" align="left" />
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            {[
-              { icon: Truck, title: "Entrée véhicules", desc: "Exposition possible dans la salle" },
-              { icon: Shield, title: "Vestiaire équipé", desc: "Capacité 450 personnes" },
-              { icon: Monitor, title: "Matériel audiovisuel", desc: "Équipement complet inclus" },
-              { icon: Maximize2, title: "Office traiteur", desc: "Cuisine professionnelle équipée" },
-              { icon: Accessibility, title: "Loge aménagée", desc: "Avec accès privatif" },
-              { icon: Speaker, title: "Bar aménagé", desc: "Service professionnel" },
-              { icon: Lightbulb, title: "Fumoir", desc: "Espace dédié" },
-              { icon: Layers, title: "Climatisation", desc: "Chauffage et traitement air" },
-              { icon: Monitor, title: "Fibre optique", desc: "Wi-Fi très haut débit" },
-            ].map((item, index) => (
-              <motion.div
-                key={item.title + index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className="text-left"
-              >
-                <div className="w-16 h-16 flex items-center justify-center mb-4 rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}10` }}>
-                  <item.icon className="w-8 h-8" style={{ color: COLORS.ACCENT_COLOR }} />
-                </div>
-                <h3 className="text-lg font-semibold text-[#0D0D0D] mb-2">{item.title}</h3>
-                <p className="text-gray-600 text-sm">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* 6. Nos équipements (grille 5×2) */}
+      <TrustSignals />
     </div>
   );
 }
