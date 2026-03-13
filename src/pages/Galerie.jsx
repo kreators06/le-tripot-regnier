@@ -14,7 +14,7 @@ export default function Galerie() {
 
   return (
     <div className="pt-20">
-      <PageSEO title="Galerie Photos" description="Parcourez la galerie photos du Tripot Régnier et découvrez l'ambiance unique de notre salle événementielle de 700m² à Paris 15e." />
+      <PageSEO title="Galerie photos | Le Tripot Régnier" description="Parcourez la galerie photos du Tripot Régnier et découvrez l'ambiance unique de notre salle événementielle de 700m² à Paris 15e." />
       {/* Gallery Section */}
       <section className="py-16 px-4 bg-[#F5F5F0]">
         <div className="max-w-[1600px] mx-auto">

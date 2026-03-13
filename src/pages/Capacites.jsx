@@ -60,7 +60,7 @@ const logistics = [
 export default function Capacites() {
   return (
     <div className="pt-20">
-      <PageSEO title="Espaces & Équipements" description="700m² modulables, mur LED immersif, système son professionnel, éclairage scénique. Découvrez les équipements techniques complets du Tripot Régnier." />
+      <PageSEO title="Espaces & Équipements | Le Tripot Régnier" description="700m² modulables, mur LED immersif, système son professionnel, éclairage scénique. Découvrez les équipements techniques complets du Tripot Régnier." />
 
       {/* Photo Header - Replacing dark hero */}
       <div className="grid grid-cols-3 h-64 md:h-80">
