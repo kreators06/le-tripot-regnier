@@ -214,11 +214,29 @@ export default function Contact() {
                     />
                   </div>
 
+                  {/* Consentement RGPD */}
+                  <div className="flex items-start gap-3">
+                    <input
+                      type="checkbox"
+                      id="consentement"
+                      checked={formData.consentement}
+                      onChange={(e) => setFormData({ ...formData, consentement: e.target.checked })}
+                      required
+                      className="mt-1 w-4 h-4 flex-shrink-0 cursor-pointer accent-[#d4b351ff]"
+                    />
+                    <label htmlFor="consentement" className="text-xs text-gray-600 leading-relaxed cursor-pointer">
+                      J'accepte que mes données personnelles soient traitées par Le Tripot Régnier dans le cadre de ma demande de contact, conformément à la{' '}
+                      <a href="/PolitiqueConfidentialite" className="underline hover:text-gray-900" style={{ color: COLORS.ACCENT_COLOR }}>
+                        politique de confidentialité
+                      </a>. *
+                    </label>
+                  </div>
+
                   {submitError && <p className="text-red-500 text-sm">{submitError}</p>}
 
                   <Button
                     type="submit"
-                    disabled={isSubmitting}
+                    disabled={isSubmitting || !formData.consentement}
                     className="w-full text-white py-4 text-base font-semibold tracking-wide rounded-lg transition-all"
                     style={{ backgroundColor: COLORS.ACCENT_COLOR, borderColor: COLORS.ACCENT_COLOR }}
                     onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR_HOVER; }}
