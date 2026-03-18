@@ -274,16 +274,10 @@ export default function Layout({ children, currentPageName }) {
             <div>
               <h4 className="font-medium mb-6 tracking-wide" style={{ color: COLORS.ACCENT_COLOR }}>Contact</h4>
               <ul className="space-y-4 text-left">
-                <li className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: COLORS.ACCENT_COLOR }} />
-                  <span className="text-gray-400 text-sm">
-                    10 – 12 rue Mathurin Régnier<br />75015 Paris
-                  </span>
-                </li>
                 <li className="flex items-center gap-3">
                   <Phone className="w-5 h-5" style={{ color: COLORS.ACCENT_COLOR }} />
-                  <a href="tel:+33145260458" className="text-gray-400 hover:text-white transition-colors text-sm">
-                    01 45 26 04 58
+                  <a href="tel:+33661060710" className="text-gray-400 hover:text-white transition-colors text-sm">
+                    06.61.06.07.10
                   </a>
                 </li>
                 <li className="flex items-center gap-3">
