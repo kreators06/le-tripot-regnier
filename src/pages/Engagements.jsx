@@ -62,7 +62,7 @@ const ecoActions = [
   { icon: Droplets, title: "Économie d'eau", description: "Systèmes optimisés pour réduire la consommation" },
   { icon: Lightbulb, title: "Éclairage LED", description: "100% LED pour une efficacité énergétique maximale" },
   { icon: ThermometerSun, title: "Climatisation réversible", description: "Système performant et économe en énergie" },
-  { icon: Gauge, title: "Équipements à détection", description: "Automatisation intelligente des ressources" }
+  { icon: Sliders, title: "Équipements à détection", description: "Automatisation intelligente des ressources" }
 ];
 
 export default function Engagements() {
