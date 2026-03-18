@@ -58,9 +58,9 @@ export default function MentionsLegales() {
             >
               <h2 className="text-2xl font-semibold text-[#0D0D0D] mb-4">2. Hébergement</h2>
               <div className="bg-[#F5F5F0] p-6 rounded-lg">
-                <p className="text-gray-700 mb-2"><strong>Hébergeur :</strong> [Nom de l'hébergeur]</p>
-                <p className="text-gray-700 mb-2"><strong>Adresse :</strong> [Adresse de l'hébergeur]</p>
-                <p className="text-gray-700"><strong>Téléphone :</strong> [Téléphone de l'hébergeur]</p>
+                <p className="text-gray-700 mb-2"><strong>Hébergeur :</strong> Base44 Ltd</p>
+                <p className="text-gray-700 mb-2"><strong>Site :</strong> <a href="https://base44.com" className="underline">base44.com</a></p>
+                <p className="text-gray-700"><strong>Contact :</strong> support@base44.com</p>
               </div>
             </motion.div>
 
