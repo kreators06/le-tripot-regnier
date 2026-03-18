@@ -139,7 +139,7 @@ export default function Contact() {
       </section>
 
       {/* ── Formulaire + Coordonnées ───────────────────────────────────────── */}
-      <section className="py-20 px-6 bg-[#F9F9F7]">
+      <section className="py-10 px-6 bg-[#F9F9F7]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
 
@@ -296,7 +296,7 @@ export default function Contact() {
       </section>
 
       {/* ── Privateaser Widget ────────────────────────────────────────────── */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-10 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
