@@ -18,7 +18,6 @@ import {
 import SectionTitle from '@/components/ui/SectionTitle';
 import CTABanner from '@/components/ui/CTABanner';
 import { COLORS } from '@/components/config/colors';
-import { IMAGES } from '@/components/config/images';
 import PageSEO from '@/components/PageSEO';
 
 const pillars = [
