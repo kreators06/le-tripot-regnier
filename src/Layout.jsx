@@ -145,18 +145,18 @@ export default function Layout({ children, currentPageName }) {
               ))}
               <Link
                 to={createPageUrl('Contact')}
-                className="px-6 py-2.5 text-xs font-semibold tracking-[0.12em] uppercase transition-all duration-300 rounded-full border-2 bg-transparent"
+                className="px-6 py-2.5 text-xs font-semibold tracking-[0.12em] uppercase transition-all duration-300 rounded-full border-2 text-white"
                 style={{
                   borderColor: COLORS.ACCENT_COLOR,
-                  color: COLORS.ACCENT_COLOR,
+                  backgroundColor: COLORS.ACCENT_COLOR,
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR;
-                  e.currentTarget.style.color = 'white';
-                }}
-                onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = 'transparent';
                   e.currentTarget.style.color = COLORS.ACCENT_COLOR;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR;
+                  e.currentTarget.style.color = 'white';
                 }}
               >
                 CONTACT
