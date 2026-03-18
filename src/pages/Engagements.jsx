@@ -44,7 +44,7 @@ const pillars = [
     ]
   },
   {
-    icon: Handshake,
+    icon: HandshakeIcon,
     title: "Esprit d'équipe",
     description: "Nous cultivons des collaborations responsables avec nos partenaires et clients, créant un cercle vertueux où chacun contribue à l'excellence collective.",
     points: [
