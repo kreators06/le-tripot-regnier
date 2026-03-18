@@ -8,11 +8,11 @@ import {
   Users, 
   Handshake, 
   Leaf, 
-  Droplets, 
+  Droplet, 
   Lightbulb,
   Wind,
   Volume2,
-  ThermometerSun,
+  Thermometer,
   Sliders
 } from 'lucide-react';
 import SectionTitle from '@/components/ui/SectionTitle';
