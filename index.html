@@ -1,11 +1,75 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="https://base44.com/logo_v2.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="manifest" href="/manifest.json" />
-    <title>Base44 APP</title>
+    <meta name="theme-color" content="#0D0D0D" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://letripotregnier.fr/assets/logo.png" />
+    <link rel="apple-touch-icon" href="https://letripotregnier.fr/assets/logo.png" />
+
+    <!-- SEO de base (écrasé dynamiquement par page) -->
+    <title>Le Tripot Régnier | Salle événementielle Paris 15</title>
+    <meta name="description" content="Le Tripot Régnier, salle de réception événementielle à Paris 15e. 700m² modulables pour soirées, dîners, conférences, défilés et showrooms." />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Le Tripot Régnier" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Le Tripot Régnier" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:url" content="https://letripotregnier.fr/" />
+    <meta property="og:title" content="Le Tripot Régnier | Salle événementielle Paris 15" />
+    <meta property="og:description" content="700m² modulables pour soirées privées, dîners d'entreprise, conférences, défilés et showrooms. Paris 15e." />
+    <meta property="og:image" content="https://letripotregnier.fr/assets/photos/photo-salle-vide.jpg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Le Tripot Régnier | Salle événementielle Paris 15" />
+    <meta name="twitter:description" content="700m² modulables pour vos événements à Paris 15e." />
+    <meta name="twitter:image" content="https://letripotregnier.fr/assets/photos/photo-salle-vide.jpg" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://letripotregnier.fr/" />
+
+    <!-- Préconnexion fonts Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Schema.org LocalBusiness (statique, enrichi dynamiquement par page) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["EventVenue", "LocalBusiness"],
+      "@id": "https://letripotregnier.fr",
+      "name": "Le Tripot Régnier",
+      "description": "Salle de réception événementielle Art Déco et industriel à Paris 15e. 700m² modulables pour soirées, conférences, défilés et showrooms.",
+      "url": "https://letripotregnier.fr",
+      "telephone": "+33661060710",
+      "email": "contact@letripotregnier.fr",
+      "image": "https://letripotregnier.fr/assets/photos/photo-salle-vide.jpg",
+      "maximumAttendeeCapacity": 500,
+      "priceRange": "€€€",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "10-12 rue Mathurin Régnier",
+        "addressLocality": "Paris",
+        "postalCode": "75015",
+        "addressCountry": "FR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 48.8422,
+        "longitude": 2.2985
+      },
+      "sameAs": [
+        "https://www.instagram.com/letripotregnier",
+        "https://www.linkedin.com/company/letripotregnier",
+        "https://www.facebook.com/letripotregnier"
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
