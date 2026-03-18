@@ -97,6 +97,7 @@ export default function Contact() {
     <div>
       <PageSEO
         title="Contact | Le Tripot Régnier"
+        canonicalPath="/Contact"
         description="Contactez Le Tripot Régnier pour privatiser notre salle événementielle de 700m². 10-12 rue Mathurin Régnier, 75015 Paris — 06.61.06.07.10."
       />
 

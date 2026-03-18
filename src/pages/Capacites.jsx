@@ -138,7 +138,7 @@ export default function Capacites() {
 
   return (
     <div>
-      <PageSEO title="Espaces & Équipements | Le Tripot Régnier" description="700m² modulables, système son professionnel, éclairage scénique. Découvrez les équipements techniques complets du Tripot Régnier." />
+      <PageSEO title="Espaces & Équipements | Le Tripot Régnier" description="700m² modulables, système son professionnel, éclairage scénique. Découvrez les équipements techniques complets du Tripot Régnier." canonicalPath="/Capacites" />
 
       {/* Lightbox */}
       <AnimatePresence>
