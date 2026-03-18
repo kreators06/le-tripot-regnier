@@ -33,13 +33,13 @@ const spaces = [
   { title: "Loge Privée", surface: "", image: IMAGES.spaces.logePrivee.src, description: "Loge avec accès privé comprenant : écran TV, canapé, toilettes, douche, lavabo." },
 ];
 
-// 6 tuiles : 5 configs + 1 carte "Événement sur mesure"
+// 6 tuiles : 5 configs + 1 carte "Tournage / Événement sur mesure"
 const configurations = [
   { name: "Défilé", capacity: "< 200 pers.", image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format" },
   { name: "Dîner assis", capacity: "< 220 pers.", image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&auto=format" },
   { name: "Conférence", capacity: "< 250 pers.", image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&auto=format" },
   { name: "Cocktail / Soirée", capacity: "< 500 pers.", image: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&auto=format" },
-  { name: "Tournage", capacity: "Sur mesure", image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&auto=format" },
+  { name: "Showroom", capacity: "Sur mesure", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&auto=format" },
 ];
 
 const testimonials = [
@@ -58,9 +58,17 @@ function HoverSliderCard({ space, onClick }) {
 
   useEffect(() => {
     if (isHovering) {
-      timerRef.current = setInterval(() => {
-        setCurrentIndex((prev) => (prev + 1) % space.images.length);
-      }, 900);
+      // Première image quasi immédiate (50ms), puis toutes les 1500ms
+      const firstTimeout = setTimeout(() => {
+        setCurrentIndex(1 % space.images.length);
+        timerRef.current = setInterval(() => {
+          setCurrentIndex((prev) => (prev + 1) % space.images.length);
+        }, 1500);
+      }, 50);
+      return () => {
+        clearTimeout(firstTimeout);
+        clearInterval(timerRef.current);
+      };
     } else {
       clearInterval(timerRef.current);
       setCurrentIndex(0);
@@ -159,8 +167,8 @@ export default function Home() {
             <p className="text-sm md:text-base text-white/80 tracking-[0.3em] uppercase mb-5 font-light">
               Le Tripot Régnier — Paris 15ème
             </p>
-            <h1 className="text-3xl md:text-5xl text-white font-bold tracking-tight leading-[1.15]">
-              Salle parisienne où<br />vos événements prennent vie.
+            <h1 className="text-white font-bold tracking-tight leading-[1.15]" style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.8rem)', maxWidth: '560px' }}>
+              Salle parisienne où vos événements prennent vie.
             </h1>
           </motion.div>
         </div>
@@ -239,13 +247,14 @@ export default function Home() {
               </motion.div>
             ))}
 
-            {/* Carte "Événement sur mesure" — fond noir, bordure dorée */}
+            {/* Carte "Tournage — Événement sur mesure" — fond noir, bordure dorée */}
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}
               className="overflow-hidden rounded-xl flex items-center justify-center"
               style={{ backgroundColor: '#0D0D0D', aspectRatio: '4/3', border: '2px solid #C5A55A' }}
             >
               <div className="text-center p-8">
-                <h3 className="text-white text-xl font-semibold mb-6">Événement sur mesure</h3>
+                <h3 className="text-white text-xl font-semibold mb-1">Tournage</h3>
+                <p className="text-sm mb-6" style={{ color: '#C5A55A' }}>Événement sur mesure</p>
                 <Link
                   to={createPageUrl('Contact')}
                   className="inline-flex items-center gap-2 px-6 py-2.5 bg-transparent font-semibold text-sm rounded-full transition-all duration-300"
