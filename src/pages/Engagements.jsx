@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { 
   Heart, 
   Users, 
-  Handshake, 
+  HandshakeIcon, 
   Leaf, 
   Droplet, 
   Lightbulb,
