@@ -22,8 +22,8 @@ import { COLORS } from '@/components/config/colors';
 const equipments = [
   {
     icon: Car,
-    title: "Entrée voiture",
-    description: "Jusqu'à 4 voitures dans la salle",
+    title: "Entrée voitures",
+    description: "Exposition dans la salle principale",
   },
   {
     icon: Shirt,
@@ -33,12 +33,12 @@ const equipments = [
   {
     icon: Monitor,
     title: "Matériel audiovisuel",
-    description: "Son, lumière, vidéo pro",
+    description: "Son, lumière, vidéo",
   },
   {
     icon: Utensils,
     title: "Office traiteur",
-    description: "Cuisine professionnelle",
+    description: "",
   },
   {
     icon: Star,
@@ -47,8 +47,8 @@ const equipments = [
   },
   {
     icon: Coffee,
-    title: "Bar",
-    description: "Service professionnel",
+    title: "Bar équipé",
+    description: "",
   },
   {
     icon: Thermometer,
@@ -69,7 +69,7 @@ const equipments = [
 
 export default function TrustSignals() {
   return (
-    <section className="py-16 md:py-24 px-6 bg-white">
+    <section className="py-16 md:py-24 px-6 bg-[#0D0D0D]">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -78,11 +78,8 @@ export default function TrustSignals() {
           transition={{ duration: 0.4 }}
           className="text-center mb-12"
         >
-          <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4 font-light">
-            Le lieu en détail
-          </p>
-          <h2 className="text-3xl md:text-4xl font-semibold text-[#0D0D0D] tracking-tight">
-            Nos <span style={{ color: COLORS.ACCENT_COLOR }}>Équipements</span>
+          <h2 className="text-3xl md:text-4xl font-semibold text-white tracking-tight">
+            Nos <span style={{ color: COLORS.ACCENT_COLOR }}>équipements</span>
           </h2>
         </motion.div>
 
@@ -97,16 +94,18 @@ export default function TrustSignals() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.04, duration: 0.3 }}
-                className="flex flex-col items-center text-center p-5 rounded-xl border border-gray-100 bg-white hover:bg-gray-50 hover:border-gray-200 transition-all duration-300"
+                className="flex flex-col items-center text-center p-5 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
               >
                 <div
                   className="w-11 h-11 rounded-lg flex items-center justify-center mb-3 flex-shrink-0"
-                  style={{ backgroundColor: `${COLORS.ACCENT_COLOR}18` }}
+                  style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20` }}
                 >
                   <Icon className="w-5 h-5" style={{ color: COLORS.ACCENT_COLOR }} />
                 </div>
-                <p className="text-sm font-semibold text-[#0D0D0D] leading-tight">{item.title}</p>
-                <p className="text-xs text-gray-500 mt-1 leading-relaxed">{item.description}</p>
+                <p className="text-sm font-semibold text-white leading-tight">{item.title}</p>
+                {item.description && (
+                  <p className="text-xs text-gray-400 mt-1 leading-relaxed">{item.description}</p>
+                )}
               </motion.div>
             );
           })}
