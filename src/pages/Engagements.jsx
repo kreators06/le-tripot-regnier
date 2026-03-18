@@ -273,14 +273,14 @@ export default function Engagements() {
             <h2 className="text-2xl md:text-3xl text-white font-semibold tracking-tight text-center sm:text-left">
               Venez découvrir le lieu
             </h2>
-            <a
-              href="/Contact"
+            <Link
+              to="/Contact"
               className="inline-flex items-center gap-3 px-8 py-4 bg-white text-[#0D0D0D] font-semibold tracking-wide text-sm hover:text-white transition-all duration-300 rounded-md flex-shrink-0"
               onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#d4b351ff'; e.currentTarget.style.color = 'white'; }}
               onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'white'; e.currentTarget.style.color = '#0D0D0D'; }}
             >
               NOUS CONTACTER
-            </a>
+            </Link>
           </div>
         </div>
       </section>
