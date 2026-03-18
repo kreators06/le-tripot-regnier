@@ -12,42 +12,26 @@ export default function LogoMarquee() {
   return (
     <div className="w-full">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <h3 className="text-center text-xs tracking-[0.3em] uppercase text-gray-500 mb-10 md:mb-12 font-light">
-          Références & Partenaires
-        </h3>
       </div>
       
       <style>{`
-        @keyframes marquee {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(calc(-50%));
-          }
+        @keyframes marquee-scroll {
+          0%   { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
         }
-        
-        .marquee-container {
-          overflow: hidden;
-          background: white;
-        }
-        
-        .marquee-content {
+        .marquee-track {
           display: flex;
-          gap: 1.5rem;
-          animation: marquee 48s linear infinite;
+          width: max-content;
+          animation: marquee-scroll 48s linear infinite;
+          gap: 2rem;
         }
-        
         @media (max-width: 767px) {
-          .marquee-content {
-            animation: marquee 16s linear infinite;
-            gap: 1rem;
-          }
+          .marquee-track { animation-duration: 20s; gap: 1rem; }
         }
       `}</style>
       
-      <div className="marquee-container">
-        <div className="marquee-content">
+      <div style={{ overflow: 'hidden' }}>
+        <div className="marquee-track">
           {doubleLogos.map((logo, index) => (
             <div
               key={index}
