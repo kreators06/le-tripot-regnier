@@ -16,7 +16,7 @@ export default function Histoire() {
       <PageSEO title="Notre histoire | Le Tripot Régnier" description="Découvrez l'histoire du Tripot Régnier, de 1904 à aujourd'hui. Ancien bains-douches devenu lieu événementiel Art Déco de 700m² au cœur de Paris 15e." />
 
       {/* ── Origine du nom — SECTION 1 ─────────────────────────────────────── */}
-      <section className="py-20 px-6">
+      <section className="py-10 px-6">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -37,7 +37,7 @@ export default function Histoire() {
       </section>
 
       {/* ── Main History Section — SECTION 2 ──────────────────────────────── */}
-      <section className="py-20 px-6 border-t border-white/10">
+      <section className="py-10 px-6 border-t border-white/10">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             {/* Text */}
@@ -120,7 +120,7 @@ export default function Histoire() {
       </section>
 
       {/* ── CTA centré ────────────────────────────────────────────────────── */}
-      <section className="py-16 px-6 border-t border-white/10">
+      <section className="py-10 px-6 border-t border-white/10">
         <div className="max-w-2xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
