@@ -167,8 +167,8 @@ export default function Home() {
             <p className="text-sm md:text-base text-white/80 tracking-[0.3em] uppercase mb-5 font-light">
               Le Tripot Régnier — Paris 15ème
             </p>
-            <h1 className="text-white font-bold tracking-tight leading-[1.15]" style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.8rem)', maxWidth: '560px' }}>
-              Salle parisienne où vos événements prennent vie.
+            <h1 className="text-white font-bold tracking-tight leading-[1.15] text-4xl md:text-5xl lg:text-6xl whitespace-nowrap">
+              Salle parisienne où<br />vos événements prennent vie.
             </h1>
           </motion.div>
         </div>
