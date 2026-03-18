@@ -58,9 +58,9 @@ const pillars = [
 
 const ecoActions = [
   { icon: Leaf, title: "Développement durable", description: "Engagement environnemental dans toutes nos activités" },
-  { icon: Droplets, title: "Économie d'eau", description: "Systèmes optimisés pour réduire la consommation" },
+  { icon: Droplet, title: "Économie d'eau", description: "Systèmes optimisés pour réduire la consommation" },
   { icon: Lightbulb, title: "Éclairage LED", description: "100% LED pour une efficacité énergétique maximale" },
-  { icon: ThermometerSun, title: "Climatisation réversible", description: "Système performant et économe en énergie" },
+  { icon: Thermometer, title: "Climatisation réversible", description: "Système performant et économe en énergie" },
   { icon: Sliders, title: "Équipements à détection", description: "Automatisation intelligente des ressources" }
 ];
 
