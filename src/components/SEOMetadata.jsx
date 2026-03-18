@@ -94,6 +94,14 @@ function setMeta(selector, createAttr, content) {
 export default function SEOMetadata() {
   useEffect(() => {
     document.title = TITLE;
+    // canonical home
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', 'https://letripotregnier.fr/');
 
     setMeta('meta[name="description"]', { name: 'description' }, DESCRIPTION);
     setMeta('meta[name="keywords"]', { name: 'keywords' }, 'salle événementielle Paris, location salle Paris 15, espace réception Paris, salle privatisée soirée, Le Tripot Régnier');
