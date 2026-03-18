@@ -72,9 +72,10 @@ export default function Engagements() {
       <section className="relative py-32 px-6 bg-[#0D0D0D] overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img 
-            src={IMAGES.engagements.hero.src}
-            alt={IMAGES.engagements.hero.alt}
+            src="https://letripotregnier.fr/assets/photos/photo-salle-vide.jpg"
+            alt="Salle événementielle Le Tripot Régnier"
             className="w-full h-full object-cover"
+            loading="lazy"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#0D0D0D] via-[#0D0D0D]/90 to-[#0D0D0D]/70" />
