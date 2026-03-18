@@ -238,15 +238,18 @@ export default function Layout({ children, currentPageName }) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             {/* Brand */}
             <div>
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-3 mb-4">
                 <img 
                   src="https://letripotregnier.fr/assets/logo.png" 
                   alt="Le Tripot Régnier" 
                   className="h-12 w-auto"
                 />
               </div>
+              <p className="text-gray-400 text-sm leading-relaxed text-left mb-1">
+                10 – 12 rue Mathurin Régnier
+              </p>
               <p className="text-gray-400 text-sm leading-relaxed text-left">
-                Salle parisienne où vos événements prennent vie.
+                75015 Paris
               </p>
             </div>
 
