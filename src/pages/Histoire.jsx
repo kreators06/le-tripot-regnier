@@ -13,7 +13,7 @@ import PageSEO from '@/components/PageSEO';
 export default function Histoire() {
   return (
     <div className="pt-24 bg-[#0D0D0D] min-h-screen">
-      <PageSEO title="Notre histoire | Le Tripot Régnier" description="Découvrez l'histoire du Tripot Régnier, de 1904 à aujourd'hui. Ancien bains-douches devenu lieu événementiel Art Déco de 700m² au cœur de Paris 15e." />
+      <PageSEO title="Notre histoire | Le Tripot Régnier" description="Découvrez l'histoire du Tripot Régnier, de 1904 à aujourd'hui. Ancien bains-douches devenu lieu événementiel Art Déco de 700m² au cœur de Paris 15e." canonicalPath="/Histoire" />
 
       {/* ── Origine du nom — SECTION 1 ─────────────────────────────────────── */}
       <section className="py-10 px-6">
