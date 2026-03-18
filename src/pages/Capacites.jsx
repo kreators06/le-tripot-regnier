@@ -85,7 +85,16 @@ function HoverSliderCard({ space, onClick }) {
 
   useEffect(() => {
     if (isHovering) {
-      timerRef.current = setInterval(() => setCurrentIndex((prev) => (prev + 1) % space.images.length), 900);
+      const firstTimeout = setTimeout(() => {
+        setCurrentIndex(1 % space.images.length);
+        timerRef.current = setInterval(() => {
+          setCurrentIndex((prev) => (prev + 1) % space.images.length);
+        }, 1500);
+      }, 50);
+      return () => {
+        clearTimeout(firstTimeout);
+        clearInterval(timerRef.current);
+      };
     } else {
       clearInterval(timerRef.current);
       setCurrentIndex(0);
