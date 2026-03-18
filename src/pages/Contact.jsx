@@ -30,6 +30,7 @@ export default function Contact() {
     phone: "",
     societe: "",
     message: "",
+    consentement: false,
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
