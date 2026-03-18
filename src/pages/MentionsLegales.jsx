@@ -131,8 +131,8 @@ export default function MentionsLegales() {
             >
               <h2 className="text-2xl font-semibold text-[#0D0D0D] mb-4">7. Crédits</h2>
               <p className="text-gray-700 leading-relaxed">
-                <strong>Conception et réalisation :</strong> [Nom de l'agence/développeur]<br />
-                <strong>Crédits photos :</strong> [Nom du photographe] / Unsplash
+                <strong>Conception et réalisation :</strong> Base44 — base44.com<br />
+                <strong>Crédits photos :</strong> Le Tripot Régnier
               </p>
             </motion.div>
 
