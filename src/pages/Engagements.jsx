@@ -13,7 +13,7 @@ import {
   Wind,
   Volume2,
   ThermometerSun,
-  Gauge
+  Sliders
 } from 'lucide-react';
 import SectionTitle from '@/components/ui/SectionTitle';
 import CTABanner from '@/components/ui/CTABanner';
