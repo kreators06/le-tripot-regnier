@@ -112,10 +112,10 @@ export default function Contact() {
             muted
             playsInline
             preload="metadata"
-            poster={IMAGES.home.heroPoster}
+            poster={IMAGES.heroPoster}
             className="w-full h-full object-cover"
           >
-            <source src={IMAGES.home.heroVideo} type="video/mp4" />
+            <source src={IMAGES.heroVideo} type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-black/50" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />

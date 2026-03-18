@@ -146,8 +146,8 @@ export default function Home() {
       {/* ── Hero ────────────────────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <video ref={videoRef} autoPlay loop muted playsInline preload="metadata" poster={IMAGES.home.heroPoster} className="w-full h-full object-cover">
-            <source src={IMAGES.home.heroVideo} type="video/mp4" />
+          <video ref={videoRef} autoPlay loop muted playsInline preload="metadata" poster={IMAGES.heroPoster} className="w-full h-full object-cover">
+            <source src={IMAGES.heroVideo} type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-black/40" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
