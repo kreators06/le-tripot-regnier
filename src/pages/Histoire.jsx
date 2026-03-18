@@ -129,7 +129,7 @@ export default function Histoire() {
             className="flex flex-col items-center gap-6"
           >
             <h2 className="text-2xl md:text-4xl text-white font-semibold tracking-tight">
-              Découvrir l'ambiance unique du Tripot Régnier
+              Découvrir l'ambiance unique<br />du Tripot Régnier
             </h2>
             <Link
               to={createPageUrl('Contact')}
