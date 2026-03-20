@@ -113,12 +113,12 @@ function HoverSliderCard({ space, onClick }) {
 
   return (
     <div
-      className="overflow-hidden cursor-pointer"
+      className="cursor-pointer"
       onClick={() => onClick(space.images[currentIndex])}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
-      <div className="relative overflow-hidden" style={{ aspectRatio: '4/3', background: '#111' }}>
+      <div className="relative overflow-hidden rounded-lg" style={{ aspectRatio: '4/3', background: '#111' }}>
         {space.images.map((src, i) => (
           <img key={i} src={src} alt={`${space.title} — Le Tripot Régnier vue ${i + 1}`}
             className="absolute inset-0 w-full h-full object-cover"
