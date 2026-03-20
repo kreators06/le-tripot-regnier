@@ -119,18 +119,12 @@ export default function TrustSignals() {
           >
             <Link
               to={createPageUrl('Capacites')}
-              className="flex flex-row items-center justify-center gap-2 text-center p-4 rounded-xl border-2 h-full transition-all duration-300 group"
-              style={{ borderColor: COLORS.ACCENT_COLOR, color: COLORS.ACCENT_COLOR }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR;
-                e.currentTarget.style.color = 'white';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'transparent';
-                e.currentTarget.style.color = COLORS.ACCENT_COLOR;
-              }}
+              className="flex flex-row items-center justify-center gap-2 text-center p-4 rounded-xl h-full transition-all duration-300 group"
+              style={{ backgroundColor: COLORS.ACCENT_COLOR, color: '#000' }}
+              onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.85'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; }}
             >
-              <span className="text-xs font-semibold whitespace-nowrap">Voir nos équipements</span>
+              <span className="text-xs font-semibold whitespace-nowrap">Voir tous nos équipements</span>
               <ArrowRight className="w-3.5 h-3.5 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>

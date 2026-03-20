@@ -15,8 +15,8 @@ import { COLORS } from '@/components/config/colors';
 
 const sallePrincipaleImages = [
   "https://letripotregnier.fr/assets/photos/photo-salle-vide.jpg",
+  "https://letripotregnier.fr/assets/photos/shoootin-photo-5.jpg",
   "https://letripotregnier.fr/assets/photos/shoootin-photo-8.jpg",
-  "https://letripotregnier.fr/assets/photos/photo-mezzanine.jpg",
 ];
 
 const mezzanineImages = [
@@ -24,16 +24,23 @@ const mezzanineImages = [
   "https://letripotregnier.fr/assets/photos/photo-lounge-etage.jpeg",
 ];
 
-const spaces = [
-  { title: "Salle Principale", surface: "400 m²", images: sallePrincipaleImages, description: "Espace modulable équipé (son, lumière, projection vidéo) dotée d'un bar et d'un fumoir intérieur.", isHoverSlider: true },
-  { title: "Bar", surface: "", image: IMAGES.spaces.bar.src, description: "Bar équipé : four, machine à glaçons, réfrigérateur." },
-  { title: "Mezzanine", surface: "65 m²", images: mezzanineImages, description: "Espace en hauteur offrant une vue panoramique sur la salle.", isHoverSlider: true },
-  { title: "Hall d'accueil", surface: "", image: "https://letripotregnier.fr/assets/photos/photo-hall-entree-tripot-regnier.jpg", description: "Espace détente situé en prolongation de la mezzanine." },
-  { title: "Vestiaire", surface: "450 pers.", image: IMAGES.spaces.vestiaire.src, description: "Vestiaire équipé avec capacité de 450 personnes" },
-  { title: "Loge Privée", surface: "", image: IMAGES.spaces.logePrivee.src, description: "Loge avec accès privé comprenant : écran TV, canapé, toilettes, douche, lavabo." },
+const hallImages = [
+  "https://letripotregnier.fr/assets/photos/photo-hall-entree-tripot-regnier.jpg",
+  "https://letripotregnier.fr/assets/photos/hall%203.jpg",
+  "https://letripotregnier.fr/assets/photos/hall%202.jpg",
+  "https://letripotregnier.fr/assets/photos/hall%204.jpg",
 ];
 
-// 2 photos par config
+const spaces = [
+  { title: "Salle Principale", surface: "400 m²", images: sallePrincipaleImages, description: "Espace modulable équipé (son, lumière, projection vidéo) doté d'un bar et d'un fumoir intérieur.", isHoverSlider: true },
+  { title: "Bar", surface: "", image: IMAGES.spaces.bar.src, description: "Bar équipé : four, machine à glaçons, réfrigérateur." },
+  { title: "Mezzanine", surface: "65 m²", images: mezzanineImages, description: "Espace en hauteur offrant une vue panoramique sur la salle.", isHoverSlider: true },
+  { title: "Hall d'accueil", surface: "", images: hallImages, description: "Espace détente situé en prolongation de la mezzanine.", isHoverSlider: true },
+  { title: "Vestiaire", surface: "450 pers.", image: IMAGES.spaces.vestiaire.src, description: "Vestiaire équipé avec capacité de 450 personnes." },
+  { title: "Loge privée", surface: "", image: IMAGES.spaces.logePrivee.src, description: "Loge avec accès privé comprenant : écran TV, canapé, toilettes, douche, lavabo." },
+];
+
+// 3 photos par config dîner et conférence, 2+ pour showroom
 const configurations = [
   {
     name: "Défilé",
@@ -47,7 +54,8 @@ const configurations = [
     name: "Dîner assis",
     capacity: "< 220 pers.",
     images: [
-      "https://letripotregnier.fr/assets/photos/photo-grande-salle-table-baquet-europe1",
+      "https://letripotregnier.fr/assets/photos/photo-grande-salle-table-baquet-europe1.png",
+      "https://letripotregnier.fr/assets/photos/diner-canteloup.jpg",
       "https://letripotregnier.fr/assets/photos/photo-salle-principale-diner-europe1.jpeg",
     ],
   },
@@ -55,8 +63,9 @@ const configurations = [
     name: "Conférence",
     capacity: "< 250 pers.",
     images: [
-      "https://letripotregnier.fr/assets/photos/photo-grande-salle-JO-paris-2024-conference",
-      "https://letripotregnier.fr/assets/photos/photo-grande-salle-event-BPCE.png",
+      "https://letripotregnier.fr/assets/photos/photo-grande-salle-JO-paris-2024-conference.png",
+      "https://letripotregnier.fr/assets/photos/conference%20copie.jpg",
+      "https://letripotregnier.fr/assets/photos/conference.jpg",
     ],
   },
   {
@@ -69,21 +78,22 @@ const configurations = [
   },
   {
     name: "Showroom",
-    capacity: "Sur mesure",
+    capacity: "Showroom / exposition — Possibilité d'exposer des véhicules",
     images: [
       "https://letripotregnier.fr/assets/photos/photo-grande-salle-evenement-audi.jpeg",
+      "https://letripotregnier.fr/assets/photos/showroom.jpg",
       "https://letripotregnier.fr/assets/photos/photo-grande-salle-ecran-geant-voiture.jpg",
     ],
   },
 ];
 
 const testimonials = [
-  { quote: "Une équipe dynamique et super professionnelle gère cet espace très agréable, chaleureux et pratique.", author: "Louis Galopin", company: "", stars: 5 },
-  { quote: "Un grand merci pour votre sens du service professionnel et votre disponibilité tout au long de cette manifestation ! À très bientôt avec certitude !", author: "Mamadou Camara", company: "MConseil & Patrimoine – Cercle Odéon", stars: 5 },
-  { quote: "Un séminaire de formation parfaitement à la hauteur de nos attentes ! L'infrastructure est impeccable.", author: "AX Événementiel", company: "", stars: 5 },
-  { quote: "3 années que nous y tenons un événement annuel, une des meilleures salles de Paris tant pour ses espaces, sa localisation, son accès pour la logistique que pour l'excellence de leurs services et accompagnement dans l'organisation. Une super team pour un super lieu !", author: "Charlotte Leclère", company: "", stars: 5 },
-  { quote: "Salle bien équipée, staff aux petits soins.", author: "Pierre-Marie Achart", company: "", stars: 5 },
-  { quote: "Agréable et convivial.", author: "Boyer Liliane", company: "", stars: 4 },
+  { quote: "Une équipe dynamique et super professionnelle gère cet espace très agréable, chaleureux et pratique.", author: "Louis Galopin" },
+  { quote: "Un grand merci pour votre sens du service professionnel et votre disponibilité tout au long de cette manifestation ! À très bientôt avec certitude !", author: "Mamadou Camara" },
+  { quote: "Un séminaire de formation parfaitement à la hauteur de nos attentes ! L'infrastructure est impeccable.", author: "AX Événementiel" },
+  { quote: "3 années que nous y tenons un événement annuel, une des meilleures salles de Paris tant pour ses espaces, sa localisation, son accès pour la logistique que pour l'excellence de leurs services et accompagnement dans l'organisation. Une super team pour un super lieu !", author: "Charlotte Leclère" },
+  { quote: "Salle bien équipée, staff aux petits soins.", author: "Pierre-Marie Achart" },
+  { quote: "Agréable et convivial.", author: "Boyer Liliane" },
 ];
 
 // ─── Hover Slider Card ────────────────────────────────────────────────────────
@@ -133,7 +143,7 @@ function HoverSliderCard({ space, onClick }) {
       </div>
       <div className="pt-3 pb-3 px-5 bg-[#0D0D0D]">
         <h3 className="text-white text-base font-semibold">{space.title}</h3>
-        <p className="text-gray-400 text-sm mt-1 leading-relaxed">{space.description}</p>
+        <p className="text-[#DDD] text-sm mt-1 leading-relaxed">{space.description}</p>
       </div>
     </div>
   );
@@ -194,19 +204,125 @@ function ConfigCard({ config, index, onLightbox }) {
           <p className="text-white/80 text-xs">{config.capacity}</p>
         </div>
       </div>
-      </div>
-      );
-      }
+    </div>
+  );
+}
 
-      // ─── Stars ────────────────────────────────────────────────────────────────────
-function Stars({ count }) {
+// ─── Testimonials Slider ──────────────────────────────────────────────────────
+function TestimonialsSlider() {
+  const [startIndex, setStartIndex] = useState(0);
+  const visibleCount = 3;
+
+  const prev = () => setStartIndex((p) => (p - 1 + testimonials.length) % testimonials.length);
+  const next = () => setStartIndex((p) => (p + 1) % testimonials.length);
+
+  const visible = Array.from({ length: visibleCount }, (_, i) =>
+    testimonials[(startIndex + i) % testimonials.length]
+  );
+
   return (
-    <div className="flex gap-0.5 mb-3">
-      {[1,2,3,4,5].map(i => (
-        <svg key={i} className="w-4 h-4" fill={i <= count ? COLORS.ACCENT_COLOR : '#d1d5db'} viewBox="0 0 20 20">
-          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-        </svg>
-      ))}
+    <div className="relative">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {visible.map((testimonial, index) => (
+          <motion.div
+            key={`${startIndex}-${index}`}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.05 }}
+            className="text-left bg-[#F9F9F7] p-6 rounded-xl"
+          >
+            <p className="text-[#0D0D0D] text-sm leading-relaxed mb-5 italic">"{testimonial.quote}"</p>
+            <div className="pt-4 border-t border-gray-200">
+              <p className="text-[#0D0D0D] font-semibold text-sm">{testimonial.author}</p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+      {/* Flèches nav */}
+      <div className="flex justify-center gap-4 mt-8">
+        <button onClick={prev} className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition">
+          <ChevronLeft className="w-5 h-5 text-[#0D0D0D]" />
+        </button>
+        <button onClick={next} className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition">
+          <ChevronRight className="w-5 h-5 text-[#0D0D0D]" />
+        </button>
+      </div>
+    </div>
+  );
+}
+
+// ─── Spaces Slider (section Nos Espaces) ──────────────────────────────────────
+function SpacesSlider({ spaces, onLightbox }) {
+  const [startIndex, setStartIndex] = useState(0);
+  const visibleCount = 3;
+
+  const prev = () => setStartIndex((p) => (p - 1 + spaces.length) % spaces.length);
+  const next = () => setStartIndex((p) => (p + 1) % spaces.length);
+
+  const visible = Array.from({ length: visibleCount }, (_, i) =>
+    spaces[(startIndex + i) % spaces.length]
+  );
+
+  return (
+    <div className="relative">
+      {/* Flèches */}
+      <button onClick={prev}
+        className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-black/90 rounded-full p-2 text-white transition-all hidden md:flex items-center justify-center"
+        aria-label="Espace précédent"
+      >
+        <ChevronLeft className="w-5 h-5" />
+      </button>
+      <button onClick={next}
+        className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-black/90 rounded-full p-2 text-white transition-all hidden md:flex items-center justify-center"
+        aria-label="Espace suivant"
+      >
+        <ChevronRight className="w-5 h-5" />
+      </button>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 px-2">
+        {visible.map((space, idx) =>
+          space.isHoverSlider ? (
+            <HoverSliderCard key={`${startIndex}-${idx}`} space={space} onClick={onLightbox} />
+          ) : (
+            <div key={`${startIndex}-${idx}`} className="cursor-pointer group" onClick={() => onLightbox(space.image)}>
+              <div className="relative overflow-hidden rounded-lg" style={{ aspectRatio: '4/3' }}>
+                <img src={space.image} alt={`${space.title} — Le Tripot Régnier`} loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                {space.surface && (
+                  <span className="absolute top-3 right-3 font-bold rounded-full text-white bg-black" style={{ fontSize: '0.95rem', padding: '0.35rem 0.9rem' }}>
+                    {space.surface}
+                  </span>
+                )}
+              </div>
+              <div className="pt-3 pb-3 px-5 bg-[#0D0D0D]">
+                <h3 className="text-white text-base font-semibold">{space.title}</h3>
+                {space.description && <p className="text-[#DDD] text-sm mt-1 leading-relaxed">{space.description}</p>}
+              </div>
+            </div>
+          )
+        )}
+      </div>
+
+      {/* Flèches mobile */}
+      <div className="flex justify-center gap-4 mt-4 md:hidden">
+        <button onClick={prev} className="w-10 h-10 rounded-full bg-black/60 flex items-center justify-center text-white">
+          <ChevronLeft className="w-5 h-5" />
+        </button>
+        <button onClick={next} className="w-10 h-10 rounded-full bg-black/60 flex items-center justify-center text-white">
+          <ChevronRight className="w-5 h-5" />
+        </button>
+      </div>
+
+      {/* Dots */}
+      <div className="flex justify-center gap-2 mt-4">
+        {spaces.map((_, i) => (
+          <button key={i} onClick={() => setStartIndex(i)}
+            className="w-2 h-2 rounded-full transition-all"
+            style={{ backgroundColor: i === startIndex ? COLORS.ACCENT_COLOR : 'rgba(255,255,255,0.3)' }}
+          />
+        ))}
+      </div>
     </div>
   );
 }
@@ -215,6 +331,8 @@ function Stars({ count }) {
 export default function Home() {
   const videoRef = useRef(null);
   const [lightboxImg, setLightboxImg] = useState(null);
+  const [lightboxImages, setLightboxImages] = useState([]);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -227,6 +345,36 @@ export default function Home() {
     video.load();
   }, []);
 
+  // Keyboard navigation for lightbox
+  useEffect(() => {
+    if (!lightboxImg) return;
+    const handleKey = (e) => {
+      if (e.key === 'Escape') setLightboxImg(null);
+      if (e.key === 'ArrowLeft' && lightboxImages.length > 1) {
+        setLightboxIndex((p) => {
+          const newIdx = (p - 1 + lightboxImages.length) % lightboxImages.length;
+          setLightboxImg(lightboxImages[newIdx]);
+          return newIdx;
+        });
+      }
+      if (e.key === 'ArrowRight' && lightboxImages.length > 1) {
+        setLightboxIndex((p) => {
+          const newIdx = (p + 1) % lightboxImages.length;
+          setLightboxImg(lightboxImages[newIdx]);
+          return newIdx;
+        });
+      }
+    };
+    window.addEventListener('keydown', handleKey);
+    return () => window.removeEventListener('keydown', handleKey);
+  }, [lightboxImg, lightboxImages]);
+
+  const openLightbox = (img, images = []) => {
+    setLightboxImg(img);
+    setLightboxImages(images.length > 0 ? images : [img]);
+    setLightboxIndex(images.indexOf(img) >= 0 ? images.indexOf(img) : 0);
+  };
+
   return (
     <div role="main">
       <AnimatePresence>
@@ -238,6 +386,22 @@ export default function Home() {
             <button className="absolute top-4 right-4 text-white bg-black/50 rounded-full p-2 hover:bg-black/80 transition" onClick={() => setLightboxImg(null)}>
               <X className="w-6 h-6" />
             </button>
+            {lightboxImages.length > 1 && (
+              <>
+                <button
+                  className="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-black/50 rounded-full p-2 hover:bg-black/80 transition"
+                  onClick={(e) => { e.stopPropagation(); const newIdx = (lightboxIndex - 1 + lightboxImages.length) % lightboxImages.length; setLightboxIndex(newIdx); setLightboxImg(lightboxImages[newIdx]); }}
+                >
+                  <ChevronLeft className="w-6 h-6" />
+                </button>
+                <button
+                  className="absolute right-16 top-1/2 -translate-y-1/2 text-white bg-black/50 rounded-full p-2 hover:bg-black/80 transition"
+                  onClick={(e) => { e.stopPropagation(); const newIdx = (lightboxIndex + 1) % lightboxImages.length; setLightboxIndex(newIdx); setLightboxImg(lightboxImages[newIdx]); }}
+                >
+                  <ChevronRight className="w-6 h-6" />
+                </button>
+              </>
+            )}
             <motion.img initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.9, opacity: 0 }}
               src={lightboxImg} alt="Aperçu photo Le Tripot Régnier"
               className="max-w-full max-h-[90vh] object-contain rounded-lg"
@@ -260,27 +424,15 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
         </div>
 
-        {/* Logo gauche / Texte droite — desktop : flex-row, mobile : flex-col centré */}
         <div className="relative z-10 w-full max-w-6xl mx-auto px-8 md:px-16 py-32">
-          <div className="flex flex-col items-center text-center md:flex-row md:items-center md:text-left gap-8 md:gap-14">
-            <motion.img
-              src="https://letripotregnier.fr/assets/logo.png"
-              alt="Le Tripot Régnier"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1 }}
-              style={{ width: 'clamp(100px, 14vw, 200px)', height: 'auto', flexShrink: 0, maxWidth: '120px' }}
-              className="md:max-w-none"
-            />
-            <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.2 }}>
-              <p className="text-sm md:text-base text-white/80 tracking-[0.3em] uppercase mb-4 font-light">
-                Le Tripot Régnier — Paris 15ème
-              </p>
-              <h1 className="text-white font-bold tracking-tight leading-[1.15] text-[1.6rem] md:text-[2.6rem] lg:text-[3.2rem]">
-                Salle parisienne où vos événements prennent vie.
-              </h1>
-            </motion.div>
-          </div>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.2 }}>
+            <p className="text-sm md:text-base text-white/80 tracking-[0.3em] uppercase mb-4 font-light">
+              Le Tripot Régnier — Paris 15ème
+            </p>
+            <h1 className="text-white font-bold tracking-tight leading-[1.15] text-[1.6rem] md:text-[2.6rem] lg:text-[3.2rem]">
+              Salle parisienne où vos événements prennent vie.
+            </h1>
+          </motion.div>
         </div>
 
         <motion.a href="#nos-espaces" aria-label="Défiler vers le contenu"
@@ -303,30 +455,7 @@ export default function Home() {
             </h2>
           </motion.div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 px-2">
-          {spaces.map((space) =>
-            space.isHoverSlider ? (
-              <HoverSliderCard key={space.title} space={space} onClick={setLightboxImg} />
-            ) : (
-              <div key={space.title} className="cursor-pointer group" onClick={() => setLightboxImg(space.image)}>
-                <div className="relative overflow-hidden rounded-lg" style={{ aspectRatio: '4/3' }}>
-                  <img src={space.image} alt={`${space.title} — Le Tripot Régnier`} loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  {space.surface && (
-                    <span className="absolute top-3 right-3 font-bold rounded-full text-white bg-black" style={{ fontSize: '0.95rem', padding: '0.35rem 0.9rem' }}>
-                      {space.surface}
-                    </span>
-                  )}
-                </div>
-                <div className="pt-3 pb-3 px-5 bg-[#0D0D0D]">
-                  <h3 className="text-white text-base font-semibold">{space.title}</h3>
-                  {space.description && <p className="text-gray-400 text-sm mt-1 leading-relaxed">{space.description}</p>}
-                </div>
-              </div>
-            )
-          )}
-        </div>
+        <SpacesSlider spaces={spaces} onLightbox={(img) => openLightbox(img)} />
       </section>
 
       {/* ── Espaces Modulables ────────────────────────────────────────────────── */}
@@ -345,17 +474,17 @@ export default function Home() {
               <ConfigCard key={config.name} config={config} index={index} onLightbox={setLightboxImg} />
             ))}
 
-            {/* Carte "Tournage & Événement sur mesure" — fond noir, bordure dorée */}
+            {/* Carte "Tournage & événement sur mesure" — fond noir, bordure dorée */}
             <div
               className="overflow-hidden rounded-xl flex items-center justify-center"
               style={{ backgroundColor: '#0D0D0D', aspectRatio: '4/3', border: `2px solid ${COLORS.ACCENT_COLOR}` }}
             >
               <div className="text-center p-8">
-                <h3 className="text-white text-xl font-semibold mb-1">Tournage & Événement sur mesure</h3>
+                <h3 className="text-white text-xl font-semibold mb-1">Tournage & événement sur mesure</h3>
                 <Link
                   to={createPageUrl('Contact')}
                   className="inline-flex items-center gap-2 mt-6 px-6 py-2.5 bg-transparent font-semibold text-sm rounded-full transition-all duration-300"
-                  style={{ border: `2px solid ${COLORS.ACCENT_COLOR}`, color: COLORS.ACCENT_COLOR }}
+                  style={{ border: `1px solid ${COLORS.ACCENT_COLOR}`, color: COLORS.ACCENT_COLOR }}
                   onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR; e.currentTarget.style.color = 'white'; }}
                   onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = COLORS.ACCENT_COLOR; }}
                 >
@@ -383,33 +512,22 @@ export default function Home() {
               Ils nous font <span style={{ color: COLORS.ACCENT_COLOR }}>confiance</span>
             </h2>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="text-left bg-[#F9F9F7] p-6 rounded-xl">
-                <Stars count={testimonial.stars} />
-                <p className="text-[#0D0D0D] text-sm leading-relaxed mb-5 italic">"{testimonial.quote}"</p>
-                <div className="pt-4 border-t border-gray-200">
-                  <p className="text-[#0D0D0D] font-semibold text-sm">{testimonial.author}</p>
-                  {testimonial.company && <p className="text-gray-500 text-xs font-light mt-0.5">{testimonial.company}</p>}
-                </div>
-              </div>
-            ))}
-          </div>
+          <TestimonialsSlider />
         </div>
       </section>
 
       {/* ── CTA ───────────────────────────────────────────────────────────────── */}
-      <section className="py-12 md:py-16 px-6" style={{ background: 'linear-gradient(135deg, #0D0D0D 0%, #1a1a1a 100%)', borderTop: `1px solid ${COLORS.ACCENT_COLOR}30` }}>
+      <section className="py-12 md:py-16 px-6" style={{ background: '#000', borderTop: `1px solid ${COLORS.ACCENT_COLOR}30` }}>
         <div className="max-w-2xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} className="flex flex-col items-center gap-5">
             <h2 className="text-2xl md:text-4xl text-white font-semibold tracking-tight">Organiser un événement</h2>
-            <p className="text-white/60 text-sm">Notre équipe est disponible pour répondre à toutes vos questions.</p>
+            <p className="text-white text-sm">Notre équipe est disponible pour répondre à toutes vos questions.</p>
             <Link
               to={createPageUrl('Contact')}
-              className="inline-flex items-center gap-3 px-8 py-3 font-semibold tracking-wide text-sm rounded-full border-2 bg-transparent transition-all duration-300"
-              style={{ borderColor: COLORS.ACCENT_COLOR, color: COLORS.ACCENT_COLOR }}
-              onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR; e.currentTarget.style.color = 'white'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = COLORS.ACCENT_COLOR; }}
+              className="inline-flex items-center gap-3 px-8 py-3 font-semibold tracking-wide text-sm rounded-full transition-all duration-300"
+              style={{ backgroundColor: COLORS.ACCENT_COLOR, color: '#000' }}
+              onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.85'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; }}
             >
               NOUS CONTACTER <ArrowRight className="w-4 h-4" />
             </Link>
