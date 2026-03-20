@@ -295,7 +295,7 @@ export default function Layout({ children, currentPageName }) {
               <h4 className="font-medium mb-6 tracking-wide" style={{ color: COLORS.ACCENT_COLOR }}>Suivez-nous</h4>
               <div className="flex gap-4 mb-6">
                 <a 
-                  href="https://www.instagram.com/letripotregnier" 
+                  href={SOCIAL.instagram}
                   target="_blank" rel="noopener noreferrer"
                   className="w-10 h-10 border border-white/20 flex items-center justify-center transition-all" 
                   aria-label="Suivez Le Tripot Régnier sur Instagram"
@@ -311,7 +311,7 @@ export default function Layout({ children, currentPageName }) {
                   <Instagram className="w-5 h-5 text-white" />
                 </a>
                 <a 
-                  href="https://www.linkedin.com/company/letripotregnier" 
+                  href={SOCIAL.linkedin}
                   target="_blank" rel="noopener noreferrer"
                   className="w-10 h-10 border border-white/20 flex items-center justify-center transition-all" 
                   aria-label="Suivez Le Tripot Régnier sur LinkedIn"
@@ -327,7 +327,7 @@ export default function Layout({ children, currentPageName }) {
                   <Linkedin className="w-5 h-5 text-white" />
                 </a>
                 <a 
-                  href="https://www.facebook.com/letripotregnier" 
+                  href={SOCIAL.facebook}
                   target="_blank" rel="noopener noreferrer"
                   className="w-10 h-10 border border-white/20 flex items-center justify-center transition-all" 
                   aria-label="Suivez Le Tripot Régnier sur Facebook"
