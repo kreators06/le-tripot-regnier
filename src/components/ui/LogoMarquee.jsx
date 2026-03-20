@@ -40,6 +40,8 @@ export default function LogoMarquee() {
               <img
                 src={logo.url}
                 alt={logo.name}
+                width="128" height="64"
+                loading="lazy"
                 className="h-full w-auto object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
               />
             </div>
