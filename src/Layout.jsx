@@ -241,10 +241,10 @@ export default function Layout({ children, currentPageName }) {
                   className="h-12 w-auto"
                 />
               </div>
-              <p className="text-gray-400 text-sm leading-relaxed text-left mb-1">
+              <p className="text-gray-300 text-sm leading-relaxed text-left mb-1">
                 10 – 12 rue Mathurin Régnier
               </p>
-              <p className="text-gray-400 text-sm leading-relaxed text-left">
+              <p className="text-gray-300 text-sm leading-relaxed text-left">
                 75015 Paris
               </p>
             </div>
@@ -257,7 +257,7 @@ export default function Layout({ children, currentPageName }) {
                   <li key={link.page}>
                     <Link 
                       to={createPageUrl(link.page)}
-                      className="text-gray-400 hover:text-white transition-colors text-sm"
+                      className="text-gray-300 hover:text-white transition-colors text-sm"
                     >
                       {link.name}
                     </Link>
@@ -342,13 +342,13 @@ export default function Layout({ children, currentPageName }) {
           </div>
 
           <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-            <p className="text-gray-500 text-sm">
+            <p className="text-gray-400 text-sm">
               © {new Date().getFullYear()} Le Tripot Régnier. Tous droits réservés.
             </p>
             <div className="flex flex-wrap gap-6 text-sm">
-              <Link to={createPageUrl('MentionsLegales')} className="text-gray-500 hover:text-white transition-colors">Mentions légales</Link>
-              <Link to={createPageUrl('PolitiqueConfidentialite')} className="text-gray-500 hover:text-white transition-colors">Politique de confidentialité</Link>
-              <Link to={createPageUrl('CGU')} className="text-gray-500 hover:text-white transition-colors">CGU</Link>
+              <Link to={createPageUrl('MentionsLegales')} className="text-gray-400 hover:text-white transition-colors">Mentions légales</Link>
+              <Link to={createPageUrl('PolitiqueConfidentialite')} className="text-gray-400 hover:text-white transition-colors">Politique de confidentialité</Link>
+              <Link to={createPageUrl('CGU')} className="text-gray-400 hover:text-white transition-colors">CGU</Link>
             </div>
           </div>
         </div>

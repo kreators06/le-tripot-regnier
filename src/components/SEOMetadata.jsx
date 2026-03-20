@@ -91,7 +91,7 @@ function setMeta(selector, createAttr, content) {
   el.setAttribute('content', content);
 }
 
-export default function SEOMetadata() {
+export default function SEOMetadata({ description }) {
   useEffect(() => {
     document.title = TITLE;
     // canonical home
