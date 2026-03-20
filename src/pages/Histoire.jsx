@@ -12,7 +12,7 @@ import PageSEO from '@/components/PageSEO';
 function PhotoCollage() {
   const photos = [
     {
-      src: "https://letripotregnier.fr/assets/photos/histoire/1_tripot-regnier-historique.png",
+      src: "https://letripotregnier.fr/assets/photos/histoire/1_tripot-regnier-historique.jpeg",
       alt: "Le Tripot Régnier historique",
       style: {
         position: 'absolute',
@@ -26,7 +26,7 @@ function PhotoCollage() {
       },
     },
     {
-      src: "https://letripotregnier.fr/assets/photos/histoire/2_tripot-regnier-facade.png",
+      src: "https://letripotregnier.fr/assets/photos/histoire/2_tripot-regnier-facade.jpeg",
       alt: "Façade du Tripot Régnier",
       style: {
         position: 'absolute',
