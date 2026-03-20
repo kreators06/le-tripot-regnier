@@ -8,13 +8,105 @@ import { COLORS } from '@/components/config/colors';
 import { IMAGES } from '@/components/config/images';
 import PageSEO from '@/components/PageSEO';
 
-// 4 photos pour la mosaïque
-const mosaicPhotos = [
-  { src: "https://letripotregnier.fr/assets/photos/photo-hall-entree-tripot-regnier.jpg", alt: "Hall d'entrée Art Déco du Tripot Régnier" },
-  { src: "https://letripotregnier.fr/assets/photos/photo-salle-vide.jpg", alt: "Salle principale du Tripot Régnier" },
-  { src: "https://letripotregnier.fr/assets/photos/photo-mezzanine.jpg", alt: "Mezzanine du Tripot Régnier" },
-  { src: "https://letripotregnier.fr/assets/photos/photo-regie.jpg", alt: "Régie technique du Tripot Régnier" },
-];
+// Collage de 4 photos avec chevauchements et rotations
+function PhotoCollage() {
+  const photos = [
+    {
+      src: "https://letripotregnier.fr/assets/photos/photo-hall-entree-tripot-regnier.jpg",
+      alt: "Hall d'entrée Art Déco du Tripot Régnier",
+      // Haut-gauche, derrière, légère rotation antihoraire
+      style: {
+        position: 'absolute',
+        width: '62%',
+        top: '0%',
+        left: '0%',
+        zIndex: 1,
+        transform: 'rotate(-4deg)',
+        borderRadius: '12px',
+        boxShadow: '0 8px 24px rgba(0,0,0,0.3)',
+      },
+    },
+    {
+      src: "https://letripotregnier.fr/assets/photos/photo-salle-vide.jpg",
+      alt: "Salle principale du Tripot Régnier",
+      // Haut-droite, devant, légère rotation horaire
+      style: {
+        position: 'absolute',
+        width: '50%',
+        top: '4%',
+        right: '0%',
+        zIndex: 3,
+        transform: 'rotate(3deg)',
+        borderRadius: '12px',
+        boxShadow: '0 8px 24px rgba(0,0,0,0.3)',
+      },
+    },
+    {
+      src: "https://letripotregnier.fr/assets/photos/photo-mezzanine.jpg",
+      alt: "Mezzanine du Tripot Régnier",
+      // Bas-gauche, devant, légère rotation antihoraire
+      style: {
+        position: 'absolute',
+        width: '50%',
+        bottom: '0%',
+        left: '2%',
+        zIndex: 3,
+        transform: 'rotate(-3deg)',
+        borderRadius: '12px',
+        boxShadow: '0 8px 24px rgba(0,0,0,0.3)',
+      },
+    },
+    {
+      src: "https://letripotregnier.fr/assets/photos/photo-regie.jpg",
+      alt: "Régie technique du Tripot Régnier",
+      // Bas-droite, devant, légère rotation horaire
+      style: {
+        position: 'absolute',
+        width: '60%',
+        bottom: '2%',
+        right: '0%',
+        zIndex: 2,
+        transform: 'rotate(4deg)',
+        borderRadius: '12px',
+        boxShadow: '0 8px 24px rgba(0,0,0,0.3)',
+      },
+    },
+  ];
+
+  return (
+    <>
+      {/* Desktop collage */}
+      <div className="hidden md:block relative" style={{ height: '480px' }}>
+        {photos.map((photo, i) => (
+          <motion.img
+            key={i}
+            src={photo.src}
+            alt={photo.alt}
+            loading="lazy"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.12, duration: 0.5 }}
+            style={{
+              ...photo.style,
+              objectFit: 'cover',
+              aspectRatio: '4/3',
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Mobile : colonne simple */}
+      <div className="flex flex-col gap-3 md:hidden">
+        {photos.map((photo, i) => (
+          <div key={i} className="overflow-hidden rounded-xl aspect-[4/3]">
+            <img src={photo.src} alt={photo.alt} loading="lazy" className="w-full h-full object-cover" />
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
 
 export default function Histoire() {
   return (
@@ -89,36 +181,9 @@ export default function Histoire() {
               </Link>
             </motion.div>
 
-            {/* Mosaïque 4 photos */}
-            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              {/* Desktop : grille 2x2 asymétrique */}
-              <div className="hidden md:grid grid-cols-[60%_40%] grid-rows-2 gap-2" style={{ height: '520px' }}>
-                {/* Haut gauche — grande */}
-                <div className="overflow-hidden rounded-lg row-span-1">
-                  <img src={mosaicPhotos[0].src} alt={mosaicPhotos[0].alt} loading="lazy" className="w-full h-full object-cover" style={{ height: '254px' }} />
-                </div>
-                {/* Haut droite — petite */}
-                <div className="overflow-hidden rounded-lg row-span-1">
-                  <img src={mosaicPhotos[1].src} alt={mosaicPhotos[1].alt} loading="lazy" className="w-full h-full object-cover" style={{ height: '254px' }} />
-                </div>
-                {/* Bas gauche — petite */}
-                <div className="overflow-hidden rounded-lg row-span-1">
-                  <img src={mosaicPhotos[2].src} alt={mosaicPhotos[2].alt} loading="lazy" className="w-full h-full object-cover" style={{ height: '254px' }} />
-                </div>
-                {/* Bas droite — grande */}
-                <div className="overflow-hidden rounded-lg row-span-1">
-                  <img src={mosaicPhotos[3].src} alt={mosaicPhotos[3].alt} loading="lazy" className="w-full h-full object-cover" style={{ height: '254px' }} />
-                </div>
-              </div>
-
-              {/* Mobile : colonne */}
-              <div className="flex flex-col gap-2 md:hidden">
-                {mosaicPhotos.map((photo, i) => (
-                  <div key={i} className="overflow-hidden rounded-lg aspect-[4/3]">
-                    <img src={photo.src} alt={photo.alt} loading="lazy" className="w-full h-full object-cover" />
-                  </div>
-                ))}
-              </div>
+            {/* Collage photos */}
+            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="pt-4">
+              <PhotoCollage />
             </motion.div>
           </div>
         </div>

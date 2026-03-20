@@ -103,10 +103,10 @@ function HoverSliderCard({ space, onClick }) {
   }, [isHovering, space.images.length]);
 
   return (
-    <div className="overflow-hidden cursor-pointer" onClick={() => onClick(space.images[currentIndex])}
+    <div className="cursor-pointer" onClick={() => onClick(space.images[currentIndex])}
       onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}
     >
-      <div className="relative overflow-hidden" style={{ aspectRatio: '4/3', background: '#111' }}>
+      <div className="relative overflow-hidden rounded-lg" style={{ aspectRatio: '4/3', background: '#111' }}>
         {space.images.map((src, i) => (
           <img key={i} src={src} alt={`${space.title} — Le Tripot Régnier`}
             className="absolute inset-0 w-full h-full object-cover"
@@ -213,8 +213,8 @@ export default function Capacites() {
             space.isHoverSlider ? (
               <HoverSliderCard key={space.title} space={space} onClick={setLightboxImg} />
             ) : (
-              <div key={space.title} className="overflow-hidden cursor-pointer group" onClick={() => setLightboxImg(space.image)}>
-                <div className="relative overflow-hidden" style={{ aspectRatio: '4/3' }}>
+              <div key={space.title} className="cursor-pointer group" onClick={() => setLightboxImg(space.image)}>
+                <div className="relative overflow-hidden rounded-lg" style={{ aspectRatio: '4/3' }}>
                   <img src={space.image} alt={`${space.title} — Le Tripot Régnier`} loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
