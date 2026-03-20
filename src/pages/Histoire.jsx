@@ -190,10 +190,10 @@ export default function Histoire() {
       </section>
 
       {/* ── CTA ────────────────────────────────────────────────────────────── */}
-      <section className="py-10 px-6 bg-white border-t border-gray-100">
+      <section className="py-12 md:py-16 px-6" style={{ background: 'linear-gradient(135deg, #0D0D0D 0%, #1a1a1a 100%)', borderTop: `1px solid ${COLORS.ACCENT_COLOR}30` }}>
         <div className="max-w-2xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} className="flex flex-col items-center gap-6">
-            <h2 className="text-2xl md:text-4xl text-[#0D0D0D] font-semibold tracking-tight">
+            <h2 className="text-2xl md:text-4xl text-white font-semibold tracking-tight">
               Découvrir l'ambiance unique<br />du Tripot Régnier
             </h2>
             <Link
