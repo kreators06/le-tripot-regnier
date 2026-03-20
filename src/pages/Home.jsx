@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Users, Utensils, Presentation, PartyPopper, Store, ChevronDown, X } from 'lucide-react';
+import { ArrowRight, ChevronDown, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import LogoMarquee from '@/components/ui/LogoMarquee';
 import SEOMetadata from '@/components/SEOMetadata';
 import TrustSignals from '@/components/TrustSignals';
@@ -33,21 +33,57 @@ const spaces = [
   { title: "Loge Privée", surface: "", image: IMAGES.spaces.logePrivee.src, description: "Loge avec accès privé comprenant : écran TV, canapé, toilettes, douche, lavabo." },
 ];
 
-// 6 tuiles : 5 configs + 1 carte "Tournage / Événement sur mesure"
+// 2 photos par config
 const configurations = [
-  { name: "Défilé", capacity: "< 200 pers.", image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format" },
-  { name: "Dîner assis", capacity: "< 220 pers.", image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&auto=format" },
-  { name: "Conférence", capacity: "< 250 pers.", image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&auto=format" },
-  { name: "Cocktail / Soirée", capacity: "< 500 pers.", image: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&auto=format" },
-  { name: "Showroom", capacity: "Sur mesure", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&auto=format" },
+  {
+    name: "Défilé",
+    capacity: "< 200 pers.",
+    images: [
+      "https://letripotregnier.fr/assets/photos/photo-salle-vide.jpg",
+      "https://letripotregnier.fr/assets/photos/photo-mezzanine.jpg",
+    ],
+  },
+  {
+    name: "Dîner assis",
+    capacity: "< 220 pers.",
+    images: [
+      "https://letripotregnier.fr/assets/photos/photo-bar.jpg",
+      "https://letripotregnier.fr/assets/photos/photo-salle-vide.jpg",
+    ],
+  },
+  {
+    name: "Conférence",
+    capacity: "< 250 pers.",
+    images: [
+      "https://letripotregnier.fr/assets/photos/photo-regie.jpg",
+      "https://letripotregnier.fr/assets/photos/photo-salle-vide.jpg",
+    ],
+  },
+  {
+    name: "Cocktail / Soirée",
+    capacity: "< 500 pers.",
+    images: [
+      "https://letripotregnier.fr/assets/photos/photo-lounge-etage.jpeg",
+      "https://letripotregnier.fr/assets/photos/photo-bar.jpg",
+    ],
+  },
+  {
+    name: "Showroom",
+    capacity: "Sur mesure",
+    images: [
+      "https://letripotregnier.fr/assets/photos/photo-salle-vide.jpg",
+      "https://letripotregnier.fr/assets/photos/photo-lounge-etage.jpeg",
+    ],
+  },
 ];
 
 const testimonials = [
-  { quote: "Un lieu exceptionnel qui a su sublimer notre événement d'entreprise. L'équipe est professionnelle et réactive. Le cadre Art Déco apporte une touche unique.", author: "Marie Dupont", company: "Directrice Événementiel, L'Oréal" },
-  { quote: "Nous avons organisé notre soirée de lancement dans ce lieu magique. L'acoustique parfaite et les équipements techniques sont un vrai plus.", author: "Thomas Bernard", company: "CEO, StartupTech" },
-  { quote: "Le Tripot Régnier a dépassé toutes nos attentes. L'espace modulable nous a permis de créer exactement l'ambiance recherchée.", author: "Sophie Martin", company: "Wedding Planner" },
-  { quote: "Un cadre industriel et élégant à la fois. La régie technique est complète et le personnel très attentionné.", author: "Julien Moreau", company: "Directeur Communication, BNP Paribas" },
-  { quote: "Nous avons tourné notre clip dans ce lieu et le résultat était exceptionnel. Mur LED, lumières scéniques, tout était au rendez-vous.", author: "Anaïs Lefebvre", company: "Productrice, Studio 15" },
+  { quote: "Une équipe dynamique et super professionnelle gère cet espace très agréable, chaleureux et pratique.", author: "Louis Galopin", company: "", stars: 5 },
+  { quote: "Un grand merci pour votre sens du service professionnel et votre disponibilité tout au long de cette manifestation ! À très bientôt avec certitude !", author: "Mamadou Camara", company: "MConseil & Patrimoine – Cercle Odéon", stars: 5 },
+  { quote: "Un séminaire de formation parfaitement à la hauteur de nos attentes ! L'infrastructure est impeccable.", author: "AX Événementiel", company: "", stars: 5 },
+  { quote: "3 années que nous y tenons un événement annuel, une des meilleures salles de Paris tant pour ses espaces, sa localisation, son accès pour la logistique que pour l'excellence de leurs services et accompagnement dans l'organisation. Une super team pour un super lieu !", author: "Charlotte Leclère", company: "", stars: 5 },
+  { quote: "Salle bien équipée, staff aux petits soins.", author: "Pierre-Marie Achart", company: "", stars: 5 },
+  { quote: "Agréable et convivial.", author: "Boyer Liliane", company: "", stars: 4 },
 ];
 
 // ─── Hover Slider Card ────────────────────────────────────────────────────────
@@ -58,7 +94,6 @@ function HoverSliderCard({ space, onClick }) {
 
   useEffect(() => {
     if (isHovering) {
-      // Première image quasi immédiate (50ms), puis toutes les 1500ms
       const firstTimeout = setTimeout(() => {
         setCurrentIndex(1 % space.images.length);
         timerRef.current = setInterval(() => {
@@ -104,6 +139,81 @@ function HoverSliderCard({ space, onClick }) {
   );
 }
 
+// ─── Config Card avec flèches ─────────────────────────────────────────────────
+function ConfigCard({ config, index }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const prev = (e) => {
+    e.stopPropagation();
+    setCurrentIndex((p) => (p - 1 + config.images.length) % config.images.length);
+  };
+  const next = (e) => {
+    e.stopPropagation();
+    setCurrentIndex((p) => (p + 1) % config.images.length);
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.05 }}
+      className="group overflow-hidden rounded-xl"
+    >
+      <div className="relative overflow-hidden" style={{ aspectRatio: '4/3' }}>
+        {config.images.map((src, i) => (
+          <img key={i} src={src} alt={`Configuration ${config.name} au Tripot Régnier`} loading="lazy"
+            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+            style={{ opacity: i === currentIndex ? 1 : 0 }}
+          />
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5" />
+
+        {/* Flèches */}
+        <button onClick={prev}
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/80 rounded-full p-1.5 text-white transition-all opacity-0 group-hover:opacity-100"
+          aria-label="Photo précédente"
+        >
+          <ChevronLeft className="w-4 h-4" />
+        </button>
+        <button onClick={next}
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/80 rounded-full p-1.5 text-white transition-all opacity-0 group-hover:opacity-100"
+          aria-label="Photo suivante"
+        >
+          <ChevronRight className="w-4 h-4" />
+        </button>
+
+        {/* Dots */}
+        <div className="absolute bottom-14 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+          {config.images.map((_, i) => (
+            <span key={i} className="w-1.5 h-1.5 rounded-full transition-all"
+              style={{ backgroundColor: i === currentIndex ? 'white' : 'rgba(255,255,255,0.4)' }}
+            />
+          ))}
+        </div>
+
+        <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
+          <h3 className="text-white text-base font-semibold drop-shadow-md">{config.name}</h3>
+          <p className="text-white/80 text-xs">{config.capacity}</p>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+// ─── Stars ────────────────────────────────────────────────────────────────────
+function Stars({ count }) {
+  return (
+    <div className="flex gap-0.5 mb-3">
+      {[1,2,3,4,5].map(i => (
+        <svg key={i} className="w-4 h-4" fill={i <= count ? COLORS.ACCENT_COLOR : '#d1d5db'} viewBox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+        </svg>
+      ))}
+    </div>
+  );
+}
+
 // ─── Page principale ──────────────────────────────────────────────────────────
 export default function Home() {
   const videoRef = useRef(null);
@@ -144,7 +254,7 @@ export default function Home() {
       <MobileCtaBar />
 
       {/* ── Hero ────────────────────────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <video ref={videoRef} autoPlay loop muted playsInline preload="metadata" poster={IMAGES.heroPoster} className="w-full h-full object-cover">
             <source src={IMAGES.heroVideo} type="video/mp4" />
@@ -153,24 +263,26 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
         </div>
 
-        <div className="relative z-10 w-full max-w-3xl mx-auto px-6 md:px-12 py-32 flex flex-col items-center text-center">
-          <motion.img
-            src="https://letripotregnier.fr/assets/logo.png"
-            alt="Le Tripot Régnier"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="mb-8"
-            style={{ height: 'clamp(80px, 14vw, 160px)', width: 'auto' }}
-          />
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.2 }}>
-            <p className="text-sm md:text-base text-white/80 tracking-[0.3em] uppercase mb-5 font-light">
-              Le Tripot Régnier — Paris 15ème
-            </p>
-            <h1 className="text-white font-bold tracking-tight leading-[1.15] text-4xl md:text-5xl lg:text-6xl whitespace-nowrap">
-              Salle parisienne où<br />vos événements prennent vie.
-            </h1>
-          </motion.div>
+        {/* Logo gauche / Texte droite — desktop : flex-row, mobile : flex-col centré */}
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-8 md:px-16 py-32">
+          <div className="flex flex-col items-center text-center md:flex-row md:items-center md:text-left gap-10 md:gap-16">
+            <motion.img
+              src="https://letripotregnier.fr/assets/logo.png"
+              alt="Le Tripot Régnier"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+              style={{ width: '200px', height: 'auto', flexShrink: 0 }}
+            />
+            <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.2 }}>
+              <p className="text-sm md:text-base text-white/80 tracking-[0.3em] uppercase mb-4 font-light">
+                Le Tripot Régnier — Paris 15ème
+              </p>
+              <h1 className="text-white font-bold tracking-tight leading-[1.15] text-4xl md:text-5xl lg:text-6xl">
+                Salle parisienne où<br />vos événements prennent vie.
+              </h1>
+            </motion.div>
+          </div>
         </div>
 
         <motion.a href="#nos-espaces" aria-label="Défiler vers le contenu"
@@ -193,7 +305,7 @@ export default function Home() {
             </h2>
           </motion.div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 px-2">
           {spaces.map((space) =>
             space.isHoverSlider ? (
               <HoverSliderCard key={space.title} space={space} onClick={setLightboxImg} />
@@ -229,38 +341,24 @@ export default function Home() {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {configurations.map((config, index) => (
-              <motion.div key={config.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.05 }}
-                className="group overflow-hidden rounded-xl"
-              >
-                <div className="relative overflow-hidden" style={{ aspectRatio: '4/3' }}>
-                  <img src={config.image} alt={`Configuration ${config.name} au Tripot Régnier`} loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5" />
-                  <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <h3 className="text-white text-base font-semibold drop-shadow-md">{config.name}</h3>
-                    <p className="text-white/80 text-xs">{config.capacity}</p>
-                  </div>
-                </div>
-              </motion.div>
+              <ConfigCard key={config.name} config={config} index={index} />
             ))}
 
-            {/* Carte "Tournage — Événement sur mesure" — fond noir, bordure dorée */}
+            {/* Carte "Tournage & Événement sur mesure" — fond noir, bordure dorée */}
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}
               className="overflow-hidden rounded-xl flex items-center justify-center"
-              style={{ backgroundColor: '#0D0D0D', aspectRatio: '4/3', border: '2px solid #C5A55A' }}
+              style={{ backgroundColor: '#0D0D0D', aspectRatio: '4/3', border: `2px solid ${COLORS.ACCENT_COLOR}` }}
             >
               <div className="text-center p-8">
-                <h3 className="text-white text-xl font-semibold mb-1">Tournage</h3>
-                <p className="text-sm mb-6" style={{ color: '#C5A55A' }}>Événement sur mesure</p>
+                <h3 className="text-white text-xl font-semibold mb-1">Tournage & Événement sur mesure</h3>
                 <Link
                   to={createPageUrl('Contact')}
-                  className="inline-flex items-center gap-2 px-6 py-2.5 bg-transparent font-semibold text-sm rounded-full transition-all duration-300"
-                  style={{ border: '2px solid #C5A55A', color: '#C5A55A' }}
-                  onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#C5A55A'; e.currentTarget.style.color = 'white'; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#C5A55A'; }}
+                  className="inline-flex items-center gap-2 mt-6 px-6 py-2.5 bg-transparent font-semibold text-sm rounded-full transition-all duration-300"
+                  style={{ border: `2px solid ${COLORS.ACCENT_COLOR}`, color: COLORS.ACCENT_COLOR }}
+                  onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR; e.currentTarget.style.color = 'white'; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = COLORS.ACCENT_COLOR; }}
                 >
                   Nous contacter <ArrowRight className="w-4 h-4" />
                 </Link>
@@ -286,13 +384,14 @@ export default function Home() {
               Ils nous font <span style={{ color: COLORS.ACCENT_COLOR }}>confiance</span>
             </h2>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {testimonials.map((testimonial, index) => (
-              <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.05 }} className="text-left">
-                <p className="text-gray-700 text-sm leading-relaxed mb-6 font-light italic">"{testimonial.quote}"</p>
+              <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.05 }} className="text-left bg-[#F9F9F7] p-6 rounded-xl">
+                <Stars count={testimonial.stars} />
+                <p className="text-[#0D0D0D] text-sm leading-relaxed mb-5 italic">"{testimonial.quote}"</p>
                 <div className="pt-4 border-t border-gray-200">
-                  <p className="text-[#0D0D0D] font-normal text-sm mb-1">{testimonial.author}</p>
-                  <p className="text-gray-500 text-xs font-light">{testimonial.company}</p>
+                  <p className="text-[#0D0D0D] font-semibold text-sm">{testimonial.author}</p>
+                  {testimonial.company && <p className="text-gray-500 text-xs font-light mt-0.5">{testimonial.company}</p>}
                 </div>
               </motion.div>
             ))}

@@ -1,6 +1,4 @@
 // ─── Histoire ─────────────────────────────────────────────────────────────────
-// Page histoire et origines du Tripot Régnier
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
@@ -10,19 +8,23 @@ import { COLORS } from '@/components/config/colors';
 import { IMAGES } from '@/components/config/images';
 import PageSEO from '@/components/PageSEO';
 
+// 4 photos pour la mosaïque
+const mosaicPhotos = [
+  { src: "https://letripotregnier.fr/assets/photos/photo-hall-entree-tripot-regnier.jpg", alt: "Hall d'entrée Art Déco du Tripot Régnier" },
+  { src: "https://letripotregnier.fr/assets/photos/photo-salle-vide.jpg", alt: "Salle principale du Tripot Régnier" },
+  { src: "https://letripotregnier.fr/assets/photos/photo-mezzanine.jpg", alt: "Mezzanine du Tripot Régnier" },
+  { src: "https://letripotregnier.fr/assets/photos/photo-regie.jpg", alt: "Régie technique du Tripot Régnier" },
+];
+
 export default function Histoire() {
   return (
-    <div className="pt-24 bg-[#0D0D0D] min-h-screen">
+    <div>
       <PageSEO title="Notre histoire | Le Tripot Régnier" description="Découvrez l'histoire du Tripot Régnier, de 1904 à aujourd'hui. Ancien bains-douches devenu lieu événementiel Art Déco de 700m² au cœur de Paris 15e." canonicalPath="/Histoire" />
 
-      {/* ── Origine du nom — SECTION 1 ─────────────────────────────────────── */}
-      <section className="py-10 px-6">
+      {/* ── SECTION 1 — Fond noir ───────────────────────────────────────────── */}
+      <section className="pt-32 pb-12 px-6 bg-[#0D0D0D]">
         <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <div className="inline-block px-3 py-1 text-xs font-medium tracking-wide mb-6 rounded" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20`, color: COLORS.ACCENT_COLOR }}>
               ORIGINE DU NOM
             </div>
@@ -36,27 +38,23 @@ export default function Histoire() {
         </div>
       </section>
 
-      {/* ── Main History Section — SECTION 2 ──────────────────────────────── */}
-      <section className="py-10 px-6 border-t border-white/10">
+      {/* ── SECTION 2 — Fond blanc ──────────────────────────────────────────── */}
+      <section className="py-12 px-6 bg-white border-t border-gray-100">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            {/* Text */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="text-left"
-            >
-              <p className="text-gray-300 leading-relaxed mb-6 text-lg">
+
+            {/* Texte */}
+            <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="text-left">
+              <p className="text-[#0D0D0D] leading-relaxed mb-6 text-lg font-medium">
                 Situé rue Mathurin Régnier, dans le 15ᵉ arrondissement de Paris, Le Tripot Régnier est un lieu chargé d'histoire.
               </p>
-              <p className="text-gray-400 leading-relaxed mb-6">
+              <p className="text-gray-700 leading-relaxed mb-6">
                 Anciennement bains-douches et laverie des premiers HLM parisiens au début du XXᵉ siècle, puis site industriel, le bâtiment a été entièrement repensé et rénové pour devenir un espace de réception dédié à l'événementiel en 2016.
               </p>
-              <p className="text-gray-400 leading-relaxed mb-6">
+              <p className="text-gray-700 leading-relaxed mb-6">
                 Inspiré des univers Art Déco et industriel, nous avons conçu Le Tripot Régnier comme un lieu hybride et contemporain, pensé pour accueillir les événements corporate et culturels d'aujourd'hui.
               </p>
-              <p className="text-gray-400 leading-relaxed mb-10">
+              <p className="text-gray-700 leading-relaxed mb-10">
                 Entièrement équipé en son, lumière et vidéo, l'espace s'adapte à des formats variés et laisse place à une grande liberté de création.
               </p>
 
@@ -91,58 +89,54 @@ export default function Histoire() {
               </Link>
             </motion.div>
 
-            {/* Images */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="space-y-4"
-            >
-              <div className="overflow-hidden rounded-lg shadow-lg aspect-[4/3]">
-                <img
-                  src="https://letripotregnier.fr/assets/photos/photo-hall-entree-tripot-regnier.jpg"
-                  alt="Hall d'entrée Art Déco du Tripot Régnier, 10-12 rue Mathurin Régnier Paris 15e"
-                  loading="lazy"
-                  className="w-full h-full object-cover"
-                />
+            {/* Mosaïque 4 photos */}
+            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+              {/* Desktop : grille 2x2 asymétrique */}
+              <div className="hidden md:grid grid-cols-[60%_40%] grid-rows-2 gap-2" style={{ height: '520px' }}>
+                {/* Haut gauche — grande */}
+                <div className="overflow-hidden rounded-lg row-span-1">
+                  <img src={mosaicPhotos[0].src} alt={mosaicPhotos[0].alt} loading="lazy" className="w-full h-full object-cover" style={{ height: '254px' }} />
+                </div>
+                {/* Haut droite — petite */}
+                <div className="overflow-hidden rounded-lg row-span-1">
+                  <img src={mosaicPhotos[1].src} alt={mosaicPhotos[1].alt} loading="lazy" className="w-full h-full object-cover" style={{ height: '254px' }} />
+                </div>
+                {/* Bas gauche — petite */}
+                <div className="overflow-hidden rounded-lg row-span-1">
+                  <img src={mosaicPhotos[2].src} alt={mosaicPhotos[2].alt} loading="lazy" className="w-full h-full object-cover" style={{ height: '254px' }} />
+                </div>
+                {/* Bas droite — grande */}
+                <div className="overflow-hidden rounded-lg row-span-1">
+                  <img src={mosaicPhotos[3].src} alt={mosaicPhotos[3].alt} loading="lazy" className="w-full h-full object-cover" style={{ height: '254px' }} />
+                </div>
               </div>
-              <div className="overflow-hidden rounded-lg shadow-lg aspect-[4/3]">
-                <img
-                  src={IMAGES.spaces.grandeSalle.src}
-                  alt="Salle principale du Tripot Régnier en configuration événementielle, 400m²"
-                  loading="lazy"
-                  className="w-full h-full object-cover"
-                />
+
+              {/* Mobile : colonne */}
+              <div className="flex flex-col gap-2 md:hidden">
+                {mosaicPhotos.map((photo, i) => (
+                  <div key={i} className="overflow-hidden rounded-lg aspect-[4/3]">
+                    <img src={photo.src} alt={photo.alt} loading="lazy" className="w-full h-full object-cover" />
+                  </div>
+                ))}
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* ── CTA centré ────────────────────────────────────────────────────── */}
-      <section className="py-10 px-6 border-t border-white/10">
+      {/* ── CTA ────────────────────────────────────────────────────────────── */}
+      <section className="py-10 px-6 bg-white border-t border-gray-100">
         <div className="max-w-2xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-col items-center gap-6"
-          >
-            <h2 className="text-2xl md:text-4xl text-white font-semibold tracking-tight">
+          <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex flex-col items-center gap-6">
+            <h2 className="text-2xl md:text-4xl text-[#0D0D0D] font-semibold tracking-tight">
               Découvrir l'ambiance unique<br />du Tripot Régnier
             </h2>
             <Link
               to={createPageUrl('Contact')}
               className="inline-flex items-center gap-3 px-8 py-4 font-semibold tracking-wide text-sm rounded-full border-2 bg-transparent transition-all duration-300"
               style={{ borderColor: COLORS.ACCENT_COLOR, color: COLORS.ACCENT_COLOR }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR;
-                e.currentTarget.style.color = 'white';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'transparent';
-                e.currentTarget.style.color = COLORS.ACCENT_COLOR;
-              }}
+              onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR; e.currentTarget.style.color = 'white'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = COLORS.ACCENT_COLOR; }}
             >
               NOUS CONTACTER
               <ArrowRight className="w-4 h-4" />
