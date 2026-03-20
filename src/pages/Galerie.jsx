@@ -18,7 +18,10 @@ export default function Galerie() {
   return (
     <div className="pt-20">
       <PageSEO
-        description="Galerie photos du Tripot Régnier. Découvrez nos espaces en images : salle principale, bar, mezzanine, hall d'accueil." title="Galerie photos | Le Tripot Régnier" description="Parcourez la galerie photos du Tripot Régnier et découvrez l'ambiance unique de notre salle événementielle de 700m² à Paris 15e." canonicalPath="/Galerie" />      
+        title="Galerie photos | Le Tripot Régnier"
+        description="Galerie photos du Tripot Régnier. Découvrez nos espaces en images : salle principale, bar, mezzanine, hall d'accueil."
+        canonicalPath="/Galerie"
+      />
       {/* Gallery Section */}
       <section className="py-16 px-4 bg-[#F5F5F0]">
         <div className="max-w-[1600px] mx-auto">
@@ -69,9 +72,9 @@ export default function Galerie() {
             onClick={() => setSelectedImage(null)}
           >
             <button 
-              className="absolute top-6 right-6 text-white/80 hover:text-white transition-colors p-2 bg-black/20 hover:bg-black/40 rounded-full"
+              className="absolute top-6 right-6 text-white/80 hover:text-white transition-colors p-2 bg-black/20 hover:bg-black/40 rounded-full min-w-[44px] min-h-[44px] flex items-center justify-center"
               onClick={() => setSelectedImage(null)}
-              aria-label="Fermer"
+              aria-label="Fermer la vue agrandie"
             >
               <X className="w-8 h-8" />
             </button>

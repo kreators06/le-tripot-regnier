@@ -184,27 +184,27 @@ export default function Contact() {
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="prenom" className="text-[#0D0D0D] font-medium text-sm">Prénom *</Label>
-                      <Input id="prenom" name="prenom" value={formData.prenom} onChange={handleChange} required placeholder="Votre prénom" className="border-gray-300 py-2.5" />
+                      <Input id="prenom" name="prenom" value={formData.prenom} onChange={handleChange} required placeholder="Votre prénom" className="border-gray-300 py-2.5 placeholder:text-gray-500" />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="nom" className="text-[#0D0D0D] font-medium text-sm">Nom *</Label>
-                      <Input id="nom" name="nom" value={formData.nom} onChange={handleChange} required placeholder="Votre nom" className="border-gray-300 py-2.5" />
+                      <Input id="nom" name="nom" value={formData.nom} onChange={handleChange} required placeholder="Votre nom" className="border-gray-300 py-2.5 placeholder:text-gray-500" />
                     </div>
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="email" className="text-[#0D0D0D] font-medium text-sm">E-mail *</Label>
-                    <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} required placeholder="votre@email.com" className="border-gray-300 py-2.5" />
+                    <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} required placeholder="votre@email.com" className="border-gray-300 py-2.5 placeholder:text-gray-500" />
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="phone" className="text-[#0D0D0D] font-medium text-sm">Téléphone</Label>
-                    <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} placeholder="06 12 34 56 78" className="border-gray-300 py-2.5" />
+                    <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} placeholder="06 12 34 56 78" className="border-gray-300 py-2.5 placeholder:text-gray-500" />
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="societe" className="text-[#0D0D0D] font-medium text-sm">Société</Label>
-                    <Input id="societe" name="societe" value={formData.societe} onChange={handleChange} placeholder="Votre société" className="border-gray-300 py-2.5" />
+                    <Input id="societe" name="societe" value={formData.societe} onChange={handleChange} placeholder="Votre société" className="border-gray-300 py-2.5 placeholder:text-gray-500" />
                   </div>
 
                   <div className="space-y-2 flex-1 flex flex-col">
