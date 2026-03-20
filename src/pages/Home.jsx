@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { motion, AnimatePresence } from 'framer-motion';
+import FadeIn from '@/components/FadeIn';
 import { ArrowRight, ChevronDown, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import LogoMarquee from '@/components/ui/LogoMarquee';
 import SEOMetadata from '@/components/SEOMetadata';

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import FadeIn from '@/components/FadeIn';
 import { COLORS } from '@/components/config/colors';
 import { IMAGES } from '@/components/config/images';
 import PageSEO from '@/components/PageSEO';
