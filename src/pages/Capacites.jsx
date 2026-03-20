@@ -193,6 +193,18 @@ export default function Capacites() {
             <button className="absolute top-4 right-4 text-white bg-black/50 rounded-full p-2 hover:bg-black/80 transition min-w-[44px] min-h-[44px] flex items-center justify-center" onClick={() => setLightboxImg(null)} aria-label="Fermer la vue agrandie">
               <X className="w-6 h-6" />
             </button>
+            {lightboxImages.length > 1 && (
+              <>
+                <button className="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-black/50 rounded-full p-2 hover:bg-black/80 transition min-w-[44px] min-h-[44px] flex items-center justify-center z-10"
+                  onClick={(e) => { e.stopPropagation(); setLightboxIndex((p) => { const n = (p - 1 + lightboxImages.length) % lightboxImages.length; setLightboxImg(lightboxImages[n]); return n; }); }}
+                  aria-label="Photo précédente"
+                ><ChevronLeft className="w-6 h-6" /></button>
+                <button className="absolute right-4 top-1/2 -translate-y-1/2 text-white bg-black/50 rounded-full p-2 hover:bg-black/80 transition min-w-[44px] min-h-[44px] flex items-center justify-center z-10"
+                  onClick={(e) => { e.stopPropagation(); setLightboxIndex((p) => { const n = (p + 1) % lightboxImages.length; setLightboxImg(lightboxImages[n]); return n; }); }}
+                  aria-label="Photo suivante"
+                ><ChevronRight className="w-6 h-6" /></button>
+              </>
+            )}
             <motion.img initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.9, opacity: 0 }}
               src={lightboxImg} alt="Aperçu photo Le Tripot Régnier"
               className="max-w-full max-h-[90vh] object-contain rounded-lg"
@@ -254,9 +266,9 @@ export default function Capacites() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 px-6 md:px-16">
           {spaces.map((space) =>
             space.isHoverSlider ? (
-              <ArrowSliderCard key={space.title} space={space} onClick={setLightboxImg} />
+              <ArrowSliderCard key={space.title} space={space} onClick={(img) => openLightbox(img, space.images)} />
             ) : (
-              <div key={space.title} className="cursor-pointer group" onClick={() => setLightboxImg(space.image)}>
+              <div key={space.title} className="cursor-pointer group" onClick={() => openLightbox(space.image, [space.image])}>
                 <div className="relative overflow-hidden rounded-lg" style={{ aspectRatio: '4/3' }}>
                   <img src={space.image} alt={`${space.title} — Le Tripot Régnier`} loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
