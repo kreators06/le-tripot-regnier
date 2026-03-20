@@ -121,7 +121,7 @@ function HoverSliderCard({ space, onClick }) {
       </div>
       <div className="pt-3 pb-3 px-5 bg-[#FAFAFA]">
         <h3 className="text-[#0D0D0D] text-base font-semibold">{space.title}</h3>
-        <p className="text-gray-500 text-sm mt-1 leading-relaxed">{space.description}</p>
+        <p className="text-[#0D0D0D] text-sm mt-1 leading-relaxed">{space.description}</p>
       </div>
     </div>
   );
@@ -208,7 +208,7 @@ export default function Capacites() {
             </h2>
           </motion.div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 px-2">
           {spaces.map((space) =>
             space.isHoverSlider ? (
               <HoverSliderCard key={space.title} space={space} onClick={setLightboxImg} />
@@ -226,7 +226,7 @@ export default function Capacites() {
                 </div>
                 <div className="pt-3 pb-3 px-5 bg-[#FAFAFA]">
                   <h3 className="text-[#0D0D0D] text-base font-semibold">{space.title}</h3>
-                  {space.description && <p className="text-gray-500 text-sm mt-1 leading-relaxed">{space.description}</p>}
+                  {space.description && <p className="text-[#0D0D0D] text-sm mt-1 leading-relaxed">{space.description}</p>}
                 </div>
               </div>
             )

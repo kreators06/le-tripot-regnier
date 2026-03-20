@@ -24,7 +24,7 @@ export default function Galerie() {
           {/* Grid */}
           <motion.div 
             layout
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4"
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2"
           >
             <AnimatePresence>
               {galleryImages.map((image, index) => (
@@ -49,7 +49,7 @@ export default function Galerie() {
                       <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
                   </div>
-                  <p className="mt-2 text-sm text-gray-500 text-left px-1">{image.alt}</p>
+                  <p className="mt-2 text-sm text-[#0D0D0D] text-left px-1">{image.alt}</p>
                 </motion.div>
               ))}
             </AnimatePresence>
