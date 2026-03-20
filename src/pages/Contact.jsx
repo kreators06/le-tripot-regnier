@@ -33,7 +33,7 @@ export default function Contact() {
     message: "",
     consentement: false,
   });
-  const recaptchaRef = useRef(null);
+  const [recaptchaError, setRecaptchaError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState("");
@@ -62,10 +62,14 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitError("");
+    setRecaptchaError("");
 
-    const recaptchaToken = recaptchaRef.current
-      ? recaptchaRef.current.querySelector('[name="g-recaptcha-response"]')?.value || ""
-      : "";
+    const recaptchaToken = window.grecaptcha ? window.grecaptcha.getResponse() : "";
+    if (!recaptchaToken) {
+      setRecaptchaError("Veuillez confirmer que vous n'êtes pas un robot.");
+      setIsSubmitting(false);
+      return;
+    }
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -92,9 +96,10 @@ export default function Contact() {
 
     if (data.success) {
       setIsSubmitted(true);
+      if (window.grecaptcha) window.grecaptcha.reset();
       setTimeout(() => {
         setIsSubmitted(false);
-        setFormData({ prenom: "", nom: "", email: "", phone: "", societe: "", message: "" });
+        setFormData({ prenom: "", nom: "", email: "", phone: "", societe: "", message: "", consentement: false });
       }, 5000);
     } else {
       setSubmitError("Une erreur est survenue. Veuillez réessayer ou nous contacter directement par email.");
@@ -242,11 +247,9 @@ export default function Contact() {
                   {submitError && <p className="text-red-500 text-sm">{submitError}</p>}
 
                   {/* reCAPTCHA v2 */}
-                  <div ref={recaptchaRef}>
-                    <div
-                      className="g-recaptcha"
-                      data-sitekey="REMPLACER_PAR_VOTRE_SITE_KEY"
-                    />
+                  <div>
+                    <div className="g-recaptcha" data-sitekey="REMPLACER_PAR_VOTRE_SITE_KEY" />
+                    {recaptchaError && <p className="text-red-500 text-sm mt-1">{recaptchaError}</p>}
                   </div>
 
                   <Button
