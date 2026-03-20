@@ -16,7 +16,7 @@ function PhotoCollage() {
       alt: "Le Tripot Régnier historique",
       style: {
         position: 'absolute',
-        width: '62%',
+        width: '58%',
         top: '0%',
         left: '0%',
         zIndex: 1,
@@ -30,7 +30,7 @@ function PhotoCollage() {
       alt: "Façade du Tripot Régnier",
       style: {
         position: 'absolute',
-        width: '50%',
+        width: '46%',
         top: '4%',
         right: '0%',
         zIndex: 3,
@@ -44,7 +44,7 @@ function PhotoCollage() {
       alt: "Travaux de rénovation du Tripot Régnier",
       style: {
         position: 'absolute',
-        width: '50%',
+        width: '46%',
         bottom: '0%',
         left: '2%',
         zIndex: 3,
@@ -58,7 +58,7 @@ function PhotoCollage() {
       alt: "Salle principale du Tripot Régnier",
       style: {
         position: 'absolute',
-        width: '60%',
+        width: '55%',
         bottom: '2%',
         right: '0%',
         zIndex: 2,
