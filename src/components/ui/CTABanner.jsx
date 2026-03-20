@@ -57,7 +57,7 @@ export default function CTABanner({
         >
           <Link 
             to={createPageUrl('Contact')}
-            className="group inline-flex items-center justify-center gap-3 px-10 py-4 text-white font-semibold tracking-tight transition-all duration-300 rounded hover:shadow-lg"
+            className="group inline-flex items-center justify-center gap-3 px-10 py-4 text-white font-semibold tracking-tight transition-all duration-300 rounded-full hover:shadow-lg"
             style={{ backgroundColor: COLORS.ACCENT_COLOR }}
             onMouseEnter={(e) => e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR_HOVER}
             onMouseLeave={(e) => e.currentTarget.style.backgroundColor = COLORS.ACCENT_COLOR}
@@ -68,7 +68,7 @@ export default function CTABanner({
           
           <Link 
             to={createPageUrl('Contact')}
-            className={`group inline-flex items-center justify-center gap-3 px-10 py-4 border ${isDark ? 'border-white/20 text-white hover:bg-white/5 hover:border-white/40' : 'border-[#0D0D0D]/20 text-[#0D0D0D] hover:bg-[#0D0D0D]/5'} font-semibold tracking-tight transition-all duration-300 rounded`}
+            className={`group inline-flex items-center justify-center gap-3 px-10 py-4 border ${isDark ? 'border-white/20 text-white hover:bg-white/5 hover:border-white/40' : 'border-[#0D0D0D]/20 text-[#0D0D0D] hover:bg-[#0D0D0D]/5'} font-semibold tracking-tight transition-all duration-300 rounded-full`}
           >
             <Calendar className="w-5 h-5" />
             {secondaryText}
