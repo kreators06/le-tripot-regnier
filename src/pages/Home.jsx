@@ -194,9 +194,9 @@ function ConfigCard({ config, index, onLightbox }) {
           <p className="text-white/80 text-xs">{config.capacity}</p>
         </div>
       </div>
-      </div>
-      );
-      }
+    </div>
+  );
+}
 
       // ─── Stars ────────────────────────────────────────────────────────────────────
 function Stars({ count }) {
