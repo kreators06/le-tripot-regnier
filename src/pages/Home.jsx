@@ -418,8 +418,8 @@ export default function Home() {
               NOUS CONTACTER <ArrowRight className="w-4 h-4" />
             </Link>
           </FadeIn>
-          </div>
-          </section>
-          </div>
-          );
-          }
+        </div>
+      </section>
+    </div>
+  );
+}

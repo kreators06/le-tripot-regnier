@@ -208,8 +208,8 @@ export default function Histoire() {
               <ArrowRight className="w-4 h-4" />
             </Link>
           </FadeIn>
-          </div>
-          </section>
-          </div>
-          );
-          }
+        </div>
+      </section>
+    </div>
+  );
+}
