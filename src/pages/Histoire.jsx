@@ -40,7 +40,7 @@ function PhotoCollage() {
       },
     },
     {
-      src: "https://letripotregnier.fr/assets/photos/histoire/3_tripot-regnier-travaux.jpg",
+      src: "https://letripotregnier.fr/assets/photos/histoire/3_tripot-regnier-travaux.jpeg",
       alt: "Travaux de rénovation du Tripot Régnier",
       style: {
         position: 'absolute',
@@ -55,6 +55,7 @@ function PhotoCollage() {
     },
     {
       src: "https://letripotregnier.fr/assets/photos/histoire/4_tripot-regnier-salle-principale.jpeg",
+
       alt: "Salle principale du Tripot Régnier",
       style: {
         position: 'absolute',

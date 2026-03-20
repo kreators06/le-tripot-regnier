@@ -47,16 +47,16 @@ const configurations = [
     name: "Défilé",
     capacity: "< 200 pers.",
     images: [
-      "https://letripotregnier.fr/assets/photos/photo-defile-mode-grande-salle-loreal.png",
-      "https://letripotregnier.fr/assets/photos/photo-salle-vide.jpg",
+      "https://letripotregnier.fr/assets/photos/photo-defile-mode-grande-salle-loreal.jpeg",
+      "https://letripotregnier.fr/assets/photos/photo-salle-vide.jpeg",
     ],
   },
   {
     name: "Dîner assis",
     capacity: "< 220 pers.",
     images: [
-      "https://letripotregnier.fr/assets/photos/photo-grande-salle-table-baquet-europe1.png",
-      "https://letripotregnier.fr/assets/photos/diner-canteloup.jpg",
+      "https://letripotregnier.fr/assets/photos/photo-grande-salle-table-baquet-europe1.jpeg",
+      "https://letripotregnier.fr/assets/photos/diner-canteloup.jpeg",
       "https://letripotregnier.fr/assets/photos/photo-salle-principale-diner-europe1.jpeg",
     ],
   },
@@ -64,9 +64,9 @@ const configurations = [
     name: "Conférence",
     capacity: "< 250 pers.",
     images: [
-      "https://letripotregnier.fr/assets/photos/photo-grande-salle-JO-paris-2024-conference.png",
-      "https://letripotregnier.fr/assets/photos/conference%20copie.jpg",
-      "https://letripotregnier.fr/assets/photos/conference.jpg",
+      "https://letripotregnier.fr/assets/photos/photo-grande-salle-JO-paris-2024-conference.jpeg",
+      "https://letripotregnier.fr/assets/photos/conference%20copie.jpeg",
+      "https://letripotregnier.fr/assets/photos/conference.jpeg",
     ],
   },
   {
@@ -74,7 +74,7 @@ const configurations = [
     capacity: "< 500 pers.",
     images: [
       "https://letripotregnier.fr/assets/photos/photo-lounge-etage.jpeg",
-      "https://letripotregnier.fr/assets/photos/photo-bar.jpg",
+      "https://letripotregnier.fr/assets/photos/photo-bar.jpeg",
     ],
   },
   {
@@ -82,8 +82,8 @@ const configurations = [
     capacity: "Showroom / exposition — Possibilité d'exposer des véhicules",
     images: [
       "https://letripotregnier.fr/assets/photos/photo-grande-salle-evenement-audi.jpeg",
-      "https://letripotregnier.fr/assets/photos/showroom.jpg",
-      "https://letripotregnier.fr/assets/photos/photo-grande-salle-ecran-geant-voiture.jpg",
+      "https://letripotregnier.fr/assets/photos/showroom.jpeg",
+      "https://letripotregnier.fr/assets/photos/photo-grande-salle-ecran-geant-voiture.jpeg",
     ],
   },
 ];

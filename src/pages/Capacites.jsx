@@ -12,14 +12,14 @@ import TrustSignals from '@/components/TrustSignals';
 
 // ─── Hero Carousel ─────────────────────────────────────────────────────────────
 const heroImages = [
-  "https://letripotregnier.fr/assets/photos/photo-defile-mode-grande-salle-loreal.png",
+  "https://letripotregnier.fr/assets/photos/photo-defile-mode-grande-salle-loreal.jpeg",
   "https://letripotregnier.fr/assets/photos/photo-salle-principale-diner-europe1.jpeg",
-  "https://letripotregnier.fr/assets/photos/photo-grande-salle-JO-paris-2024-conference.png",
+  "https://letripotregnier.fr/assets/photos/photo-grande-salle-JO-paris-2024-conference.jpeg",
   "https://letripotregnier.fr/assets/photos/photo-grande-salle-evenement-audi.jpeg",
   "https://letripotregnier.fr/assets/photos/photo-lounge-etage.jpeg",
   IMAGES.capacites.regie.src,
   IMAGES.spaces.bar.src,
-  "https://letripotregnier.fr/assets/photos/photo-hall-entree-tripot-regnier.jpg",
+  "https://letripotregnier.fr/assets/photos/photo-hall-entree-tripot-regnier.jpeg",
 ];
 const duplicated = [...heroImages, ...heroImages];
 
