@@ -366,6 +366,7 @@ export default function Home() {
           </div>
       </section>
 
+
       {/* ── Nos équipements ───────────────────────────────────────────────────── */}
       <TrustSignals />
 
