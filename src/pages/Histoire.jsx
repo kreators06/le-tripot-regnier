@@ -110,7 +110,7 @@ export default function Histoire() {
       <PageSEO title="Notre histoire | Le Tripot Régnier" description="Découvrez l'histoire du Tripot Régnier, de 1904 à aujourd'hui. Ancien bains-douches devenu lieu événementiel Art Déco de 700m² au cœur de Paris 15e." canonicalPath="/Histoire" />
 
       {/* ── SECTION 1 — Texte historique ────────────────────────────────────── */}
-      <section className="pt-32 pb-12 px-6 bg-white">
+      <section className="pt-40 pb-12 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
@@ -132,11 +132,11 @@ export default function Histoire() {
               </p>
 
               {/* Encart Origine du nom */}
-              <div className="rounded-xl p-6 mb-10" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}10`, border: `2px solid ${COLORS.ACCENT_COLOR}40` }}>
-                <div className="inline-block px-3 py-1 text-xs font-medium tracking-wide mb-3 rounded" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}25`, color: COLORS.ACCENT_COLOR }}>
+              <div className="rounded-xl p-6 mb-10" style={{ backgroundColor: COLORS.ACCENT_COLOR }}>
+                <div className="inline-block px-3 py-1 text-xs font-medium tracking-wide mb-3 rounded bg-black/20 text-white">
                   ORIGINE DU NOM
                 </div>
-                <p className="text-gray-700 leading-relaxed text-sm">
+                <p className="text-white leading-relaxed text-sm">
                   Son nom rend hommage au Tripot Régnier, célèbre jeu de paume construit en 1573 par Jacques Régnier, père du poète Mathurin Régnier — un clin d'œil à l'histoire parisienne et à l'esprit de convivialité qui anime le lieu.
                 </p>
               </div>

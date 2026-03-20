@@ -355,7 +355,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
         </div>
 
-        <div className="relative z-10 w-full max-w-6xl mx-auto px-8 md:px-16 py-32">
+        <div className="relative z-10 w-full max-w-6xl mx-auto px-8 md:px-16 py-32 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.2 }}>
             <p className="text-sm md:text-base text-white/80 tracking-[0.3em] uppercase mb-4 font-light">
               Le Tripot Régnier — Paris 15ème
@@ -472,7 +472,7 @@ export default function Home() {
       </section>
 
       {/* ── CTA ───────────────────────────────────────────────────────────────── */}
-      <section className="py-12 md:py-16 px-6" style={{ background: '#000', borderTop: `1px solid ${COLORS.ACCENT_COLOR}30` }}>
+      <section className="py-12 md:py-16 px-6" style={{ background: '#0D0D0D', borderTop: `1px solid ${COLORS.ACCENT_COLOR}30` }}>
         <div className="max-w-2xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} className="flex flex-col items-center gap-5">
             <h2 className="text-2xl md:text-4xl text-white font-semibold tracking-tight">Organiser un événement</h2>

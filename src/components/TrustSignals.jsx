@@ -78,7 +78,7 @@ export default function TrustSignals() {
           transition={{ duration: 0.4 }}
           className="text-left mb-12"
         >
-          <h2 className="text-lg font-semibold text-[#0D0D0D] tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-semibold text-[#0D0D0D] tracking-tight">
             Nos <span style={{ color: COLORS.ACCENT_COLOR }}>équipements</span>
           </h2>
         </motion.div>
@@ -120,7 +120,7 @@ export default function TrustSignals() {
             <Link
               to={createPageUrl('Capacites')}
               className="flex flex-row items-center justify-center gap-2 text-center p-4 rounded-xl h-full transition-all duration-300 group"
-              style={{ backgroundColor: COLORS.ACCENT_COLOR, color: '#000' }}
+              style={{ backgroundColor: COLORS.ACCENT_COLOR, color: 'white' }}
               onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.85'; }}
               onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; }}
             >
