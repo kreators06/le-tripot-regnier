@@ -113,27 +113,21 @@ export const IMAGES = {
 
   // ── Logos partenaires (marquee) ──────────────────────────────────────────────
   logos: [
-    { name: "L'Oréal Professionnel", url: "https://imgs.search.brave.com/xmnF6bvl5Cqv7H19JkRRQFE8g-u2R3n2e_WfoVGl_k0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5nYWxsLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMTUvTG9y/ZWFsLUxvZ28ucG5n" },
-    { name: "Paris 2024",            url: "https://imgs.search.brave.com/VmRjgdPg2kOTo718IzdM7_zBN8sA4zWWdkqfgtW9lkc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/ZnJlZWxvZ292ZWN0/b3JzLm5ldC93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyMy8wMy9w/YXJpcy0yMDI0LWxv/Z28tZnJlZWxvZ292/ZWN0b3JzLm5ldF8u/cG5n" },
-    { name: "Nike",                  url: "https://cdn.freebiesupply.com/logos/large/2x/nike-4-logo-black-and-white.png" },
-    { name: "JEEP",                  url: "https://cdn.freebiesupply.com/logos/large/2x/jeep-7-logo-black-and-white.png" },
-    { name: "Audi",                  url: "https://cdn.freebiesupply.com/logos/large/2x/audi-logo-black-and-white.png" },
-    { name: "Les Républicains",      url: "https://imgs.search.brave.com/f--uPj2DZLOR1a5BO_TB6hXV9P4LW9veNRHOu1xJxBg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9sb2dv/cy13b3JsZC5uZXQv/d3AtY29udGVudC91/cGxvYWRzLzIwMjQv/MDcvTGVzLVJlcHVi/bGljYWlucy1Mb2dv/LTUwMHgyODEucG5n" },
-    { name: "Europe 1",              url: "https://cdn.freebiesupply.com/logos/large/2x/europe-1-logo-png-transparent.png" },
-    { name: "Cdiscount",             url: "https://imgs.search.brave.com/Pk9ZnqasutWC2jB88_SqBgw9Uzfp1o9BXxbvS6NkAqY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pY29u/bG9nb3ZlY3Rvci5j/b20vdXBsb2Fkcy9p/bWFnZXMvMjAyNS8w/My9zbS02N2M5NGY4/ZmJlOGMwLUNkaXNj/b3VudC53ZWJw" },
-    { name: "TF1",                   url: "https://cdn.freebiesupply.com/logos/large/2x/tf1-logo-png-transparent.png" },
-    { name: "BPCE",                  url: "https://www.bpce.com/sites/default/files/styles/logo_partner/public/2021-06/logo-bpce.png" },
-    { name: "Kronenbourg",           url: "https://cdn.freebiesupply.com/logos/large/2x/kronenbourg-1664-logo-png-transparent.png" },
-    { name: "Aston Martin",          url: "https://cdn.freebiesupply.com/logos/large/2x/aston-martin-logo-png-transparent.png" },
-    { name: "Orange",                url: "https://cdn.freebiesupply.com/logos/large/2x/orange-logo-png-transparent.png" },
-    { name: "Rotary",                url: "https://cdn.freebiesupply.com/logos/large/2x/rotary-international-logo-png-transparent.png" },
-    { name: "NYX Cosmetics",         url: "https://cdn.freebiesupply.com/logos/large/2x/nyx-cosmetics-logo-png-transparent.png" },
-    { name: "Delsey",                url: "https://cdn.freebiesupply.com/logos/large/2x/delsey-logo-png-transparent.png" },
-    { name: "FSE",                   url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Flag_of_the_European_Union.svg/320px-Flag_of_the_European_Union.svg.png" },
-    { name: "Shadow",                url: "https://cdn.freebiesupply.com/logos/large/2x/shadow-logo-png-transparent.png" },
-    { name: "Degré Zéro",            url: "https://imgs.search.brave.com/3Z2ZZjs2mXc4y499p-qjzsuXUmvE0epkHeutKLM2mVA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9sb2dv/ZGl4LmNvbS9sb2dv/LzIxMTE1NTAucG5n" },
-    { name: "Bonjour",               url: "https://imgs.search.brave.com/fsR70YCmL7Td0rEv5p58ZiBiYJ_QH4AGW_UbcGTLLIU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMud2l4c3RhdGlj/LmNvbS9tZWRpYS84/YTQyMzFfODkxZGVk/ZmNkMDQ0NGI4ZDhl/MDA1Yzg1YWUzNzYz/MDF-bXYyLnBuZy92/MS9maWxsL3dfNDE2/LGhfMjQ4LGFsX2Ms/cV84NSx1c21fMC42/Nl8xLjAwXzAuMDEs/ZW5jX2F2aWYscXVh/bGl0eV9hdXRvL0Jv/bmpvdXJfZWRpdGVk/LnBuZw" },
-  ],
+  { name: "Alfa", url: "https://letripotregnier.fr/assets/photos/logos/alfa.png" },
+  { name: "Aston Martin", url: "https://letripotregnier.fr/assets/photos/logos/astonmartin.png" },
+  { name: "Cdiscount", url: "https://letripotregnier.fr/assets/photos/logos/cdiscount.png" },
+  { name: "Celine", url: "https://letripotregnier.fr/assets/photos/logos/Celine.png" },
+  { name: "Jeep", url: "https://letripotregnier.fr/assets/photos/logos/jeep.png" },
+  { name: "Lamborghini", url: "https://letripotregnier.fr/assets/photos/logos/lamborghini.png" },
+  { name: "Leclerc", url: "https://letripotregnier.fr/assets/photos/logos/leclerc.png" },
+  { name: "L'Oréal", url: "https://letripotregnier.fr/assets/photos/logos/loreal.png" },
+  { name: "Natixis", url: "https://letripotregnier.fr/assets/photos/logos/natixis.png" },
+  { name: "Nike", url: "https://letripotregnier.fr/assets/photos/logos/nike.png" },
+  { name: "Orange", url: "https://letripotregnier.fr/assets/photos/logos/orange.png" },
+  { name: "Porsche", url: "https://letripotregnier.fr/assets/photos/logos/Porsche.png" },
+  { name: "Salesfactory", url: "https://letripotregnier.fr/assets/photos/logos/salesfactory.png" },
+  { name: "Volkswagen", url: "https://letripotregnier.fr/assets/photos/logos/volkswagen.png" }
+],
 
 };
 
