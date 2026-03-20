@@ -396,7 +396,7 @@ export default function Home() {
                   <p className="text-[#0D0D0D] font-semibold text-sm">{testimonial.author}</p>
                   {testimonial.company && <p className="text-gray-500 text-xs font-light mt-0.5">{testimonial.company}</p>}
                 </div>
-              </motion.div>
+              </FadeIn>
             ))}
           </div>
         </div>
@@ -417,9 +417,9 @@ export default function Home() {
             >
               NOUS CONTACTER <ArrowRight className="w-4 h-4" />
             </Link>
-          </motion.div>
-        </div>
-      </section>
-    </div>
-  );
-}
+          </FadeIn>
+          </div>
+          </section>
+          </div>
+          );
+          }
