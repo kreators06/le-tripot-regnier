@@ -24,7 +24,7 @@ export default function SectionTitle({
       transition={{ duration: 0.6 }}
       className={`mb-16 ${alignClass}`}
     >
-      <h2 className={`text-4xl md:text-5xl font-semibold tracking-tight mb-6 ${light ? 'text-white' : 'text-[#0D0D0D]'}`}>
+      <h2 className={`text-lg font-semibold tracking-tight mb-6 ${light ? 'text-white' : 'text-[#0D0D0D]'}`}>
         {title}
       </h2>
       {subtitle && (

@@ -13,9 +13,9 @@ import CookieConsent from '@/components/CookieConsent';
 const navLinks = [
   { name: 'Accueil', page: 'Home' },
   { name: 'Histoire', page: 'Histoire' },
-  { name: 'Galerie Photos', page: 'Galerie' },
-  { name: 'Espaces & Équipements', page: 'Capacites' },
-  { name: 'Nos Engagements', page: 'Engagements' },
+  { name: 'Galerie photos', page: 'Galerie' },
+  { name: 'Espaces & équipements', page: 'Capacites' },
+  { name: 'Nos engagements', page: 'Engagements' },
   { name: 'Contact', page: 'Contact' },
 ];
 
