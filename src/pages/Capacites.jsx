@@ -60,21 +60,27 @@ function HeroCarousel() {
 
 // ─── Données espaces ──────────────────────────────────────────────────────────
 const sallePrincipaleImages = [
-  "https://letripotregnier.fr/assets/photos/photo-salle-vide.jpg",
-  "https://letripotregnier.fr/assets/photos/photo-mezzanine.jpg",
-  "https://letripotregnier.fr/assets/photos/photo-lounge-etage.jpeg",
+  "https://letripotregnier.fr/assets/photos/photo-salle-vide.jpeg",
+  "https://letripotregnier.fr/assets/photos/shoootin-photo-5.jpeg",
+  "https://letripotregnier.fr/assets/photos/shoootin-photo-8.jpeg",
 ];
 const mezzanineImages = [
-  "https://letripotregnier.fr/assets/photos/photo-mezzanine.jpg",
+  "https://letripotregnier.fr/assets/photos/photo-mezzanine.jpeg",
   "https://letripotregnier.fr/assets/photos/photo-lounge-etage.jpeg",
+];
+const hallImages = [
+  "https://letripotregnier.fr/assets/photos/photo-hall-entree-tripot-regnier.jpeg",
+  "https://letripotregnier.fr/assets/photos/hall%203.jpeg",
+  "https://letripotregnier.fr/assets/photos/hall%202.jpeg",
+  "https://letripotregnier.fr/assets/photos/hall%204.jpeg",
 ];
 
 const spaces = [
-  { title: "Salle Principale", surface: "400 m²", images: sallePrincipaleImages, description: "Espace modulable équipé (son, lumière, projection vidéo) dotée d'un bar et d'un fumoir intérieur.", isHoverSlider: true },
-  { title: "Bar", surface: "", image: IMAGES.spaces.bar.src, description: "Bar équipé : four, machine à glaçons, réfrigérateur." },
+  { title: "Salle Principale", surface: "400 m²", images: sallePrincipaleImages, description: "Espace modulable équipé (son, lumière, projection vidéo) doté d'un bar et d'un fumoir intérieur.", isHoverSlider: true },
+  { title: "Bar", surface: "", images: ["https://letripotregnier.fr/assets/photos/Bar-serveur.jpeg", IMAGES.spaces.bar.src], description: "Bar équipé : four, machine à glaçons, réfrigérateur.", isHoverSlider: true },
   { title: "Mezzanine", surface: "65 m²", images: mezzanineImages, description: "Espace en hauteur offrant une vue panoramique sur la salle.", isHoverSlider: true },
-  { title: "Hall d'accueil", surface: "", image: IMAGES.spaces.espaceLounge.src, description: "Espace détente situé en prolongation de la mezzanine." },
-  { title: "Vestiaire", surface: "450 pers.", image: IMAGES.spaces.vestiaire.src, description: "Vestiaire équipé avec capacité de 450 personnes" },
+  { title: "Hall d'accueil", surface: "", images: hallImages, description: "Espace détente situé en prolongation de la mezzanine.", isHoverSlider: true },
+  { title: "Vestiaire", surface: "450 pers.", image: IMAGES.spaces.vestiaire.src, description: "Vestiaire équipé avec capacité de 450 personnes." },
   { title: "Loge Privée", surface: "", image: IMAGES.spaces.logePrivee.src, description: "Loge avec accès privé comprenant : écran TV, canapé, toilettes, douche, lavabo." },
 ];
 
@@ -206,14 +212,14 @@ export default function Capacites() {
 
       {/* 4. Espaces */}
       <section className="py-12 md:py-16 bg-[#FAFAFA]">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6 md:px-16">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} className="text-left mb-10">
             <h2 className="text-3xl md:text-5xl font-semibold text-[#0D0D0D] tracking-tight">
               Nos <span style={{ color: COLORS.ACCENT_COLOR }}>espaces</span>
             </h2>
           </motion.div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 px-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 px-6 md:px-16">
           {spaces.map((space) =>
             space.isHoverSlider ? (
               <ArrowSliderCard key={space.title} space={space} onClick={setLightboxImg} />
