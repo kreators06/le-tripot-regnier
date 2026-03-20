@@ -240,6 +240,14 @@ export default function Contact() {
 
                   {submitError && <p className="text-red-500 text-sm">{submitError}</p>}
 
+                  {/* reCAPTCHA v2 */}
+                  <div ref={recaptchaRef}>
+                    <div
+                      className="g-recaptcha"
+                      data-sitekey="REMPLACER_PAR_VOTRE_SITE_KEY"
+                    />
+                  </div>
+
                   <Button
                     type="submit"
                     disabled={isSubmitting || !formData.consentement}
