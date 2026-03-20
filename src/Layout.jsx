@@ -7,6 +7,7 @@ import { createPageUrl } from '@/utils';
 import { Menu, X, Phone, Mail, MapPin, Instagram, Linkedin, Facebook } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { COLORS } from '@/components/config/colors';
+import { SOCIAL } from '@/components/config/social';
 import CookieConsent from '@/components/CookieConsent';
 
 const navLinks = [

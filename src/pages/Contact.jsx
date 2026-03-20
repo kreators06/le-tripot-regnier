@@ -20,6 +20,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { COLORS } from "@/components/config/colors";
 import { IMAGES } from "@/components/config/images";
+import { SOCIAL } from "@/components/config/social";
 import PageSEO from "@/components/PageSEO";
 
 export default function Contact() {
