@@ -115,11 +115,6 @@ export default function Layout({ children, currentPageName }) {
             <Link
               to={createPageUrl('Home')}
               className="flex items-center gap-3 group"
-              style={{
-                opacity: currentPageName === 'Home' && !isScrolled ? 0 : 1,
-                pointerEvents: currentPageName === 'Home' && !isScrolled ? 'none' : 'auto',
-                transition: 'opacity 0.4s ease',
-              }}
             >
               <img 
                 src="https://letripotregnier.fr/assets/logo.png" 
