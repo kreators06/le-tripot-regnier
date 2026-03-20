@@ -62,6 +62,10 @@ export default function Contact() {
     setIsSubmitting(true);
     setSubmitError("");
 
+    const recaptchaToken = recaptchaRef.current
+      ? recaptchaRef.current.querySelector('[name="g-recaptcha-response"]')?.value || ""
+      : "";
+
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: {
@@ -78,6 +82,7 @@ export default function Contact() {
         téléphone: formData.phone,
         société: formData.societe,
         message: formData.message,
+        "g-recaptcha-response": recaptchaToken,
       }),
     });
 
