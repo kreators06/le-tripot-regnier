@@ -140,7 +140,7 @@ function HoverSliderCard({ space, onClick }) {
 }
 
 // ─── Config Card avec flèches ─────────────────────────────────────────────────
-function ConfigCard({ config, index }) {
+function ConfigCard({ config, index, onLightbox }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const prev = (e) => {
@@ -158,7 +158,8 @@ function ConfigCard({ config, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.05 }}
-      className="group overflow-hidden rounded-xl"
+      className="group overflow-hidden rounded-xl cursor-pointer"
+      onClick={() => onLightbox(config.images[currentIndex])}
     >
       <div className="relative overflow-hidden" style={{ aspectRatio: '4/3' }}>
         {config.images.map((src, i) => (
@@ -264,22 +265,23 @@ export default function Home() {
         </div>
 
         {/* Logo gauche / Texte droite — desktop : flex-row, mobile : flex-col centré */}
-        <div className="relative z-10 w-full max-w-5xl mx-auto px-8 md:px-16 py-32">
-          <div className="flex flex-col items-center text-center md:flex-row md:items-center md:text-left gap-10 md:gap-16">
+        <div className="relative z-10 w-full max-w-6xl mx-auto px-8 md:px-16 py-32">
+          <div className="flex flex-col items-center text-center md:flex-row md:items-center md:text-left gap-8 md:gap-14">
             <motion.img
               src="https://letripotregnier.fr/assets/logo.png"
               alt="Le Tripot Régnier"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1 }}
-              style={{ width: '200px', height: 'auto', flexShrink: 0 }}
+              style={{ width: 'clamp(100px, 14vw, 200px)', height: 'auto', flexShrink: 0, maxWidth: '120px' }}
+              className="md:max-w-none"
             />
             <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.2 }}>
               <p className="text-sm md:text-base text-white/80 tracking-[0.3em] uppercase mb-4 font-light">
                 Le Tripot Régnier — Paris 15ème
               </p>
-              <h1 className="text-white font-bold tracking-tight leading-[1.15] text-4xl md:text-5xl lg:text-6xl">
-                Salle parisienne où<br />vos événements prennent vie.
+              <h1 className="text-white font-bold tracking-tight leading-[1.15] text-[1.6rem] md:text-[2.6rem] lg:text-[3.2rem]">
+                Salle parisienne où vos événements prennent vie.
               </h1>
             </motion.div>
           </div>
@@ -310,8 +312,8 @@ export default function Home() {
             space.isHoverSlider ? (
               <HoverSliderCard key={space.title} space={space} onClick={setLightboxImg} />
             ) : (
-              <div key={space.title} className="overflow-hidden cursor-pointer group" onClick={() => setLightboxImg(space.image)}>
-                <div className="relative overflow-hidden" style={{ aspectRatio: '4/3' }}>
+              <div key={space.title} className="cursor-pointer group" onClick={() => setLightboxImg(space.image)}>
+                <div className="relative overflow-hidden rounded-lg" style={{ aspectRatio: '4/3' }}>
                   <img src={space.image} alt={`${space.title} — Le Tripot Régnier`} loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
@@ -343,7 +345,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {configurations.map((config, index) => (
-              <ConfigCard key={config.name} config={config} index={index} />
+              <ConfigCard key={config.name} config={config} index={index} onLightbox={setLightboxImg} />
             ))}
 
             {/* Carte "Tournage & Événement sur mesure" — fond noir, bordure dorée */}
