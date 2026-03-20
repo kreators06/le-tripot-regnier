@@ -76,9 +76,9 @@ export default function TrustSignals() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
-          className="text-center mb-12"
+          className="text-left mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-semibold text-[#0D0D0D] tracking-tight">
+          <h2 className="text-lg font-semibold text-[#0D0D0D] tracking-tight">
             Nos <span style={{ color: COLORS.ACCENT_COLOR }}>équipements</span>
           </h2>
         </motion.div>
