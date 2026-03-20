@@ -96,50 +96,54 @@ const testimonials = [
   { quote: "Agréable et convivial.", author: "Boyer Liliane" },
 ];
 
-// ─── Hover Slider Card ────────────────────────────────────────────────────────
-function HoverSliderCard({ space, onClick }) {
+// ─── Arrow Slider Card (flèches gauche/droite dans la tuile) ─────────────────
+function ArrowSliderCard({ space, onClick }) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isHovering, setIsHovering] = useState(false);
-  const timerRef = useRef(null);
 
-  useEffect(() => {
-    if (isHovering) {
-      const firstTimeout = setTimeout(() => {
-        setCurrentIndex(1 % space.images.length);
-        timerRef.current = setInterval(() => {
-          setCurrentIndex((prev) => (prev + 1) % space.images.length);
-        }, 1500);
-      }, 50);
-      return () => {
-        clearTimeout(firstTimeout);
-        clearInterval(timerRef.current);
-      };
-    } else {
-      clearInterval(timerRef.current);
-      setCurrentIndex(0);
-    }
-    return () => clearInterval(timerRef.current);
-  }, [isHovering, space.images.length]);
+  const prev = (e) => {
+    e.stopPropagation();
+    setCurrentIndex((p) => (p - 1 + space.images.length) % space.images.length);
+  };
+  const next = (e) => {
+    e.stopPropagation();
+    setCurrentIndex((p) => (p + 1) % space.images.length);
+  };
 
   return (
-    <div
-      className="cursor-pointer"
-      onClick={() => onClick(space.images[currentIndex])}
-      onMouseEnter={() => setIsHovering(true)}
-      onMouseLeave={() => setIsHovering(false)}
-    >
+    <div className="cursor-pointer group/card" onClick={() => onClick(space.images[currentIndex])}>
       <div className="relative overflow-hidden rounded-lg" style={{ aspectRatio: '4/3', background: '#111' }}>
         {space.images.map((src, i) => (
           <img key={i} src={src} alt={`${space.title} — Le Tripot Régnier vue ${i + 1}`}
             className="absolute inset-0 w-full h-full object-cover"
-            style={{ opacity: i === currentIndex ? 1 : 0, transition: 'opacity 0.6s ease' }}
+            style={{ opacity: i === currentIndex ? 1 : 0, transition: 'opacity 0.5s ease' }}
           />
         ))}
         {space.surface && (
-          <span className="absolute top-3 right-3 font-bold rounded-full text-white bg-black" style={{ fontSize: '0.95rem', padding: '0.35rem 0.9rem' }}>
+          <span className="absolute top-3 right-3 font-bold rounded-full text-white bg-black z-10" style={{ fontSize: '0.95rem', padding: '0.35rem 0.9rem' }}>
             {space.surface}
           </span>
         )}
+        {/* Flèches */}
+        <button onClick={prev}
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/80 rounded-full p-1.5 text-white transition-all opacity-0 group-hover/card:opacity-100"
+          aria-label="Photo précédente"
+        >
+          <ChevronLeft className="w-4 h-4" />
+        </button>
+        <button onClick={next}
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/80 rounded-full p-1.5 text-white transition-all opacity-0 group-hover/card:opacity-100"
+          aria-label="Photo suivante"
+        >
+          <ChevronRight className="w-4 h-4" />
+        </button>
+        {/* Dots */}
+        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+          {space.images.map((_, i) => (
+            <span key={i} className="w-1.5 h-1.5 rounded-full transition-all"
+              style={{ backgroundColor: i === currentIndex ? 'white' : 'rgba(255,255,255,0.4)' }}
+            />
+          ))}
+        </div>
       </div>
       <div className="pt-3 pb-3 px-5 bg-[#0D0D0D]">
         <h3 className="text-white text-base font-semibold">{space.title}</h3>
@@ -150,6 +154,7 @@ function HoverSliderCard({ space, onClick }) {
 }
 
 // ─── Config Card avec flèches ─────────────────────────────────────────────────
+// (SpacesSlider supprimé — grille fixe utilisée à la place)
 function ConfigCard({ config, index, onLightbox }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -454,8 +459,32 @@ export default function Home() {
               Nos <span style={{ color: COLORS.ACCENT_COLOR }}>espaces</span>
             </h2>
           </motion.div>
+          {/* Grille fixe 2×3 */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+            {spaces.map((space) =>
+              space.isHoverSlider ? (
+                <ArrowSliderCard key={space.title} space={space} onClick={(img) => openLightbox(img, space.images)} />
+              ) : (
+                <div key={space.title} className="cursor-pointer group" onClick={() => openLightbox(space.image)}>
+                  <div className="relative overflow-hidden rounded-lg" style={{ aspectRatio: '4/3' }}>
+                    <img src={space.image} alt={`${space.title} — Le Tripot Régnier`} loading="lazy"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    {space.surface && (
+                      <span className="absolute top-3 right-3 font-bold rounded-full text-white bg-black" style={{ fontSize: '0.95rem', padding: '0.35rem 0.9rem' }}>
+                        {space.surface}
+                      </span>
+                    )}
+                  </div>
+                  <div className="pt-3 pb-3 px-5 bg-[#0D0D0D]">
+                    <h3 className="text-white text-base font-semibold">{space.title}</h3>
+                    {space.description && <p className="text-[#DDD] text-sm mt-1 leading-relaxed">{space.description}</p>}
+                  </div>
+                </div>
+              )
+            )}
+          </div>
         </div>
-        <SpacesSlider spaces={spaces} onLightbox={(img) => openLightbox(img)} />
       </section>
 
       {/* ── Espaces Modulables ────────────────────────────────────────────────── */}
