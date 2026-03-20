@@ -60,14 +60,14 @@ export default function Engagements() {
             <div className="inline-block px-3 py-1 text-xs font-medium tracking-wide mb-6 rounded" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20`, color: COLORS.ACCENT_COLOR }}>
               RSE
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight">
+            <h1 className="text-4xl md:text-6xl font-bold text-[#0D0D0D] mb-8 tracking-tight">
               Le Tripot Régnier<br />
               <span style={{ color: COLORS.ACCENT_COLOR }}>engagé RSE</span>
             </h1>
-            <p className="text-gray-300 leading-relaxed text-lg mb-6">
+            <p className="text-gray-700 leading-relaxed text-lg mb-6">
               Au Tripot Régnier, nous faisons le choix de l'événementiel responsable. Notre démarche RSE s'inscrit au cœur de notre activité afin d'offrir à nos clients et partenaires des réceptions respectueuses de la planète et des personnes.
             </p>
-            <p className="text-gray-400 leading-relaxed text-base">
+            <p className="text-gray-600 leading-relaxed text-base">
               Porté par Pascal Monti, Directeur du Tripot Régnier et Président d'un groupe de sociétés certifiées Qualité (ISO 9001), Environnement (ISO 14001) et labellisées RSE niveau Exemplaire. Notre politique RSE repose sur trois piliers :
             </p>
           </motion.div>
@@ -85,7 +85,7 @@ export default function Engagements() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.05 }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="bg-white/5 border border-white/10 rounded-xl p-8"
+                className="bg-gray-50 border border-gray-200 rounded-xl p-8"
               >
                 <div className="w-12 h-12 flex items-center justify-center rounded-lg mb-5" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20` }}>
                   <pillar.icon className="w-6 h-6" style={{ color: COLORS.ACCENT_COLOR }} />
@@ -93,7 +93,7 @@ export default function Engagements() {
                 <h3 className="text-lg font-semibold mb-3" style={{ color: COLORS.ACCENT_COLOR }}>
                   {pillar.title}
                 </h3>
-                <p className="text-gray-300 text-sm leading-relaxed">
+                <p className="text-gray-600 text-sm leading-relaxed">
                   {pillar.description}
                 </p>
               </motion.div>
@@ -103,13 +103,13 @@ export default function Engagements() {
       </section>
 
       {/* ── SECTION 2 — Actions concrètes ────────────────────────────────────── */}
-      <section className="py-16 px-6 border-t border-white/10">
+      <section className="py-16 px-6 border-t border-gray-100">
         <div className="max-w-3xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} className="mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-bold text-[#0D0D0D] mb-4 tracking-tight">
               Actions <span style={{ color: COLORS.ACCENT_COLOR }}>concrètes</span>
             </h2>
-            <p className="text-gray-400 text-base leading-relaxed">
+            <p className="text-gray-600 text-base leading-relaxed">
               Au Tripot Régnier, notre engagement en faveur du développement durable se traduit par des actions concrètes.
             </p>
           </motion.div>
@@ -131,14 +131,14 @@ export default function Engagements() {
                 >
                   {/* Point de la timeline */}
                   <div className="relative flex-shrink-0 w-8 flex justify-center">
-                    <div className="w-3 h-3 rounded-full mt-1.5 ring-2 ring-offset-2 ring-offset-[#0D0D0D]" style={{ backgroundColor: COLORS.ACCENT_COLOR, ringColor: COLORS.ACCENT_COLOR }} />
+                    <div className="w-3 h-3 rounded-full mt-1.5 ring-2 ring-offset-2 ring-offset-white" style={{ backgroundColor: COLORS.ACCENT_COLOR }} />
                   </div>
                   {/* Contenu */}
                   <div className="pb-2">
                     <h3 className="text-base font-semibold mb-1" style={{ color: COLORS.ACCENT_COLOR }}>
                       {action.title}
                     </h3>
-                    <p className="text-gray-300 text-sm leading-relaxed">
+                    <p className="text-gray-600 text-sm leading-relaxed">
                       {action.description}
                     </p>
                   </div>
@@ -150,7 +150,7 @@ export default function Engagements() {
       </section>
 
       {/* ── CTA ───────────────────────────────────────────────────────────────── */}
-      <section className="py-16 px-6 border-t border-white/10">
+      <section className="py-16 px-6 border-t border-gray-100" style={{ background: 'linear-gradient(135deg, #0D0D0D 0%, #1a1a1a 100%)' }}>
         <div className="max-w-2xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} className="flex flex-col items-center gap-5">
             <h2 className="text-2xl md:text-4xl text-white font-semibold tracking-tight">Organiser un événement responsable</h2>
