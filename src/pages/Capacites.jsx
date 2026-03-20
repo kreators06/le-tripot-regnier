@@ -1,7 +1,7 @@
 // ─── Capacites ────────────────────────────────────────────────────────────────
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Lightbulb, Monitor, Speaker, X, ArrowRight } from 'lucide-react';
+import { Lightbulb, Monitor, Speaker, X, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import SectionTitle from '@/components/ui/SectionTitle';
@@ -78,46 +78,51 @@ const spaces = [
   { title: "Loge Privée", surface: "", image: IMAGES.spaces.logePrivee.src, description: "Loge avec accès privé comprenant : écran TV, canapé, toilettes, douche, lavabo." },
 ];
 
-function HoverSliderCard({ space, onClick }) {
+function ArrowSliderCard({ space, onClick }) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isHovering, setIsHovering] = useState(false);
-  const timerRef = useRef(null);
 
-  useEffect(() => {
-    if (isHovering) {
-      const firstTimeout = setTimeout(() => {
-        setCurrentIndex(1 % space.images.length);
-        timerRef.current = setInterval(() => {
-          setCurrentIndex((prev) => (prev + 1) % space.images.length);
-        }, 1500);
-      }, 50);
-      return () => {
-        clearTimeout(firstTimeout);
-        clearInterval(timerRef.current);
-      };
-    } else {
-      clearInterval(timerRef.current);
-      setCurrentIndex(0);
-    }
-    return () => clearInterval(timerRef.current);
-  }, [isHovering, space.images.length]);
+  const prev = (e) => {
+    e.stopPropagation();
+    setCurrentIndex((p) => (p - 1 + space.images.length) % space.images.length);
+  };
+  const next = (e) => {
+    e.stopPropagation();
+    setCurrentIndex((p) => (p + 1) % space.images.length);
+  };
 
   return (
-    <div className="cursor-pointer" onClick={() => onClick(space.images[currentIndex])}
-      onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}
-    >
+    <div className="cursor-pointer group/card" onClick={() => onClick(space.images[currentIndex])}>
       <div className="relative overflow-hidden rounded-lg" style={{ aspectRatio: '4/3', background: '#111' }}>
         {space.images.map((src, i) => (
           <img key={i} src={src} alt={`${space.title} — Le Tripot Régnier`}
             className="absolute inset-0 w-full h-full object-cover"
-            style={{ opacity: i === currentIndex ? 1 : 0, transition: 'opacity 0.6s ease' }}
+            style={{ opacity: i === currentIndex ? 1 : 0, transition: 'opacity 0.5s ease' }}
           />
         ))}
         {space.surface && (
-          <span className="absolute top-3 right-3 font-bold rounded-full text-white bg-black" style={{ fontSize: '0.95rem', padding: '0.35rem 0.9rem' }}>
+          <span className="absolute top-3 right-3 font-bold rounded-full text-white bg-black z-10" style={{ fontSize: '0.95rem', padding: '0.35rem 0.9rem' }}>
             {space.surface}
           </span>
         )}
+        <button onClick={prev}
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/80 rounded-full p-1.5 text-white transition-all opacity-0 group-hover/card:opacity-100"
+          aria-label="Photo précédente"
+        >
+          <ChevronLeft className="w-4 h-4" />
+        </button>
+        <button onClick={next}
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/80 rounded-full p-1.5 text-white transition-all opacity-0 group-hover/card:opacity-100"
+          aria-label="Photo suivante"
+        >
+          <ChevronRight className="w-4 h-4" />
+        </button>
+        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+          {space.images.map((_, i) => (
+            <span key={i} className="w-1.5 h-1.5 rounded-full transition-all"
+              style={{ backgroundColor: i === currentIndex ? 'white' : 'rgba(255,255,255,0.4)' }}
+            />
+          ))}
+        </div>
       </div>
       <div className="pt-3 pb-3 px-5 bg-[#FAFAFA]">
         <h3 className="text-[#0D0D0D] text-base font-semibold">{space.title}</h3>
@@ -211,7 +216,7 @@ export default function Capacites() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 px-2">
           {spaces.map((space) =>
             space.isHoverSlider ? (
-              <HoverSliderCard key={space.title} space={space} onClick={setLightboxImg} />
+              <ArrowSliderCard key={space.title} space={space} onClick={setLightboxImg} />
             ) : (
               <div key={space.title} className="cursor-pointer group" onClick={() => setLightboxImg(space.image)}>
                 <div className="relative overflow-hidden rounded-lg" style={{ aspectRatio: '4/3' }}>
