@@ -299,13 +299,13 @@ export default function Contact() {
 
                 {/* Social */}
                 <div className="flex gap-3 pb-4 border-b border-gray-100">
-                  <a href="https://www.instagram.com/letripotregnierofficiel/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 border border-gray-200 flex items-center justify-center rounded-lg hover:bg-gray-50 transition-colors" aria-label="Instagram">
+                  <a href="https://www.instagram.com/letripotregnier" target="_blank" rel="noopener noreferrer" className="w-9 h-9 border border-gray-200 flex items-center justify-center rounded-lg hover:bg-gray-50 transition-colors" aria-label="Instagram">
                     <Instagram className="w-4 h-4 text-[#0D0D0D]" />
                   </a>
-                  <a href="https://www.linkedin.com/company/le-tripot-régnier/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 border border-gray-200 flex items-center justify-center rounded-lg hover:bg-gray-50 transition-colors" aria-label="LinkedIn">
+                  <a href="https://www.linkedin.com/company/letripotregnier" target="_blank" rel="noopener noreferrer" className="w-9 h-9 border border-gray-200 flex items-center justify-center rounded-lg hover:bg-gray-50 transition-colors" aria-label="LinkedIn">
                     <Linkedin className="w-4 h-4 text-[#0D0D0D]" />
                   </a>
-                  <a href="https://www.facebook.com/LeTripotRegnier/?locale=fr_FR" target="_blank" rel="noopener noreferrer" className="w-9 h-9 border border-gray-200 flex items-center justify-center rounded-lg hover:bg-gray-50 transition-colors" aria-label="Facebook">
+                  <a href="https://www.facebook.com/letripotregnier" target="_blank" rel="noopener noreferrer" className="w-9 h-9 border border-gray-200 flex items-center justify-center rounded-lg hover:bg-gray-50 transition-colors" aria-label="Facebook">
                     <Facebook className="w-4 h-4 text-[#0D0D0D]" />
                   </a>
                 </div>

@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import FadeIn from '@/components/FadeIn';
 import { COLORS } from '@/components/config/colors';
 import { IMAGES } from '@/components/config/images';
 import PageSEO from '@/components/PageSEO';
@@ -137,7 +136,7 @@ export default function Histoire() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
             {/* Texte */}
-            <FadeIn direction="right" className="text-left">
+            <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.05 }} className="text-left">
               <p className="text-[#0D0D0D] leading-relaxed mb-6 text-lg font-medium">
                 Situé rue Mathurin Régnier, dans le 15ᵉ arrondissement de Paris, Le Tripot Régnier est un lieu chargé d'histoire.
               </p>
@@ -180,21 +179,21 @@ export default function Histoire() {
                 GALERIE PHOTOS
                 <ArrowRight className="w-4 h-4" />
               </Link>
-            </FadeIn>
+            </motion.div>
 
             {/* Collage photos */}
-            <FadeIn direction="left" className="pt-4">
+            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.05 }} className="pt-4">
               <PhotoCollage />
-            </FadeIn>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* ── CTA ────────────────────────────────────────────────────────────── */}
-      <section className="py-10 px-6" style={{ background: 'linear-gradient(135deg, #0D0D0D 0%, #1a1a1a 100%)', borderTop: `1px solid ${COLORS.ACCENT_COLOR}30` }}>
+      <section className="py-10 px-6 bg-white border-t border-gray-100">
         <div className="max-w-2xl mx-auto text-center">
-          <FadeIn className="flex flex-col items-center gap-6">
-            <h2 className="text-2xl md:text-4xl text-white font-semibold tracking-tight">
+          <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} className="flex flex-col items-center gap-6">
+            <h2 className="text-2xl md:text-4xl text-[#0D0D0D] font-semibold tracking-tight">
               Découvrir l'ambiance unique<br />du Tripot Régnier
             </h2>
             <Link
@@ -207,7 +206,7 @@ export default function Histoire() {
               NOUS CONTACTER
               <ArrowRight className="w-4 h-4" />
             </Link>
-          </FadeIn>
+          </motion.div>
         </div>
       </section>
     </div>
