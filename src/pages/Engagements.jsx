@@ -83,7 +83,7 @@ export default function Engagements() {
                 key={pillar.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.05 }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 className="bg-white/5 border border-white/10 rounded-xl p-8"
               >
@@ -105,7 +105,7 @@ export default function Engagements() {
       {/* ── SECTION 2 — Actions concrètes ────────────────────────────────────── */}
       <section className="py-16 px-6 border-t border-white/10">
         <div className="max-w-3xl mx-auto">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} className="mb-12">
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight">
               Actions <span style={{ color: COLORS.ACCENT_COLOR }}>concrètes</span>
             </h2>
@@ -125,7 +125,7 @@ export default function Engagements() {
                   key={index}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, amount: 0.05 }}
                   transition={{ delay: index * 0.08 }}
                   className="flex gap-6 pl-0"
                 >
@@ -152,7 +152,7 @@ export default function Engagements() {
       {/* ── CTA ───────────────────────────────────────────────────────────────── */}
       <section className="py-16 px-6 border-t border-white/10">
         <div className="max-w-2xl mx-auto text-center">
-          <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex flex-col items-center gap-5">
+          <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} className="flex flex-col items-center gap-5">
             <h2 className="text-2xl md:text-4xl text-white font-semibold tracking-tight">Organiser un événement responsable</h2>
             <p className="text-white/60 text-sm">Notre équipe est disponible pour répondre à toutes vos questions.</p>
             <Link

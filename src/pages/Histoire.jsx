@@ -85,7 +85,7 @@ function PhotoCollage() {
             loading="lazy"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.05 }}
             transition={{ delay: i * 0.12, duration: 0.5 }}
             style={{
               ...photo.style,
@@ -136,7 +136,7 @@ export default function Histoire() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
             {/* Texte */}
-            <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="text-left">
+            <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.05 }} className="text-left">
               <p className="text-[#0D0D0D] leading-relaxed mb-6 text-lg font-medium">
                 Situé rue Mathurin Régnier, dans le 15ᵉ arrondissement de Paris, Le Tripot Régnier est un lieu chargé d'histoire.
               </p>
@@ -182,7 +182,7 @@ export default function Histoire() {
             </motion.div>
 
             {/* Collage photos */}
-            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="pt-4">
+            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.05 }} className="pt-4">
               <PhotoCollage />
             </motion.div>
           </div>
@@ -192,7 +192,7 @@ export default function Histoire() {
       {/* ── CTA ────────────────────────────────────────────────────────────── */}
       <section className="py-10 px-6 bg-white border-t border-gray-100">
         <div className="max-w-2xl mx-auto text-center">
-          <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex flex-col items-center gap-6">
+          <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} className="flex flex-col items-center gap-6">
             <h2 className="text-2xl md:text-4xl text-[#0D0D0D] font-semibold tracking-tight">
               Découvrir l'ambiance unique<br />du Tripot Régnier
             </h2>

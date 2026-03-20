@@ -166,7 +166,7 @@ export default function Capacites() {
       <section className="py-12 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <SectionTitle title="Matériel audiovisuel" align="left" />
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-8 mb-8 overflow-hidden rounded-xl">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} className="mt-8 mb-8 overflow-hidden rounded-xl">
             <img src={IMAGES.capacites.regie.src} alt={IMAGES.capacites.regie.alt} className="w-full h-52 md:h-72 object-cover" />
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -175,7 +175,7 @@ export default function Capacites() {
               { icon: Monitor, label: "Vidéo", items: video, delay: 0.1 },
               { icon: Speaker, label: "Son", items: sound, delay: 0.2 },
             ].map(({ icon: Icon, label, items, delay = 0 }) => (
-              <motion.div key={label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay }} className="bg-[#F5F5F0] p-6 text-left rounded-lg">
+              <motion.div key={label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} transition={{ delay }} className="bg-[#F5F5F0] p-6 text-left rounded-lg">
                 <div className="flex items-center gap-4 mb-5">
                   <div className="w-10 h-10 flex items-center justify-center rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20` }}>
                     <Icon className="w-5 h-5" style={{ color: COLORS.ACCENT_COLOR }} />
@@ -202,7 +202,7 @@ export default function Capacites() {
       {/* 4. Espaces */}
       <section className="py-12 md:py-16 bg-[#FAFAFA]">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} className="text-center mb-10">
             <h2 className="text-4xl md:text-6xl font-semibold text-[#0D0D0D] tracking-tight">
               Nos <span style={{ color: COLORS.ACCENT_COLOR }}>espaces</span>
             </h2>
@@ -237,7 +237,7 @@ export default function Capacites() {
       {/* 5. CTA */}
       <section className="py-12 md:py-16 px-6" style={{ background: 'linear-gradient(135deg, #0D0D0D 0%, #1a1a1a 100%)', borderTop: `1px solid ${COLORS.ACCENT_COLOR}30` }}>
         <div className="max-w-2xl mx-auto text-center">
-          <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex flex-col items-center gap-5">
+          <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} className="flex flex-col items-center gap-5">
             <h2 className="text-2xl md:text-4xl text-white font-semibold tracking-tight">Organiser un événement</h2>
             <p className="text-white/60 text-sm">Notre équipe est disponible pour répondre à toutes vos questions.</p>
             <Link
