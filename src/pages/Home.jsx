@@ -330,16 +330,17 @@ export default function Home() {
       </section>
 
       {/* ── Espaces Modulables ────────────────────────────────────────────────── */}
-      <section className="py-12 md:py-16 px-6 bg-[#FAFAFA]">
-        <div className="max-w-7xl mx-auto">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} className="text-center mb-10">
+      <section className="py-12 md:py-16 bg-[#FAFAFA]">
+        <div className="max-w-7xl mx-auto px-6 mb-10">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} className="text-center">
             <h2 className="text-3xl md:text-5xl font-semibold text-[#0D0D0D] tracking-tight">
               Organisez un événement{' '}
               <span style={{ color: COLORS.ACCENT_COLOR }}>à votre image</span>
             </h2>
           </motion.div>
+        </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 px-2">
             {configurations.map((config, index) => (
               <ConfigCard key={config.name} config={config} index={index} onLightbox={setLightboxImg} />
             ))}
