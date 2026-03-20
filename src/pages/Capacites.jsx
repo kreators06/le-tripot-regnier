@@ -172,7 +172,7 @@ export default function Capacites() {
         <div className="max-w-6xl mx-auto">
           <SectionTitle title="Matériel audiovisuel" align="left" />
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} className="mt-8 mb-8 overflow-hidden rounded-xl">
-            <img src={IMAGES.capacites.regie.src} alt={IMAGES.capacites.regie.alt} className="w-full h-52 md:h-72 object-cover" />
+            <img src={IMAGES.capacites.regie.src} alt={IMAGES.capacites.regie.alt} className="w-full h-72 md:h-[420px] object-cover" />
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[

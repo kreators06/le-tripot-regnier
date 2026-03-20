@@ -277,19 +277,19 @@ export default function Home() {
     video.load();
   }, []);
 
-  // Keyboard navigation for lightbox
+  // Keyboard navigation for lightbox (works for all lightboxes)
   useEffect(() => {
     if (!lightboxImg) return;
     const handleKey = (e) => {
       if (e.key === 'Escape') setLightboxImg(null);
-      if (e.key === 'ArrowLeft' && lightboxImages.length > 1) {
+      if (e.key === 'ArrowLeft') {
         setLightboxIndex((p) => {
           const newIdx = (p - 1 + lightboxImages.length) % lightboxImages.length;
           setLightboxImg(lightboxImages[newIdx]);
           return newIdx;
         });
       }
-      if (e.key === 'ArrowRight' && lightboxImages.length > 1) {
+      if (e.key === 'ArrowRight') {
         setLightboxIndex((p) => {
           const newIdx = (p + 1) % lightboxImages.length;
           setLightboxImg(lightboxImages[newIdx]);
@@ -429,7 +429,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 px-6 md:px-16">
             {configurations.map((config, index) => (
-              <ConfigCard key={config.name} config={config} index={index} onLightbox={setLightboxImg} />
+              <ConfigCard key={config.name} config={config} index={index} onLightbox={(img) => openLightbox(img, config.images)} />
             ))}
 
             {/* Carte "Tournage & événement sur mesure" — fond noir, bordure dorée */}

@@ -86,7 +86,7 @@ export default function Engagements() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="lg:col-span-2"
+              className="lg:col-span-5"
             >
               <h1 className="text-3xl md:text-5xl font-semibold text-[#0D0D0D] tracking-tight mb-4">
                 Nos <span style={{ color: COLORS.ACCENT_COLOR }}>engagements</span>
@@ -126,9 +126,9 @@ export default function Engagements() {
                     {/* Liste à puces dorées */}
                     <ul className="space-y-2 mt-auto">
                       {card.items.map((item, i) => (
-                        <li key={i} className="flex items-start gap-2 text-sm" style={{ color: COLORS.ACCENT_COLOR }}>
+                        <li key={i} className="flex items-start gap-2 text-sm">
                           <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: COLORS.ACCENT_COLOR }} />
-                          <span style={{ color: COLORS.ACCENT_COLOR }}>{item}</span>
+                          <span className="text-[#0D0D0D]">{item}</span>
                         </li>
                       ))}
                     </ul>

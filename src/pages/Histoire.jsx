@@ -132,11 +132,11 @@ export default function Histoire() {
               </p>
 
               {/* Encart Origine du nom */}
-              <div className="rounded-xl p-6 mb-10" style={{ backgroundColor: COLORS.ACCENT_COLOR }}>
-                <div className="inline-block px-3 py-1 text-xs font-medium tracking-wide mb-3 rounded bg-black/20 text-white">
+              <div className="rounded-xl p-6 mb-10 bg-[#F5F5F0] border border-gray-200">
+                <div className="inline-block px-3 py-1 text-xs font-medium tracking-wide mb-3 rounded" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20`, color: COLORS.ACCENT_COLOR }}>
                   ORIGINE DU NOM
                 </div>
-                <p className="text-white leading-relaxed text-sm">
+                <p className="text-gray-700 leading-relaxed text-sm">
                   Son nom rend hommage au Tripot Régnier, célèbre jeu de paume construit en 1573 par Jacques Régnier, père du poète Mathurin Régnier — un clin d'œil à l'histoire parisienne et à l'esprit de convivialité qui anime le lieu.
                 </p>
               </div>
