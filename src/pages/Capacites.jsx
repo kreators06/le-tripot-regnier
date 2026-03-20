@@ -203,7 +203,7 @@ export default function Capacites() {
       <section className="py-12 md:py-16 bg-[#FAFAFA]">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} className="text-left mb-10">
-            <h2 className="text-lg font-semibold text-[#0D0D0D] tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-semibold text-[#0D0D0D] tracking-tight">
               Nos <span style={{ color: COLORS.ACCENT_COLOR }}>espaces</span>
             </h2>
           </motion.div>
