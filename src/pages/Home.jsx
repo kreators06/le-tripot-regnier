@@ -15,8 +15,8 @@ import { COLORS } from '@/components/config/colors';
 
 const sallePrincipaleImages = [
   "https://letripotregnier.fr/assets/photos/photo-salle-vide.jpg",
+  "https://letripotregnier.fr/assets/photos/shoootin-photo-8.jpg",
   "https://letripotregnier.fr/assets/photos/photo-mezzanine.jpg",
-  "https://letripotregnier.fr/assets/photos/photo-lounge-etage.jpeg",
 ];
 
 const mezzanineImages = [
@@ -28,7 +28,7 @@ const spaces = [
   { title: "Salle Principale", surface: "400 m²", images: sallePrincipaleImages, description: "Espace modulable équipé (son, lumière, projection vidéo) dotée d'un bar et d'un fumoir intérieur.", isHoverSlider: true },
   { title: "Bar", surface: "", image: IMAGES.spaces.bar.src, description: "Bar équipé : four, machine à glaçons, réfrigérateur." },
   { title: "Mezzanine", surface: "65 m²", images: mezzanineImages, description: "Espace en hauteur offrant une vue panoramique sur la salle.", isHoverSlider: true },
-  { title: "Hall d'accueil", surface: "", image: IMAGES.spaces.espaceLounge.src, description: "Espace détente situé en prolongation de la mezzanine." },
+  { title: "Hall d'accueil", surface: "", image: "https://letripotregnier.fr/assets/photos/photo-hall-entree-tripot-regnier.jpg", description: "Espace détente situé en prolongation de la mezzanine." },
   { title: "Vestiaire", surface: "450 pers.", image: IMAGES.spaces.vestiaire.src, description: "Vestiaire équipé avec capacité de 450 personnes" },
   { title: "Loge Privée", surface: "", image: IMAGES.spaces.logePrivee.src, description: "Loge avec accès privé comprenant : écran TV, canapé, toilettes, douche, lavabo." },
 ];
@@ -39,24 +39,24 @@ const configurations = [
     name: "Défilé",
     capacity: "< 200 pers.",
     images: [
+      "https://letripotregnier.fr/assets/photos/photo-defile-mode-grande-salle-loreal.png",
       "https://letripotregnier.fr/assets/photos/photo-salle-vide.jpg",
-      "https://letripotregnier.fr/assets/photos/photo-mezzanine.jpg",
     ],
   },
   {
     name: "Dîner assis",
     capacity: "< 220 pers.",
     images: [
-      "https://letripotregnier.fr/assets/photos/photo-bar.jpg",
-      "https://letripotregnier.fr/assets/photos/photo-salle-vide.jpg",
+      "https://letripotregnier.fr/assets/photos/photo-grande-salle-table-baquet-europe1",
+      "https://letripotregnier.fr/assets/photos/photo-salle-principale-diner-europe1.jpeg",
     ],
   },
   {
     name: "Conférence",
     capacity: "< 250 pers.",
     images: [
-      "https://letripotregnier.fr/assets/photos/photo-regie.jpg",
-      "https://letripotregnier.fr/assets/photos/photo-salle-vide.jpg",
+      "https://letripotregnier.fr/assets/photos/photo-grande-salle-JO-paris-2024-conference",
+      "https://letripotregnier.fr/assets/photos/photo-grande-salle-event-BPCE.png",
     ],
   },
   {
@@ -71,8 +71,8 @@ const configurations = [
     name: "Showroom",
     capacity: "Sur mesure",
     images: [
-      "https://letripotregnier.fr/assets/photos/photo-salle-vide.jpg",
-      "https://letripotregnier.fr/assets/photos/photo-lounge-etage.jpeg",
+      "https://letripotregnier.fr/assets/photos/photo-grande-salle-evenement-audi.jpeg",
+      "https://letripotregnier.fr/assets/photos/photo-grande-salle-ecran-geant-voiture.jpg",
     ],
   },
 ];
