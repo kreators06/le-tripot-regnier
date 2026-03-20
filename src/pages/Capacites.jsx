@@ -146,6 +146,38 @@ const sound = ["Système HK LINEAR 5 actif", "Console YAMAHA 01V", "Platines PIO
 // ─── Page ──────────────────────────────────────────────────────────────────────
 export default function Capacites() {
   const [lightboxImg, setLightboxImg] = useState(null);
+  const [lightboxImages, setLightboxImages] = useState([]);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  const openLightbox = (img, images = [img]) => {
+    const idx = images.indexOf(img);
+    setLightboxImages(images);
+    setLightboxIndex(idx >= 0 ? idx : 0);
+    setLightboxImg(img);
+  };
+
+  useEffect(() => {
+    if (!lightboxImg) return;
+    const handleKey = (e) => {
+      if (e.key === 'Escape') setLightboxImg(null);
+      if (e.key === 'ArrowLeft') {
+        setLightboxIndex((p) => {
+          const newIdx = (p - 1 + lightboxImages.length) % lightboxImages.length;
+          setLightboxImg(lightboxImages[newIdx]);
+          return newIdx;
+        });
+      }
+      if (e.key === 'ArrowRight') {
+        setLightboxIndex((p) => {
+          const newIdx = (p + 1) % lightboxImages.length;
+          setLightboxImg(lightboxImages[newIdx]);
+          return newIdx;
+        });
+      }
+    };
+    window.addEventListener('keydown', handleKey);
+    return () => window.removeEventListener('keydown', handleKey);
+  }, [lightboxImg, lightboxImages]);
 
   return (
     <div>

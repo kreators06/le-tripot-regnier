@@ -22,11 +22,11 @@ export default function LogoMarquee() {
         .marquee-track {
           display: flex;
           width: max-content;
-          animation: marquee-scroll 48s linear infinite;
-          gap: 2rem;
+          animation: marquee-scroll 56s linear infinite;
+          gap: 1rem;
         }
         @media (max-width: 767px) {
-          .marquee-track { animation-duration: 20s; gap: 1rem; }
+          .marquee-track { animation-duration: 28s; gap: 0.5rem; }
         }
       `}</style>
       
@@ -35,7 +35,7 @@ export default function LogoMarquee() {
           {doubleLogos.map((logo, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-24 h-12 md:w-40 md:h-20 flex items-center justify-center px-2"
+              className="flex-shrink-0 w-20 h-10 md:w-32 md:h-16 flex items-center justify-center px-1"
             >
               <img
                 src={logo.url}
