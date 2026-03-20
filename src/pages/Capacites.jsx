@@ -12,13 +12,13 @@ import TrustSignals from '@/components/TrustSignals';
 
 // ─── Hero Carousel ─────────────────────────────────────────────────────────────
 const heroImages = [
-  IMAGES.spaces.grandeSalle.src,
+  "https://letripotregnier.fr/assets/photos/photo-defile-mode-grande-salle-loreal.png",
+  "https://letripotregnier.fr/assets/photos/photo-salle-principale-diner-europe1.jpeg",
+  "https://letripotregnier.fr/assets/photos/photo-grande-salle-JO-paris-2024-conference.png",
+  "https://letripotregnier.fr/assets/photos/photo-grande-salle-evenement-audi.jpeg",
+  "https://letripotregnier.fr/assets/photos/photo-lounge-etage.jpeg",
   IMAGES.capacites.regie.src,
-  IMAGES.spaces.mezzanine.src,
   IMAGES.spaces.bar.src,
-  IMAGES.spaces.espaceLounge.src,
-  IMAGES.spaces.logePrivee.src,
-  IMAGES.spaces.vestiaire.src,
   "https://letripotregnier.fr/assets/photos/photo-hall-entree-tripot-regnier.jpg",
 ];
 const duplicated = [...heroImages, ...heroImages];
@@ -27,7 +27,7 @@ function HeroCarousel() {
   const [paused, setPaused] = useState(false);
   return (
     <div
-      className="relative overflow-hidden h-48 md:h-72 pt-24"
+      className="relative overflow-hidden h-64 md:h-96 pt-24"
       style={{ background: '#0D0D0D' }}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
@@ -202,8 +202,8 @@ export default function Capacites() {
       {/* 4. Espaces */}
       <section className="py-12 md:py-16 bg-[#FAFAFA]">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} className="text-center mb-10">
-            <h2 className="text-4xl md:text-6xl font-semibold text-[#0D0D0D] tracking-tight">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} className="text-left mb-10">
+            <h2 className="text-lg font-semibold text-[#0D0D0D] tracking-tight">
               Nos <span style={{ color: COLORS.ACCENT_COLOR }}>espaces</span>
             </h2>
           </motion.div>
