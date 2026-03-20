@@ -50,7 +50,7 @@ const timelineActions = [
 
 export default function Engagements() {
   return (
-    <div className="bg-[#0D0D0D] min-h-screen">
+    <div className="bg-white min-h-screen">
       <PageSEO title="Nos engagements | Le Tripot Régnier" description="Découvrez les engagements RSE du Tripot Régnier : développement durable, économie d'eau, éclairage LED, acoustique professionnelle et qualité de l'air." canonicalPath="/Engagements" />
 
       {/* ── SECTION 1 — Intro RSE ─────────────────────────────────────────────── */}
