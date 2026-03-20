@@ -105,13 +105,13 @@ function ArrowSliderCard({ space, onClick }) {
           </span>
         )}
         <button onClick={prev}
-          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/80 rounded-full p-1.5 text-white transition-all opacity-0 group-hover/card:opacity-100"
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/80 rounded-full text-white transition-all opacity-0 group-hover/card:opacity-100 min-w-[44px] min-h-[44px] flex items-center justify-center"
           aria-label="Photo précédente"
         >
           <ChevronLeft className="w-4 h-4" />
         </button>
         <button onClick={next}
-          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/80 rounded-full p-1.5 text-white transition-all opacity-0 group-hover/card:opacity-100"
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/80 rounded-full text-white transition-all opacity-0 group-hover/card:opacity-100 min-w-[44px] min-h-[44px] flex items-center justify-center"
           aria-label="Photo suivante"
         >
           <ChevronRight className="w-4 h-4" />
@@ -143,7 +143,7 @@ export default function Capacites() {
 
   return (
     <div>
-      <PageSEO title="Espaces & Équipements | Le Tripot Régnier" description="700m² modulables, système son professionnel, éclairage scénique. Découvrez les équipements techniques complets du Tripot Régnier." canonicalPath="/Capacites" />
+      <PageSEO title="Espaces & Équipements | Le Tripot Régnier" description="Espaces modulables et matériel audiovisuel professionnel au Tripot Régnier. Son, lumière, vidéo et régie technique complète." canonicalPath="/Capacites" />
 
       {/* Lightbox */}
       <AnimatePresence>
@@ -152,7 +152,7 @@ export default function Capacites() {
             className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4"
             onClick={() => setLightboxImg(null)}
           >
-            <button className="absolute top-4 right-4 text-white bg-black/50 rounded-full p-2 hover:bg-black/80 transition" onClick={() => setLightboxImg(null)}>
+            <button className="absolute top-4 right-4 text-white bg-black/50 rounded-full p-2 hover:bg-black/80 transition min-w-[44px] min-h-[44px] flex items-center justify-center" onClick={() => setLightboxImg(null)} aria-label="Fermer la vue agrandie">
               <X className="w-6 h-6" />
             </button>
             <motion.img initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.9, opacity: 0 }}
