@@ -345,7 +345,7 @@ export default function Home() {
             ))}
 
             {/* Carte "Tournage & Événement sur mesure" — fond noir, bordure dorée */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} transition={{ delay: 0.3 }}
+            <div
               className="overflow-hidden rounded-xl flex items-center justify-center"
               style={{ backgroundColor: '#0D0D0D', aspectRatio: '4/3', border: `2px solid ${COLORS.ACCENT_COLOR}` }}
             >
@@ -361,7 +361,7 @@ export default function Home() {
                   Nous contacter <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
