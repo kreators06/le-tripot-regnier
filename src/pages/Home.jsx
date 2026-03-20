@@ -14,30 +14,31 @@ import { COLORS } from '@/components/config/colors';
 // ─── Données ──────────────────────────────────────────────────────────────────
 
 const sallePrincipaleImages = [
-  "https://letripotregnier.fr/assets/photos/photo-salle-vide.jpg",
-  "https://letripotregnier.fr/assets/photos/shoootin-photo-5.jpg",
-  "https://letripotregnier.fr/assets/photos/shoootin-photo-8.jpg",
+  "https://letripotregnier.fr/assets/photos/photo-salle-vide.jpeg",
+  "https://letripotregnier.fr/assets/photos/shoootin-photo-5.jpeg",
+  "https://letripotregnier.fr/assets/photos/shoootin-photo-8.jpeg",
 ];
 
 const mezzanineImages = [
-  "https://letripotregnier.fr/assets/photos/photo-mezzanine.jpg",
+  "https://letripotregnier.fr/assets/photos/photo-mezzanine.jpeg",
   "https://letripotregnier.fr/assets/photos/photo-lounge-etage.jpeg",
 ];
 
 const hallImages = [
-  "https://letripotregnier.fr/assets/photos/photo-hall-entree-tripot-regnier.jpg",
-  "https://letripotregnier.fr/assets/photos/hall%203.jpg",
-  "https://letripotregnier.fr/assets/photos/hall%202.jpg",
-  "https://letripotregnier.fr/assets/photos/hall%204.jpg",
+  "https://letripotregnier.fr/assets/photos/photo-hall-entree-tripot-regnier.jpeg",
+  "https://letripotregnier.fr/assets/photos/hall%203.jpeg",
+  "https://letripotregnier.fr/assets/photos/hall%202.jpeg",
+  "https://letripotregnier.fr/assets/photos/hall%204.jpeg",
 ];
 
 const spaces = [
   { title: "Salle Principale", surface: "400 m²", images: sallePrincipaleImages, description: "Espace modulable équipé (son, lumière, projection vidéo) doté d'un bar et d'un fumoir intérieur.", isHoverSlider: true },
-  { title: "Bar", surface: "", image: IMAGES.spaces.bar.src, description: "Bar équipé : four, machine à glaçons, réfrigérateur." },
+  { title: "Bar", surface: "", images: ["https://letripotregnier.fr/assets/photos/Bar-serveur.jpeg", IMAGES.spaces.bar.src], description: "Bar équipé : four, machine à glaçons, réfrigérateur.", isHoverSlider: true },
   { title: "Mezzanine", surface: "65 m²", images: mezzanineImages, description: "Espace en hauteur offrant une vue panoramique sur la salle.", isHoverSlider: true },
   { title: "Hall d'accueil", surface: "", images: hallImages, description: "Espace détente situé en prolongation de la mezzanine.", isHoverSlider: true },
   { title: "Vestiaire", surface: "450 pers.", image: IMAGES.spaces.vestiaire.src, description: "Vestiaire équipé avec capacité de 450 personnes." },
   { title: "Loge privée", surface: "", image: IMAGES.spaces.logePrivee.src, description: "Loge avec accès privé comprenant : écran TV, canapé, toilettes, douche, lavabo." },
+
 ];
 
 // 3 photos par config dîner et conférence, 2+ pour showroom
