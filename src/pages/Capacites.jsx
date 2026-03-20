@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Lightbulb, Monitor, Speaker, X, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
-import SectionTitle from '@/components/ui/SectionTitle';
 import { COLORS } from '@/components/config/colors';
 import { IMAGES } from '@/components/config/images';
 import PageSEO from '@/components/PageSEO';
