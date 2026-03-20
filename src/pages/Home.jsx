@@ -114,10 +114,11 @@ function ArrowSliderCard({ space, onClick }) {
     <div className="cursor-pointer group/card" onClick={() => onClick(space.images[currentIndex])}>
       <div className="relative overflow-hidden rounded-lg" style={{ aspectRatio: '4/3', background: '#111' }}>
         {space.images.map((src, i) => (
-          <img key={i} src={src} alt={`${space.title} — Le Tripot Régnier vue ${i + 1}`}
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ opacity: i === currentIndex ? 1 : 0, transition: 'opacity 0.5s ease' }}
-          />
+        <img key={i} src={src} alt={`${space.title} — Le Tripot Régnier vue ${i + 1}`}
+          loading="lazy" width="600" height="450"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ opacity: i === currentIndex ? 1 : 0, transition: 'opacity 0.5s ease' }}
+        />
         ))}
         {space.surface && (
           <span className="absolute top-3 right-3 font-bold rounded-full text-white bg-black z-10" style={{ fontSize: '0.95rem', padding: '0.35rem 0.9rem' }}>
@@ -175,7 +176,7 @@ function ConfigCard({ config, index, onLightbox }) {
     >
       <div className="relative overflow-hidden" style={{ aspectRatio: '4/3' }}>
         {config.images.map((src, i) => (
-          <img key={i} src={src} alt={`Configuration ${config.name} au Tripot Régnier`} loading="lazy"
+          <img key={i} src={src} alt={`Configuration ${config.name} au Tripot Régnier`} loading="lazy" width="600" height="450"
             className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
             style={{ opacity: i === currentIndex ? 1 : 0 }}
           />
@@ -354,8 +355,8 @@ export default function Home() {
           <video ref={videoRef} autoPlay loop muted playsInline preload="metadata" poster={IMAGES.heroPoster} className="w-full h-full object-cover">
             <source src={IMAGES.heroVideo} type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-black/40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-black/55" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
         </div>
 
         <div className="relative z-10 w-full max-w-6xl mx-auto px-8 md:px-16 py-32 text-center">
@@ -396,7 +397,7 @@ export default function Home() {
               ) : (
                 <div key={space.title} className="cursor-pointer group" onClick={() => openLightbox(space.image)}>
                   <div className="relative overflow-hidden rounded-lg" style={{ aspectRatio: '4/3' }}>
-                    <img src={space.image} alt={`${space.title} — Le Tripot Régnier`} loading="lazy"
+                    <img src={space.image} alt={`${space.title} — Le Tripot Régnier`} loading="lazy" width="600" height="450"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     {space.surface && (

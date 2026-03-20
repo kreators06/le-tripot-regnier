@@ -48,7 +48,7 @@ function HeroCarousel() {
       <div className={`carousel-track h-full${paused ? ' paused' : ''}`}>
         {duplicated.map((src, i) => (
           <div key={i} className="h-full flex-shrink-0 overflow-hidden rounded-lg" style={{ width: 'clamp(160px, 24vw, 360px)' }}>
-            <img src={src} alt="Le Tripot Régnier" className="w-full h-full object-cover" />
+            <img src={src} alt="Le Tripot Régnier" width="360" height="270" loading="lazy" className="w-full h-full object-cover" />
           </div>
         ))}
       </div>
@@ -220,9 +220,9 @@ export default function Capacites() {
       {/* 2. Matériel audiovisuel */}
       <section className="py-12 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
-          <SectionTitle title="Matériel audiovisuel" align="left" />
+          <h2 className="text-3xl md:text-4xl font-semibold text-[#0D0D0D] tracking-tight mb-2">Matériel audiovisuel</h2>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} className="mt-8 mb-8 overflow-hidden rounded-xl">
-            <img src={IMAGES.capacites.regie.src} alt={IMAGES.capacites.regie.alt} className="w-full h-72 md:h-[420px] object-cover" />
+            <img src={IMAGES.capacites.regie.src} alt={IMAGES.capacites.regie.alt} width="1200" height="420" loading="lazy" className="w-full h-72 md:h-[420px] object-cover" />
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
@@ -235,7 +235,7 @@ export default function Capacites() {
                   <div className="w-10 h-10 flex items-center justify-center rounded-lg" style={{ backgroundColor: `${COLORS.ACCENT_COLOR}20` }}>
                     <Icon className="w-5 h-5" style={{ color: COLORS.ACCENT_COLOR }} />
                   </div>
-                  <h3 className="text-lg font-semibold text-[#0D0D0D]">{label}</h3>
+                  <h3 className="text-lg font-semibold text-[#0D0D0D]" aria-label={label}>{label}</h3>
                 </div>
                 <ul className="space-y-2">
                   {items.map((item, i) => (
@@ -258,7 +258,7 @@ export default function Capacites() {
       <section className="py-12 md:py-16 bg-[#FAFAFA]">
         <div className="max-w-7xl mx-auto px-6 md:px-16">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} className="text-left mb-10">
-            <h2 className="text-3xl md:text-5xl font-semibold text-[#0D0D0D] tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-semibold text-[#0D0D0D] tracking-tight">
               Nos <span style={{ color: COLORS.ACCENT_COLOR }}>espaces</span>
             </h2>
           </motion.div>
@@ -270,7 +270,7 @@ export default function Capacites() {
             ) : (
               <div key={space.title} className="cursor-pointer group" onClick={() => openLightbox(space.image, [space.image])}>
                 <div className="relative overflow-hidden rounded-lg" style={{ aspectRatio: '4/3' }}>
-                  <img src={space.image} alt={`${space.title} — Le Tripot Régnier`} loading="lazy"
+                  <img src={space.image} alt={`${space.title} — Le Tripot Régnier`} loading="lazy" width="600" height="450"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   {space.surface && (
@@ -294,7 +294,7 @@ export default function Capacites() {
         <div className="max-w-2xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} className="flex flex-col items-center gap-5">
             <h2 className="text-2xl md:text-4xl text-white font-semibold tracking-tight">Organiser un événement</h2>
-            <p className="text-white/60 text-sm">Notre équipe est disponible pour répondre à toutes vos questions.</p>
+            <p className="text-white/80 text-sm">Notre équipe est disponible pour répondre à toutes vos questions.</p>
             <Link
               to={createPageUrl('Contact')}
               className="inline-flex items-center gap-3 px-8 py-3 font-semibold tracking-wide text-sm rounded-full border-2 bg-transparent transition-all duration-300"

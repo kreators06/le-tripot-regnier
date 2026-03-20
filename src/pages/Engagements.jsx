@@ -118,7 +118,7 @@ export default function Engagements() {
                     </div>
 
                     {/* Titre */}
-                    <h2 className="text-base font-bold text-[#0D0D0D] mb-3">{card.title}</h2>
+                    <h3 className="text-base font-bold text-[#0D0D0D] mb-3">{card.title}</h3>
 
                     {/* Description */}
                     <p className="text-gray-700 text-sm leading-relaxed mb-4">{card.description}</p>

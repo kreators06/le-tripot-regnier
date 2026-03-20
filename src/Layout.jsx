@@ -118,8 +118,9 @@ export default function Layout({ children, currentPageName }) {
             >
               <img 
                 src="https://letripotregnier.fr/assets/logo.png" 
-                alt="Le Tripot Régnier" 
-                className="h-12 w-auto transition-opacity duration-300 group-hover:opacity-80"
+                  alt="Le Tripot Régnier" 
+                  width="160" height="48"
+                  className="h-12 w-auto transition-opacity duration-300 group-hover:opacity-80"
               />
             </Link>
 
@@ -238,6 +239,7 @@ export default function Layout({ children, currentPageName }) {
                 <img 
                   src="https://letripotregnier.fr/assets/logo.png" 
                   alt="Le Tripot Régnier" 
+                  width="160" height="48"
                   className="h-12 w-auto"
                 />
               </div>
@@ -251,7 +253,7 @@ export default function Layout({ children, currentPageName }) {
 
             {/* Navigation */}
             <div>
-              <h4 className="font-medium mb-6 tracking-wide" style={{ color: COLORS.ACCENT_COLOR }}>Navigation</h4>
+              <h2 className="font-medium mb-6 tracking-wide text-base" style={{ color: COLORS.ACCENT_COLOR }}>Navigation</h2>
               <ul className="space-y-3 text-left">
                 {navLinks.map((link) => (
                   <li key={link.page}>
@@ -268,7 +270,7 @@ export default function Layout({ children, currentPageName }) {
 
             {/* Contact */}
             <div>
-              <h4 className="font-medium mb-6 tracking-wide" style={{ color: COLORS.ACCENT_COLOR }}>Contact</h4>
+              <h2 className="font-medium mb-6 tracking-wide text-base" style={{ color: COLORS.ACCENT_COLOR }}>Contact</h2>
               <ul className="space-y-4 text-left">
                 <li className="flex items-center gap-3">
                   <Phone className="w-5 h-5" style={{ color: COLORS.ACCENT_COLOR }} />
@@ -287,7 +289,7 @@ export default function Layout({ children, currentPageName }) {
 
             {/* Social */}
             <div>
-              <h4 className="font-medium mb-6 tracking-wide" style={{ color: COLORS.ACCENT_COLOR }}>Suivez-nous</h4>
+              <h2 className="font-medium mb-6 tracking-wide text-base" style={{ color: COLORS.ACCENT_COLOR }}>Suivez-nous</h2>
               <div className="flex gap-4 mb-6">
                 <a 
                   href={SOCIAL.instagram}

@@ -129,8 +129,8 @@ export default function Contact() {
           >
             <source src={IMAGES.heroVideo} type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-black/50" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <motion.h1
@@ -166,7 +166,7 @@ export default function Contact() {
             >
               <div className="mb-6">
                 <h2 className="text-2xl md:text-3xl font-bold text-[#0D0D0D] mb-2">
-                  Nous contacter
+                  Formulaire de contact
                 </h2>
                 <p className="text-gray-600">Notre équipe vous répondra dans les plus brefs délais.</p>
               </div>

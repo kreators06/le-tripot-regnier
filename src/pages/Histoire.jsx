@@ -97,7 +97,7 @@ function PhotoCollage() {
       <div className="flex flex-col gap-3 md:hidden">
         {photos.map((photo, i) => (
           <div key={i} className="overflow-hidden rounded-xl aspect-[4/3]">
-            <img src={photo.src} alt={photo.alt} loading="lazy" className="w-full h-full object-cover" />
+            <img src={photo.src} alt={photo.alt} loading="lazy" width="600" height="450" className="w-full h-full object-cover" />
           </div>
         ))}
       </div>
