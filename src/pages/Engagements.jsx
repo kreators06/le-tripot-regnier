@@ -88,16 +88,16 @@ export default function Engagements() {
               transition={{ duration: 0.6 }}
               className="lg:col-span-5"
             >
-              <h1 className="text-3xl md:text-5xl font-semibold text-[#0D0D0D] tracking-tight mb-4">
+              <h1 className="text-3xl md:text-5xl font-semibold text-[#0D0D0D] tracking-tight mb-2">
                 Nos <span style={{ color: COLORS.ACCENT_COLOR }}>engagements</span>
               </h1>
-              <p className="text-gray-600 leading-relaxed text-base">
+              <p className="text-gray-600 leading-relaxed text-base mb-0">
                 Le Tripot Régnier est engagé en faveur du développement durable.
               </p>
             </motion.div>
 
-            {/* Colonne droite — 3 cartes (~60%) */}
-            <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-4">
+            {/* 3 cartes sur toute la largeur */}
+            <div className="lg:col-span-5 grid grid-cols-1 md:grid-cols-3 gap-4">
               {engagementCards.map((card, index) => {
                 const Icon = card.icon;
                 return (
