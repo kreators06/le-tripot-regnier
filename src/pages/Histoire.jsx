@@ -12,9 +12,8 @@ import PageSEO from '@/components/PageSEO';
 function PhotoCollage() {
   const photos = [
     {
-      src: "https://letripotregnier.fr/assets/photos/photo-hall-entree-tripot-regnier.jpg",
-      alt: "Hall d'entrée Art Déco du Tripot Régnier",
-      // Haut-gauche, derrière, légère rotation antihoraire
+      src: "https://letripotregnier.fr/assets/photos/histoire/1_tripot-regnier-historique.png",
+      alt: "Le Tripot Régnier historique",
       style: {
         position: 'absolute',
         width: '62%',
@@ -27,9 +26,8 @@ function PhotoCollage() {
       },
     },
     {
-      src: "https://letripotregnier.fr/assets/photos/photo-salle-vide.jpg",
-      alt: "Salle principale du Tripot Régnier",
-      // Haut-droite, devant, légère rotation horaire
+      src: "https://letripotregnier.fr/assets/photos/histoire/2_tripot-regnier-facade.png",
+      alt: "Façade du Tripot Régnier",
       style: {
         position: 'absolute',
         width: '50%',
@@ -42,9 +40,8 @@ function PhotoCollage() {
       },
     },
     {
-      src: "https://letripotregnier.fr/assets/photos/photo-mezzanine.jpg",
-      alt: "Mezzanine du Tripot Régnier",
-      // Bas-gauche, devant, légère rotation antihoraire
+      src: "https://letripotregnier.fr/assets/photos/histoire/3_tripot-regnier-travaux.jpg",
+      alt: "Travaux de rénovation du Tripot Régnier",
       style: {
         position: 'absolute',
         width: '50%',
@@ -57,9 +54,8 @@ function PhotoCollage() {
       },
     },
     {
-      src: "https://letripotregnier.fr/assets/photos/photo-regie.jpg",
-      alt: "Régie technique du Tripot Régnier",
-      // Bas-droite, devant, légère rotation horaire
+      src: "https://letripotregnier.fr/assets/photos/histoire/4_tripot-regnier-salle-principale.jpeg",
+      alt: "Salle principale du Tripot Régnier",
       style: {
         position: 'absolute',
         width: '60%',
