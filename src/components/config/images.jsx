@@ -119,7 +119,6 @@ export const IMAGES = {
   { name: "Celine", url: "https://letripotregnier.fr/assets/photos/logos/Celine.png" },
   { name: "Jeep", url: "https://letripotregnier.fr/assets/photos/logos/jeep.png" },
   { name: "Lamborghini", url: "https://letripotregnier.fr/assets/photos/logos/lamborghini.png" },
-  { name: "Leclerc", url: "https://letripotregnier.fr/assets/photos/logos/leclerc.png" },
   { name: "L'Oréal", url: "https://letripotregnier.fr/assets/photos/logos/loreal.png" },
   { name: "Natixis", url: "https://letripotregnier.fr/assets/photos/logos/natixis.png" },
   { name: "Nike", url: "https://letripotregnier.fr/assets/photos/logos/nike.png" },
