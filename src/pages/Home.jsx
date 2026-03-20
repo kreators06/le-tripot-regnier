@@ -153,11 +153,7 @@ function ConfigCard({ config, index, onLightbox }) {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.05 }}
-      transition={{ delay: index * 0.05 }}
+    <div
       className="group overflow-hidden rounded-xl cursor-pointer"
       onClick={() => onLightbox(config.images[currentIndex])}
     >
@@ -198,11 +194,11 @@ function ConfigCard({ config, index, onLightbox }) {
           <p className="text-white/80 text-xs">{config.capacity}</p>
         </div>
       </div>
-    </motion.div>
-  );
-}
+      </div>
+      );
+      }
 
-// ─── Stars ────────────────────────────────────────────────────────────────────
+      // ─── Stars ────────────────────────────────────────────────────────────────────
 function Stars({ count }) {
   return (
     <div className="flex gap-0.5 mb-3">
