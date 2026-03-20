@@ -40,7 +40,7 @@ export const IMAGES = {
   // ── Page Capacités ───────────────────────────────────────────────────────────
   capacites: {
     regie: {
-      src: "https://letripotregnier.fr/assets/photos/photo-regie.jpg",
+      src: "https://letripotregnier.fr/assets/photos/photo-regie-ecran-live.png",
       alt: "Régie technique Le Tripot Régnier",
     },
   },
