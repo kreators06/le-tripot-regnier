@@ -388,14 +388,14 @@ export default function Home() {
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {testimonials.map((testimonial, index) => (
-              <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} transition={{ delay: index * 0.05 }} className="text-left bg-[#F9F9F7] p-6 rounded-xl">
+              <div key={index} className="text-left bg-[#F9F9F7] p-6 rounded-xl">
                 <Stars count={testimonial.stars} />
                 <p className="text-[#0D0D0D] text-sm leading-relaxed mb-5 italic">"{testimonial.quote}"</p>
                 <div className="pt-4 border-t border-gray-200">
                   <p className="text-[#0D0D0D] font-semibold text-sm">{testimonial.author}</p>
                   {testimonial.company && <p className="text-gray-500 text-xs font-light mt-0.5">{testimonial.company}</p>}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
