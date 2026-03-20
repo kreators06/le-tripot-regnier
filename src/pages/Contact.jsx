@@ -248,7 +248,7 @@ export default function Contact() {
 
                   {/* reCAPTCHA v2 */}
                   <div>
-                    <div className="g-recaptcha" data-sitekey="REMPLACER_PAR_VOTRE_SITE_KEY" />
+                    <div className="g-recaptcha" data-sitekey="bc12345-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />
                     {recaptchaError && <p className="text-red-500 text-sm mt-1">{recaptchaError}</p>}
                   </div>
 
