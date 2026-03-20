@@ -164,8 +164,8 @@ export default function Layout({ children, currentPageName }) {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="xl:hidden text-white p-2"
-              aria-label="Menu"
+              className="xl:hidden text-white p-3 min-w-[44px] min-h-[44px] flex items-center justify-center"
+              aria-label={mobileMenuOpen ? "Fermer le menu de navigation" : "Ouvrir le menu de navigation"}
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -292,8 +292,8 @@ export default function Layout({ children, currentPageName }) {
                 <a 
                   href={SOCIAL.instagram}
                   target="_blank" rel="noopener noreferrer"
-                  className="w-10 h-10 border border-white/20 flex items-center justify-center transition-all" 
-                  aria-label="Suivez Le Tripot Régnier sur Instagram"
+                  className="w-11 h-11 border border-white/20 flex items-center justify-center transition-all" 
+                  aria-label="Suivez-nous sur Instagram"
                   onMouseEnter={(e) => {
                     e.currentTarget.style.borderColor = COLORS.ACCENT_COLOR;
                     e.currentTarget.style.backgroundColor = `${COLORS.ACCENT_COLOR}10`;
@@ -308,8 +308,8 @@ export default function Layout({ children, currentPageName }) {
                 <a 
                   href={SOCIAL.linkedin}
                   target="_blank" rel="noopener noreferrer"
-                  className="w-10 h-10 border border-white/20 flex items-center justify-center transition-all" 
-                  aria-label="Suivez Le Tripot Régnier sur LinkedIn"
+                  className="w-11 h-11 border border-white/20 flex items-center justify-center transition-all" 
+                  aria-label="Suivez-nous sur LinkedIn"
                   onMouseEnter={(e) => {
                     e.currentTarget.style.borderColor = COLORS.ACCENT_COLOR;
                     e.currentTarget.style.backgroundColor = `${COLORS.ACCENT_COLOR}10`;
@@ -324,8 +324,8 @@ export default function Layout({ children, currentPageName }) {
                 <a 
                   href={SOCIAL.facebook}
                   target="_blank" rel="noopener noreferrer"
-                  className="w-10 h-10 border border-white/20 flex items-center justify-center transition-all" 
-                  aria-label="Suivez Le Tripot Régnier sur Facebook"
+                  className="w-11 h-11 border border-white/20 flex items-center justify-center transition-all" 
+                  aria-label="Suivez-nous sur Facebook"
                   onMouseEnter={(e) => {
                     e.currentTarget.style.borderColor = COLORS.ACCENT_COLOR;
                     e.currentTarget.style.backgroundColor = `${COLORS.ACCENT_COLOR}10`;

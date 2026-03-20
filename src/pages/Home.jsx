@@ -125,13 +125,13 @@ function ArrowSliderCard({ space, onClick }) {
         )}
         {/* Flèches */}
         <button onClick={prev}
-          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/80 rounded-full p-1.5 text-white transition-all opacity-0 group-hover/card:opacity-100"
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/80 rounded-full text-white transition-all opacity-0 group-hover/card:opacity-100 min-w-[44px] min-h-[44px] flex items-center justify-center"
           aria-label="Photo précédente"
         >
           <ChevronLeft className="w-4 h-4" />
         </button>
         <button onClick={next}
-          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/80 rounded-full p-1.5 text-white transition-all opacity-0 group-hover/card:opacity-100"
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/80 rounded-full text-white transition-all opacity-0 group-hover/card:opacity-100 min-w-[44px] min-h-[44px] flex items-center justify-center"
           aria-label="Photo suivante"
         >
           <ChevronRight className="w-4 h-4" />
@@ -245,10 +245,10 @@ function TestimonialsSlider() {
       </div>
       {/* Flèches nav */}
       <div className="flex justify-center gap-4 mt-8">
-        <button onClick={prev} className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition">
+        <button onClick={prev} className="w-11 h-11 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition" aria-label="Avis précédent">
           <ChevronLeft className="w-5 h-5 text-[#0D0D0D]" />
         </button>
-        <button onClick={next} className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition">
+        <button onClick={next} className="w-11 h-11 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100 transition" aria-label="Avis suivant">
           <ChevronRight className="w-5 h-5 text-[#0D0D0D]" />
         </button>
       </div>
@@ -314,20 +314,22 @@ export default function Home() {
             className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4"
             onClick={() => setLightboxImg(null)}
           >
-            <button className="absolute top-4 right-4 text-white bg-black/50 rounded-full p-2 hover:bg-black/80 transition" onClick={() => setLightboxImg(null)}>
+            <button className="absolute top-4 right-4 text-white bg-black/50 rounded-full p-2 hover:bg-black/80 transition min-w-[44px] min-h-[44px] flex items-center justify-center" onClick={() => setLightboxImg(null)} aria-label="Fermer la vue agrandie">
               <X className="w-6 h-6" />
             </button>
             {lightboxImages.length > 1 && (
               <>
                 <button
-                  className="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-black/50 rounded-full p-2 hover:bg-black/80 transition"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-black/50 rounded-full p-2 hover:bg-black/80 transition min-w-[44px] min-h-[44px] flex items-center justify-center"
                   onClick={(e) => { e.stopPropagation(); const newIdx = (lightboxIndex - 1 + lightboxImages.length) % lightboxImages.length; setLightboxIndex(newIdx); setLightboxImg(lightboxImages[newIdx]); }}
+                  aria-label="Photo précédente"
                 >
                   <ChevronLeft className="w-6 h-6" />
                 </button>
                 <button
-                  className="absolute right-16 top-1/2 -translate-y-1/2 text-white bg-black/50 rounded-full p-2 hover:bg-black/80 transition"
+                  className="absolute right-16 top-1/2 -translate-y-1/2 text-white bg-black/50 rounded-full p-2 hover:bg-black/80 transition min-w-[44px] min-h-[44px] flex items-center justify-center"
                   onClick={(e) => { e.stopPropagation(); const newIdx = (lightboxIndex + 1) % lightboxImages.length; setLightboxIndex(newIdx); setLightboxImg(lightboxImages[newIdx]); }}
+                  aria-label="Photo suivante"
                 >
                   <ChevronRight className="w-6 h-6" />
                 </button>
