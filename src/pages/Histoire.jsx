@@ -137,7 +137,7 @@ export default function Histoire() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
             {/* Texte */}
-            <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.05 }} className="text-left">
+            <FadeIn direction="right" className="text-left">
               <p className="text-[#0D0D0D] leading-relaxed mb-6 text-lg font-medium">
                 Situé rue Mathurin Régnier, dans le 15ᵉ arrondissement de Paris, Le Tripot Régnier est un lieu chargé d'histoire.
               </p>
@@ -183,7 +183,7 @@ export default function Histoire() {
             </motion.div>
 
             {/* Collage photos */}
-            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.05 }} className="pt-4">
+            <FadeIn direction="left" className="pt-4">
               <PhotoCollage />
             </motion.div>
           </div>
@@ -193,7 +193,7 @@ export default function Histoire() {
       {/* ── CTA ────────────────────────────────────────────────────────────── */}
       <section className="py-10 px-6" style={{ background: 'linear-gradient(135deg, #0D0D0D 0%, #1a1a1a 100%)', borderTop: `1px solid ${COLORS.ACCENT_COLOR}30` }}>
         <div className="max-w-2xl mx-auto text-center">
-          <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} className="flex flex-col items-center gap-6">
+          <FadeIn className="flex flex-col items-center gap-6">
             <h2 className="text-2xl md:text-4xl text-white font-semibold tracking-tight">
               Découvrir l'ambiance unique<br />du Tripot Régnier
             </h2>
