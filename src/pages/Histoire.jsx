@@ -180,12 +180,12 @@ export default function Histoire() {
                 GALERIE PHOTOS
                 <ArrowRight className="w-4 h-4" />
               </Link>
-            </motion.div>
+            </FadeIn>
 
             {/* Collage photos */}
             <FadeIn direction="left" className="pt-4">
               <PhotoCollage />
-            </motion.div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -207,9 +207,9 @@ export default function Histoire() {
               NOUS CONTACTER
               <ArrowRight className="w-4 h-4" />
             </Link>
-          </motion.div>
-        </div>
-      </section>
-    </div>
-  );
-}
+          </FadeIn>
+          </div>
+          </section>
+          </div>
+          );
+          }
