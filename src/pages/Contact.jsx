@@ -32,6 +32,7 @@ export default function Contact() {
     message: "",
     consentement: false,
   });
+  const recaptchaRef = useRef(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState("");
