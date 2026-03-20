@@ -107,7 +107,7 @@ function PhotoCollage() {
 export default function Histoire() {
   return (
     <div>
-      <PageSEO title="Notre histoire | Le Tripot Régnier" description="Découvrez l'histoire du Tripot Régnier, de 1904 à aujourd'hui. Ancien bains-douches devenu lieu événementiel Art Déco de 700m² au cœur de Paris 15e." canonicalPath="/Histoire" />
+      <PageSEO title="Notre histoire | Le Tripot Régnier" description="Découvrez l'histoire du Tripot Régnier, ancien bains-douches parisien transformé en salle événementielle Art Déco dans le 15e arrondissement." canonicalPath="/Histoire" />
 
       {/* ── SECTION 1 — Texte historique ────────────────────────────────────── */}
       <section className="pt-40 pb-12 px-6 bg-white">

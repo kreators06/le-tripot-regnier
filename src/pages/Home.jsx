@@ -183,14 +183,14 @@ function ConfigCard({ config, index, onLightbox }) {
 
         {/* Flèches */}
         <button onClick={prev}
-          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/80 rounded-full p-1.5 text-white transition-all opacity-0 group-hover:opacity-100"
-          aria-label="Photo précédente"
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/80 rounded-full text-white transition-all opacity-0 group-hover:opacity-100 min-w-[44px] min-h-[44px] flex items-center justify-center"
+          aria-label="Configuration précédente"
         >
           <ChevronLeft className="w-4 h-4" />
         </button>
         <button onClick={next}
-          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/80 rounded-full p-1.5 text-white transition-all opacity-0 group-hover:opacity-100"
-          aria-label="Photo suivante"
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/80 rounded-full text-white transition-all opacity-0 group-hover:opacity-100 min-w-[44px] min-h-[44px] flex items-center justify-center"
+          aria-label="Configuration suivante"
         >
           <ChevronRight className="w-4 h-4" />
         </button>
@@ -344,7 +344,7 @@ export default function Home() {
         )}
       </AnimatePresence>
 
-      <SEOMetadata />
+      <SEOMetadata description="Le Tripot Régnier, salle événementielle à Paris 15e. Espace modulable de 300m² pour soirées, dîners, conférences, défilés et showrooms." />
       <MobileCtaBar />
 
       {/* ── Hero ────────────────────────────────────────────────────────────── */}
@@ -381,14 +381,14 @@ export default function Home() {
 
       {/* ── Nos espaces ─────────────────────────────────────────────────────── */}
       <section id="nos-espaces" className="py-12 md:py-16 bg-[#0D0D0D]">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6 md:px-16">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} className="text-center mb-10">
             <h2 className="text-4xl md:text-6xl font-semibold text-white tracking-tight">
               Nos <span style={{ color: COLORS.ACCENT_COLOR }}>espaces</span>
             </h2>
           </motion.div>
           {/* Grille fixe 2×3 */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {spaces.map((space) =>
               space.isHoverSlider ? (
                 <ArrowSliderCard key={space.title} space={space} onClick={(img) => openLightbox(img, space.images)} />
@@ -417,7 +417,7 @@ export default function Home() {
 
       {/* ── Espaces Modulables ────────────────────────────────────────────────── */}
       <section className="py-12 md:py-16 bg-[#FAFAFA]">
-        <div className="px-6 mb-10">
+        <div className="px-6 md:px-16 mb-10">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} className="text-center">
             <h2 className="text-3xl md:text-5xl font-semibold text-[#0D0D0D] tracking-tight">
               Organisez un événement{' '}
@@ -426,7 +426,7 @@ export default function Home() {
           </motion.div>
         </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 px-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 px-6 md:px-16">
             {configurations.map((config, index) => (
               <ConfigCard key={config.name} config={config} index={index} onLightbox={setLightboxImg} />
             ))}
