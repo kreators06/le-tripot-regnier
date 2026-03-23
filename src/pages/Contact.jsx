@@ -66,12 +66,7 @@ export default function Contact() {
     setSubmitError("");
     setRecaptchaError("");
 
-    const recaptchaToken = recaptchaRef.current ? recaptchaRef.current.getValue() : "";
-    if (!recaptchaToken) {
-      setRecaptchaError("Veuillez confirmer que vous n'êtes pas un robot.");
-      setIsSubmitting(false);
-      return;
-    }
+    // reCAPTCHA temporairement désactivé pour test
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -248,14 +243,7 @@ export default function Contact() {
 
                   {submitError && <p className="text-red-500 text-sm">{submitError}</p>}
 
-                  {/* reCAPTCHA v2 */}
-                  <div>
-                    <ReCAPTCHA
-                      ref={recaptchaRef}
-                      sitekey="6LdjRJUsAAAAAEiAIRr7-p0nVzOsaOhjBVWg1Ox1"
-                    />
-                    {recaptchaError && <p className="text-red-500 text-sm mt-1">{recaptchaError}</p>}
-                  </div>
+                  {/* reCAPTCHA temporairement désactivé pour test */}
 
                   <Button
                     type="submit"
