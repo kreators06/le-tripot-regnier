@@ -96,6 +96,7 @@ export default function Contact() {
     const data = await response.json();
     setIsSubmitting(false);
 
+    console.log("Web3Forms response:", data);
     if (data.success) {
       setIsSubmitted(true);
       if (recaptchaRef.current) recaptchaRef.current.reset();
@@ -104,7 +105,7 @@ export default function Contact() {
         setFormData({ prenom: "", nom: "", email: "", phone: "", societe: "", message: "", consentement: false });
       }, 5000);
     } else {
-      setSubmitError("Une erreur est survenue. Veuillez réessayer ou nous contacter directement par email.");
+      setSubmitError(`Erreur: ${data.message || JSON.stringify(data)}`);
     }
   };
 
