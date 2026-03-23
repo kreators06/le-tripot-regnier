@@ -2,6 +2,7 @@
 // Page de contact et réservation du Tripot Régnier
 
 import React, { useState, useRef, useEffect } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import { motion } from "framer-motion";
 import {
   Phone,
@@ -33,6 +34,7 @@ export default function Contact() {
     message: "",
     consentement: false,
   });
+  const recaptchaRef = useRef(null);
   const [recaptchaError, setRecaptchaError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -64,7 +66,7 @@ export default function Contact() {
     setSubmitError("");
     setRecaptchaError("");
 
-    const recaptchaToken = window.grecaptcha ? window.grecaptcha.getResponse() : "";
+    const recaptchaToken = recaptchaRef.current ? recaptchaRef.current.getValue() : "";
     if (!recaptchaToken) {
       setRecaptchaError("Veuillez confirmer que vous n'êtes pas un robot.");
       setIsSubmitting(false);
@@ -78,7 +80,7 @@ export default function Contact() {
         Accept: "application/json",
       },
       body: JSON.stringify({
-        access_key: "REMPLACER_PAR_VOTRE_CLE",
+        access_key: "bfbce709-3e96-488e-bc51-f3141df00ec1",
         subject: "Nouvelle demande de contact - Le Tripot Régnier",
         from_name: "Site Le Tripot Régnier",
         prénom: formData.prenom,
@@ -96,7 +98,7 @@ export default function Contact() {
 
     if (data.success) {
       setIsSubmitted(true);
-      if (window.grecaptcha) window.grecaptcha.reset();
+      if (recaptchaRef.current) recaptchaRef.current.reset();
       setTimeout(() => {
         setIsSubmitted(false);
         setFormData({ prenom: "", nom: "", email: "", phone: "", societe: "", message: "", consentement: false });
@@ -248,7 +250,10 @@ export default function Contact() {
 
                   {/* reCAPTCHA v2 */}
                   <div>
-                    <div className="g-recaptcha" data-sitekey="bc12345-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />
+                    <ReCAPTCHA
+                      ref={recaptchaRef}
+                      sitekey="6LdjRJUsAAAAAEiAIRr7-p0nVzOsaOhjBVWg1Ox1"
+                    />
                     {recaptchaError && <p className="text-red-500 text-sm mt-1">{recaptchaError}</p>}
                   </div>
 
