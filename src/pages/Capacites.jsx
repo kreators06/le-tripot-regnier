@@ -216,6 +216,19 @@ export default function Capacites() {
       {/* 1. Carrousel */}
       <HeroCarousel />
 
+      {/* Intro SEO */}
+      <section className="py-10 px-6 bg-white border-b border-gray-100">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-3xl md:text-4xl font-bold text-[#0D0D0D] mb-4 tracking-tight">Espaces &amp; Équipements</h1>
+          <p className="text-gray-700 leading-relaxed text-base md:text-lg mb-4">
+            Le <strong>Tripot Régnier</strong> met à votre disposition un <strong>équipement de salle événementielle</strong> professionnel et complet. Situé dans le 15ème arrondissement de Paris, notre lieu dispose de <strong>700 m²</strong> entièrement modulables, capables d'accueillir jusqu'à <strong>500 personnes</strong> selon la configuration choisie. Que vous planifiez une conférence, un dîner de gala, un défilé ou un showroom, nos espaces s'adaptent à votre vision.
+          </p>
+          <p className="text-gray-700 leading-relaxed text-base">
+            Notre infrastructure technique — <strong>son, lumière, vidéo</strong> — est gérée depuis une régie dédiée au 1er étage. Chaque élément a été sélectionné pour garantir une expérience de qualité professionnelle, du petit événement intime au grand rassemblement de <strong>500 personnes</strong>.
+          </p>
+        </div>
+      </section>
+
       {/* 2. Matériel audiovisuel */}
       <section className="py-12 px-6 bg-white">
         <div className="max-w-6xl mx-auto">

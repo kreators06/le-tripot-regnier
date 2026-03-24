@@ -39,6 +39,13 @@ export default function Galerie() {
       />
       {/* Gallery Section */}
       <section className="py-16 px-4 bg-[#F5F5F0]">
+        <div className="max-w-4xl mx-auto text-center mb-10 px-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#0D0D0D] mb-4 tracking-tight">Galerie photos</h1>
+          <h2 className="text-xl font-semibold mb-5" style={{ color: '#d4b351ff' }}>Découvrez nos espaces en images</h2>
+          <p className="text-gray-700 leading-relaxed text-base md:text-lg">
+            Bienvenue dans la galerie du <strong>Tripot Régnier</strong>, votre <strong>salle événementielle Art Déco à Paris</strong>. Ces <strong>photos de notre salle événementielle Paris</strong> illustrent la diversité des configurations possibles : cocktail debout, dîner assis, conférence, défilé de mode ou showroom. La <strong>décoration Art Déco</strong> et les volumes généreux du lieu créent une atmosphère unique pour chacun de vos événements. Parcourez ces images pour vous projeter dans votre prochain projet et n'hésitez pas à nous contacter pour une visite sur place.
+          </p>
+        </div>
         <div className="max-w-[1600px] mx-auto">
           <motion.div layout className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2">
             <AnimatePresence>
@@ -70,59 +77,10 @@ export default function Galerie() {
             </AnimatePresence>
           </motion.div>
         </div>
+        </div>
       </section>
 
       {/* Lightbox */}
-      <AnimatePresence>
-        {selectedImage && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4"
-            onClick={() => setSelectedIndex(null)}
-          >
-            <button
-              className="absolute top-6 right-6 text-white/80 hover:text-white transition-colors p-2 bg-black/20 hover:bg-black/40 rounded-full min-w-[44px] min-h-[44px] flex items-center justify-center"
-              onClick={() => setSelectedIndex(null)}
-              aria-label="Fermer la vue agrandie"
-            >
-              <X className="w-8 h-8" />
-            </button>
-            <button
-              className="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-black/40 hover:bg-black/70 rounded-full p-2 min-w-[44px] min-h-[44px] flex items-center justify-center transition z-10"
-              onClick={(e) => { e.stopPropagation(); prev(); }}
-              aria-label="Photo précédente"
-            >
-              <ChevronLeft className="w-7 h-7" />
-            </button>
-            <button
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-white bg-black/40 hover:bg-black/70 rounded-full p-2 min-w-[44px] min-h-[44px] flex items-center justify-center transition z-10"
-              onClick={(e) => { e.stopPropagation(); next(); }}
-              aria-label="Photo suivante"
-            >
-              <ChevronRight className="w-7 h-7" />
-            </button>
-            <motion.img
-              key={selectedImage.src}
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              src={selectedImage.src}
-              alt={selectedImage.alt}
-              className="max-w-full max-h-[85vh] object-contain rounded-lg"
-              onClick={(e) => e.stopPropagation()}
-            />
-            <div className="absolute bottom-6 left-0 right-0 text-center">
-              <p className="text-white text-sm">{selectedImage.alt}</p>
-              <p className="text-white/40 text-xs mt-1">{selectedIndex + 1} / {galleryImages.length}</p>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* CTA Banner */}
       <CTABanner
         title="Envie de voir le lieu en personne ?"
         subtitle="Planifiez une visite pour découvrir l'atmosphère unique du Tripot Régnier"

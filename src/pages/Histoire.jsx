@@ -118,18 +118,23 @@ export default function Histoire() {
             {/* Texte */}
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="text-left">
 
-              <h1 className="text-4xl md:text-5xl font-bold text-[#0D0D0D] mb-8 tracking-tight">
+              <h1 className="text-4xl md:text-5xl font-bold text-[#0D0D0D] mb-4 tracking-tight">
                 Histoire
               </h1>
-
+              <h2 className="text-xl md:text-2xl font-semibold mb-8" style={{ color: '#d4b351ff' }}>
+                L'histoire d'un lieu unique au cœur du 15ème arrondissement
+              </h2>
               <p className="text-[#0D0D0D] leading-relaxed mb-6 text-lg font-medium">
                 Situé rue Mathurin Régnier, dans le 15ᵉ arrondissement de Paris, Le Tripot Régnier est un lieu chargé d'histoire.
               </p>
               <p className="text-gray-700 leading-relaxed mb-6">
-                Anciennement bains-douches et laverie des premiers HLM parisiens au début du XXᵉ siècle, puis site industriel, le bâtiment a été entièrement repensé et rénové pour devenir un espace de réception dédié à l'événementiel en 2016.
+                Anciennement bains-douches et laverie des premiers HLM parisiens au début du XX<sup>e</sup> siècle, puis site industriel, le bâtiment a été entièrement repensé et rénové pour devenir un <strong>espace de réception dédié à l'événementiel</strong> en 2016. Ce lieu, qui témoigne de l'histoire ouvrière parisienne, incarne aujourd'hui une vision contemporaine de l'hospitalité haut de gamme.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                Inscrit dans le patrimoine architectural du <strong>15ème arrondissement de Paris</strong>, le bâtiment a conservé ses volumes généreux, ses hauteurs sous plafond et la robustesse de sa structure d'origine. Les concepteurs ont su y insuffler une esthétique <strong>Art Déco</strong> mêlée de touches industrielles : matériaux bruts, luminaires cuivrés, parquet à chevrons. Un équilibre rare entre mémoire du lieu et exigences d'un <strong>lieu événementiel historique</strong> du XXI<sup>e</sup> siècle.
               </p>
               <p className="text-gray-700 leading-relaxed mb-10">
-                Inspiré des univers Art Déco et industriel, nous avons conçu Le Tripot Régnier comme un lieu hybride et contemporain, pensé pour accueillir les événements corporate et culturels d'aujourd'hui.
+                Inspiré des univers Art Déco et industriel, nous avons conçu Le Tripot Régnier comme un lieu hybride et contemporain, pensé pour accueillir les événements corporate et culturels d'aujourd'hui. <strong>Salle Art Déco Paris 15</strong> dans toute sa splendeur, il offre à chaque événement un décor qui marque les esprits.
               </p>
 
               {/* Encart Origine du nom */}

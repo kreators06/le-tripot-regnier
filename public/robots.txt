@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://letripotregnier.fr/sitemap.xml
+Disallow: /admin/

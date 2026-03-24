@@ -88,13 +88,18 @@ export default function Engagements() {
               transition={{ duration: 0.6 }}
               className="lg:col-span-5"
             >
-              <h1 className="text-3xl md:text-5xl font-semibold text-[#0D0D0D] tracking-tight mb-2">
+              <h1 className="text-3xl md:text-5xl font-semibold text-[#0D0D0D] tracking-tight mb-3">
                 Nos <span style={{ color: COLORS.ACCENT_COLOR }}>engagements</span>
               </h1>
-              <p className="text-gray-600 leading-relaxed text-base mb-0">
-                Le Tripot Régnier est engagé en faveur du développement durable.
+              <h2 className="text-lg md:text-xl font-semibold mb-5" style={{ color: COLORS.ACCENT_COLOR }}>
+                Nos engagements pour des événements réussis et responsables
+              </h2>
+              <p className="text-gray-700 leading-relaxed text-base mb-4 max-w-3xl">
+                Le Tripot Régnier s'engage résolument en faveur du <strong>développement durable</strong> et de l'<strong>événementiel responsable à Paris</strong>. Chaque décision — du choix de nos partenaires à la gestion de nos consommations énergétiques — est guidée par notre volonté de réduire notre empreinte carbone tout en offrant la meilleure expérience possible à nos clients.
               </p>
-            </motion.div>
+              <p className="text-gray-700 leading-relaxed text-base mb-6 max-w-3xl">
+                Notre <strong>salle accessible à Paris</strong> a été conçue pour accueillir tous les publics dans les meilleures conditions. L'acoustique, la ventilation, l'éclairage et la sécurité des personnes sont au cœur de nos préoccupations. Notre <strong>équipe professionnelle événement</strong> veille à chaque instant au confort et à la sécurité de vos invités, des prestataires et de nos collaborateurs.
+              </p>
 
             {/* 3 cartes sur toute la largeur */}
             <div className="lg:col-span-5 grid grid-cols-1 md:grid-cols-3 gap-4">

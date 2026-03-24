@@ -365,7 +365,7 @@ export default function Home() {
               Le Tripot Régnier — Paris 15ème
             </p>
             <h1 className="text-white font-bold tracking-tight leading-[1.15] text-[1.6rem] md:text-[2.6rem] lg:text-[3.2rem]">
-              Salle parisienne où vos événements prennent vie.
+              Location de salle événementielle Art Déco Paris 15 — Mariage, Conférence, Soirée privée
             </h1>
           </motion.div>
         </div>
@@ -381,11 +381,42 @@ export default function Home() {
         </motion.a>
       </section>
 
+      {/* ── Intro SEO ──────────────────────────────────────────────────────── */}
+      <section className="py-14 px-6 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }}>
+            <p className="text-gray-700 leading-relaxed text-base md:text-lg mb-5">
+              Au cœur du <strong>15ème arrondissement de Paris</strong>, Le Tripot Régnier est une <strong>salle événementielle Art Déco</strong> d'exception, entièrement privatisable pour tous vos événements. Avec ses 700 m² modulables sur deux niveaux, ce lieu unique allie l'élégance d'un <strong>espace de réception Paris</strong> et la modernité d'une infrastructure technique complète.
+            </p>
+            <p className="text-gray-700 leading-relaxed text-base md:text-lg mb-5">
+              De la <strong>conférence d'entreprise</strong> au grand dîner de gala, du showroom automobile à la soirée corporate, Le Tripot Régnier s'adapte à chaque projet. Des marques comme L'Oréal, Nike, Porsche, Lamborghini, Orange ou Cdiscount ont choisi ce lieu pour ses qualités techniques et son ambiance inimitable. Proposer un cadre aussi singulier pour votre <strong>événement à Paris</strong>, c'est notre promesse.
+            </p>
+            <p className="text-gray-700 leading-relaxed text-base md:text-lg mb-7">
+              Que vous organisiez un mariage, un séminaire ou un lancement de produit, notre équipe vous accompagne de la visite jusqu'au jour J pour que votre événement soit inoubliable.
+            </p>
+            <ul className="inline-flex flex-col md:flex-row flex-wrap justify-center gap-3 text-sm font-medium text-[#0D0D0D] mb-8">
+              {["Jusqu'à 500 personnes", "Équipement AV complet", "Entrée véhicules", "Bar & office traiteur", "Fibre optique", "Loge privée"].map((item) => (
+                <li key={item} className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: '#d4b351ff' }} />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <Link
+              to={createPageUrl('Contact')}
+              className="inline-flex items-center gap-2 px-7 py-3 text-white font-semibold text-sm tracking-wide rounded-full transition-all duration-300"
+              style={{ backgroundColor: '#d4b351ff' }}
+              onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.85'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; }}
+            >
+              Demander un devis gratuit <ArrowRight className="w-4 h-4" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ── Nos espaces ─────────────────────────────────────────────────────── */}
-      <section id="nos-espaces" className="py-12 md:py-16 bg-[#0D0D0D]">
-        <div className="max-w-7xl mx-auto px-6 md:px-16">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} className="text-center mb-10">
-            <h2 className="text-4xl md:text-6xl font-semibold text-white tracking-tight">
+      <section id="nos-espaces"
               Nos <span style={{ color: COLORS.ACCENT_COLOR }}>espaces</span>
             </h2>
           </motion.div>
@@ -468,18 +499,30 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} className="text-center mb-10">
             <h2 className="text-3xl md:text-5xl font-semibold text-[#0D0D0D] tracking-tight">
-              Ils nous font <span style={{ color: COLORS.ACCENT_COLOR }}>confiance</span>
+              Ce que nos clients <span style={{ color: COLORS.ACCENT_COLOR }}>disent de nous</span>
             </h2>
+            <a
+              href="https://www.google.com/search?kgmid=/g/11c54xh3tb&q=Le+Tripot+R%C3%A9gnier#lrd=0x47e67039a1f85d19:0x6456022fd50040ec,1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-3 text-sm font-medium underline underline-offset-4"
+              style={{ color: COLORS.ACCENT_COLOR }}
+            >
+              Voir nos avis Google →
+            </a>
           </motion.div>
           <TestimonialsSlider />
         </div>
       </section>
 
+      {/* ── FAQ ──────────────────────────────────────────────────────────────── */}
+      <HomeFAQ />
+
       {/* ── CTA ───────────────────────────────────────────────────────────────── */}
       <section className="py-12 md:py-16 px-6" style={{ background: '#0D0D0D', borderTop: `1px solid ${COLORS.ACCENT_COLOR}30` }}>
         <div className="max-w-2xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} className="flex flex-col items-center gap-5">
-            <h2 className="text-2xl md:text-4xl text-white font-semibold tracking-tight">Organiser un événement</h2>
+            <h2 className="text-2xl md:text-4xl text-white font-semibold tracking-tight">Prêt à organiser votre prochain événement ?</h2>
             <p className="text-white text-sm">Notre équipe est disponible pour répondre à toutes vos questions.</p>
             <Link
               to={createPageUrl('Contact')}
