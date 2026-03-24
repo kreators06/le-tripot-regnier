@@ -8,6 +8,7 @@ import LogoMarquee from '@/components/ui/LogoMarquee';
 import SEOMetadata from '@/components/SEOMetadata';
 import TrustSignals from '@/components/TrustSignals';
 import MobileCtaBar from '@/components/MobileCtaBar';
+import HomeFAQ from '@/components/HomeFAQ';
 import { IMAGES } from '@/components/config/images';
 import { COLORS } from '@/components/config/colors';
 
