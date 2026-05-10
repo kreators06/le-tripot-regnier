@@ -1,0 +1,9 @@
+{
+  "name": "Le Tripot R\u00e9gnier",
+  "site": {
+    "installCommand": "npm install",
+    "buildCommand": "npm run build",
+    "serveCommand": "npm run dev",
+    "outputDirectory": "./dist"
+  }
+}
